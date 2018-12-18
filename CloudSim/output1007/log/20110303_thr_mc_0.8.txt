@@ -1,0 +1,3162 @@
+Initialising...
+Starting CloudSim version 3.0
+Broker is starting...
+Datacenter is starting...
+Entities started.
+0.0: Broker: Cloud Resource List received with 1 resource(s)
+0.0: Broker: Trying to Create VM #0 in Datacenter
+0.0: Broker: Trying to Create VM #1 in Datacenter
+0.0: Broker: Trying to Create VM #2 in Datacenter
+0.0: Broker: Trying to Create VM #3 in Datacenter
+0.0: Broker: Trying to Create VM #4 in Datacenter
+0.0: Broker: Trying to Create VM #5 in Datacenter
+0.0: Broker: Trying to Create VM #6 in Datacenter
+0.0: Broker: Trying to Create VM #7 in Datacenter
+0.0: Broker: Trying to Create VM #8 in Datacenter
+0.0: Broker: Trying to Create VM #9 in Datacenter
+0.0: Broker: Trying to Create VM #10 in Datacenter
+0.0: Broker: Trying to Create VM #11 in Datacenter
+0.0: Broker: Trying to Create VM #12 in Datacenter
+0.0: Broker: Trying to Create VM #13 in Datacenter
+0.0: Broker: Trying to Create VM #14 in Datacenter
+0.0: Broker: Trying to Create VM #15 in Datacenter
+0.0: Broker: Trying to Create VM #16 in Datacenter
+0.0: Broker: Trying to Create VM #17 in Datacenter
+0.0: Broker: Trying to Create VM #18 in Datacenter
+0.0: Broker: Trying to Create VM #19 in Datacenter
+0.0: Broker: Trying to Create VM #20 in Datacenter
+0.0: Broker: Trying to Create VM #21 in Datacenter
+0.0: Broker: Trying to Create VM #22 in Datacenter
+0.0: Broker: Trying to Create VM #23 in Datacenter
+0.0: Broker: Trying to Create VM #24 in Datacenter
+0.0: Broker: Trying to Create VM #25 in Datacenter
+0.0: Broker: Trying to Create VM #26 in Datacenter
+0.0: Broker: Trying to Create VM #27 in Datacenter
+0.0: Broker: Trying to Create VM #28 in Datacenter
+0.0: Broker: Trying to Create VM #29 in Datacenter
+0.0: Broker: Trying to Create VM #30 in Datacenter
+0.0: Broker: Trying to Create VM #31 in Datacenter
+0.0: Broker: Trying to Create VM #32 in Datacenter
+0.0: Broker: Trying to Create VM #33 in Datacenter
+0.0: Broker: Trying to Create VM #34 in Datacenter
+0.0: Broker: Trying to Create VM #35 in Datacenter
+0.0: Broker: Trying to Create VM #36 in Datacenter
+0.0: Broker: Trying to Create VM #37 in Datacenter
+0.0: Broker: Trying to Create VM #38 in Datacenter
+0.0: Broker: Trying to Create VM #39 in Datacenter
+0.0: Broker: Trying to Create VM #40 in Datacenter
+0.0: Broker: Trying to Create VM #41 in Datacenter
+0.0: Broker: Trying to Create VM #42 in Datacenter
+0.0: Broker: Trying to Create VM #43 in Datacenter
+0.0: Broker: Trying to Create VM #44 in Datacenter
+0.0: Broker: Trying to Create VM #45 in Datacenter
+0.0: Broker: Trying to Create VM #46 in Datacenter
+0.0: Broker: Trying to Create VM #47 in Datacenter
+0.0: Broker: Trying to Create VM #48 in Datacenter
+0.0: Broker: Trying to Create VM #49 in Datacenter
+0.0: Broker: Trying to Create VM #50 in Datacenter
+0.0: Broker: Trying to Create VM #51 in Datacenter
+0.0: Broker: Trying to Create VM #52 in Datacenter
+0.0: Broker: Trying to Create VM #53 in Datacenter
+0.0: Broker: Trying to Create VM #54 in Datacenter
+0.0: Broker: Trying to Create VM #55 in Datacenter
+0.0: Broker: Trying to Create VM #56 in Datacenter
+0.0: Broker: Trying to Create VM #57 in Datacenter
+0.0: Broker: Trying to Create VM #58 in Datacenter
+0.0: Broker: Trying to Create VM #59 in Datacenter
+0.0: Broker: Trying to Create VM #60 in Datacenter
+0.0: Broker: Trying to Create VM #61 in Datacenter
+0.0: Broker: Trying to Create VM #62 in Datacenter
+0.0: Broker: Trying to Create VM #63 in Datacenter
+0.0: Broker: Trying to Create VM #64 in Datacenter
+0.0: Broker: Trying to Create VM #65 in Datacenter
+0.0: Broker: Trying to Create VM #66 in Datacenter
+0.0: Broker: Trying to Create VM #67 in Datacenter
+0.0: Broker: Trying to Create VM #68 in Datacenter
+0.0: Broker: Trying to Create VM #69 in Datacenter
+0.0: Broker: Trying to Create VM #70 in Datacenter
+0.0: Broker: Trying to Create VM #71 in Datacenter
+0.0: Broker: Trying to Create VM #72 in Datacenter
+0.0: Broker: Trying to Create VM #73 in Datacenter
+0.0: Broker: Trying to Create VM #74 in Datacenter
+0.0: Broker: Trying to Create VM #75 in Datacenter
+0.0: Broker: Trying to Create VM #76 in Datacenter
+0.0: Broker: Trying to Create VM #77 in Datacenter
+0.0: Broker: Trying to Create VM #78 in Datacenter
+0.0: Broker: Trying to Create VM #79 in Datacenter
+0.0: Broker: Trying to Create VM #80 in Datacenter
+0.0: Broker: Trying to Create VM #81 in Datacenter
+0.0: Broker: Trying to Create VM #82 in Datacenter
+0.0: Broker: Trying to Create VM #83 in Datacenter
+0.0: Broker: Trying to Create VM #84 in Datacenter
+0.0: Broker: Trying to Create VM #85 in Datacenter
+0.0: Broker: Trying to Create VM #86 in Datacenter
+0.0: Broker: Trying to Create VM #87 in Datacenter
+0.0: Broker: Trying to Create VM #88 in Datacenter
+0.0: Broker: Trying to Create VM #89 in Datacenter
+0.0: Broker: Trying to Create VM #90 in Datacenter
+0.0: Broker: Trying to Create VM #91 in Datacenter
+0.0: Broker: Trying to Create VM #92 in Datacenter
+0.0: Broker: Trying to Create VM #93 in Datacenter
+0.0: Broker: Trying to Create VM #94 in Datacenter
+0.0: Broker: Trying to Create VM #95 in Datacenter
+0.0: Broker: Trying to Create VM #96 in Datacenter
+0.0: Broker: Trying to Create VM #97 in Datacenter
+0.0: Broker: Trying to Create VM #98 in Datacenter
+0.0: Broker: Trying to Create VM #99 in Datacenter
+0.0: Broker: Trying to Create VM #100 in Datacenter
+0.0: Broker: Trying to Create VM #101 in Datacenter
+0.0: Broker: Trying to Create VM #102 in Datacenter
+0.0: Broker: Trying to Create VM #103 in Datacenter
+0.0: Broker: Trying to Create VM #104 in Datacenter
+0.0: Broker: Trying to Create VM #105 in Datacenter
+0.0: Broker: Trying to Create VM #106 in Datacenter
+0.0: Broker: Trying to Create VM #107 in Datacenter
+0.0: Broker: Trying to Create VM #108 in Datacenter
+0.0: Broker: Trying to Create VM #109 in Datacenter
+0.0: Broker: Trying to Create VM #110 in Datacenter
+0.0: Broker: Trying to Create VM #111 in Datacenter
+0.0: Broker: Trying to Create VM #112 in Datacenter
+0.0: Broker: Trying to Create VM #113 in Datacenter
+0.0: Broker: Trying to Create VM #114 in Datacenter
+0.0: Broker: Trying to Create VM #115 in Datacenter
+0.0: Broker: Trying to Create VM #116 in Datacenter
+0.0: Broker: Trying to Create VM #117 in Datacenter
+0.0: Broker: Trying to Create VM #118 in Datacenter
+0.0: Broker: Trying to Create VM #119 in Datacenter
+0.0: Broker: Trying to Create VM #120 in Datacenter
+0.0: Broker: Trying to Create VM #121 in Datacenter
+0.0: Broker: Trying to Create VM #122 in Datacenter
+0.0: Broker: Trying to Create VM #123 in Datacenter
+0.0: Broker: Trying to Create VM #124 in Datacenter
+0.0: Broker: Trying to Create VM #125 in Datacenter
+0.0: Broker: Trying to Create VM #126 in Datacenter
+0.0: Broker: Trying to Create VM #127 in Datacenter
+0.0: Broker: Trying to Create VM #128 in Datacenter
+0.0: Broker: Trying to Create VM #129 in Datacenter
+0.0: Broker: Trying to Create VM #130 in Datacenter
+0.0: Broker: Trying to Create VM #131 in Datacenter
+0.0: Broker: Trying to Create VM #132 in Datacenter
+0.0: Broker: Trying to Create VM #133 in Datacenter
+0.0: Broker: Trying to Create VM #134 in Datacenter
+0.0: Broker: Trying to Create VM #135 in Datacenter
+0.0: Broker: Trying to Create VM #136 in Datacenter
+0.0: Broker: Trying to Create VM #137 in Datacenter
+0.0: Broker: Trying to Create VM #138 in Datacenter
+0.0: Broker: Trying to Create VM #139 in Datacenter
+0.0: Broker: Trying to Create VM #140 in Datacenter
+0.0: Broker: Trying to Create VM #141 in Datacenter
+0.0: Broker: Trying to Create VM #142 in Datacenter
+0.0: Broker: Trying to Create VM #143 in Datacenter
+0.0: Broker: Trying to Create VM #144 in Datacenter
+0.0: Broker: Trying to Create VM #145 in Datacenter
+0.0: Broker: Trying to Create VM #146 in Datacenter
+0.0: Broker: Trying to Create VM #147 in Datacenter
+0.0: Broker: Trying to Create VM #148 in Datacenter
+0.0: Broker: Trying to Create VM #149 in Datacenter
+0.0: Broker: Trying to Create VM #150 in Datacenter
+0.0: Broker: Trying to Create VM #151 in Datacenter
+0.0: Broker: Trying to Create VM #152 in Datacenter
+0.0: Broker: Trying to Create VM #153 in Datacenter
+0.0: Broker: Trying to Create VM #154 in Datacenter
+0.0: Broker: Trying to Create VM #155 in Datacenter
+0.0: Broker: Trying to Create VM #156 in Datacenter
+0.0: Broker: Trying to Create VM #157 in Datacenter
+0.0: Broker: Trying to Create VM #158 in Datacenter
+0.0: Broker: Trying to Create VM #159 in Datacenter
+0.0: Broker: Trying to Create VM #160 in Datacenter
+0.0: Broker: Trying to Create VM #161 in Datacenter
+0.0: Broker: Trying to Create VM #162 in Datacenter
+0.0: Broker: Trying to Create VM #163 in Datacenter
+0.0: Broker: Trying to Create VM #164 in Datacenter
+0.0: Broker: Trying to Create VM #165 in Datacenter
+0.0: Broker: Trying to Create VM #166 in Datacenter
+0.0: Broker: Trying to Create VM #167 in Datacenter
+0.0: Broker: Trying to Create VM #168 in Datacenter
+0.0: Broker: Trying to Create VM #169 in Datacenter
+0.0: Broker: Trying to Create VM #170 in Datacenter
+0.0: Broker: Trying to Create VM #171 in Datacenter
+0.0: Broker: Trying to Create VM #172 in Datacenter
+0.0: Broker: Trying to Create VM #173 in Datacenter
+0.0: Broker: Trying to Create VM #174 in Datacenter
+0.0: Broker: Trying to Create VM #175 in Datacenter
+0.0: Broker: Trying to Create VM #176 in Datacenter
+0.0: Broker: Trying to Create VM #177 in Datacenter
+0.0: Broker: Trying to Create VM #178 in Datacenter
+0.0: Broker: Trying to Create VM #179 in Datacenter
+0.0: Broker: Trying to Create VM #180 in Datacenter
+0.0: Broker: Trying to Create VM #181 in Datacenter
+0.0: Broker: Trying to Create VM #182 in Datacenter
+0.0: Broker: Trying to Create VM #183 in Datacenter
+0.0: Broker: Trying to Create VM #184 in Datacenter
+0.0: Broker: Trying to Create VM #185 in Datacenter
+0.0: Broker: Trying to Create VM #186 in Datacenter
+0.0: Broker: Trying to Create VM #187 in Datacenter
+0.0: Broker: Trying to Create VM #188 in Datacenter
+0.0: Broker: Trying to Create VM #189 in Datacenter
+0.0: Broker: Trying to Create VM #190 in Datacenter
+0.0: Broker: Trying to Create VM #191 in Datacenter
+0.0: Broker: Trying to Create VM #192 in Datacenter
+0.0: Broker: Trying to Create VM #193 in Datacenter
+0.0: Broker: Trying to Create VM #194 in Datacenter
+0.0: Broker: Trying to Create VM #195 in Datacenter
+0.0: Broker: Trying to Create VM #196 in Datacenter
+0.0: Broker: Trying to Create VM #197 in Datacenter
+0.0: Broker: Trying to Create VM #198 in Datacenter
+0.0: Broker: Trying to Create VM #199 in Datacenter
+0.0: Broker: Trying to Create VM #200 in Datacenter
+0.0: Broker: Trying to Create VM #201 in Datacenter
+0.0: Broker: Trying to Create VM #202 in Datacenter
+0.0: Broker: Trying to Create VM #203 in Datacenter
+0.0: Broker: Trying to Create VM #204 in Datacenter
+0.0: Broker: Trying to Create VM #205 in Datacenter
+0.0: Broker: Trying to Create VM #206 in Datacenter
+0.0: Broker: Trying to Create VM #207 in Datacenter
+0.0: Broker: Trying to Create VM #208 in Datacenter
+0.0: Broker: Trying to Create VM #209 in Datacenter
+0.0: Broker: Trying to Create VM #210 in Datacenter
+0.0: Broker: Trying to Create VM #211 in Datacenter
+0.0: Broker: Trying to Create VM #212 in Datacenter
+0.0: Broker: Trying to Create VM #213 in Datacenter
+0.0: Broker: Trying to Create VM #214 in Datacenter
+0.0: Broker: Trying to Create VM #215 in Datacenter
+0.0: Broker: Trying to Create VM #216 in Datacenter
+0.0: Broker: Trying to Create VM #217 in Datacenter
+0.0: Broker: Trying to Create VM #218 in Datacenter
+0.0: Broker: Trying to Create VM #219 in Datacenter
+0.0: Broker: Trying to Create VM #220 in Datacenter
+0.0: Broker: Trying to Create VM #221 in Datacenter
+0.0: Broker: Trying to Create VM #222 in Datacenter
+0.0: Broker: Trying to Create VM #223 in Datacenter
+0.0: Broker: Trying to Create VM #224 in Datacenter
+0.0: Broker: Trying to Create VM #225 in Datacenter
+0.0: Broker: Trying to Create VM #226 in Datacenter
+0.0: Broker: Trying to Create VM #227 in Datacenter
+0.0: Broker: Trying to Create VM #228 in Datacenter
+0.0: Broker: Trying to Create VM #229 in Datacenter
+0.0: Broker: Trying to Create VM #230 in Datacenter
+0.0: Broker: Trying to Create VM #231 in Datacenter
+0.0: Broker: Trying to Create VM #232 in Datacenter
+0.0: Broker: Trying to Create VM #233 in Datacenter
+0.0: Broker: Trying to Create VM #234 in Datacenter
+0.0: Broker: Trying to Create VM #235 in Datacenter
+0.0: Broker: Trying to Create VM #236 in Datacenter
+0.0: Broker: Trying to Create VM #237 in Datacenter
+0.0: Broker: Trying to Create VM #238 in Datacenter
+0.0: Broker: Trying to Create VM #239 in Datacenter
+0.0: Broker: Trying to Create VM #240 in Datacenter
+0.0: Broker: Trying to Create VM #241 in Datacenter
+0.0: Broker: Trying to Create VM #242 in Datacenter
+0.0: Broker: Trying to Create VM #243 in Datacenter
+0.0: Broker: Trying to Create VM #244 in Datacenter
+0.0: Broker: Trying to Create VM #245 in Datacenter
+0.0: Broker: Trying to Create VM #246 in Datacenter
+0.0: Broker: Trying to Create VM #247 in Datacenter
+0.0: Broker: Trying to Create VM #248 in Datacenter
+0.0: Broker: Trying to Create VM #249 in Datacenter
+0.0: Broker: Trying to Create VM #250 in Datacenter
+0.0: Broker: Trying to Create VM #251 in Datacenter
+0.0: Broker: Trying to Create VM #252 in Datacenter
+0.0: Broker: Trying to Create VM #253 in Datacenter
+0.0: Broker: Trying to Create VM #254 in Datacenter
+0.0: Broker: Trying to Create VM #255 in Datacenter
+0.0: Broker: Trying to Create VM #256 in Datacenter
+0.0: Broker: Trying to Create VM #257 in Datacenter
+0.0: Broker: Trying to Create VM #258 in Datacenter
+0.0: Broker: Trying to Create VM #259 in Datacenter
+0.0: Broker: Trying to Create VM #260 in Datacenter
+0.0: Broker: Trying to Create VM #261 in Datacenter
+0.0: Broker: Trying to Create VM #262 in Datacenter
+0.0: Broker: Trying to Create VM #263 in Datacenter
+0.0: Broker: Trying to Create VM #264 in Datacenter
+0.0: Broker: Trying to Create VM #265 in Datacenter
+0.0: Broker: Trying to Create VM #266 in Datacenter
+0.0: Broker: Trying to Create VM #267 in Datacenter
+0.0: Broker: Trying to Create VM #268 in Datacenter
+0.0: Broker: Trying to Create VM #269 in Datacenter
+0.0: Broker: Trying to Create VM #270 in Datacenter
+0.0: Broker: Trying to Create VM #271 in Datacenter
+0.0: Broker: Trying to Create VM #272 in Datacenter
+0.0: Broker: Trying to Create VM #273 in Datacenter
+0.0: Broker: Trying to Create VM #274 in Datacenter
+0.0: Broker: Trying to Create VM #275 in Datacenter
+0.0: Broker: Trying to Create VM #276 in Datacenter
+0.0: Broker: Trying to Create VM #277 in Datacenter
+0.0: Broker: Trying to Create VM #278 in Datacenter
+0.0: Broker: Trying to Create VM #279 in Datacenter
+0.0: Broker: Trying to Create VM #280 in Datacenter
+0.0: Broker: Trying to Create VM #281 in Datacenter
+0.0: Broker: Trying to Create VM #282 in Datacenter
+0.0: Broker: Trying to Create VM #283 in Datacenter
+0.0: Broker: Trying to Create VM #284 in Datacenter
+0.0: Broker: Trying to Create VM #285 in Datacenter
+0.0: Broker: Trying to Create VM #286 in Datacenter
+0.0: Broker: Trying to Create VM #287 in Datacenter
+0.0: Broker: Trying to Create VM #288 in Datacenter
+0.0: Broker: Trying to Create VM #289 in Datacenter
+0.0: Broker: Trying to Create VM #290 in Datacenter
+0.0: Broker: Trying to Create VM #291 in Datacenter
+0.0: Broker: Trying to Create VM #292 in Datacenter
+0.0: Broker: Trying to Create VM #293 in Datacenter
+0.0: Broker: Trying to Create VM #294 in Datacenter
+0.0: Broker: Trying to Create VM #295 in Datacenter
+0.0: Broker: Trying to Create VM #296 in Datacenter
+0.0: Broker: Trying to Create VM #297 in Datacenter
+0.0: Broker: Trying to Create VM #298 in Datacenter
+0.0: Broker: Trying to Create VM #299 in Datacenter
+0.0: Broker: Trying to Create VM #300 in Datacenter
+0.0: Broker: Trying to Create VM #301 in Datacenter
+0.0: Broker: Trying to Create VM #302 in Datacenter
+0.0: Broker: Trying to Create VM #303 in Datacenter
+0.0: Broker: Trying to Create VM #304 in Datacenter
+0.0: Broker: Trying to Create VM #305 in Datacenter
+0.0: Broker: Trying to Create VM #306 in Datacenter
+0.0: Broker: Trying to Create VM #307 in Datacenter
+0.0: Broker: Trying to Create VM #308 in Datacenter
+0.0: Broker: Trying to Create VM #309 in Datacenter
+0.0: Broker: Trying to Create VM #310 in Datacenter
+0.0: Broker: Trying to Create VM #311 in Datacenter
+0.0: Broker: Trying to Create VM #312 in Datacenter
+0.0: Broker: Trying to Create VM #313 in Datacenter
+0.0: Broker: Trying to Create VM #314 in Datacenter
+0.0: Broker: Trying to Create VM #315 in Datacenter
+0.0: Broker: Trying to Create VM #316 in Datacenter
+0.0: Broker: Trying to Create VM #317 in Datacenter
+0.0: Broker: Trying to Create VM #318 in Datacenter
+0.0: Broker: Trying to Create VM #319 in Datacenter
+0.0: Broker: Trying to Create VM #320 in Datacenter
+0.0: Broker: Trying to Create VM #321 in Datacenter
+0.0: Broker: Trying to Create VM #322 in Datacenter
+0.0: Broker: Trying to Create VM #323 in Datacenter
+0.0: Broker: Trying to Create VM #324 in Datacenter
+0.0: Broker: Trying to Create VM #325 in Datacenter
+0.0: Broker: Trying to Create VM #326 in Datacenter
+0.0: Broker: Trying to Create VM #327 in Datacenter
+0.0: Broker: Trying to Create VM #328 in Datacenter
+0.0: Broker: Trying to Create VM #329 in Datacenter
+0.0: Broker: Trying to Create VM #330 in Datacenter
+0.0: Broker: Trying to Create VM #331 in Datacenter
+0.0: Broker: Trying to Create VM #332 in Datacenter
+0.0: Broker: Trying to Create VM #333 in Datacenter
+0.0: Broker: Trying to Create VM #334 in Datacenter
+0.0: Broker: Trying to Create VM #335 in Datacenter
+0.0: Broker: Trying to Create VM #336 in Datacenter
+0.0: Broker: Trying to Create VM #337 in Datacenter
+0.0: Broker: Trying to Create VM #338 in Datacenter
+0.0: Broker: Trying to Create VM #339 in Datacenter
+0.0: Broker: Trying to Create VM #340 in Datacenter
+0.0: Broker: Trying to Create VM #341 in Datacenter
+0.0: Broker: Trying to Create VM #342 in Datacenter
+0.0: Broker: Trying to Create VM #343 in Datacenter
+0.0: Broker: Trying to Create VM #344 in Datacenter
+0.0: Broker: Trying to Create VM #345 in Datacenter
+0.0: Broker: Trying to Create VM #346 in Datacenter
+0.0: Broker: Trying to Create VM #347 in Datacenter
+0.0: Broker: Trying to Create VM #348 in Datacenter
+0.0: Broker: Trying to Create VM #349 in Datacenter
+0.0: Broker: Trying to Create VM #350 in Datacenter
+0.0: Broker: Trying to Create VM #351 in Datacenter
+0.0: Broker: Trying to Create VM #352 in Datacenter
+0.0: Broker: Trying to Create VM #353 in Datacenter
+0.0: Broker: Trying to Create VM #354 in Datacenter
+0.0: Broker: Trying to Create VM #355 in Datacenter
+0.0: Broker: Trying to Create VM #356 in Datacenter
+0.0: Broker: Trying to Create VM #357 in Datacenter
+0.0: Broker: Trying to Create VM #358 in Datacenter
+0.0: Broker: Trying to Create VM #359 in Datacenter
+0.0: Broker: Trying to Create VM #360 in Datacenter
+0.0: Broker: Trying to Create VM #361 in Datacenter
+0.0: Broker: Trying to Create VM #362 in Datacenter
+0.0: Broker: Trying to Create VM #363 in Datacenter
+0.0: Broker: Trying to Create VM #364 in Datacenter
+0.0: Broker: Trying to Create VM #365 in Datacenter
+0.0: Broker: Trying to Create VM #366 in Datacenter
+0.0: Broker: Trying to Create VM #367 in Datacenter
+0.0: Broker: Trying to Create VM #368 in Datacenter
+0.0: Broker: Trying to Create VM #369 in Datacenter
+0.0: Broker: Trying to Create VM #370 in Datacenter
+0.0: Broker: Trying to Create VM #371 in Datacenter
+0.0: Broker: Trying to Create VM #372 in Datacenter
+0.0: Broker: Trying to Create VM #373 in Datacenter
+0.0: Broker: Trying to Create VM #374 in Datacenter
+0.0: Broker: Trying to Create VM #375 in Datacenter
+0.0: Broker: Trying to Create VM #376 in Datacenter
+0.0: Broker: Trying to Create VM #377 in Datacenter
+0.0: Broker: Trying to Create VM #378 in Datacenter
+0.0: Broker: Trying to Create VM #379 in Datacenter
+0.0: Broker: Trying to Create VM #380 in Datacenter
+0.0: Broker: Trying to Create VM #381 in Datacenter
+0.0: Broker: Trying to Create VM #382 in Datacenter
+0.0: Broker: Trying to Create VM #383 in Datacenter
+0.0: Broker: Trying to Create VM #384 in Datacenter
+0.0: Broker: Trying to Create VM #385 in Datacenter
+0.0: Broker: Trying to Create VM #386 in Datacenter
+0.0: Broker: Trying to Create VM #387 in Datacenter
+0.0: Broker: Trying to Create VM #388 in Datacenter
+0.0: Broker: Trying to Create VM #389 in Datacenter
+0.0: Broker: Trying to Create VM #390 in Datacenter
+0.0: Broker: Trying to Create VM #391 in Datacenter
+0.0: Broker: Trying to Create VM #392 in Datacenter
+0.0: Broker: Trying to Create VM #393 in Datacenter
+0.0: Broker: Trying to Create VM #394 in Datacenter
+0.0: Broker: Trying to Create VM #395 in Datacenter
+0.0: Broker: Trying to Create VM #396 in Datacenter
+0.0: Broker: Trying to Create VM #397 in Datacenter
+0.0: Broker: Trying to Create VM #398 in Datacenter
+0.0: Broker: Trying to Create VM #399 in Datacenter
+0.0: Broker: Trying to Create VM #400 in Datacenter
+0.0: Broker: Trying to Create VM #401 in Datacenter
+0.0: Broker: Trying to Create VM #402 in Datacenter
+0.0: Broker: Trying to Create VM #403 in Datacenter
+0.0: Broker: Trying to Create VM #404 in Datacenter
+0.0: Broker: Trying to Create VM #405 in Datacenter
+0.0: Broker: Trying to Create VM #406 in Datacenter
+0.0: Broker: Trying to Create VM #407 in Datacenter
+0.0: Broker: Trying to Create VM #408 in Datacenter
+0.0: Broker: Trying to Create VM #409 in Datacenter
+0.0: Broker: Trying to Create VM #410 in Datacenter
+0.0: Broker: Trying to Create VM #411 in Datacenter
+0.0: Broker: Trying to Create VM #412 in Datacenter
+0.0: Broker: Trying to Create VM #413 in Datacenter
+0.0: Broker: Trying to Create VM #414 in Datacenter
+0.0: Broker: Trying to Create VM #415 in Datacenter
+0.0: Broker: Trying to Create VM #416 in Datacenter
+0.0: Broker: Trying to Create VM #417 in Datacenter
+0.0: Broker: Trying to Create VM #418 in Datacenter
+0.0: Broker: Trying to Create VM #419 in Datacenter
+0.0: Broker: Trying to Create VM #420 in Datacenter
+0.0: Broker: Trying to Create VM #421 in Datacenter
+0.0: Broker: Trying to Create VM #422 in Datacenter
+0.0: Broker: Trying to Create VM #423 in Datacenter
+0.0: Broker: Trying to Create VM #424 in Datacenter
+0.0: Broker: Trying to Create VM #425 in Datacenter
+0.0: Broker: Trying to Create VM #426 in Datacenter
+0.0: Broker: Trying to Create VM #427 in Datacenter
+0.0: Broker: Trying to Create VM #428 in Datacenter
+0.0: Broker: Trying to Create VM #429 in Datacenter
+0.0: Broker: Trying to Create VM #430 in Datacenter
+0.0: Broker: Trying to Create VM #431 in Datacenter
+0.0: Broker: Trying to Create VM #432 in Datacenter
+0.0: Broker: Trying to Create VM #433 in Datacenter
+0.0: Broker: Trying to Create VM #434 in Datacenter
+0.0: Broker: Trying to Create VM #435 in Datacenter
+0.0: Broker: Trying to Create VM #436 in Datacenter
+0.0: Broker: Trying to Create VM #437 in Datacenter
+0.0: Broker: Trying to Create VM #438 in Datacenter
+0.0: Broker: Trying to Create VM #439 in Datacenter
+0.0: Broker: Trying to Create VM #440 in Datacenter
+0.0: Broker: Trying to Create VM #441 in Datacenter
+0.0: Broker: Trying to Create VM #442 in Datacenter
+0.0: Broker: Trying to Create VM #443 in Datacenter
+0.0: Broker: Trying to Create VM #444 in Datacenter
+0.0: Broker: Trying to Create VM #445 in Datacenter
+0.0: Broker: Trying to Create VM #446 in Datacenter
+0.0: Broker: Trying to Create VM #447 in Datacenter
+0.0: Broker: Trying to Create VM #448 in Datacenter
+0.0: Broker: Trying to Create VM #449 in Datacenter
+0.0: Broker: Trying to Create VM #450 in Datacenter
+0.0: Broker: Trying to Create VM #451 in Datacenter
+0.0: Broker: Trying to Create VM #452 in Datacenter
+0.0: Broker: Trying to Create VM #453 in Datacenter
+0.0: Broker: Trying to Create VM #454 in Datacenter
+0.0: Broker: Trying to Create VM #455 in Datacenter
+0.0: Broker: Trying to Create VM #456 in Datacenter
+0.0: Broker: Trying to Create VM #457 in Datacenter
+0.0: Broker: Trying to Create VM #458 in Datacenter
+0.0: Broker: Trying to Create VM #459 in Datacenter
+0.0: Broker: Trying to Create VM #460 in Datacenter
+0.0: Broker: Trying to Create VM #461 in Datacenter
+0.0: Broker: Trying to Create VM #462 in Datacenter
+0.0: Broker: Trying to Create VM #463 in Datacenter
+0.0: Broker: Trying to Create VM #464 in Datacenter
+0.0: Broker: Trying to Create VM #465 in Datacenter
+0.0: Broker: Trying to Create VM #466 in Datacenter
+0.0: Broker: Trying to Create VM #467 in Datacenter
+0.0: Broker: Trying to Create VM #468 in Datacenter
+0.0: Broker: Trying to Create VM #469 in Datacenter
+0.0: Broker: Trying to Create VM #470 in Datacenter
+0.0: Broker: Trying to Create VM #471 in Datacenter
+0.0: Broker: Trying to Create VM #472 in Datacenter
+0.0: Broker: Trying to Create VM #473 in Datacenter
+0.0: Broker: Trying to Create VM #474 in Datacenter
+0.0: Broker: Trying to Create VM #475 in Datacenter
+0.0: Broker: Trying to Create VM #476 in Datacenter
+0.0: Broker: Trying to Create VM #477 in Datacenter
+0.0: Broker: Trying to Create VM #478 in Datacenter
+0.0: Broker: Trying to Create VM #479 in Datacenter
+0.0: Broker: Trying to Create VM #480 in Datacenter
+0.0: Broker: Trying to Create VM #481 in Datacenter
+0.0: Broker: Trying to Create VM #482 in Datacenter
+0.0: Broker: Trying to Create VM #483 in Datacenter
+0.0: Broker: Trying to Create VM #484 in Datacenter
+0.0: Broker: Trying to Create VM #485 in Datacenter
+0.0: Broker: Trying to Create VM #486 in Datacenter
+0.0: Broker: Trying to Create VM #487 in Datacenter
+0.0: Broker: Trying to Create VM #488 in Datacenter
+0.0: Broker: Trying to Create VM #489 in Datacenter
+0.0: Broker: Trying to Create VM #490 in Datacenter
+0.0: Broker: Trying to Create VM #491 in Datacenter
+0.0: Broker: Trying to Create VM #492 in Datacenter
+0.0: Broker: Trying to Create VM #493 in Datacenter
+0.0: Broker: Trying to Create VM #494 in Datacenter
+0.0: Broker: Trying to Create VM #495 in Datacenter
+0.0: Broker: Trying to Create VM #496 in Datacenter
+0.0: Broker: Trying to Create VM #497 in Datacenter
+0.0: Broker: Trying to Create VM #498 in Datacenter
+0.0: Broker: Trying to Create VM #499 in Datacenter
+0.0: Broker: Trying to Create VM #500 in Datacenter
+0.0: Broker: Trying to Create VM #501 in Datacenter
+0.0: Broker: Trying to Create VM #502 in Datacenter
+0.0: Broker: Trying to Create VM #503 in Datacenter
+0.0: Broker: Trying to Create VM #504 in Datacenter
+0.0: Broker: Trying to Create VM #505 in Datacenter
+0.0: Broker: Trying to Create VM #506 in Datacenter
+0.0: Broker: Trying to Create VM #507 in Datacenter
+0.0: Broker: Trying to Create VM #508 in Datacenter
+0.0: Broker: Trying to Create VM #509 in Datacenter
+0.0: Broker: Trying to Create VM #510 in Datacenter
+0.0: Broker: Trying to Create VM #511 in Datacenter
+0.0: Broker: Trying to Create VM #512 in Datacenter
+0.0: Broker: Trying to Create VM #513 in Datacenter
+0.0: Broker: Trying to Create VM #514 in Datacenter
+0.0: Broker: Trying to Create VM #515 in Datacenter
+0.0: Broker: Trying to Create VM #516 in Datacenter
+0.0: Broker: Trying to Create VM #517 in Datacenter
+0.0: Broker: Trying to Create VM #518 in Datacenter
+0.0: Broker: Trying to Create VM #519 in Datacenter
+0.0: Broker: Trying to Create VM #520 in Datacenter
+0.0: Broker: Trying to Create VM #521 in Datacenter
+0.0: Broker: Trying to Create VM #522 in Datacenter
+0.0: Broker: Trying to Create VM #523 in Datacenter
+0.0: Broker: Trying to Create VM #524 in Datacenter
+0.0: Broker: Trying to Create VM #525 in Datacenter
+0.0: Broker: Trying to Create VM #526 in Datacenter
+0.0: Broker: Trying to Create VM #527 in Datacenter
+0.0: Broker: Trying to Create VM #528 in Datacenter
+0.0: Broker: Trying to Create VM #529 in Datacenter
+0.0: Broker: Trying to Create VM #530 in Datacenter
+0.0: Broker: Trying to Create VM #531 in Datacenter
+0.0: Broker: Trying to Create VM #532 in Datacenter
+0.0: Broker: Trying to Create VM #533 in Datacenter
+0.0: Broker: Trying to Create VM #534 in Datacenter
+0.0: Broker: Trying to Create VM #535 in Datacenter
+0.0: Broker: Trying to Create VM #536 in Datacenter
+0.0: Broker: Trying to Create VM #537 in Datacenter
+0.0: Broker: Trying to Create VM #538 in Datacenter
+0.0: Broker: Trying to Create VM #539 in Datacenter
+0.0: Broker: Trying to Create VM #540 in Datacenter
+0.0: Broker: Trying to Create VM #541 in Datacenter
+0.0: Broker: Trying to Create VM #542 in Datacenter
+0.0: Broker: Trying to Create VM #543 in Datacenter
+0.0: Broker: Trying to Create VM #544 in Datacenter
+0.0: Broker: Trying to Create VM #545 in Datacenter
+0.0: Broker: Trying to Create VM #546 in Datacenter
+0.0: Broker: Trying to Create VM #547 in Datacenter
+0.0: Broker: Trying to Create VM #548 in Datacenter
+0.0: Broker: Trying to Create VM #549 in Datacenter
+0.0: Broker: Trying to Create VM #550 in Datacenter
+0.0: Broker: Trying to Create VM #551 in Datacenter
+0.0: Broker: Trying to Create VM #552 in Datacenter
+0.0: Broker: Trying to Create VM #553 in Datacenter
+0.0: Broker: Trying to Create VM #554 in Datacenter
+0.0: Broker: Trying to Create VM #555 in Datacenter
+0.0: Broker: Trying to Create VM #556 in Datacenter
+0.0: Broker: Trying to Create VM #557 in Datacenter
+0.0: Broker: Trying to Create VM #558 in Datacenter
+0.0: Broker: Trying to Create VM #559 in Datacenter
+0.0: Broker: Trying to Create VM #560 in Datacenter
+0.0: Broker: Trying to Create VM #561 in Datacenter
+0.0: Broker: Trying to Create VM #562 in Datacenter
+0.0: Broker: Trying to Create VM #563 in Datacenter
+0.0: Broker: Trying to Create VM #564 in Datacenter
+0.0: Broker: Trying to Create VM #565 in Datacenter
+0.0: Broker: Trying to Create VM #566 in Datacenter
+0.0: Broker: Trying to Create VM #567 in Datacenter
+0.0: Broker: Trying to Create VM #568 in Datacenter
+0.0: Broker: Trying to Create VM #569 in Datacenter
+0.0: Broker: Trying to Create VM #570 in Datacenter
+0.0: Broker: Trying to Create VM #571 in Datacenter
+0.0: Broker: Trying to Create VM #572 in Datacenter
+0.0: Broker: Trying to Create VM #573 in Datacenter
+0.0: Broker: Trying to Create VM #574 in Datacenter
+0.0: Broker: Trying to Create VM #575 in Datacenter
+0.0: Broker: Trying to Create VM #576 in Datacenter
+0.0: Broker: Trying to Create VM #577 in Datacenter
+0.0: Broker: Trying to Create VM #578 in Datacenter
+0.0: Broker: Trying to Create VM #579 in Datacenter
+0.0: Broker: Trying to Create VM #580 in Datacenter
+0.0: Broker: Trying to Create VM #581 in Datacenter
+0.0: Broker: Trying to Create VM #582 in Datacenter
+0.0: Broker: Trying to Create VM #583 in Datacenter
+0.0: Broker: Trying to Create VM #584 in Datacenter
+0.0: Broker: Trying to Create VM #585 in Datacenter
+0.0: Broker: Trying to Create VM #586 in Datacenter
+0.0: Broker: Trying to Create VM #587 in Datacenter
+0.0: Broker: Trying to Create VM #588 in Datacenter
+0.0: Broker: Trying to Create VM #589 in Datacenter
+0.0: Broker: Trying to Create VM #590 in Datacenter
+0.0: Broker: Trying to Create VM #591 in Datacenter
+0.0: Broker: Trying to Create VM #592 in Datacenter
+0.0: Broker: Trying to Create VM #593 in Datacenter
+0.0: Broker: Trying to Create VM #594 in Datacenter
+0.0: Broker: Trying to Create VM #595 in Datacenter
+0.0: Broker: Trying to Create VM #596 in Datacenter
+0.0: Broker: Trying to Create VM #597 in Datacenter
+0.0: Broker: Trying to Create VM #598 in Datacenter
+0.0: Broker: Trying to Create VM #599 in Datacenter
+0.0: Broker: Trying to Create VM #600 in Datacenter
+0.0: Broker: Trying to Create VM #601 in Datacenter
+0.0: Broker: Trying to Create VM #602 in Datacenter
+0.0: Broker: Trying to Create VM #603 in Datacenter
+0.0: Broker: Trying to Create VM #604 in Datacenter
+0.0: Broker: Trying to Create VM #605 in Datacenter
+0.0: Broker: Trying to Create VM #606 in Datacenter
+0.0: Broker: Trying to Create VM #607 in Datacenter
+0.0: Broker: Trying to Create VM #608 in Datacenter
+0.0: Broker: Trying to Create VM #609 in Datacenter
+0.0: Broker: Trying to Create VM #610 in Datacenter
+0.0: Broker: Trying to Create VM #611 in Datacenter
+0.0: Broker: Trying to Create VM #612 in Datacenter
+0.0: Broker: Trying to Create VM #613 in Datacenter
+0.0: Broker: Trying to Create VM #614 in Datacenter
+0.0: Broker: Trying to Create VM #615 in Datacenter
+0.0: Broker: Trying to Create VM #616 in Datacenter
+0.0: Broker: Trying to Create VM #617 in Datacenter
+0.0: Broker: Trying to Create VM #618 in Datacenter
+0.0: Broker: Trying to Create VM #619 in Datacenter
+0.0: Broker: Trying to Create VM #620 in Datacenter
+0.0: Broker: Trying to Create VM #621 in Datacenter
+0.0: Broker: Trying to Create VM #622 in Datacenter
+0.0: Broker: Trying to Create VM #623 in Datacenter
+0.0: Broker: Trying to Create VM #624 in Datacenter
+0.0: Broker: Trying to Create VM #625 in Datacenter
+0.0: Broker: Trying to Create VM #626 in Datacenter
+0.0: Broker: Trying to Create VM #627 in Datacenter
+0.0: Broker: Trying to Create VM #628 in Datacenter
+0.0: Broker: Trying to Create VM #629 in Datacenter
+0.0: Broker: Trying to Create VM #630 in Datacenter
+0.0: Broker: Trying to Create VM #631 in Datacenter
+0.0: Broker: Trying to Create VM #632 in Datacenter
+0.0: Broker: Trying to Create VM #633 in Datacenter
+0.0: Broker: Trying to Create VM #634 in Datacenter
+0.0: Broker: Trying to Create VM #635 in Datacenter
+0.0: Broker: Trying to Create VM #636 in Datacenter
+0.0: Broker: Trying to Create VM #637 in Datacenter
+0.0: Broker: Trying to Create VM #638 in Datacenter
+0.0: Broker: Trying to Create VM #639 in Datacenter
+0.0: Broker: Trying to Create VM #640 in Datacenter
+0.0: Broker: Trying to Create VM #641 in Datacenter
+0.0: Broker: Trying to Create VM #642 in Datacenter
+0.0: Broker: Trying to Create VM #643 in Datacenter
+0.0: Broker: Trying to Create VM #644 in Datacenter
+0.0: Broker: Trying to Create VM #645 in Datacenter
+0.0: Broker: Trying to Create VM #646 in Datacenter
+0.0: Broker: Trying to Create VM #647 in Datacenter
+0.0: Broker: Trying to Create VM #648 in Datacenter
+0.0: Broker: Trying to Create VM #649 in Datacenter
+0.0: Broker: Trying to Create VM #650 in Datacenter
+0.0: Broker: Trying to Create VM #651 in Datacenter
+0.0: Broker: Trying to Create VM #652 in Datacenter
+0.0: Broker: Trying to Create VM #653 in Datacenter
+0.0: Broker: Trying to Create VM #654 in Datacenter
+0.0: Broker: Trying to Create VM #655 in Datacenter
+0.0: Broker: Trying to Create VM #656 in Datacenter
+0.0: Broker: Trying to Create VM #657 in Datacenter
+0.0: Broker: Trying to Create VM #658 in Datacenter
+0.0: Broker: Trying to Create VM #659 in Datacenter
+0.0: Broker: Trying to Create VM #660 in Datacenter
+0.0: Broker: Trying to Create VM #661 in Datacenter
+0.0: Broker: Trying to Create VM #662 in Datacenter
+0.0: Broker: Trying to Create VM #663 in Datacenter
+0.0: Broker: Trying to Create VM #664 in Datacenter
+0.0: Broker: Trying to Create VM #665 in Datacenter
+0.0: Broker: Trying to Create VM #666 in Datacenter
+0.0: Broker: Trying to Create VM #667 in Datacenter
+0.0: Broker: Trying to Create VM #668 in Datacenter
+0.0: Broker: Trying to Create VM #669 in Datacenter
+0.0: Broker: Trying to Create VM #670 in Datacenter
+0.0: Broker: Trying to Create VM #671 in Datacenter
+0.0: Broker: Trying to Create VM #672 in Datacenter
+0.0: Broker: Trying to Create VM #673 in Datacenter
+0.0: Broker: Trying to Create VM #674 in Datacenter
+0.0: Broker: Trying to Create VM #675 in Datacenter
+0.0: Broker: Trying to Create VM #676 in Datacenter
+0.0: Broker: Trying to Create VM #677 in Datacenter
+0.0: Broker: Trying to Create VM #678 in Datacenter
+0.0: Broker: Trying to Create VM #679 in Datacenter
+0.0: Broker: Trying to Create VM #680 in Datacenter
+0.0: Broker: Trying to Create VM #681 in Datacenter
+0.0: Broker: Trying to Create VM #682 in Datacenter
+0.0: Broker: Trying to Create VM #683 in Datacenter
+0.0: Broker: Trying to Create VM #684 in Datacenter
+0.0: Broker: Trying to Create VM #685 in Datacenter
+0.0: Broker: Trying to Create VM #686 in Datacenter
+0.0: Broker: Trying to Create VM #687 in Datacenter
+0.0: Broker: Trying to Create VM #688 in Datacenter
+0.0: Broker: Trying to Create VM #689 in Datacenter
+0.0: Broker: Trying to Create VM #690 in Datacenter
+0.0: Broker: Trying to Create VM #691 in Datacenter
+0.0: Broker: Trying to Create VM #692 in Datacenter
+0.0: Broker: Trying to Create VM #693 in Datacenter
+0.0: Broker: Trying to Create VM #694 in Datacenter
+0.0: Broker: Trying to Create VM #695 in Datacenter
+0.0: Broker: Trying to Create VM #696 in Datacenter
+0.0: Broker: Trying to Create VM #697 in Datacenter
+0.0: Broker: Trying to Create VM #698 in Datacenter
+0.0: Broker: Trying to Create VM #699 in Datacenter
+0.0: Broker: Trying to Create VM #700 in Datacenter
+0.0: Broker: Trying to Create VM #701 in Datacenter
+0.0: Broker: Trying to Create VM #702 in Datacenter
+0.0: Broker: Trying to Create VM #703 in Datacenter
+0.0: Broker: Trying to Create VM #704 in Datacenter
+0.0: Broker: Trying to Create VM #705 in Datacenter
+0.0: Broker: Trying to Create VM #706 in Datacenter
+0.0: Broker: Trying to Create VM #707 in Datacenter
+0.0: Broker: Trying to Create VM #708 in Datacenter
+0.0: Broker: Trying to Create VM #709 in Datacenter
+0.0: Broker: Trying to Create VM #710 in Datacenter
+0.0: Broker: Trying to Create VM #711 in Datacenter
+0.0: Broker: Trying to Create VM #712 in Datacenter
+0.0: Broker: Trying to Create VM #713 in Datacenter
+0.0: Broker: Trying to Create VM #714 in Datacenter
+0.0: Broker: Trying to Create VM #715 in Datacenter
+0.0: Broker: Trying to Create VM #716 in Datacenter
+0.0: Broker: Trying to Create VM #717 in Datacenter
+0.0: Broker: Trying to Create VM #718 in Datacenter
+0.0: Broker: Trying to Create VM #719 in Datacenter
+0.0: Broker: Trying to Create VM #720 in Datacenter
+0.0: Broker: Trying to Create VM #721 in Datacenter
+0.0: Broker: Trying to Create VM #722 in Datacenter
+0.0: Broker: Trying to Create VM #723 in Datacenter
+0.0: Broker: Trying to Create VM #724 in Datacenter
+0.0: Broker: Trying to Create VM #725 in Datacenter
+0.0: Broker: Trying to Create VM #726 in Datacenter
+0.0: Broker: Trying to Create VM #727 in Datacenter
+0.0: Broker: Trying to Create VM #728 in Datacenter
+0.0: Broker: Trying to Create VM #729 in Datacenter
+0.0: Broker: Trying to Create VM #730 in Datacenter
+0.0: Broker: Trying to Create VM #731 in Datacenter
+0.0: Broker: Trying to Create VM #732 in Datacenter
+0.0: Broker: Trying to Create VM #733 in Datacenter
+0.0: Broker: Trying to Create VM #734 in Datacenter
+0.0: Broker: Trying to Create VM #735 in Datacenter
+0.0: Broker: Trying to Create VM #736 in Datacenter
+0.0: Broker: Trying to Create VM #737 in Datacenter
+0.0: Broker: Trying to Create VM #738 in Datacenter
+0.0: Broker: Trying to Create VM #739 in Datacenter
+0.0: Broker: Trying to Create VM #740 in Datacenter
+0.0: Broker: Trying to Create VM #741 in Datacenter
+0.0: Broker: Trying to Create VM #742 in Datacenter
+0.0: Broker: Trying to Create VM #743 in Datacenter
+0.0: Broker: Trying to Create VM #744 in Datacenter
+0.0: Broker: Trying to Create VM #745 in Datacenter
+0.0: Broker: Trying to Create VM #746 in Datacenter
+0.0: Broker: Trying to Create VM #747 in Datacenter
+0.0: Broker: Trying to Create VM #748 in Datacenter
+0.0: Broker: Trying to Create VM #749 in Datacenter
+0.0: Broker: Trying to Create VM #750 in Datacenter
+0.0: Broker: Trying to Create VM #751 in Datacenter
+0.0: Broker: Trying to Create VM #752 in Datacenter
+0.0: Broker: Trying to Create VM #753 in Datacenter
+0.0: Broker: Trying to Create VM #754 in Datacenter
+0.0: Broker: Trying to Create VM #755 in Datacenter
+0.0: Broker: Trying to Create VM #756 in Datacenter
+0.0: Broker: Trying to Create VM #757 in Datacenter
+0.0: Broker: Trying to Create VM #758 in Datacenter
+0.0: Broker: Trying to Create VM #759 in Datacenter
+0.0: Broker: Trying to Create VM #760 in Datacenter
+0.0: Broker: Trying to Create VM #761 in Datacenter
+0.0: Broker: Trying to Create VM #762 in Datacenter
+0.0: Broker: Trying to Create VM #763 in Datacenter
+0.0: Broker: Trying to Create VM #764 in Datacenter
+0.0: Broker: Trying to Create VM #765 in Datacenter
+0.0: Broker: Trying to Create VM #766 in Datacenter
+0.0: Broker: Trying to Create VM #767 in Datacenter
+0.0: Broker: Trying to Create VM #768 in Datacenter
+0.0: Broker: Trying to Create VM #769 in Datacenter
+0.0: Broker: Trying to Create VM #770 in Datacenter
+0.0: Broker: Trying to Create VM #771 in Datacenter
+0.0: Broker: Trying to Create VM #772 in Datacenter
+0.0: Broker: Trying to Create VM #773 in Datacenter
+0.0: Broker: Trying to Create VM #774 in Datacenter
+0.0: Broker: Trying to Create VM #775 in Datacenter
+0.0: Broker: Trying to Create VM #776 in Datacenter
+0.0: Broker: Trying to Create VM #777 in Datacenter
+0.0: Broker: Trying to Create VM #778 in Datacenter
+0.0: Broker: Trying to Create VM #779 in Datacenter
+0.0: Broker: Trying to Create VM #780 in Datacenter
+0.0: Broker: Trying to Create VM #781 in Datacenter
+0.0: Broker: Trying to Create VM #782 in Datacenter
+0.0: Broker: Trying to Create VM #783 in Datacenter
+0.0: Broker: Trying to Create VM #784 in Datacenter
+0.0: Broker: Trying to Create VM #785 in Datacenter
+0.0: Broker: Trying to Create VM #786 in Datacenter
+0.0: Broker: Trying to Create VM #787 in Datacenter
+0.0: Broker: Trying to Create VM #788 in Datacenter
+0.0: Broker: Trying to Create VM #789 in Datacenter
+0.0: Broker: Trying to Create VM #790 in Datacenter
+0.0: Broker: Trying to Create VM #791 in Datacenter
+0.0: Broker: Trying to Create VM #792 in Datacenter
+0.0: Broker: Trying to Create VM #793 in Datacenter
+0.0: Broker: Trying to Create VM #794 in Datacenter
+0.0: Broker: Trying to Create VM #795 in Datacenter
+0.0: Broker: Trying to Create VM #796 in Datacenter
+0.0: Broker: Trying to Create VM #797 in Datacenter
+0.0: Broker: Trying to Create VM #798 in Datacenter
+0.0: Broker: Trying to Create VM #799 in Datacenter
+0.0: Broker: Trying to Create VM #800 in Datacenter
+0.0: Broker: Trying to Create VM #801 in Datacenter
+0.0: Broker: Trying to Create VM #802 in Datacenter
+0.0: Broker: Trying to Create VM #803 in Datacenter
+0.0: Broker: Trying to Create VM #804 in Datacenter
+0.0: Broker: Trying to Create VM #805 in Datacenter
+0.0: Broker: Trying to Create VM #806 in Datacenter
+0.0: Broker: Trying to Create VM #807 in Datacenter
+0.0: Broker: Trying to Create VM #808 in Datacenter
+0.0: Broker: Trying to Create VM #809 in Datacenter
+0.0: Broker: Trying to Create VM #810 in Datacenter
+0.0: Broker: Trying to Create VM #811 in Datacenter
+0.0: Broker: Trying to Create VM #812 in Datacenter
+0.0: Broker: Trying to Create VM #813 in Datacenter
+0.0: Broker: Trying to Create VM #814 in Datacenter
+0.0: Broker: Trying to Create VM #815 in Datacenter
+0.0: Broker: Trying to Create VM #816 in Datacenter
+0.0: Broker: Trying to Create VM #817 in Datacenter
+0.0: Broker: Trying to Create VM #818 in Datacenter
+0.0: Broker: Trying to Create VM #819 in Datacenter
+0.0: Broker: Trying to Create VM #820 in Datacenter
+0.0: Broker: Trying to Create VM #821 in Datacenter
+0.0: Broker: Trying to Create VM #822 in Datacenter
+0.0: Broker: Trying to Create VM #823 in Datacenter
+0.0: Broker: Trying to Create VM #824 in Datacenter
+0.0: Broker: Trying to Create VM #825 in Datacenter
+0.0: Broker: Trying to Create VM #826 in Datacenter
+0.0: Broker: Trying to Create VM #827 in Datacenter
+0.0: Broker: Trying to Create VM #828 in Datacenter
+0.0: Broker: Trying to Create VM #829 in Datacenter
+0.0: Broker: Trying to Create VM #830 in Datacenter
+0.0: Broker: Trying to Create VM #831 in Datacenter
+0.0: Broker: Trying to Create VM #832 in Datacenter
+0.0: Broker: Trying to Create VM #833 in Datacenter
+0.0: Broker: Trying to Create VM #834 in Datacenter
+0.0: Broker: Trying to Create VM #835 in Datacenter
+0.0: Broker: Trying to Create VM #836 in Datacenter
+0.0: Broker: Trying to Create VM #837 in Datacenter
+0.0: Broker: Trying to Create VM #838 in Datacenter
+0.0: Broker: Trying to Create VM #839 in Datacenter
+0.0: Broker: Trying to Create VM #840 in Datacenter
+0.0: Broker: Trying to Create VM #841 in Datacenter
+0.0: Broker: Trying to Create VM #842 in Datacenter
+0.0: Broker: Trying to Create VM #843 in Datacenter
+0.0: Broker: Trying to Create VM #844 in Datacenter
+0.0: Broker: Trying to Create VM #845 in Datacenter
+0.0: Broker: Trying to Create VM #846 in Datacenter
+0.0: Broker: Trying to Create VM #847 in Datacenter
+0.0: Broker: Trying to Create VM #848 in Datacenter
+0.0: Broker: Trying to Create VM #849 in Datacenter
+0.0: Broker: Trying to Create VM #850 in Datacenter
+0.0: Broker: Trying to Create VM #851 in Datacenter
+0.0: Broker: Trying to Create VM #852 in Datacenter
+0.0: Broker: Trying to Create VM #853 in Datacenter
+0.0: Broker: Trying to Create VM #854 in Datacenter
+0.0: Broker: Trying to Create VM #855 in Datacenter
+0.0: Broker: Trying to Create VM #856 in Datacenter
+0.0: Broker: Trying to Create VM #857 in Datacenter
+0.0: Broker: Trying to Create VM #858 in Datacenter
+0.0: Broker: Trying to Create VM #859 in Datacenter
+0.0: Broker: Trying to Create VM #860 in Datacenter
+0.0: Broker: Trying to Create VM #861 in Datacenter
+0.0: Broker: Trying to Create VM #862 in Datacenter
+0.0: Broker: Trying to Create VM #863 in Datacenter
+0.0: Broker: Trying to Create VM #864 in Datacenter
+0.0: Broker: Trying to Create VM #865 in Datacenter
+0.0: Broker: Trying to Create VM #866 in Datacenter
+0.0: Broker: Trying to Create VM #867 in Datacenter
+0.0: Broker: Trying to Create VM #868 in Datacenter
+0.0: Broker: Trying to Create VM #869 in Datacenter
+0.0: Broker: Trying to Create VM #870 in Datacenter
+0.0: Broker: Trying to Create VM #871 in Datacenter
+0.0: Broker: Trying to Create VM #872 in Datacenter
+0.0: Broker: Trying to Create VM #873 in Datacenter
+0.0: Broker: Trying to Create VM #874 in Datacenter
+0.0: Broker: Trying to Create VM #875 in Datacenter
+0.0: Broker: Trying to Create VM #876 in Datacenter
+0.0: Broker: Trying to Create VM #877 in Datacenter
+0.0: Broker: Trying to Create VM #878 in Datacenter
+0.0: Broker: Trying to Create VM #879 in Datacenter
+0.0: Broker: Trying to Create VM #880 in Datacenter
+0.0: Broker: Trying to Create VM #881 in Datacenter
+0.0: Broker: Trying to Create VM #882 in Datacenter
+0.0: Broker: Trying to Create VM #883 in Datacenter
+0.0: Broker: Trying to Create VM #884 in Datacenter
+0.0: Broker: Trying to Create VM #885 in Datacenter
+0.0: Broker: Trying to Create VM #886 in Datacenter
+0.0: Broker: Trying to Create VM #887 in Datacenter
+0.0: Broker: Trying to Create VM #888 in Datacenter
+0.0: Broker: Trying to Create VM #889 in Datacenter
+0.0: Broker: Trying to Create VM #890 in Datacenter
+0.0: Broker: Trying to Create VM #891 in Datacenter
+0.0: Broker: Trying to Create VM #892 in Datacenter
+0.0: Broker: Trying to Create VM #893 in Datacenter
+0.0: Broker: Trying to Create VM #894 in Datacenter
+0.0: Broker: Trying to Create VM #895 in Datacenter
+0.0: Broker: Trying to Create VM #896 in Datacenter
+0.0: Broker: Trying to Create VM #897 in Datacenter
+0.0: Broker: Trying to Create VM #898 in Datacenter
+0.0: Broker: Trying to Create VM #899 in Datacenter
+0.0: Broker: Trying to Create VM #900 in Datacenter
+0.0: Broker: Trying to Create VM #901 in Datacenter
+0.0: Broker: Trying to Create VM #902 in Datacenter
+0.0: Broker: Trying to Create VM #903 in Datacenter
+0.0: Broker: Trying to Create VM #904 in Datacenter
+0.0: Broker: Trying to Create VM #905 in Datacenter
+0.0: Broker: Trying to Create VM #906 in Datacenter
+0.0: Broker: Trying to Create VM #907 in Datacenter
+0.0: Broker: Trying to Create VM #908 in Datacenter
+0.0: Broker: Trying to Create VM #909 in Datacenter
+0.0: Broker: Trying to Create VM #910 in Datacenter
+0.0: Broker: Trying to Create VM #911 in Datacenter
+0.0: Broker: Trying to Create VM #912 in Datacenter
+0.0: Broker: Trying to Create VM #913 in Datacenter
+0.0: Broker: Trying to Create VM #914 in Datacenter
+0.0: Broker: Trying to Create VM #915 in Datacenter
+0.0: Broker: Trying to Create VM #916 in Datacenter
+0.0: Broker: Trying to Create VM #917 in Datacenter
+0.0: Broker: Trying to Create VM #918 in Datacenter
+0.0: Broker: Trying to Create VM #919 in Datacenter
+0.0: Broker: Trying to Create VM #920 in Datacenter
+0.0: Broker: Trying to Create VM #921 in Datacenter
+0.0: Broker: Trying to Create VM #922 in Datacenter
+0.0: Broker: Trying to Create VM #923 in Datacenter
+0.0: Broker: Trying to Create VM #924 in Datacenter
+0.0: Broker: Trying to Create VM #925 in Datacenter
+0.0: Broker: Trying to Create VM #926 in Datacenter
+0.0: Broker: Trying to Create VM #927 in Datacenter
+0.0: Broker: Trying to Create VM #928 in Datacenter
+0.0: Broker: Trying to Create VM #929 in Datacenter
+0.0: Broker: Trying to Create VM #930 in Datacenter
+0.0: Broker: Trying to Create VM #931 in Datacenter
+0.0: Broker: Trying to Create VM #932 in Datacenter
+0.0: Broker: Trying to Create VM #933 in Datacenter
+0.0: Broker: Trying to Create VM #934 in Datacenter
+0.0: Broker: Trying to Create VM #935 in Datacenter
+0.0: Broker: Trying to Create VM #936 in Datacenter
+0.0: Broker: Trying to Create VM #937 in Datacenter
+0.0: Broker: Trying to Create VM #938 in Datacenter
+0.0: Broker: Trying to Create VM #939 in Datacenter
+0.0: Broker: Trying to Create VM #940 in Datacenter
+0.0: Broker: Trying to Create VM #941 in Datacenter
+0.0: Broker: Trying to Create VM #942 in Datacenter
+0.0: Broker: Trying to Create VM #943 in Datacenter
+0.0: Broker: Trying to Create VM #944 in Datacenter
+0.0: Broker: Trying to Create VM #945 in Datacenter
+0.0: Broker: Trying to Create VM #946 in Datacenter
+0.0: Broker: Trying to Create VM #947 in Datacenter
+0.0: Broker: Trying to Create VM #948 in Datacenter
+0.0: Broker: Trying to Create VM #949 in Datacenter
+0.0: Broker: Trying to Create VM #950 in Datacenter
+0.0: Broker: Trying to Create VM #951 in Datacenter
+0.0: Broker: Trying to Create VM #952 in Datacenter
+0.0: Broker: Trying to Create VM #953 in Datacenter
+0.0: Broker: Trying to Create VM #954 in Datacenter
+0.0: Broker: Trying to Create VM #955 in Datacenter
+0.0: Broker: Trying to Create VM #956 in Datacenter
+0.0: Broker: Trying to Create VM #957 in Datacenter
+0.0: Broker: Trying to Create VM #958 in Datacenter
+0.0: Broker: Trying to Create VM #959 in Datacenter
+0.0: Broker: Trying to Create VM #960 in Datacenter
+0.0: Broker: Trying to Create VM #961 in Datacenter
+0.0: Broker: Trying to Create VM #962 in Datacenter
+0.0: Broker: Trying to Create VM #963 in Datacenter
+0.0: Broker: Trying to Create VM #964 in Datacenter
+0.0: Broker: Trying to Create VM #965 in Datacenter
+0.0: Broker: Trying to Create VM #966 in Datacenter
+0.0: Broker: Trying to Create VM #967 in Datacenter
+0.0: Broker: Trying to Create VM #968 in Datacenter
+0.0: Broker: Trying to Create VM #969 in Datacenter
+0.0: Broker: Trying to Create VM #970 in Datacenter
+0.0: Broker: Trying to Create VM #971 in Datacenter
+0.0: Broker: Trying to Create VM #972 in Datacenter
+0.0: Broker: Trying to Create VM #973 in Datacenter
+0.0: Broker: Trying to Create VM #974 in Datacenter
+0.0: Broker: Trying to Create VM #975 in Datacenter
+0.0: Broker: Trying to Create VM #976 in Datacenter
+0.0: Broker: Trying to Create VM #977 in Datacenter
+0.0: Broker: Trying to Create VM #978 in Datacenter
+0.0: Broker: Trying to Create VM #979 in Datacenter
+0.0: Broker: Trying to Create VM #980 in Datacenter
+0.0: Broker: Trying to Create VM #981 in Datacenter
+0.0: Broker: Trying to Create VM #982 in Datacenter
+0.0: Broker: Trying to Create VM #983 in Datacenter
+0.0: Broker: Trying to Create VM #984 in Datacenter
+0.0: Broker: Trying to Create VM #985 in Datacenter
+0.0: Broker: Trying to Create VM #986 in Datacenter
+0.0: Broker: Trying to Create VM #987 in Datacenter
+0.0: Broker: Trying to Create VM #988 in Datacenter
+0.0: Broker: Trying to Create VM #989 in Datacenter
+0.0: Broker: Trying to Create VM #990 in Datacenter
+0.0: Broker: Trying to Create VM #991 in Datacenter
+0.0: Broker: Trying to Create VM #992 in Datacenter
+0.0: Broker: Trying to Create VM #993 in Datacenter
+0.0: Broker: Trying to Create VM #994 in Datacenter
+0.0: Broker: Trying to Create VM #995 in Datacenter
+0.0: Broker: Trying to Create VM #996 in Datacenter
+0.0: Broker: Trying to Create VM #997 in Datacenter
+0.0: Broker: Trying to Create VM #998 in Datacenter
+0.0: Broker: Trying to Create VM #999 in Datacenter
+0.0: Broker: Trying to Create VM #1000 in Datacenter
+0.0: Broker: Trying to Create VM #1001 in Datacenter
+0.0: Broker: Trying to Create VM #1002 in Datacenter
+0.0: Broker: Trying to Create VM #1003 in Datacenter
+0.0: Broker: Trying to Create VM #1004 in Datacenter
+0.0: Broker: Trying to Create VM #1005 in Datacenter
+0.0: Broker: Trying to Create VM #1006 in Datacenter
+0.0: Broker: Trying to Create VM #1007 in Datacenter
+0.0: Broker: Trying to Create VM #1008 in Datacenter
+0.0: Broker: Trying to Create VM #1009 in Datacenter
+0.0: Broker: Trying to Create VM #1010 in Datacenter
+0.0: Broker: Trying to Create VM #1011 in Datacenter
+0.0: Broker: Trying to Create VM #1012 in Datacenter
+0.0: Broker: Trying to Create VM #1013 in Datacenter
+0.0: Broker: Trying to Create VM #1014 in Datacenter
+0.0: Broker: Trying to Create VM #1015 in Datacenter
+0.0: Broker: Trying to Create VM #1016 in Datacenter
+0.0: Broker: Trying to Create VM #1017 in Datacenter
+0.0: Broker: Trying to Create VM #1018 in Datacenter
+0.0: Broker: Trying to Create VM #1019 in Datacenter
+0.0: Broker: Trying to Create VM #1020 in Datacenter
+0.0: Broker: Trying to Create VM #1021 in Datacenter
+0.0: Broker: Trying to Create VM #1022 in Datacenter
+0.0: Broker: Trying to Create VM #1023 in Datacenter
+0.0: Broker: Trying to Create VM #1024 in Datacenter
+0.0: Broker: Trying to Create VM #1025 in Datacenter
+0.0: Broker: Trying to Create VM #1026 in Datacenter
+0.0: Broker: Trying to Create VM #1027 in Datacenter
+0.0: Broker: Trying to Create VM #1028 in Datacenter
+0.0: Broker: Trying to Create VM #1029 in Datacenter
+0.0: Broker: Trying to Create VM #1030 in Datacenter
+0.0: Broker: Trying to Create VM #1031 in Datacenter
+0.0: Broker: Trying to Create VM #1032 in Datacenter
+0.0: Broker: Trying to Create VM #1033 in Datacenter
+0.0: Broker: Trying to Create VM #1034 in Datacenter
+0.0: Broker: Trying to Create VM #1035 in Datacenter
+0.0: Broker: Trying to Create VM #1036 in Datacenter
+0.0: Broker: Trying to Create VM #1037 in Datacenter
+0.0: Broker: Trying to Create VM #1038 in Datacenter
+0.0: Broker: Trying to Create VM #1039 in Datacenter
+0.0: Broker: Trying to Create VM #1040 in Datacenter
+0.0: Broker: Trying to Create VM #1041 in Datacenter
+0.0: Broker: Trying to Create VM #1042 in Datacenter
+0.0: Broker: Trying to Create VM #1043 in Datacenter
+0.0: Broker: Trying to Create VM #1044 in Datacenter
+0.0: Broker: Trying to Create VM #1045 in Datacenter
+0.0: Broker: Trying to Create VM #1046 in Datacenter
+0.0: Broker: Trying to Create VM #1047 in Datacenter
+0.0: Broker: Trying to Create VM #1048 in Datacenter
+0.0: Broker: Trying to Create VM #1049 in Datacenter
+0.0: Broker: Trying to Create VM #1050 in Datacenter
+0.0: Broker: Trying to Create VM #1051 in Datacenter
+0,00: VM #0 has been allocated to the host #1
+0,00: VM #1 has been allocated to the host #3
+0,00: VM #2 has been allocated to the host #5
+0,00: VM #3 has been allocated to the host #7
+0,00: VM #4 has been allocated to the host #9
+0,00: VM #5 has been allocated to the host #11
+0,00: VM #6 has been allocated to the host #13
+0,00: VM #7 has been allocated to the host #15
+0,00: VM #8 has been allocated to the host #17
+0,00: VM #9 has been allocated to the host #19
+0,00: VM #10 has been allocated to the host #0
+0,00: VM #11 has been allocated to the host #2
+0,00: VM #12 has been allocated to the host #4
+0,00: VM #13 has been allocated to the host #6
+0,00: VM #14 has been allocated to the host #8
+0,00: VM #15 has been allocated to the host #10
+0,00: VM #16 has been allocated to the host #12
+0,00: VM #17 has been allocated to the host #14
+0,00: VM #18 has been allocated to the host #16
+0,00: VM #19 has been allocated to the host #18
+0,00: VM #20 has been allocated to the host #1
+0,00: VM #21 has been allocated to the host #3
+0,00: VM #22 has been allocated to the host #5
+0,00: VM #23 has been allocated to the host #7
+0,00: VM #24 has been allocated to the host #9
+0,00: VM #25 has been allocated to the host #11
+0,00: VM #26 has been allocated to the host #13
+0,00: VM #27 has been allocated to the host #15
+0,00: VM #28 has been allocated to the host #17
+0,00: VM #29 has been allocated to the host #19
+0,00: VM #30 has been allocated to the host #0
+0,00: VM #31 has been allocated to the host #2
+0,00: VM #32 has been allocated to the host #4
+0,00: VM #33 has been allocated to the host #6
+0,00: VM #34 has been allocated to the host #8
+0,00: VM #35 has been allocated to the host #10
+0,00: VM #36 has been allocated to the host #12
+0,00: VM #37 has been allocated to the host #14
+0,00: VM #38 has been allocated to the host #16
+0,00: VM #39 has been allocated to the host #18
+0,00: VM #40 has been allocated to the host #1
+0,00: VM #41 has been allocated to the host #3
+0,00: VM #42 has been allocated to the host #5
+0,00: VM #43 has been allocated to the host #7
+0,00: VM #44 has been allocated to the host #9
+0,00: VM #45 has been allocated to the host #11
+0,00: VM #46 has been allocated to the host #13
+0,00: VM #47 has been allocated to the host #15
+0,00: VM #48 has been allocated to the host #17
+0,00: VM #49 has been allocated to the host #19
+0,00: VM #50 has been allocated to the host #0
+0,00: VM #51 has been allocated to the host #2
+0,00: VM #52 has been allocated to the host #4
+0,00: VM #53 has been allocated to the host #6
+0,00: VM #54 has been allocated to the host #8
+0,00: VM #55 has been allocated to the host #10
+0,00: VM #56 has been allocated to the host #12
+0,00: VM #57 has been allocated to the host #14
+0,00: VM #58 has been allocated to the host #16
+0,00: VM #59 has been allocated to the host #18
+0,00: VM #60 has been allocated to the host #1
+0,00: VM #61 has been allocated to the host #3
+0,00: VM #62 has been allocated to the host #5
+0,00: VM #63 has been allocated to the host #7
+0,00: VM #64 has been allocated to the host #9
+0,00: VM #65 has been allocated to the host #11
+0,00: VM #66 has been allocated to the host #13
+0,00: VM #67 has been allocated to the host #15
+0,00: VM #68 has been allocated to the host #17
+0,00: VM #69 has been allocated to the host #19
+0,00: VM #70 has been allocated to the host #0
+0,00: VM #71 has been allocated to the host #2
+0,00: VM #72 has been allocated to the host #4
+0,00: VM #73 has been allocated to the host #6
+0,00: VM #74 has been allocated to the host #8
+0,00: VM #75 has been allocated to the host #10
+0,00: VM #76 has been allocated to the host #12
+0,00: VM #77 has been allocated to the host #14
+0,00: VM #78 has been allocated to the host #16
+0,00: VM #79 has been allocated to the host #18
+0,00: VM #80 has been allocated to the host #1
+0,00: VM #81 has been allocated to the host #3
+0,00: VM #82 has been allocated to the host #5
+0,00: VM #83 has been allocated to the host #7
+0,00: VM #84 has been allocated to the host #9
+0,00: VM #85 has been allocated to the host #11
+0,00: VM #86 has been allocated to the host #13
+0,00: VM #87 has been allocated to the host #15
+0,00: VM #88 has been allocated to the host #17
+0,00: VM #89 has been allocated to the host #19
+0,00: VM #90 has been allocated to the host #1
+0,00: VM #91 has been allocated to the host #3
+0,00: VM #92 has been allocated to the host #5
+0,00: VM #93 has been allocated to the host #7
+0,00: VM #94 has been allocated to the host #9
+0,00: VM #95 has been allocated to the host #11
+0,00: VM #96 has been allocated to the host #13
+0,00: VM #97 has been allocated to the host #15
+0,00: VM #98 has been allocated to the host #17
+0,00: VM #99 has been allocated to the host #19
+0,00: VM #100 has been allocated to the host #0
+0,00: VM #101 has been allocated to the host #2
+0,00: VM #102 has been allocated to the host #4
+0,00: VM #103 has been allocated to the host #6
+0,00: VM #104 has been allocated to the host #8
+0,00: VM #105 has been allocated to the host #10
+0,00: VM #106 has been allocated to the host #12
+0,00: VM #107 has been allocated to the host #14
+0,00: VM #108 has been allocated to the host #16
+0,00: VM #109 has been allocated to the host #18
+0,00: VM #110 has been allocated to the host #1
+0,00: VM #111 has been allocated to the host #3
+0,00: VM #112 has been allocated to the host #5
+0,00: VM #113 has been allocated to the host #7
+0,00: VM #114 has been allocated to the host #9
+0,00: VM #115 has been allocated to the host #11
+0,00: VM #116 has been allocated to the host #13
+0,00: VM #117 has been allocated to the host #15
+0,00: VM #118 has been allocated to the host #17
+0,00: VM #119 has been allocated to the host #19
+0,00: VM #120 has been allocated to the host #0
+0,00: VM #121 has been allocated to the host #2
+0,00: VM #122 has been allocated to the host #4
+0,00: VM #123 has been allocated to the host #6
+0,00: VM #124 has been allocated to the host #8
+0,00: VM #125 has been allocated to the host #10
+0,00: VM #126 has been allocated to the host #12
+0,00: VM #127 has been allocated to the host #14
+0,00: VM #128 has been allocated to the host #16
+0,00: VM #129 has been allocated to the host #18
+0,00: VM #130 has been allocated to the host #0
+0,00: VM #131 has been allocated to the host #2
+0,00: VM #132 has been allocated to the host #4
+0,00: VM #133 has been allocated to the host #6
+0,00: VM #134 has been allocated to the host #8
+0,00: VM #135 has been allocated to the host #10
+0,00: VM #136 has been allocated to the host #12
+0,00: VM #137 has been allocated to the host #14
+0,00: VM #138 has been allocated to the host #16
+0,00: VM #139 has been allocated to the host #18
+0,00: VM #140 has been allocated to the host #1
+0,00: VM #141 has been allocated to the host #3
+0,00: VM #142 has been allocated to the host #5
+0,00: VM #143 has been allocated to the host #7
+0,00: VM #144 has been allocated to the host #9
+0,00: VM #145 has been allocated to the host #11
+0,00: VM #146 has been allocated to the host #13
+0,00: VM #147 has been allocated to the host #15
+0,00: VM #148 has been allocated to the host #17
+0,00: VM #149 has been allocated to the host #19
+0,00: VM #150 has been allocated to the host #0
+0,00: VM #151 has been allocated to the host #2
+0,00: VM #152 has been allocated to the host #4
+0,00: VM #153 has been allocated to the host #6
+0,00: VM #154 has been allocated to the host #8
+0,00: VM #155 has been allocated to the host #10
+0,00: VM #156 has been allocated to the host #12
+0,00: VM #157 has been allocated to the host #14
+0,00: VM #158 has been allocated to the host #16
+0,00: VM #159 has been allocated to the host #18
+0,00: VM #160 has been allocated to the host #0
+0,00: VM #161 has been allocated to the host #2
+0,00: VM #162 has been allocated to the host #4
+0,00: VM #163 has been allocated to the host #6
+0,00: VM #164 has been allocated to the host #8
+0,00: VM #165 has been allocated to the host #10
+0,00: VM #166 has been allocated to the host #12
+0,00: VM #167 has been allocated to the host #14
+0,00: VM #168 has been allocated to the host #16
+0,00: VM #169 has been allocated to the host #18
+0,00: VM #170 has been allocated to the host #1
+0,00: VM #171 has been allocated to the host #3
+0,00: VM #172 has been allocated to the host #5
+0,00: VM #173 has been allocated to the host #7
+0,00: VM #174 has been allocated to the host #9
+0,00: VM #175 has been allocated to the host #11
+0,00: VM #176 has been allocated to the host #13
+0,00: VM #177 has been allocated to the host #15
+0,00: VM #178 has been allocated to the host #17
+0,00: VM #179 has been allocated to the host #19
+0,00: VM #180 has been allocated to the host #0
+0,00: VM #181 has been allocated to the host #2
+0,00: VM #182 has been allocated to the host #4
+0,00: VM #183 has been allocated to the host #6
+0,00: VM #184 has been allocated to the host #8
+0,00: VM #185 has been allocated to the host #10
+0,00: VM #186 has been allocated to the host #12
+0,00: VM #187 has been allocated to the host #14
+0,00: VM #188 has been allocated to the host #16
+0,00: VM #189 has been allocated to the host #18
+0,00: VM #190 has been allocated to the host #1
+0,00: VM #191 has been allocated to the host #3
+0,00: VM #192 has been allocated to the host #5
+0,00: VM #193 has been allocated to the host #7
+0,00: VM #194 has been allocated to the host #9
+0,00: VM #195 has been allocated to the host #11
+0,00: VM #196 has been allocated to the host #13
+0,00: VM #197 has been allocated to the host #15
+0,00: VM #198 has been allocated to the host #17
+0,00: VM #199 has been allocated to the host #19
+0,00: No suitable host found for VM #200
+
+0,00: No suitable host found for VM #201
+
+0,00: No suitable host found for VM #202
+
+0,00: No suitable host found for VM #203
+
+0,00: No suitable host found for VM #204
+
+0,00: No suitable host found for VM #205
+
+0,00: No suitable host found for VM #206
+
+0,00: No suitable host found for VM #207
+
+0,00: No suitable host found for VM #208
+
+0,00: No suitable host found for VM #209
+
+0,00: No suitable host found for VM #210
+
+0,00: No suitable host found for VM #211
+
+0,00: No suitable host found for VM #212
+
+0,00: No suitable host found for VM #213
+
+0,00: No suitable host found for VM #214
+
+0,00: No suitable host found for VM #215
+
+0,00: No suitable host found for VM #216
+
+0,00: No suitable host found for VM #217
+
+0,00: No suitable host found for VM #218
+
+0,00: No suitable host found for VM #219
+
+0,00: No suitable host found for VM #220
+
+0,00: No suitable host found for VM #221
+
+0,00: No suitable host found for VM #222
+
+0,00: No suitable host found for VM #223
+
+0,00: No suitable host found for VM #224
+
+0,00: No suitable host found for VM #225
+
+0,00: No suitable host found for VM #226
+
+0,00: No suitable host found for VM #227
+
+0,00: No suitable host found for VM #228
+
+0,00: No suitable host found for VM #229
+
+0,00: No suitable host found for VM #230
+
+0,00: No suitable host found for VM #231
+
+0,00: No suitable host found for VM #232
+
+0,00: No suitable host found for VM #233
+
+0,00: No suitable host found for VM #234
+
+0,00: No suitable host found for VM #235
+
+0,00: No suitable host found for VM #236
+
+0,00: No suitable host found for VM #237
+
+0,00: No suitable host found for VM #238
+
+0,00: No suitable host found for VM #239
+
+0,00: No suitable host found for VM #240
+
+0,00: No suitable host found for VM #241
+
+0,00: No suitable host found for VM #242
+
+0,00: No suitable host found for VM #243
+
+0,00: No suitable host found for VM #244
+
+0,00: No suitable host found for VM #245
+
+0,00: No suitable host found for VM #246
+
+0,00: No suitable host found for VM #247
+
+0,00: No suitable host found for VM #248
+
+0,00: No suitable host found for VM #249
+
+0,00: No suitable host found for VM #250
+
+0,00: No suitable host found for VM #251
+
+0,00: No suitable host found for VM #252
+
+0,00: No suitable host found for VM #253
+
+0,00: No suitable host found for VM #254
+
+0,00: No suitable host found for VM #255
+
+0,00: No suitable host found for VM #256
+
+0,00: No suitable host found for VM #257
+
+0,00: No suitable host found for VM #258
+
+0,00: No suitable host found for VM #259
+
+0,00: No suitable host found for VM #260
+
+0,00: No suitable host found for VM #261
+
+0,00: No suitable host found for VM #262
+
+0,00: No suitable host found for VM #263
+
+0,00: No suitable host found for VM #264
+
+0,00: No suitable host found for VM #265
+
+0,00: No suitable host found for VM #266
+
+0,00: No suitable host found for VM #267
+
+0,00: No suitable host found for VM #268
+
+0,00: No suitable host found for VM #269
+
+0,00: No suitable host found for VM #270
+
+0,00: No suitable host found for VM #271
+
+0,00: No suitable host found for VM #272
+
+0,00: No suitable host found for VM #273
+
+0,00: No suitable host found for VM #274
+
+0,00: No suitable host found for VM #275
+
+0,00: No suitable host found for VM #276
+
+0,00: No suitable host found for VM #277
+
+0,00: No suitable host found for VM #278
+
+0,00: No suitable host found for VM #279
+
+0,00: No suitable host found for VM #280
+
+0,00: No suitable host found for VM #281
+
+0,00: No suitable host found for VM #282
+
+0,00: No suitable host found for VM #283
+
+0,00: No suitable host found for VM #284
+
+0,00: No suitable host found for VM #285
+
+0,00: No suitable host found for VM #286
+
+0,00: No suitable host found for VM #287
+
+0,00: No suitable host found for VM #288
+
+0,00: No suitable host found for VM #289
+
+0,00: No suitable host found for VM #290
+
+0,00: No suitable host found for VM #291
+
+0,00: No suitable host found for VM #292
+
+0,00: No suitable host found for VM #293
+
+0,00: No suitable host found for VM #294
+
+0,00: No suitable host found for VM #295
+
+0,00: No suitable host found for VM #296
+
+0,00: No suitable host found for VM #297
+
+0,00: No suitable host found for VM #298
+
+0,00: No suitable host found for VM #299
+
+0,00: No suitable host found for VM #300
+
+0,00: No suitable host found for VM #301
+
+0,00: No suitable host found for VM #302
+
+0,00: No suitable host found for VM #303
+
+0,00: No suitable host found for VM #304
+
+0,00: No suitable host found for VM #305
+
+0,00: No suitable host found for VM #306
+
+0,00: No suitable host found for VM #307
+
+0,00: No suitable host found for VM #308
+
+0,00: No suitable host found for VM #309
+
+0,00: No suitable host found for VM #310
+
+0,00: No suitable host found for VM #311
+
+0,00: No suitable host found for VM #312
+
+0,00: No suitable host found for VM #313
+
+0,00: No suitable host found for VM #314
+
+0,00: No suitable host found for VM #315
+
+0,00: No suitable host found for VM #316
+
+0,00: No suitable host found for VM #317
+
+0,00: No suitable host found for VM #318
+
+0,00: No suitable host found for VM #319
+
+0,00: No suitable host found for VM #320
+
+0,00: No suitable host found for VM #321
+
+0,00: No suitable host found for VM #322
+
+0,00: No suitable host found for VM #323
+
+0,00: No suitable host found for VM #324
+
+0,00: No suitable host found for VM #325
+
+0,00: No suitable host found for VM #326
+
+0,00: No suitable host found for VM #327
+
+0,00: No suitable host found for VM #328
+
+0,00: No suitable host found for VM #329
+
+0,00: No suitable host found for VM #330
+
+0,00: No suitable host found for VM #331
+
+0,00: No suitable host found for VM #332
+
+0,00: No suitable host found for VM #333
+
+0,00: No suitable host found for VM #334
+
+0,00: No suitable host found for VM #335
+
+0,00: No suitable host found for VM #336
+
+0,00: No suitable host found for VM #337
+
+0,00: No suitable host found for VM #338
+
+0,00: No suitable host found for VM #339
+
+0,00: No suitable host found for VM #340
+
+0,00: No suitable host found for VM #341
+
+0,00: No suitable host found for VM #342
+
+0,00: No suitable host found for VM #343
+
+0,00: No suitable host found for VM #344
+
+0,00: No suitable host found for VM #345
+
+0,00: No suitable host found for VM #346
+
+0,00: No suitable host found for VM #347
+
+0,00: No suitable host found for VM #348
+
+0,00: No suitable host found for VM #349
+
+0,00: No suitable host found for VM #350
+
+0,00: No suitable host found for VM #351
+
+0,00: No suitable host found for VM #352
+
+0,00: No suitable host found for VM #353
+
+0,00: No suitable host found for VM #354
+
+0,00: No suitable host found for VM #355
+
+0,00: No suitable host found for VM #356
+
+0,00: No suitable host found for VM #357
+
+0,00: No suitable host found for VM #358
+
+0,00: No suitable host found for VM #359
+
+0,00: No suitable host found for VM #360
+
+0,00: No suitable host found for VM #361
+
+0,00: No suitable host found for VM #362
+
+0,00: No suitable host found for VM #363
+
+0,00: No suitable host found for VM #364
+
+0,00: No suitable host found for VM #365
+
+0,00: No suitable host found for VM #366
+
+0,00: No suitable host found for VM #367
+
+0,00: No suitable host found for VM #368
+
+0,00: No suitable host found for VM #369
+
+0,00: No suitable host found for VM #370
+
+0,00: No suitable host found for VM #371
+
+0,00: No suitable host found for VM #372
+
+0,00: No suitable host found for VM #373
+
+0,00: No suitable host found for VM #374
+
+0,00: No suitable host found for VM #375
+
+0,00: No suitable host found for VM #376
+
+0,00: No suitable host found for VM #377
+
+0,00: No suitable host found for VM #378
+
+0,00: No suitable host found for VM #379
+
+0,00: No suitable host found for VM #380
+
+0,00: No suitable host found for VM #381
+
+0,00: No suitable host found for VM #382
+
+0,00: No suitable host found for VM #383
+
+0,00: No suitable host found for VM #384
+
+0,00: No suitable host found for VM #385
+
+0,00: No suitable host found for VM #386
+
+0,00: No suitable host found for VM #387
+
+0,00: No suitable host found for VM #388
+
+0,00: No suitable host found for VM #389
+
+0,00: No suitable host found for VM #390
+
+0,00: No suitable host found for VM #391
+
+0,00: No suitable host found for VM #392
+
+0,00: No suitable host found for VM #393
+
+0,00: No suitable host found for VM #394
+
+0,00: No suitable host found for VM #395
+
+0,00: No suitable host found for VM #396
+
+0,00: No suitable host found for VM #397
+
+0,00: No suitable host found for VM #398
+
+0,00: No suitable host found for VM #399
+
+0,00: No suitable host found for VM #400
+
+0,00: No suitable host found for VM #401
+
+0,00: No suitable host found for VM #402
+
+0,00: No suitable host found for VM #403
+
+0,00: No suitable host found for VM #404
+
+0,00: No suitable host found for VM #405
+
+0,00: No suitable host found for VM #406
+
+0,00: No suitable host found for VM #407
+
+0,00: No suitable host found for VM #408
+
+0,00: No suitable host found for VM #409
+
+0,00: No suitable host found for VM #410
+
+0,00: No suitable host found for VM #411
+
+0,00: No suitable host found for VM #412
+
+0,00: No suitable host found for VM #413
+
+0,00: No suitable host found for VM #414
+
+0,00: No suitable host found for VM #415
+
+0,00: No suitable host found for VM #416
+
+0,00: No suitable host found for VM #417
+
+0,00: No suitable host found for VM #418
+
+0,00: No suitable host found for VM #419
+
+0,00: No suitable host found for VM #420
+
+0,00: No suitable host found for VM #421
+
+0,00: No suitable host found for VM #422
+
+0,00: No suitable host found for VM #423
+
+0,00: No suitable host found for VM #424
+
+0,00: No suitable host found for VM #425
+
+0,00: No suitable host found for VM #426
+
+0,00: No suitable host found for VM #427
+
+0,00: No suitable host found for VM #428
+
+0,00: No suitable host found for VM #429
+
+0,00: No suitable host found for VM #430
+
+0,00: No suitable host found for VM #431
+
+0,00: No suitable host found for VM #432
+
+0,00: No suitable host found for VM #433
+
+0,00: No suitable host found for VM #434
+
+0,00: No suitable host found for VM #435
+
+0,00: No suitable host found for VM #436
+
+0,00: No suitable host found for VM #437
+
+0,00: No suitable host found for VM #438
+
+0,00: No suitable host found for VM #439
+
+0,00: No suitable host found for VM #440
+
+0,00: No suitable host found for VM #441
+
+0,00: No suitable host found for VM #442
+
+0,00: No suitable host found for VM #443
+
+0,00: No suitable host found for VM #444
+
+0,00: No suitable host found for VM #445
+
+0,00: No suitable host found for VM #446
+
+0,00: No suitable host found for VM #447
+
+0,00: No suitable host found for VM #448
+
+0,00: No suitable host found for VM #449
+
+0,00: No suitable host found for VM #450
+
+0,00: No suitable host found for VM #451
+
+0,00: No suitable host found for VM #452
+
+0,00: No suitable host found for VM #453
+
+0,00: No suitable host found for VM #454
+
+0,00: No suitable host found for VM #455
+
+0,00: No suitable host found for VM #456
+
+0,00: No suitable host found for VM #457
+
+0,00: No suitable host found for VM #458
+
+0,00: No suitable host found for VM #459
+
+0,00: No suitable host found for VM #460
+
+0,00: No suitable host found for VM #461
+
+0,00: No suitable host found for VM #462
+
+0,00: No suitable host found for VM #463
+
+0,00: No suitable host found for VM #464
+
+0,00: No suitable host found for VM #465
+
+0,00: No suitable host found for VM #466
+
+0,00: No suitable host found for VM #467
+
+0,00: No suitable host found for VM #468
+
+0,00: No suitable host found for VM #469
+
+0,00: No suitable host found for VM #470
+
+0,00: No suitable host found for VM #471
+
+0,00: No suitable host found for VM #472
+
+0,00: No suitable host found for VM #473
+
+0,00: No suitable host found for VM #474
+
+0,00: No suitable host found for VM #475
+
+0,00: No suitable host found for VM #476
+
+0,00: No suitable host found for VM #477
+
+0,00: No suitable host found for VM #478
+
+0,00: No suitable host found for VM #479
+
+0,00: No suitable host found for VM #480
+
+0,00: No suitable host found for VM #481
+
+0,00: No suitable host found for VM #482
+
+0,00: No suitable host found for VM #483
+
+0,00: No suitable host found for VM #484
+
+0,00: No suitable host found for VM #485
+
+0,00: No suitable host found for VM #486
+
+0,00: No suitable host found for VM #487
+
+0,00: No suitable host found for VM #488
+
+0,00: No suitable host found for VM #489
+
+0,00: No suitable host found for VM #490
+
+0,00: No suitable host found for VM #491
+
+0,00: No suitable host found for VM #492
+
+0,00: No suitable host found for VM #493
+
+0,00: No suitable host found for VM #494
+
+0,00: No suitable host found for VM #495
+
+0,00: No suitable host found for VM #496
+
+0,00: No suitable host found for VM #497
+
+0,00: No suitable host found for VM #498
+
+0,00: No suitable host found for VM #499
+
+0,00: No suitable host found for VM #500
+
+0,00: No suitable host found for VM #501
+
+0,00: No suitable host found for VM #502
+
+0,00: No suitable host found for VM #503
+
+0,00: No suitable host found for VM #504
+
+0,00: No suitable host found for VM #505
+
+0,00: No suitable host found for VM #506
+
+0,00: No suitable host found for VM #507
+
+0,00: No suitable host found for VM #508
+
+0,00: No suitable host found for VM #509
+
+0,00: No suitable host found for VM #510
+
+0,00: No suitable host found for VM #511
+
+0,00: No suitable host found for VM #512
+
+0,00: No suitable host found for VM #513
+
+0,00: No suitable host found for VM #514
+
+0,00: No suitable host found for VM #515
+
+0,00: No suitable host found for VM #516
+
+0,00: No suitable host found for VM #517
+
+0,00: No suitable host found for VM #518
+
+0,00: No suitable host found for VM #519
+
+0,00: No suitable host found for VM #520
+
+0,00: No suitable host found for VM #521
+
+0,00: No suitable host found for VM #522
+
+0,00: No suitable host found for VM #523
+
+0,00: No suitable host found for VM #524
+
+0,00: No suitable host found for VM #525
+
+0,00: No suitable host found for VM #526
+
+0,00: No suitable host found for VM #527
+
+0,00: No suitable host found for VM #528
+
+0,00: No suitable host found for VM #529
+
+0,00: No suitable host found for VM #530
+
+0,00: No suitable host found for VM #531
+
+0,00: No suitable host found for VM #532
+
+0,00: No suitable host found for VM #533
+
+0,00: No suitable host found for VM #534
+
+0,00: No suitable host found for VM #535
+
+0,00: No suitable host found for VM #536
+
+0,00: No suitable host found for VM #537
+
+0,00: No suitable host found for VM #538
+
+0,00: No suitable host found for VM #539
+
+0,00: No suitable host found for VM #540
+
+0,00: No suitable host found for VM #541
+
+0,00: No suitable host found for VM #542
+
+0,00: No suitable host found for VM #543
+
+0,00: No suitable host found for VM #544
+
+0,00: No suitable host found for VM #545
+
+0,00: No suitable host found for VM #546
+
+0,00: No suitable host found for VM #547
+
+0,00: No suitable host found for VM #548
+
+0,00: No suitable host found for VM #549
+
+0,00: No suitable host found for VM #550
+
+0,00: No suitable host found for VM #551
+
+0,00: No suitable host found for VM #552
+
+0,00: No suitable host found for VM #553
+
+0,00: No suitable host found for VM #554
+
+0,00: No suitable host found for VM #555
+
+0,00: No suitable host found for VM #556
+
+0,00: No suitable host found for VM #557
+
+0,00: No suitable host found for VM #558
+
+0,00: No suitable host found for VM #559
+
+0,00: No suitable host found for VM #560
+
+0,00: No suitable host found for VM #561
+
+0,00: No suitable host found for VM #562
+
+0,00: No suitable host found for VM #563
+
+0,00: No suitable host found for VM #564
+
+0,00: No suitable host found for VM #565
+
+0,00: No suitable host found for VM #566
+
+0,00: No suitable host found for VM #567
+
+0,00: No suitable host found for VM #568
+
+0,00: No suitable host found for VM #569
+
+0,00: No suitable host found for VM #570
+
+0,00: No suitable host found for VM #571
+
+0,00: No suitable host found for VM #572
+
+0,00: No suitable host found for VM #573
+
+0,00: No suitable host found for VM #574
+
+0,00: No suitable host found for VM #575
+
+0,00: No suitable host found for VM #576
+
+0,00: No suitable host found for VM #577
+
+0,00: No suitable host found for VM #578
+
+0,00: No suitable host found for VM #579
+
+0,00: No suitable host found for VM #580
+
+0,00: No suitable host found for VM #581
+
+0,00: No suitable host found for VM #582
+
+0,00: No suitable host found for VM #583
+
+0,00: No suitable host found for VM #584
+
+0,00: No suitable host found for VM #585
+
+0,00: No suitable host found for VM #586
+
+0,00: No suitable host found for VM #587
+
+0,00: No suitable host found for VM #588
+
+0,00: No suitable host found for VM #589
+
+0,00: No suitable host found for VM #590
+
+0,00: No suitable host found for VM #591
+
+0,00: No suitable host found for VM #592
+
+0,00: No suitable host found for VM #593
+
+0,00: No suitable host found for VM #594
+
+0,00: No suitable host found for VM #595
+
+0,00: No suitable host found for VM #596
+
+0,00: No suitable host found for VM #597
+
+0,00: No suitable host found for VM #598
+
+0,00: No suitable host found for VM #599
+
+0,00: No suitable host found for VM #600
+
+0,00: No suitable host found for VM #601
+
+0,00: No suitable host found for VM #602
+
+0,00: No suitable host found for VM #603
+
+0,00: No suitable host found for VM #604
+
+0,00: No suitable host found for VM #605
+
+0,00: No suitable host found for VM #606
+
+0,00: No suitable host found for VM #607
+
+0,00: No suitable host found for VM #608
+
+0,00: No suitable host found for VM #609
+
+0,00: No suitable host found for VM #610
+
+0,00: No suitable host found for VM #611
+
+0,00: No suitable host found for VM #612
+
+0,00: No suitable host found for VM #613
+
+0,00: No suitable host found for VM #614
+
+0,00: No suitable host found for VM #615
+
+0,00: No suitable host found for VM #616
+
+0,00: No suitable host found for VM #617
+
+0,00: No suitable host found for VM #618
+
+0,00: No suitable host found for VM #619
+
+0,00: No suitable host found for VM #620
+
+0,00: No suitable host found for VM #621
+
+0,00: No suitable host found for VM #622
+
+0,00: No suitable host found for VM #623
+
+0,00: No suitable host found for VM #624
+
+0,00: No suitable host found for VM #625
+
+0,00: No suitable host found for VM #626
+
+0,00: No suitable host found for VM #627
+
+0,00: No suitable host found for VM #628
+
+0,00: No suitable host found for VM #629
+
+0,00: No suitable host found for VM #630
+
+0,00: No suitable host found for VM #631
+
+0,00: No suitable host found for VM #632
+
+0,00: No suitable host found for VM #633
+
+0,00: No suitable host found for VM #634
+
+0,00: No suitable host found for VM #635
+
+0,00: No suitable host found for VM #636
+
+0,00: No suitable host found for VM #637
+
+0,00: No suitable host found for VM #638
+
+0,00: No suitable host found for VM #639
+
+0,00: No suitable host found for VM #640
+
+0,00: No suitable host found for VM #641
+
+0,00: No suitable host found for VM #642
+
+0,00: No suitable host found for VM #643
+
+0,00: No suitable host found for VM #644
+
+0,00: No suitable host found for VM #645
+
+0,00: No suitable host found for VM #646
+
+0,00: No suitable host found for VM #647
+
+0,00: No suitable host found for VM #648
+
+0,00: No suitable host found for VM #649
+
+0,00: No suitable host found for VM #650
+
+0,00: No suitable host found for VM #651
+
+0,00: No suitable host found for VM #652
+
+0,00: No suitable host found for VM #653
+
+0,00: No suitable host found for VM #654
+
+0,00: No suitable host found for VM #655
+
+0,00: No suitable host found for VM #656
+
+0,00: No suitable host found for VM #657
+
+0,00: No suitable host found for VM #658
+
+0,00: No suitable host found for VM #659
+
+0,00: No suitable host found for VM #660
+
+0,00: No suitable host found for VM #661
+
+0,00: No suitable host found for VM #662
+
+0,00: No suitable host found for VM #663
+
+0,00: No suitable host found for VM #664
+
+0,00: No suitable host found for VM #665
+
+0,00: No suitable host found for VM #666
+
+0,00: No suitable host found for VM #667
+
+0,00: No suitable host found for VM #668
+
+0,00: No suitable host found for VM #669
+
+0,00: No suitable host found for VM #670
+
+0,00: No suitable host found for VM #671
+
+0,00: No suitable host found for VM #672
+
+0,00: No suitable host found for VM #673
+
+0,00: No suitable host found for VM #674
+
+0,00: No suitable host found for VM #675
+
+0,00: No suitable host found for VM #676
+
+0,00: No suitable host found for VM #677
+
+0,00: No suitable host found for VM #678
+
+0,00: No suitable host found for VM #679
+
+0,00: No suitable host found for VM #680
+
+0,00: No suitable host found for VM #681
+
+0,00: No suitable host found for VM #682
+
+0,00: No suitable host found for VM #683
+
+0,00: No suitable host found for VM #684
+
+0,00: No suitable host found for VM #685
+
+0,00: No suitable host found for VM #686
+
+0,00: No suitable host found for VM #687
+
+0,00: No suitable host found for VM #688
+
+0,00: No suitable host found for VM #689
+
+0,00: No suitable host found for VM #690
+
+0,00: No suitable host found for VM #691
+
+0,00: No suitable host found for VM #692
+
+0,00: No suitable host found for VM #693
+
+0,00: No suitable host found for VM #694
+
+0,00: No suitable host found for VM #695
+
+0,00: No suitable host found for VM #696
+
+0,00: No suitable host found for VM #697
+
+0,00: No suitable host found for VM #698
+
+0,00: No suitable host found for VM #699
+
+0,00: No suitable host found for VM #700
+
+0,00: No suitable host found for VM #701
+
+0,00: No suitable host found for VM #702
+
+0,00: No suitable host found for VM #703
+
+0,00: No suitable host found for VM #704
+
+0,00: No suitable host found for VM #705
+
+0,00: No suitable host found for VM #706
+
+0,00: No suitable host found for VM #707
+
+0,00: No suitable host found for VM #708
+
+0,00: No suitable host found for VM #709
+
+0,00: No suitable host found for VM #710
+
+0,00: No suitable host found for VM #711
+
+0,00: No suitable host found for VM #712
+
+0,00: No suitable host found for VM #713
+
+0,00: No suitable host found for VM #714
+
+0,00: No suitable host found for VM #715
+
+0,00: No suitable host found for VM #716
+
+0,00: No suitable host found for VM #717
+
+0,00: No suitable host found for VM #718
+
+0,00: No suitable host found for VM #719
+
+0,00: No suitable host found for VM #720
+
+0,00: No suitable host found for VM #721
+
+0,00: No suitable host found for VM #722
+
+0,00: No suitable host found for VM #723
+
+0,00: No suitable host found for VM #724
+
+0,00: No suitable host found for VM #725
+
+0,00: No suitable host found for VM #726
+
+0,00: No suitable host found for VM #727
+
+0,00: No suitable host found for VM #728
+
+0,00: No suitable host found for VM #729
+
+0,00: No suitable host found for VM #730
+
+0,00: No suitable host found for VM #731
+
+0,00: No suitable host found for VM #732
+
+0,00: No suitable host found for VM #733
+
+0,00: No suitable host found for VM #734
+
+0,00: No suitable host found for VM #735
+
+0,00: No suitable host found for VM #736
+
+0,00: No suitable host found for VM #737
+
+0,00: No suitable host found for VM #738
+
+0,00: No suitable host found for VM #739
+
+0,00: No suitable host found for VM #740
+
+0,00: No suitable host found for VM #741
+
+0,00: No suitable host found for VM #742
+
+0,00: No suitable host found for VM #743
+
+0,00: No suitable host found for VM #744
+
+0,00: No suitable host found for VM #745
+
+0,00: No suitable host found for VM #746
+
+0,00: No suitable host found for VM #747
+
+0,00: No suitable host found for VM #748
+
+0,00: No suitable host found for VM #749
+
+0,00: No suitable host found for VM #750
+
+0,00: No suitable host found for VM #751
+
+0,00: No suitable host found for VM #752
+
+0,00: No suitable host found for VM #753
+
+0,00: No suitable host found for VM #754
+
+0,00: No suitable host found for VM #755
+
+0,00: No suitable host found for VM #756
+
+0,00: No suitable host found for VM #757
+
+0,00: No suitable host found for VM #758
+
+0,00: No suitable host found for VM #759
+
+0,00: No suitable host found for VM #760
+
+0,00: No suitable host found for VM #761
+
+0,00: No suitable host found for VM #762
+
+0,00: No suitable host found for VM #763
+
+0,00: No suitable host found for VM #764
+
+0,00: No suitable host found for VM #765
+
+0,00: No suitable host found for VM #766
+
+0,00: No suitable host found for VM #767
+
+0,00: No suitable host found for VM #768
+
+0,00: No suitable host found for VM #769
+
+0,00: No suitable host found for VM #770
+
+0,00: No suitable host found for VM #771
+
+0,00: No suitable host found for VM #772
+
+0,00: No suitable host found for VM #773
+
+0,00: No suitable host found for VM #774
+
+0,00: No suitable host found for VM #775
+
+0,00: No suitable host found for VM #776
+
+0,00: No suitable host found for VM #777
+
+0,00: No suitable host found for VM #778
+
+0,00: No suitable host found for VM #779
+
+0,00: No suitable host found for VM #780
+
+0,00: No suitable host found for VM #781
+
+0,00: No suitable host found for VM #782
+
+0,00: No suitable host found for VM #783
+
+0,00: No suitable host found for VM #784
+
+0,00: No suitable host found for VM #785
+
+0,00: No suitable host found for VM #786
+
+0,00: No suitable host found for VM #787
+
+0,00: No suitable host found for VM #788
+
+0,00: No suitable host found for VM #789
+
+0,00: No suitable host found for VM #790
+
+0,00: No suitable host found for VM #791
+
+0,00: No suitable host found for VM #792
+
+0,00: No suitable host found for VM #793
+
+0,00: No suitable host found for VM #794
+
+0,00: No suitable host found for VM #795
+
+0,00: No suitable host found for VM #796
+
+0,00: No suitable host found for VM #797
+
+0,00: No suitable host found for VM #798
+
+0,00: No suitable host found for VM #799
+
+0,00: No suitable host found for VM #800
+
+0,00: No suitable host found for VM #801
+
+0,00: No suitable host found for VM #802
+
+0,00: No suitable host found for VM #803
+
+0,00: No suitable host found for VM #804
+
+0,00: No suitable host found for VM #805
+
+0,00: No suitable host found for VM #806
+
+0,00: No suitable host found for VM #807
+
+0,00: No suitable host found for VM #808
+
+0,00: No suitable host found for VM #809
+
+0,00: No suitable host found for VM #810
+
+0,00: No suitable host found for VM #811
+
+0,00: No suitable host found for VM #812
+
+0,00: No suitable host found for VM #813
+
+0,00: No suitable host found for VM #814
+
+0,00: No suitable host found for VM #815
+
+0,00: No suitable host found for VM #816
+
+0,00: No suitable host found for VM #817
+
+0,00: No suitable host found for VM #818
+
+0,00: No suitable host found for VM #819
+
+0,00: No suitable host found for VM #820
+
+0,00: No suitable host found for VM #821
+
+0,00: No suitable host found for VM #822
+
+0,00: No suitable host found for VM #823
+
+0,00: No suitable host found for VM #824
+
+0,00: No suitable host found for VM #825
+
+0,00: No suitable host found for VM #826
+
+0,00: No suitable host found for VM #827
+
+0,00: No suitable host found for VM #828
+
+0,00: No suitable host found for VM #829
+
+0,00: No suitable host found for VM #830
+
+0,00: No suitable host found for VM #831
+
+0,00: No suitable host found for VM #832
+
+0,00: No suitable host found for VM #833
+
+0,00: No suitable host found for VM #834
+
+0,00: No suitable host found for VM #835
+
+0,00: No suitable host found for VM #836
+
+0,00: No suitable host found for VM #837
+
+0,00: No suitable host found for VM #838
+
+0,00: No suitable host found for VM #839
+
+0,00: No suitable host found for VM #840
+
+0,00: No suitable host found for VM #841
+
+0,00: No suitable host found for VM #842
+
+0,00: No suitable host found for VM #843
+
+0,00: No suitable host found for VM #844
+
+0,00: No suitable host found for VM #845
+
+0,00: No suitable host found for VM #846
+
+0,00: No suitable host found for VM #847
+
+0,00: No suitable host found for VM #848
+
+0,00: No suitable host found for VM #849
+
+0,00: No suitable host found for VM #850
+
+0,00: No suitable host found for VM #851
+
+0,00: No suitable host found for VM #852
+
+0,00: No suitable host found for VM #853
+
+0,00: No suitable host found for VM #854
+
+0,00: No suitable host found for VM #855
+
+0,00: No suitable host found for VM #856
+
+0,00: No suitable host found for VM #857
+
+0,00: No suitable host found for VM #858
+
+0,00: No suitable host found for VM #859
+
+0,00: No suitable host found for VM #860
+
+0,00: No suitable host found for VM #861
+
+0,00: No suitable host found for VM #862
+
+0,00: No suitable host found for VM #863
+
+0,00: No suitable host found for VM #864
+
+0,00: No suitable host found for VM #865
+
+0,00: No suitable host found for VM #866
+
+0,00: No suitable host found for VM #867
+
+0,00: No suitable host found for VM #868
+
+0,00: No suitable host found for VM #869
+
+0,00: No suitable host found for VM #870
+
+0,00: No suitable host found for VM #871
+
+0,00: No suitable host found for VM #872
+
+0,00: No suitable host found for VM #873
+
+0,00: No suitable host found for VM #874
+
+0,00: No suitable host found for VM #875
+
+0,00: No suitable host found for VM #876
+
+0,00: No suitable host found for VM #877
+
+0,00: No suitable host found for VM #878
+
+0,00: No suitable host found for VM #879
+
+0,00: No suitable host found for VM #880
+
+0,00: No suitable host found for VM #881
+
+0,00: No suitable host found for VM #882
+
+0,00: No suitable host found for VM #883
+
+0,00: No suitable host found for VM #884
+
+0,00: No suitable host found for VM #885
+
+0,00: No suitable host found for VM #886
+
+0,00: No suitable host found for VM #887
+
+0,00: No suitable host found for VM #888
+
+0,00: No suitable host found for VM #889
+
+0,00: No suitable host found for VM #890
+
+0,00: No suitable host found for VM #891
+
+0,00: No suitable host found for VM #892
+
+0,00: No suitable host found for VM #893
+
+0,00: No suitable host found for VM #894
+
+0,00: No suitable host found for VM #895
+
+0,00: No suitable host found for VM #896
+
+0,00: No suitable host found for VM #897
+
+0,00: No suitable host found for VM #898
+
+0,00: No suitable host found for VM #899
+
+0,00: No suitable host found for VM #900
+
+0,00: No suitable host found for VM #901
+
+0,00: No suitable host found for VM #902
+
+0,00: No suitable host found for VM #903
+
+0,00: No suitable host found for VM #904
+
+0,00: No suitable host found for VM #905
+
+0,00: No suitable host found for VM #906
+
+0,00: No suitable host found for VM #907
+
+0,00: No suitable host found for VM #908
+
+0,00: No suitable host found for VM #909
+
+0,00: No suitable host found for VM #910
+
+0,00: No suitable host found for VM #911
+
+0,00: No suitable host found for VM #912
+
+0,00: No suitable host found for VM #913
+
+0,00: No suitable host found for VM #914
+
+0,00: No suitable host found for VM #915
+
+0,00: No suitable host found for VM #916
+
+0,00: No suitable host found for VM #917
+
+0,00: No suitable host found for VM #918
+
+0,00: No suitable host found for VM #919
+
+0,00: No suitable host found for VM #920
+
+0,00: No suitable host found for VM #921
+
+0,00: No suitable host found for VM #922
+
+0,00: No suitable host found for VM #923
+
+0,00: No suitable host found for VM #924
+
+0,00: No suitable host found for VM #925
+
+0,00: No suitable host found for VM #926
+
+0,00: No suitable host found for VM #927
+
+0,00: No suitable host found for VM #928
+
+0,00: No suitable host found for VM #929
+
+0,00: No suitable host found for VM #930
+
+0,00: No suitable host found for VM #931
+
+0,00: No suitable host found for VM #932
+
+0,00: No suitable host found for VM #933
+
+0,00: No suitable host found for VM #934
+
+0,00: No suitable host found for VM #935
+
+0,00: No suitable host found for VM #936
+
+0,00: No suitable host found for VM #937
+
+0,00: No suitable host found for VM #938
+
+0,00: No suitable host found for VM #939
+
+0,00: No suitable host found for VM #940
+
+0,00: No suitable host found for VM #941
+
+0,00: No suitable host found for VM #942
+
+0,00: No suitable host found for VM #943
+
+0,00: No suitable host found for VM #944
+
+0,00: No suitable host found for VM #945
+
+0,00: No suitable host found for VM #946
+
+0,00: No suitable host found for VM #947
+
+0,00: No suitable host found for VM #948
+
+0,00: No suitable host found for VM #949
+
+0,00: No suitable host found for VM #950
+
+0,00: No suitable host found for VM #951
+
+0,00: No suitable host found for VM #952
+
+0,00: No suitable host found for VM #953
+
+0,00: No suitable host found for VM #954
+
+0,00: No suitable host found for VM #955
+
+0,00: No suitable host found for VM #956
+
+0,00: No suitable host found for VM #957
+
+0,00: No suitable host found for VM #958
+
+0,00: No suitable host found for VM #959
+
+0,00: No suitable host found for VM #960
+
+0,00: No suitable host found for VM #961
+
+0,00: No suitable host found for VM #962
+
+0,00: No suitable host found for VM #963
+
+0,00: No suitable host found for VM #964
+
+0,00: No suitable host found for VM #965
+
+0,00: No suitable host found for VM #966
+
+0,00: No suitable host found for VM #967
+
+0,00: No suitable host found for VM #968
+
+0,00: No suitable host found for VM #969
+
+0,00: No suitable host found for VM #970
+
+0,00: No suitable host found for VM #971
+
+0,00: No suitable host found for VM #972
+
+0,00: No suitable host found for VM #973
+
+0,00: No suitable host found for VM #974
+
+0,00: No suitable host found for VM #975
+
+0,00: No suitable host found for VM #976
+
+0,00: No suitable host found for VM #977
+
+0,00: No suitable host found for VM #978
+
+0,00: No suitable host found for VM #979
+
+0,00: No suitable host found for VM #980
+
+0,00: No suitable host found for VM #981
+
+0,00: No suitable host found for VM #982
+
+0,00: No suitable host found for VM #983
+
+0,00: No suitable host found for VM #984
+
+0,00: No suitable host found for VM #985
+
+0,00: No suitable host found for VM #986
+
+0,00: No suitable host found for VM #987
+
+0,00: No suitable host found for VM #988
+
+0,00: No suitable host found for VM #989
+
+0,00: No suitable host found for VM #990
+
+0,00: No suitable host found for VM #991
+
+0,00: No suitable host found for VM #992
+
+0,00: No suitable host found for VM #993
+
+0,00: No suitable host found for VM #994
+
+0,00: No suitable host found for VM #995
+
+0,00: No suitable host found for VM #996
+
+0,00: No suitable host found for VM #997
+
+0,00: No suitable host found for VM #998
+
+0,00: No suitable host found for VM #999
+
+0,00: No suitable host found for VM #1000
+
+0,00: No suitable host found for VM #1001
+
+0,00: No suitable host found for VM #1002
+
+0,00: No suitable host found for VM #1003
+
+0,00: No suitable host found for VM #1004
+
+0,00: No suitable host found for VM #1005
+
+0,00: No suitable host found for VM #1006
+
+0,00: No suitable host found for VM #1007
+
+0,00: No suitable host found for VM #1008
+
+0,00: No suitable host found for VM #1009
+
+0,00: No suitable host found for VM #1010
+
+0,00: No suitable host found for VM #1011
+
+0,00: No suitable host found for VM #1012
+
+0,00: No suitable host found for VM #1013
+
+0,00: No suitable host found for VM #1014
+
+0,00: No suitable host found for VM #1015
+
+0,00: No suitable host found for VM #1016
+
+0,00: No suitable host found for VM #1017
+
+0,00: No suitable host found for VM #1018
+
+0,00: No suitable host found for VM #1019
+
+0,00: No suitable host found for VM #1020
+
+0,00: No suitable host found for VM #1021
+
+0,00: No suitable host found for VM #1022
+
+0,00: No suitable host found for VM #1023
+
+0,00: No suitable host found for VM #1024
+
+0,00: No suitable host found for VM #1025
+
+0,00: No suitable host found for VM #1026
+
+0,00: No suitable host found for VM #1027
+
+0,00: No suitable host found for VM #1028
+
+0,00: No suitable host found for VM #1029
+
+0,00: No suitable host found for VM #1030
+
+0,00: No suitable host found for VM #1031
+
+0,00: No suitable host found for VM #1032
+
+0,00: No suitable host found for VM #1033
+
+0,00: No suitable host found for VM #1034
+
+0,00: No suitable host found for VM #1035
+
+0,00: No suitable host found for VM #1036
+
+0,00: No suitable host found for VM #1037
+
+0,00: No suitable host found for VM #1038
+
+0,00: No suitable host found for VM #1039
+
+0,00: No suitable host found for VM #1040
+
+0,00: No suitable host found for VM #1041
+
+0,00: No suitable host found for VM #1042
+
+0,00: No suitable host found for VM #1043
+
+0,00: No suitable host found for VM #1044
+
+0,00: No suitable host found for VM #1045
+
+0,00: No suitable host found for VM #1046
+
+0,00: No suitable host found for VM #1047
+
+0,00: No suitable host found for VM #1048
+
+0,00: No suitable host found for VM #1049
+
+0,00: No suitable host found for VM #1050
+
+0,00: No suitable host found for VM #1051
+
+0.1: Broker: VM #0 has been created in Datacenter #3, Host #1
+0.1: Broker: VM #1 has been created in Datacenter #3, Host #3
+0.1: Broker: VM #2 has been created in Datacenter #3, Host #5
+0.1: Broker: VM #3 has been created in Datacenter #3, Host #7
+0.1: Broker: VM #4 has been created in Datacenter #3, Host #9
+0.1: Broker: VM #5 has been created in Datacenter #3, Host #11
+0.1: Broker: VM #6 has been created in Datacenter #3, Host #13
+0.1: Broker: VM #7 has been created in Datacenter #3, Host #15
+0.1: Broker: VM #8 has been created in Datacenter #3, Host #17
+0.1: Broker: VM #9 has been created in Datacenter #3, Host #19
+0.1: Broker: VM #10 has been created in Datacenter #3, Host #0
+0.1: Broker: VM #11 has been created in Datacenter #3, Host #2
+0.1: Broker: VM #12 has been created in Datacenter #3, Host #4
+0.1: Broker: VM #13 has been created in Datacenter #3, Host #6
+0.1: Broker: VM #14 has been created in Datacenter #3, Host #8
+0.1: Broker: VM #15 has been created in Datacenter #3, Host #10
+0.1: Broker: VM #16 has been created in Datacenter #3, Host #12
+0.1: Broker: VM #17 has been created in Datacenter #3, Host #14
+0.1: Broker: VM #18 has been created in Datacenter #3, Host #16
+0.1: Broker: VM #19 has been created in Datacenter #3, Host #18
+0.1: Broker: VM #20 has been created in Datacenter #3, Host #1
+0.1: Broker: VM #21 has been created in Datacenter #3, Host #3
+0.1: Broker: VM #22 has been created in Datacenter #3, Host #5
+0.1: Broker: VM #23 has been created in Datacenter #3, Host #7
+0.1: Broker: VM #24 has been created in Datacenter #3, Host #9
+0.1: Broker: VM #25 has been created in Datacenter #3, Host #11
+0.1: Broker: VM #26 has been created in Datacenter #3, Host #13
+0.1: Broker: VM #27 has been created in Datacenter #3, Host #15
+0.1: Broker: VM #28 has been created in Datacenter #3, Host #17
+0.1: Broker: VM #29 has been created in Datacenter #3, Host #19
+0.1: Broker: VM #30 has been created in Datacenter #3, Host #0
+0.1: Broker: VM #31 has been created in Datacenter #3, Host #2
+0.1: Broker: VM #32 has been created in Datacenter #3, Host #4
+0.1: Broker: VM #33 has been created in Datacenter #3, Host #6
+0.1: Broker: VM #34 has been created in Datacenter #3, Host #8
+0.1: Broker: VM #35 has been created in Datacenter #3, Host #10
+0.1: Broker: VM #36 has been created in Datacenter #3, Host #12
+0.1: Broker: VM #37 has been created in Datacenter #3, Host #14
+0.1: Broker: VM #38 has been created in Datacenter #3, Host #16
+0.1: Broker: VM #39 has been created in Datacenter #3, Host #18
+0.1: Broker: VM #40 has been created in Datacenter #3, Host #1
+0.1: Broker: VM #41 has been created in Datacenter #3, Host #3
+0.1: Broker: VM #42 has been created in Datacenter #3, Host #5
+0.1: Broker: VM #43 has been created in Datacenter #3, Host #7
+0.1: Broker: VM #44 has been created in Datacenter #3, Host #9
+0.1: Broker: VM #45 has been created in Datacenter #3, Host #11
+0.1: Broker: VM #46 has been created in Datacenter #3, Host #13
+0.1: Broker: VM #47 has been created in Datacenter #3, Host #15
+0.1: Broker: VM #48 has been created in Datacenter #3, Host #17
+0.1: Broker: VM #49 has been created in Datacenter #3, Host #19
+0.1: Broker: VM #50 has been created in Datacenter #3, Host #0
+0.1: Broker: VM #51 has been created in Datacenter #3, Host #2
+0.1: Broker: VM #52 has been created in Datacenter #3, Host #4
+0.1: Broker: VM #53 has been created in Datacenter #3, Host #6
+0.1: Broker: VM #54 has been created in Datacenter #3, Host #8
+0.1: Broker: VM #55 has been created in Datacenter #3, Host #10
+0.1: Broker: VM #56 has been created in Datacenter #3, Host #12
+0.1: Broker: VM #57 has been created in Datacenter #3, Host #14
+0.1: Broker: VM #58 has been created in Datacenter #3, Host #16
+0.1: Broker: VM #59 has been created in Datacenter #3, Host #18
+0.1: Broker: VM #60 has been created in Datacenter #3, Host #1
+0.1: Broker: VM #61 has been created in Datacenter #3, Host #3
+0.1: Broker: VM #62 has been created in Datacenter #3, Host #5
+0.1: Broker: VM #63 has been created in Datacenter #3, Host #7
+0.1: Broker: VM #64 has been created in Datacenter #3, Host #9
+0.1: Broker: VM #65 has been created in Datacenter #3, Host #11
+0.1: Broker: VM #66 has been created in Datacenter #3, Host #13
+0.1: Broker: VM #67 has been created in Datacenter #3, Host #15
+0.1: Broker: VM #68 has been created in Datacenter #3, Host #17
+0.1: Broker: VM #69 has been created in Datacenter #3, Host #19
+0.1: Broker: VM #70 has been created in Datacenter #3, Host #0
+0.1: Broker: VM #71 has been created in Datacenter #3, Host #2
+0.1: Broker: VM #72 has been created in Datacenter #3, Host #4
+0.1: Broker: VM #73 has been created in Datacenter #3, Host #6
+0.1: Broker: VM #74 has been created in Datacenter #3, Host #8
+0.1: Broker: VM #75 has been created in Datacenter #3, Host #10
+0.1: Broker: VM #76 has been created in Datacenter #3, Host #12
+0.1: Broker: VM #77 has been created in Datacenter #3, Host #14
+0.1: Broker: VM #78 has been created in Datacenter #3, Host #16
+0.1: Broker: VM #79 has been created in Datacenter #3, Host #18
+0.1: Broker: VM #80 has been created in Datacenter #3, Host #1
+0.1: Broker: VM #81 has been created in Datacenter #3, Host #3
+0.1: Broker: VM #82 has been created in Datacenter #3, Host #5
+0.1: Broker: VM #83 has been created in Datacenter #3, Host #7
+0.1: Broker: VM #84 has been created in Datacenter #3, Host #9
+0.1: Broker: VM #85 has been created in Datacenter #3, Host #11
+0.1: Broker: VM #86 has been created in Datacenter #3, Host #13
+0.1: Broker: VM #87 has been created in Datacenter #3, Host #15
+0.1: Broker: VM #88 has been created in Datacenter #3, Host #17
+0.1: Broker: VM #89 has been created in Datacenter #3, Host #19
+0.1: Broker: VM #90 has been created in Datacenter #3, Host #1
+0.1: Broker: VM #91 has been created in Datacenter #3, Host #3
+0.1: Broker: VM #92 has been created in Datacenter #3, Host #5
+0.1: Broker: VM #93 has been created in Datacenter #3, Host #7
+0.1: Broker: VM #94 has been created in Datacenter #3, Host #9
+0.1: Broker: VM #95 has been created in Datacenter #3, Host #11
+0.1: Broker: VM #96 has been created in Datacenter #3, Host #13
+0.1: Broker: VM #97 has been created in Datacenter #3, Host #15
+0.1: Broker: VM #98 has been created in Datacenter #3, Host #17
+0.1: Broker: VM #99 has been created in Datacenter #3, Host #19
+0.1: Broker: VM #100 has been created in Datacenter #3, Host #0
+0.1: Broker: VM #101 has been created in Datacenter #3, Host #2
+0.1: Broker: VM #102 has been created in Datacenter #3, Host #4
+0.1: Broker: VM #103 has been created in Datacenter #3, Host #6
+0.1: Broker: VM #104 has been created in Datacenter #3, Host #8
+0.1: Broker: VM #105 has been created in Datacenter #3, Host #10
+0.1: Broker: VM #106 has been created in Datacenter #3, Host #12
+0.1: Broker: VM #107 has been created in Datacenter #3, Host #14
+0.1: Broker: VM #108 has been created in Datacenter #3, Host #16
+0.1: Broker: VM #109 has been created in Datacenter #3, Host #18
+0.1: Broker: VM #110 has been created in Datacenter #3, Host #1
+0.1: Broker: VM #111 has been created in Datacenter #3, Host #3
+0.1: Broker: VM #112 has been created in Datacenter #3, Host #5
+0.1: Broker: VM #113 has been created in Datacenter #3, Host #7
+0.1: Broker: VM #114 has been created in Datacenter #3, Host #9
+0.1: Broker: VM #115 has been created in Datacenter #3, Host #11
+0.1: Broker: VM #116 has been created in Datacenter #3, Host #13
+0.1: Broker: VM #117 has been created in Datacenter #3, Host #15
+0.1: Broker: VM #118 has been created in Datacenter #3, Host #17
+0.1: Broker: VM #119 has been created in Datacenter #3, Host #19
+0.1: Broker: VM #120 has been created in Datacenter #3, Host #0
+0.1: Broker: VM #121 has been created in Datacenter #3, Host #2
+0.1: Broker: VM #122 has been created in Datacenter #3, Host #4
+0.1: Broker: VM #123 has been created in Datacenter #3, Host #6
+0.1: Broker: VM #124 has been created in Datacenter #3, Host #8
+0.1: Broker: VM #125 has been created in Datacenter #3, Host #10
+0.1: Broker: VM #126 has been created in Datacenter #3, Host #12
+0.1: Broker: VM #127 has been created in Datacenter #3, Host #14
+0.1: Broker: VM #128 has been created in Datacenter #3, Host #16
+0.1: Broker: VM #129 has been created in Datacenter #3, Host #18
+0.1: Broker: VM #130 has been created in Datacenter #3, Host #0
+0.1: Broker: VM #131 has been created in Datacenter #3, Host #2
+0.1: Broker: VM #132 has been created in Datacenter #3, Host #4
+0.1: Broker: VM #133 has been created in Datacenter #3, Host #6
+0.1: Broker: VM #134 has been created in Datacenter #3, Host #8
+0.1: Broker: VM #135 has been created in Datacenter #3, Host #10
+0.1: Broker: VM #136 has been created in Datacenter #3, Host #12
+0.1: Broker: VM #137 has been created in Datacenter #3, Host #14
+0.1: Broker: VM #138 has been created in Datacenter #3, Host #16
+0.1: Broker: VM #139 has been created in Datacenter #3, Host #18
+0.1: Broker: VM #140 has been created in Datacenter #3, Host #1
+0.1: Broker: VM #141 has been created in Datacenter #3, Host #3
+0.1: Broker: VM #142 has been created in Datacenter #3, Host #5
+0.1: Broker: VM #143 has been created in Datacenter #3, Host #7
+0.1: Broker: VM #144 has been created in Datacenter #3, Host #9
+0.1: Broker: VM #145 has been created in Datacenter #3, Host #11
+0.1: Broker: VM #146 has been created in Datacenter #3, Host #13
+0.1: Broker: VM #147 has been created in Datacenter #3, Host #15
+0.1: Broker: VM #148 has been created in Datacenter #3, Host #17
+0.1: Broker: VM #149 has been created in Datacenter #3, Host #19
+0.1: Broker: VM #150 has been created in Datacenter #3, Host #0
+0.1: Broker: VM #151 has been created in Datacenter #3, Host #2
+0.1: Broker: VM #152 has been created in Datacenter #3, Host #4
+0.1: Broker: VM #153 has been created in Datacenter #3, Host #6
+0.1: Broker: VM #154 has been created in Datacenter #3, Host #8
+0.1: Broker: VM #155 has been created in Datacenter #3, Host #10
+0.1: Broker: VM #156 has been created in Datacenter #3, Host #12
+0.1: Broker: VM #157 has been created in Datacenter #3, Host #14
+0.1: Broker: VM #158 has been created in Datacenter #3, Host #16
+0.1: Broker: VM #159 has been created in Datacenter #3, Host #18
+0.1: Broker: VM #160 has been created in Datacenter #3, Host #0
+0.1: Broker: VM #161 has been created in Datacenter #3, Host #2
+0.1: Broker: VM #162 has been created in Datacenter #3, Host #4
+0.1: Broker: VM #163 has been created in Datacenter #3, Host #6
+0.1: Broker: VM #164 has been created in Datacenter #3, Host #8
+0.1: Broker: VM #165 has been created in Datacenter #3, Host #10
+0.1: Broker: VM #166 has been created in Datacenter #3, Host #12
+0.1: Broker: VM #167 has been created in Datacenter #3, Host #14
+0.1: Broker: VM #168 has been created in Datacenter #3, Host #16
+0.1: Broker: VM #169 has been created in Datacenter #3, Host #18
+0.1: Broker: VM #170 has been created in Datacenter #3, Host #1
+0.1: Broker: VM #171 has been created in Datacenter #3, Host #3
+0.1: Broker: VM #172 has been created in Datacenter #3, Host #5
+0.1: Broker: VM #173 has been created in Datacenter #3, Host #7
+0.1: Broker: VM #174 has been created in Datacenter #3, Host #9
+0.1: Broker: VM #175 has been created in Datacenter #3, Host #11
+0.1: Broker: VM #176 has been created in Datacenter #3, Host #13
+0.1: Broker: VM #177 has been created in Datacenter #3, Host #15
+0.1: Broker: VM #178 has been created in Datacenter #3, Host #17
+0.1: Broker: VM #179 has been created in Datacenter #3, Host #19
+0.1: Broker: VM #180 has been created in Datacenter #3, Host #0
+0.1: Broker: VM #181 has been created in Datacenter #3, Host #2
+0.1: Broker: VM #182 has been created in Datacenter #3, Host #4
+0.1: Broker: VM #183 has been created in Datacenter #3, Host #6
+0.1: Broker: VM #184 has been created in Datacenter #3, Host #8
+0.1: Broker: VM #185 has been created in Datacenter #3, Host #10
+0.1: Broker: VM #186 has been created in Datacenter #3, Host #12
+0.1: Broker: VM #187 has been created in Datacenter #3, Host #14
+0.1: Broker: VM #188 has been created in Datacenter #3, Host #16
+0.1: Broker: VM #189 has been created in Datacenter #3, Host #18
+0.1: Broker: VM #190 has been created in Datacenter #3, Host #1
+0.1: Broker: VM #191 has been created in Datacenter #3, Host #3
+0.1: Broker: VM #192 has been created in Datacenter #3, Host #5
+0.1: Broker: VM #193 has been created in Datacenter #3, Host #7
+0.1: Broker: VM #194 has been created in Datacenter #3, Host #9
+0.1: Broker: VM #195 has been created in Datacenter #3, Host #11
+0.1: Broker: VM #196 has been created in Datacenter #3, Host #13
+0.1: Broker: VM #197 has been created in Datacenter #3, Host #15
+0.1: Broker: VM #198 has been created in Datacenter #3, Host #17
+0.1: Broker: VM #199 has been created in Datacenter #3, Host #19
