@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 
 import org.cloudbus.cloudsim.Host;
 import org.cloudbus.cloudsim.Vm;
-import org.cloudbus.cloudsim.util.HostIT2FLSIntFLBCC;
+import org.cloudbus.cloudsim.util.Type2FuzzyLogicEvaluation;
 
 /**
  * The Static Threshold (THR) VM allocation policy.
@@ -146,7 +146,7 @@ public class PowerVmAllocationPolicyMigrationStaticThreshold extends PowerVmAllo
 		ccStandartScale = (10 * _host.getUtilizationOfBw()) / minCCHost;
 		ramStandartScale = (_host.getUtilizationOfRam() / maxRamHost) * 10;
 
-		HostIT2FLSIntFLBCC it2 = new HostIT2FLSIntFLBCC(cpStandartScale, ccStandartScale, ramStandartScale, plotMF,
+		Type2FuzzyLogicEvaluation it2 = new Type2FuzzyLogicEvaluation(cpStandartScale, ccStandartScale, ramStandartScale, plotMF,
 				isOverOrUnder, isTypeObjective);
 
 		// System.out.println("maxCPHost: #"+maxCPHost+" minCCHost: #"+minCCHost+ "

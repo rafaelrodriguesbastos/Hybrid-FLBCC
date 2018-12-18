@@ -36,7 +36,7 @@ import type1.sets.T1MF_Trapezoidal;
  * like to generate the applicable tip.
  * @author Christian Wagner
  */
-public class HostIT2FLSIntFLBCC 
+public class Type2FuzzyLogicEvaluation 
 {
     Input CP, CC, RAM, EC;    //the inputs to the FLS
     Output U;             //the output of the FLS
@@ -48,7 +48,7 @@ public class HostIT2FLSIntFLBCC
     private double levelOfuse;
        
            
-    public HostIT2FLSIntFLBCC()
+    public Type2FuzzyLogicEvaluation()
     {
 		
         //Define the inputs
@@ -213,7 +213,7 @@ public class HostIT2FLSIntFLBCC
     
     // isOverOrUnder: 1 = Overload; 2 = Underload
     // isTypeObjective: 1 = Performance; 2 = Energy; 3 = Hibridy
-    public HostIT2FLSIntFLBCC(double inCP, double inCC, double inRam, boolean plotMF, int isOverOrUnder, int isTypeObjective) {
+    public Type2FuzzyLogicEvaluation(double inCP, double inCC, double inRam, boolean plotMF, int isOverOrUnder, int isTypeObjective) {
 		super();
 		this.inCP = inCP;
 		this.inCC = inCC;
@@ -858,7 +858,7 @@ public class HostIT2FLSIntFLBCC
 		ccStandartScale = (10*_host.getUtilizationOfBw())/minCCHost;
 		ramStandartScale = (_host.getUtilizationOfRam()/maxRamHost)*10;
 		
-		HostIT2FLSIntFLBCC it2 = new HostIT2FLSIntFLBCC(cpStandartScale,ccStandartScale,ramStandartScale, plotMF, isOverOrUnder, isTypeObjective);		
+		Type2FuzzyLogicEvaluation it2 = new Type2FuzzyLogicEvaluation(cpStandartScale,ccStandartScale,ramStandartScale, plotMF, isOverOrUnder, isTypeObjective);		
 		
 		// System.out.println("maxCPHost: #"+maxCPHost+" minCCHost: #"+minCCHost+ " maxRamHost: #"+maxRamHost + " Level of Use #"+it2.getLevelOfUse());
 		//System.out.println("cpStandartScale: #"+cpStandartScale+" ccStandartScale: #"+ccStandartScale+ " ramStandartScale: #"+ramStandartScale+ " it2.getLevelOfUse() #"+(it2.getLevelOfUse()/10));

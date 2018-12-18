@@ -13,7 +13,7 @@ import java.util.List;
 import org.cloudbus.cloudsim.Host;
 import org.cloudbus.cloudsim.Log;
 import org.cloudbus.cloudsim.Vm;
-import org.cloudbus.cloudsim.util.HostIT2FLSIntFLBCC;
+import org.cloudbus.cloudsim.util.Type2FuzzyLogicEvaluation;
 import org.cloudbus.cloudsim.util.MathUtil;
 
 /**
@@ -148,7 +148,7 @@ public class PowerVmAllocationPolicyMigrationFuzzy extends PowerVmAllocationPoli
 		ccStandartScale = (_host.getUtilizationOfBw()/maxCCHost)*10;
 		ramStandartScale = (_host.getUtilizationOfRam()/maxRamHost)*10;
 		
-		HostIT2FLSIntFLBCC it2 = new HostIT2FLSIntFLBCC(cpStandartScale,ccStandartScale,ramStandartScale, false, 1, 1);
+		Type2FuzzyLogicEvaluation it2 = new Type2FuzzyLogicEvaluation(cpStandartScale,ccStandartScale,ramStandartScale, false, 1, 1);
 		
 		// return utilization > getUtilizationThreshold();
 		//double utililization = it2.getPriority();
