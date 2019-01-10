@@ -39,7 +39,9 @@ public class IqrMu {
 		String vmSelectionPolicy = "mu"; // Minimum Utilization (MU) VM selection policy
 		String parameter = "1.5"; // the safety parameter of the IQR policy
 		boolean outputAbstractInCsv = true;  // enable summary recording in csv
-		boolean enableFuzzyT2Overload = true; // enable overload fuzzy type 2 detection
+		boolean enableFuzzyT2Overload = false; // enable overload fuzzy type 2 detection
+		boolean admissibleOrders = true; // enable selection host for admissible orders
+		String orderType = "xuandyager"; // set admissible order type
 		
 
 		new PlanetLabRunner(
@@ -52,7 +54,9 @@ public class IqrMu {
 				vmSelectionPolicy,
 				parameter,
 				outputAbstractInCsv,
-				enableFuzzyT2Overload);
+				enableFuzzyT2Overload,
+				admissibleOrders,
+				orderType);
 	}
 
 }

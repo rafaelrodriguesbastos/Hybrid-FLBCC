@@ -34,12 +34,14 @@ public class LrRs {
 		boolean outputToFile = false;
 		String inputFolder = LrRs.class.getClassLoader().getResource("workload/planetlab").getPath();
 		String outputFolder = "output";
-		String workload = "20110412"; // PlanetLab workload - 20110303, 20110306, 20110309, 20110322, 20110325, 20110403, 20110409, 20110411, 20110412 
+		String workload = "20110411"; // PlanetLab workload - 20110303, 20110306, 20110309, 20110322, 20110325, 20110403, 20110409, 20110411, 20110412 
 		String vmAllocationPolicy = "lr"; // Local Regression (LR) VM allocation policy
 		String vmSelectionPolicy = "rs"; // Random Selection (RS) VM selection policy
 		String parameter = "1.2"; //1.2 the safety parameter of the LR policy
 		boolean outputAbstractInCsv = true;  // enable summary recording in csv
-		boolean enableFuzzyT2Overload = true; // enable overload fuzzy type 2 detection
+		boolean enableFuzzyT2Overload = false; // enable overload fuzzy type 2 detection
+		boolean admissibleOrders = true; // enable selection host for admissible orders
+		String orderType = "xuandyager"; // set admissible order type
 
 		new PlanetLabRunner(
 				enableOutput,
@@ -51,7 +53,9 @@ public class LrRs {
 				vmSelectionPolicy,
 				parameter,
                 outputAbstractInCsv,
-                enableFuzzyT2Overload);
+                enableFuzzyT2Overload,
+                admissibleOrders,
+                orderType);
 	}
 
 }

@@ -30,6 +30,8 @@ public class PlanetLabRunnerConsole {
 		boolean outputToFile = true;
 		boolean outputAbstractInCsv = false;
 		boolean enableFuzzyT2Overload = true; 
+		boolean admissibleOrders = true; // enable selection host for admissible orders
+		String orderType = "xuandyager"; // set admissible order type
 		
 		if (args[0].equals("1")) {
 			enableOutput = true;
@@ -57,7 +59,9 @@ public class PlanetLabRunnerConsole {
 				vmSelectionPolicy,
 				parameter,
 				outputAbstractInCsv,
-				enableFuzzyT2Overload);
+				enableFuzzyT2Overload,
+				admissibleOrders,
+				orderType);
 	}
 
 }

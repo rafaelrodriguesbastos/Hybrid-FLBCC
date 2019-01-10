@@ -46,6 +46,9 @@ public class Type2FuzzyLogicEvaluation
     private double inCC;
     private double inRam;
     private double levelOfuse;
+    
+    private double OutputXValue;
+    private double OutputYValue;
        
            
     public Type2FuzzyLogicEvaluation()
@@ -213,7 +216,7 @@ public class Type2FuzzyLogicEvaluation
     
     // isOverOrUnder: 1 = Overload; 2 = Underload
     // isTypeObjective: 1 = Performance; 2 = Energy; 3 = Hibridy
-    public Type2FuzzyLogicEvaluation(double inCP, double inCC, double inRam, boolean plotMF, int isOverOrUnder, int isTypeObjective) {
+    public Type2FuzzyLogicEvaluation(double inCP, double inCC, double inRam, boolean plotMF, int isOverOrUnder, int isTypeObjective, boolean IntervalOutputType) {
 		super();
 		this.inCP = inCP;
 		this.inCC = inCC;
@@ -377,226 +380,23 @@ public class Type2FuzzyLogicEvaluation
             rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, smallCC, smallRAM}, highUtilization));
             
         }
-/*        
-        // Versao 1 da base de regras
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, smallCC, smallRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, smallCC, averageRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, smallCC, highRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, bigCC, smallRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, bigCC, averageRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, bigCC, highRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, averageCC, smallRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, averageCC, averageRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, averageCC, highRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, smallCC, smallRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, smallCC, averageRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, smallCC, highRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, bigCC, smallRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, bigCC, averageRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, bigCC, highRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, averageCC, smallRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, averageCC, averageRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, averageCC, highRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, smallCC, smallRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, smallCC, averageRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, smallCC, highRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, bigCC, smallRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, bigCC, averageRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, bigCC, highRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, averageCC, smallRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, averageCC, averageRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, averageCC, highRAM}, lowUtilization));
-*/ 
+       
+       
         
-        
-/*     
-      // Versão 2 da base de regras
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, smallCC, smallRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, smallCC, averageRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, smallCC, highRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, bigCC, smallRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, bigCC, averageRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, bigCC, highRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, averageCC, smallRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, averageCC, averageRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, averageCC, highRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, smallCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, smallCC, averageRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, smallCC, highRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, bigCC, smallRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, bigCC, averageRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, bigCC, highRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, averageCC, smallRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, averageCC, averageRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, averageCC, highRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, smallCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, smallCC, averageRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, smallCC, highRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, bigCC, smallRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, bigCC, averageRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, bigCC, highRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, averageCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, averageCC, averageRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, averageCC, highRAM}, lowUtilization));
-*/
-        
-/*
-        // Versao 3 da base de regras
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, smallCC, smallRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, smallCC, averageRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, smallCC, highRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, bigCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, bigCC, averageRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, bigCC, highRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, averageCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, averageCC, averageRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, averageCC, highRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, smallCC, smallRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, smallCC, averageRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, smallCC, highRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, bigCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, bigCC, averageRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, bigCC, highRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, averageCC, smallRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, averageCC, averageRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, averageCC, highRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, smallCC, smallRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, smallCC, averageRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, smallCC, highRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, bigCC, smallRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, bigCC, averageRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, bigCC, highRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, averageCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, averageCC, averageRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, averageCC, highRAM}, lowUtilization));
-*/
-        
-/*
-     //Versao 4 base de regras (economizou energia, porem perdeu no SLA)
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, smallCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, smallCC, averageRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, smallCC, highRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, bigCC, smallRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, bigCC, averageRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, bigCC, highRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, averageCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, averageCC, averageRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, averageCC, highRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, smallCC, smallRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, smallCC, averageRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, smallCC, highRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, bigCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, bigCC, averageRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, bigCC, highRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, averageCC, smallRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, averageCC, averageRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, averageCC, highRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, smallCC, smallRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, smallCC, averageRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, smallCC, highRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, bigCC, smallRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, bigCC, averageRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, bigCC, highRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, averageCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, averageCC, averageRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, averageCC, highRAM}, lowUtilization));
-    */      
- 
- 
-/*      Versão 5 (Diminuiu o ganho de energia, e manteve o SLA em 10,36) 
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, smallCC, smallRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, smallCC, averageRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, smallCC, highRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, bigCC, smallRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, bigCC, averageRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, bigCC, highRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, averageCC, smallRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, averageCC, averageRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, averageCC, highRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, smallCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, smallCC, averageRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, smallCC, highRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, bigCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, bigCC, averageRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, bigCC, highRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, averageCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, averageCC, averageRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, averageCC, highRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, smallCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, smallCC, averageRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, smallCC, highRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, bigCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, bigCC, averageRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, bigCC, highRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, averageCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, averageCC, averageRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, averageCC, highRAM}, lowUtilization));
-
- */
-    
-        
-  /*      
-        // Energy consumption: 188,14 kWh
-        // Overall SLA violation: 13,43%
-        // Average SLA violation: 16,46%
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, smallCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, smallCC, averageRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, smallCC, highRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, bigCC, smallRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, bigCC, averageRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, bigCC, highRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, averageCC, smallRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, averageCC, averageRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, averageCC, highRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, smallCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, smallCC, averageRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, smallCC, highRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, bigCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, bigCC, averageRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, bigCC, highRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, averageCC, smallRAM}, highUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, averageCC, averageRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, averageCC, highRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, smallCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, smallCC, averageRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, smallCC, highRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, bigCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, bigCC, averageRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, bigCC, highRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, averageCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, averageCC, averageRAM}, lowUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, averageCC, highRAM}, lowUtilization));
-*/
-        
-/*
-        // Energy consumption: 254,66 kWh
-        // Average SLA violation: 9,84%
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, smallCC, smallRAM}, highUtilization));//
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, smallCC, averageRAM}, averageUtilization));//
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, bigCC, averageRAM}, lowUtilization));//
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, averageCC, smallRAM}, averageUtilization));//
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, averageCC, highRAM}, lowUtilization));//
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, smallCC, highRAM}, lowUtilization));//
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, bigCC, averageRAM}, lowUtilization));//
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, bigCC, highRAM}, lowUtilization));//
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, averageCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, smallCC, smallRAM}, highUtilization));//
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, smallCC, averageRAM}, averageUtilization));//
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, smallCC, highRAM}, lowUtilization));//
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, bigCC, smallRAM}, averageUtilization));
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, bigCC, averageRAM}, lowUtilization));//
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, bigCC, highRAM}, lowUtilization));//
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, smallCC, smallRAM}, highUtilization));//
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{limitedCP, smallCC, averageRAM}, highUtilization));//
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{reasonableCP, smallCC, highRAM}, averageUtilization));//
-        rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, smallCC, smallRAM}, highUtilization));//
- */       
         //get some outputs
         // getPriority(inCP, inCC, inRAM);
         //getPriority(8.0, 2.0, 9.0);
         //getPriority(1.0, 8.0, 3.0);
         
-        setLevelOfUsePriority(getLevelOfUse(getInCP(), getInCC(), getInRam(),0));
+        // OutputType = 1 saída em valor único
+        // se não saída em intervalo
+        if(!IntervalOutputType) {
+        	setLevelOfUsePriority(getLevelOfUse(getInCP(), getInCC(), getInRam(),0));	
+        }else {
+        	getLevelRangeInUse(getInCP(), getInCC(), getInRam(),0);
+        }
+        
+        
         
         
                 
@@ -740,8 +540,53 @@ public class Type2FuzzyLogicEvaluation
             System.out.println(centroidTipXValues+" at y= "+centroidTipYValues);     
          */   
     	// System.out.println("Prioridade: "+rulebase.evaluate(tipoDefuzzificacao).get(U));
+    	
             return rulebase.evaluate(tipoDefuzzificacao).get(U);
     }
+    
+    public void getLevelRangeInUse(double inCP, double inCC, double inRAM, int tipoDefuzzificacao)
+    {
+        //first, set the inputs
+    	
+    	CP.setInput(inCP);
+    	CC.setInput(inCC);
+    	RAM.setInput(inRAM);
+    	
+   	
+        /*
+        //now execute the FLS and print output
+        System.out.println("The CP was: "+CP.getInput());
+        System.out.println("The CC was: "+CC.getInput());
+        System.out.println("The RAM was: "+RAM.getInput());
+        System.out.println("Using center of sets type reduction, the IT2 FLS recommends a "
+                + "priority of: "+rulebase.evaluate(0).get(P));  
+        System.out.println("Using centroid type reduction, the IT2 FLS recommends a "
+                + "priority of: "+rulebase.evaluate(1).get(P));
+        
+        //show the output of the raw centroids
+        System.out.println("Centroid of the output for Priority (based on centroid type reduction):");
+        TreeMap<Output, Object[]> centroid = rulebase.evaluateGetCentroid(1);
+        Object[] centroidTip = centroid.get(P);
+        Tuple centroidTipXValues = (Tuple)centroidTip[0];
+        double centroidTipYValues = ((Double)centroidTip[1]);
+            System.out.println(centroidTipXValues+" at y= "+centroidTipYValues);     
+         */   
+    	// System.out.println("Prioridade: "+rulebase.evaluate(tipoDefuzzificacao).get(U));
+    	
+    	TreeMap<Output, Object[]> centroid = rulebase.evaluateGetCentroid(tipoDefuzzificacao);
+        Object[] centroidTip = centroid.get(U);
+        Tuple centroidTipXValues = (Tuple)centroidTip[0];
+        //this.OutputXValue = Double.parseDouble(centroidTipXValues.toString());
+        this.OutputXValue = centroidTipXValues.getLeft();
+
+        //double centroidTipYValues = ((Double)centroidTip[1]);
+        this.OutputYValue = centroidTipXValues.getRight();
+        
+       // System.out.println("XValue: "+this.OutputXValue+" YValue: "+this.OutputYValue);  
+         
+    }
+    
+    
     
     
     private void plotMFs(String name, IntervalT2MF_Interface[] sets, int discretizationLevel)
@@ -820,7 +665,7 @@ public class Type2FuzzyLogicEvaluation
     
 	//aqui ini
     
-    public double getLevelOfUse(Host host, boolean plotMF, int isOverOrUnder, int isTypeObjective, List<? extends Host> hostList) {
+    public double getLevelOfUse(Host host, boolean plotMF, int isOverOrUnder, int isTypeObjective, List<? extends Host> hostList, boolean IntervalOutputType) {
 		PowerHostUtilizationHistory _host = (PowerHostUtilizationHistory) host;
 		
 		//double cpAvailable = _host.getMaxAvailableMips();
@@ -858,13 +703,37 @@ public class Type2FuzzyLogicEvaluation
 		ccStandartScale = (10*_host.getUtilizationOfBw())/minCCHost;
 		ramStandartScale = (_host.getUtilizationOfRam()/maxRamHost)*10;
 		
-		Type2FuzzyLogicEvaluation it2 = new Type2FuzzyLogicEvaluation(cpStandartScale,ccStandartScale,ramStandartScale, plotMF, isOverOrUnder, isTypeObjective);		
+		Type2FuzzyLogicEvaluation it2 = new Type2FuzzyLogicEvaluation(cpStandartScale,ccStandartScale,ramStandartScale, plotMF, isOverOrUnder, isTypeObjective, IntervalOutputType);		
 		
 		// System.out.println("maxCPHost: #"+maxCPHost+" minCCHost: #"+minCCHost+ " maxRamHost: #"+maxRamHost + " Level of Use #"+it2.getLevelOfUse());
 		//System.out.println("cpStandartScale: #"+cpStandartScale+" ccStandartScale: #"+ccStandartScale+ " ramStandartScale: #"+ramStandartScale+ " it2.getLevelOfUse() #"+(it2.getLevelOfUse()/10));
 		
 		return it2.getLevelOfUse();
 		
+	}
+
+
+
+	public double getOutputXValue() {
+		return OutputXValue;
+	}
+
+
+
+	public void setOutputXValue(double outputXValue) {
+		OutputXValue = outputXValue;
+	}
+
+
+
+	public double getOutputYValue() {
+		return OutputYValue;
+	}
+
+
+
+	public void setOutputYValue(double outputYValue) {
+		OutputYValue = outputYValue;
 	}
     
    // aqui fim

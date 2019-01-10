@@ -38,8 +38,10 @@ public class IqrMmt {
 		String vmAllocationPolicy = "iqr"; // Inter Quartile Range (IQR) VM allocation policy
 		String vmSelectionPolicy = "mmt"; // Minimum Migration Time (MMT) VM selection policy
 		String parameter = "1.5"; //3.2 1.5 the safety parameter of the IQR policy
-		boolean outputAbstractInCsv = false;  // enable summary recording in csv
-		boolean enableFuzzyT2Overload = true; // enable overload fuzzy type 2 detection
+		boolean outputAbstractInCsv = true;  // enable summary recording in csv
+		boolean enableFuzzyT2Overload = false; // enable overload fuzzy type 2 detection
+		boolean admissibleOrders = true; // enable selection host for admissible orders
+		String orderType = "xuandyager"; // set admissible order type
 
 		new PlanetLabRunner(
 				enableOutput,
@@ -51,7 +53,9 @@ public class IqrMmt {
 				vmSelectionPolicy,
 				parameter,
 				outputAbstractInCsv,
-				enableFuzzyT2Overload);
+				enableFuzzyT2Overload,
+				admissibleOrders,
+				orderType);
 	}
 
 }

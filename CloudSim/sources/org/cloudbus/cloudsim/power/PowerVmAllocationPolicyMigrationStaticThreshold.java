@@ -37,6 +37,11 @@ public class PowerVmAllocationPolicyMigrationStaticThreshold extends PowerVmAllo
 	private double utilizationThreshold = 0.9;
 
 	private boolean enableFuzzyT2Overload;
+	
+	private boolean admissibleOrders;
+	private String orderType;
+	
+	
 
 	/**
 	 * Instantiates a new power vm allocation policy migration mad.
@@ -46,10 +51,12 @@ public class PowerVmAllocationPolicyMigrationStaticThreshold extends PowerVmAllo
 	 * @param utilizationThreshold the utilization threshold
 	 */
 	public PowerVmAllocationPolicyMigrationStaticThreshold(List<? extends Host> hostList,
-			PowerVmSelectionPolicy vmSelectionPolicy, double utilizationThreshold, boolean enableFuzzyT2Overload) {
-		super(hostList, vmSelectionPolicy);
+			PowerVmSelectionPolicy vmSelectionPolicy, double utilizationThreshold, boolean enableFuzzyT2Overload, boolean admissibleOrders, String orderType) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType);
 		setUtilizationThreshold(utilizationThreshold);
 		setEnableFuzzyT2Overload(enableFuzzyT2Overload);
+		setAdmissibleOrders(admissibleOrders);
+		setOrderType(orderType);
 	}
 
 	/**
@@ -147,7 +154,7 @@ public class PowerVmAllocationPolicyMigrationStaticThreshold extends PowerVmAllo
 		ramStandartScale = (_host.getUtilizationOfRam() / maxRamHost) * 10;
 
 		Type2FuzzyLogicEvaluation it2 = new Type2FuzzyLogicEvaluation(cpStandartScale, ccStandartScale, ramStandartScale, plotMF,
-				isOverOrUnder, isTypeObjective);
+				isOverOrUnder, isTypeObjective, false);
 
 		// System.out.println("maxCPHost: #"+maxCPHost+" minCCHost: #"+minCCHost+ "
 		// maxRamHost: #"+maxRamHost + " Level of Use #"+it2.getLevelOfUse());
@@ -184,5 +191,23 @@ public class PowerVmAllocationPolicyMigrationStaticThreshold extends PowerVmAllo
 	public void setEnableFuzzyT2Overload(boolean enableFuzzyT2Overload) {
 		this.enableFuzzyT2Overload = enableFuzzyT2Overload;
 	}
+
+	public boolean isAdmissibleOrders() {
+		return admissibleOrders;
+	}
+
+	public void setAdmissibleOrders(boolean admissibleOrders) {
+		this.admissibleOrders = admissibleOrders;
+	}
+
+	public String getOrderType() {
+		return orderType;
+	}
+
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+	}
+	
+	
 
 }

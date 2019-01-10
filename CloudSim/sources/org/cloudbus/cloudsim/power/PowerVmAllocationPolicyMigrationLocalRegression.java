@@ -38,7 +38,7 @@ public class PowerVmAllocationPolicyMigrationLocalRegression extends PowerVmAllo
 
 	/** The fallback vm allocation policy. */
 	private PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy;
-
+	
 	/**
 	 * Instantiates a new power vm allocation policy migration local regression.
 	 * 
@@ -54,8 +54,10 @@ public class PowerVmAllocationPolicyMigrationLocalRegression extends PowerVmAllo
 			double safetyParameter,
 			double schedulingInterval,
 			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy,
-			double utilizationThreshold) {
-		super(hostList, vmSelectionPolicy);
+			double utilizationThreshold,
+			boolean admissibleOrders,
+			String orderType) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType);
 		setSafetyParameter(safetyParameter);
 		setSchedulingInterval(schedulingInterval);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
@@ -74,8 +76,10 @@ public class PowerVmAllocationPolicyMigrationLocalRegression extends PowerVmAllo
 			PowerVmSelectionPolicy vmSelectionPolicy,
 			double safetyParameter,
 			double schedulingInterval,
-			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy) {
-		super(hostList, vmSelectionPolicy);
+			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy,
+			boolean admissibleOrders,
+			String orderType) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType);
 		setSafetyParameter(safetyParameter);
 		setSchedulingInterval(schedulingInterval);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
@@ -185,5 +189,6 @@ public class PowerVmAllocationPolicyMigrationLocalRegression extends PowerVmAllo
 	public void setSafetyParameter(double safetyParameter) {
 		this.safetyParameter = safetyParameter;
 	}
+
 
 }

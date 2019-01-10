@@ -37,7 +37,9 @@ public class PowerVmAllocationPolicyMigrationInterQuartileRange extends
 
 	/** The fallback vm allocation policy. */
 	private PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy;
-
+	
+	
+	
 	/**
 	 * Instantiates a new power vm allocation policy migration mad.
 	 * 
@@ -51,10 +53,14 @@ public class PowerVmAllocationPolicyMigrationInterQuartileRange extends
 			PowerVmSelectionPolicy vmSelectionPolicy,
 			double safetyParameter,
 			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy,
-			double utilizationThreshold) {
-		super(hostList, vmSelectionPolicy);
+			double utilizationThreshold,
+			boolean enableFuzzyT2Overload,
+			boolean admissibleOrders,
+			String orderType) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType);
 		setSafetyParameter(safetyParameter);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
+		
 	}
 
 	/**
@@ -68,10 +74,14 @@ public class PowerVmAllocationPolicyMigrationInterQuartileRange extends
 			List<? extends Host> hostList,
 			PowerVmSelectionPolicy vmSelectionPolicy,
 			double safetyParameter,
-			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy) {
-		super(hostList, vmSelectionPolicy);
+			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy,
+			boolean enableFuzzyT2Overload,
+			boolean admissibleOrders, 
+			String orderType) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType);
 		setSafetyParameter(safetyParameter);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
+		
 	}
 
 	/**
@@ -153,5 +163,7 @@ public class PowerVmAllocationPolicyMigrationInterQuartileRange extends
 	public PowerVmAllocationPolicyMigrationAbstract getFallbackVmAllocationPolicy() {
 		return fallbackVmAllocationPolicy;
 	}
+
+	
 
 }

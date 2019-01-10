@@ -6,6 +6,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import org.cloudbus.cloudsim.Cloudlet;
 import org.cloudbus.cloudsim.DatacenterBroker;
 import org.cloudbus.cloudsim.Log;
@@ -58,8 +60,14 @@ public abstract class RunnerAbstract {
 	/** The host list. */
 	protected static List<PowerHost> hostList;
 	
-	/** The host list. */
+	/** The fuzzy type-2 overload detection. */
 	protected static boolean enableFuzzyT2Overload;
+	
+	protected static boolean admissibleOrders;
+	
+	protected static String orderType;
+	
+	
 	
 
 	/**
@@ -84,7 +92,9 @@ public abstract class RunnerAbstract {
 			String vmSelectionPolicy,
 			String parameter,
 			boolean outputAbstractInCsv,
-			boolean enableFuzzyT2Overload) {
+			boolean enableFuzzyT2Overload,
+			boolean admissibleOrders,
+			String orderType) {
 		try {
 			initLogOutput(
 					enableOutput,
@@ -107,11 +117,21 @@ public abstract class RunnerAbstract {
 			strFuzzyExperimentName = "it2fuzzy";
 		}
 		
+		if (admissibleOrders) {
+			
+			if (enableFuzzyT2Overload)
+				strFuzzyExperimentName = strFuzzyExperimentName+"_admissible_orders_"+orderType;	
+			else
+				strFuzzyExperimentName = strFuzzyExperimentName+"admissible_orders_"+orderType;
+			
+			
+		}
+		
 		init(inputFolder + "/" + workload);
 		start(
 				getExperimentName(workload, vmAllocationPolicy, vmSelectionPolicy, parameter, strFuzzyExperimentName), //, "it2fuzzy"
 				outputFolder,
-				getVmAllocationPolicy(vmAllocationPolicy, vmSelectionPolicy, parameter, enableFuzzyT2Overload), outputAbstractInCsv);
+				getVmAllocationPolicy(vmAllocationPolicy, vmSelectionPolicy, parameter, enableFuzzyT2Overload, admissibleOrders, orderType), outputAbstractInCsv);
 	}
 
 	/**
@@ -244,7 +264,9 @@ public abstract class RunnerAbstract {
 			String vmAllocationPolicyName,
 			String vmSelectionPolicyName,
 			String parameterName,
-			boolean enableFuzzyT2Overload) {
+			boolean enableFuzzyT2Overload,
+			boolean admissibleOrders,
+			String orderType) {
 		VmAllocationPolicy vmAllocationPolicy = null;
 		PowerVmSelectionPolicy vmSelectionPolicy = null;
 		if (!vmSelectionPolicyName.isEmpty()) {
@@ -255,57 +277,79 @@ public abstract class RunnerAbstract {
 			parameter = Double.valueOf(parameterName);
 		}
 		if (vmAllocationPolicyName.equals("iqr")) {
+			
+			//JOptionPane.showMessageDialog(null, "Admissible order: "+ admissibleOrders+" Order Type: "+ orderType);
+			
 			PowerVmAllocationPolicyMigrationAbstract fallbackVmSelectionPolicy = new PowerVmAllocationPolicyMigrationStaticThreshold(
 					hostList,
 					vmSelectionPolicy,
 					0.7,
-					enableFuzzyT2Overload);
+					enableFuzzyT2Overload,
+					admissibleOrders,
+					orderType);
 			vmAllocationPolicy = new PowerVmAllocationPolicyMigrationInterQuartileRange(
 					hostList,
 					vmSelectionPolicy, 
 					parameter,
-					fallbackVmSelectionPolicy);
+					fallbackVmSelectionPolicy,
+					enableFuzzyT2Overload,
+					admissibleOrders,
+					orderType);
 		}else if (vmAllocationPolicyName.equals("mad")) {
 			PowerVmAllocationPolicyMigrationAbstract fallbackVmSelectionPolicy = new PowerVmAllocationPolicyMigrationStaticThreshold(
 					hostList,
 					vmSelectionPolicy,
 					0.7,
-					enableFuzzyT2Overload);
+					enableFuzzyT2Overload, 
+					admissibleOrders,
+					orderType);
 			vmAllocationPolicy = new PowerVmAllocationPolicyMigrationMedianAbsoluteDeviation(
 					hostList,
 					vmSelectionPolicy,
 					parameter,
-					fallbackVmSelectionPolicy);
+					fallbackVmSelectionPolicy,
+					admissibleOrders,
+					orderType);
 		} else if (vmAllocationPolicyName.equals("lr")) {
 			PowerVmAllocationPolicyMigrationAbstract fallbackVmSelectionPolicy = new PowerVmAllocationPolicyMigrationStaticThreshold(
 					hostList,
 					vmSelectionPolicy,
 					0.7,
-					enableFuzzyT2Overload);
+					enableFuzzyT2Overload,
+					admissibleOrders,
+					orderType);
 			vmAllocationPolicy = new PowerVmAllocationPolicyMigrationLocalRegression(
 					hostList,
 					vmSelectionPolicy,
 					parameter,
 					Constants.SCHEDULING_INTERVAL,
-					fallbackVmSelectionPolicy);
+					fallbackVmSelectionPolicy,
+					admissibleOrders,
+					orderType);
 		} else if (vmAllocationPolicyName.equals("lrr")) {
 			PowerVmAllocationPolicyMigrationAbstract fallbackVmSelectionPolicy = new PowerVmAllocationPolicyMigrationStaticThreshold(
 					hostList,
 					vmSelectionPolicy,
 					0.7,
-					enableFuzzyT2Overload);
+					enableFuzzyT2Overload,
+					admissibleOrders,
+					orderType);
 			vmAllocationPolicy = new PowerVmAllocationPolicyMigrationLocalRegressionRobust(
 					hostList,
 					vmSelectionPolicy,
 					parameter,
 					Constants.SCHEDULING_INTERVAL,
-					fallbackVmSelectionPolicy);
+					fallbackVmSelectionPolicy,
+					admissibleOrders,
+					orderType);
 		} else if (vmAllocationPolicyName.equals("thr")) {
 			vmAllocationPolicy = new PowerVmAllocationPolicyMigrationStaticThreshold(
 					hostList,
 					vmSelectionPolicy,
 					parameter,
-					enableFuzzyT2Overload);
+					enableFuzzyT2Overload,
+					admissibleOrders,
+					orderType);
 		} else if (vmAllocationPolicyName.equals("dvfs")) {
 			vmAllocationPolicy = new PowerVmAllocationPolicySimple(hostList);
 			
@@ -358,5 +402,7 @@ public abstract class RunnerAbstract {
 		return enableOutput;
 	}
 
+	
+	
 
 }

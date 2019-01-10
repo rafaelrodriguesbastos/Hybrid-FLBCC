@@ -41,7 +41,8 @@ public class Dvfs {
 		String parameter = "";
 		boolean outputAbstractInCsv = false;  // enable summary recording in csv 
 		boolean enableFuzzyT2Overload = true; // enable overload fuzzy type 2 detection
-
+		boolean admissibleOrders = true; // enable selection host for admissible orders
+		String orderType = "xuandyager"; // set admissible order type
 		new PlanetLabRunner(
 				enableOutput,
 				outputToFile,
@@ -52,7 +53,9 @@ public class Dvfs {
 				vmSelectionPolicy,
 				parameter,
 				outputAbstractInCsv,
-				enableFuzzyT2Overload);
+				enableFuzzyT2Overload,
+				admissibleOrders,
+				orderType);
 	}
 
 }

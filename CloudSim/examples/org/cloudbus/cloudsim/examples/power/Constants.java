@@ -23,7 +23,7 @@ public class Constants {
 	public final static boolean ENABLE_OUTPUT = true;
 	public final static boolean OUTPUT_CSV    = false;
 	
-	public final static String ABSTRACT_FILE_NAME = "/log-resumos-execs.csv";
+	public final static String ABSTRACT_FILE_NAME = "/log-resumos-execs-fuzz-ieee-2019.csv";
 
 	public final static double SCHEDULING_INTERVAL = 300;
 	public final static double SIMULATION_LIMIT = 24 * 60 * 60;
@@ -55,15 +55,15 @@ public class Constants {
 	 *   We increase the memory size to enable over-subscription (x4)
 	 */
 	public final static int HOST_TYPES	 = 2;
-	public final static int[] HOST_MIPS	 = { 1860, 2660 };
+	public final static int[] HOST_MIPS	 = { 4520, 4721 }; //1860, 2660 
 	public final static int[] HOST_PES	 = { 2, 2 };
-	public final static int[] HOST_RAM	 = { 4096, 4096 };
+	public final static int[] HOST_RAM	 = { 131072, 393216 }; //131072, 393216
 	public final static int HOST_BW		 = 1000000; // 1 Gbit/s
 	public final static int HOST_STORAGE = 1000000; // 1 GB
 
 	public final static PowerModel[] HOST_POWER = {
 		//new PowerModelSpecPowerHpProLiantMl110G4Xeon3040(),
-		//new PowerModelSpecPowerHpProLiantMl110G5Xeon3075()
+		//new PowerModelSpecPowerHpProLiantMl110G5Xeon3075(),
 		new PowerModelSpecPowerHewlettPackardEnterpriseProLiantDL325(),
 		new PowerModelSpecPowerHewlettPackardEnterpriseProLiantDL385()
 	};

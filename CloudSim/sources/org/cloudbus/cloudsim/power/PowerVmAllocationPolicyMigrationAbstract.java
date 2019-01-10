@@ -18,32 +18,37 @@ import java.util.Set;
 
 import org.cloudbus.cloudsim.Host;
 import org.cloudbus.cloudsim.HostDynamicWorkload;
+import org.cloudbus.cloudsim.HostUseLevel;
 import org.cloudbus.cloudsim.Log;
 import org.cloudbus.cloudsim.Vm;
 import org.cloudbus.cloudsim.core.CloudSim;
 import org.cloudbus.cloudsim.power.lists.PowerVmList;
 import org.cloudbus.cloudsim.util.ExecutionTimeMeasurer;
+import org.cloudbus.cloudsim.util.Type2FuzzyLogicEvaluation;
+
+
 
 /**
- * The class of an abstract power-aware VM allocation policy that dynamically optimizes the VM
- * allocation using migration.
+ * The class of an abstract power-aware VM allocation policy that dynamically
+ * optimizes the VM allocation using migration.
  * 
- * If you are using any algorithms, policies or workload included in the power package, please cite
- * the following paper:
+ * If you are using any algorithms, policies or workload included in the power
+ * package, please cite the following paper:
  * 
- * Anton Beloglazov, and Rajkumar Buyya, "Optimal Online Deterministic Algorithms and Adaptive
- * Heuristics for Energy and Performance Efficient Dynamic Consolidation of Virtual Machines in
- * Cloud Data Centers", Concurrency and Computation: Practice and Experience (CCPE), Volume 24,
- * Issue 13, Pages: 1397-1420, John Wiley & Sons, Ltd, New York, USA, 2012
+ * Anton Beloglazov, and Rajkumar Buyya, "Optimal Online Deterministic
+ * Algorithms and Adaptive Heuristics for Energy and Performance Efficient
+ * Dynamic Consolidation of Virtual Machines in Cloud Data Centers", Concurrency
+ * and Computation: Practice and Experience (CCPE), Volume 24, Issue 13, Pages:
+ * 1397-1420, John Wiley & Sons, Ltd, New York, USA, 2012
  * 
  * @author Anton Beloglazov
  * @since CloudSim Toolkit 3.0
  */
 public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAllocationPolicyAbstract {
 
-	/** The vm selection policy. */ 
+	/** The vm selection policy. */
 	private PowerVmSelectionPolicy vmSelectionPolicy;
- 
+
 	/** The saved allocation. */
 	private final List<Map<String, Object>> savedAllocation = new ArrayList<Map<String, Object>>();
 
@@ -68,21 +73,37 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 	/** The execution time history total. */
 	private final List<Double> executionTimeHistoryTotal = new LinkedList<Double>();
 
-	
-	//private String overloadVerificationType;
-	
+	private double outputXValue;
+
+	private double outputYValue;
+
+	private double maxCPHostOfArchitecture = 2660;
+
+	private double minCCHostOfArchitecture = 1000000;
+
+	private double maxRamHostOfArchitecture = 393216;
+
+	private ArrayList<HostUseLevel> hostUseLevel = new ArrayList<>();
+
+	private boolean admissibleOrders = true;
+
+	private String orderType = "XuAndYager";
+
 	/**
 	 * Instantiates a new power vm allocation policy migration abstract.
 	 * 
-	 * @param hostList the host list
+	 * @param hostList          the host list
 	 * @param vmSelectionPolicy the vm selection policy
 	 */
-	public PowerVmAllocationPolicyMigrationAbstract(
-			List<? extends Host> hostList,
-			PowerVmSelectionPolicy vmSelectionPolicy) {
+	public PowerVmAllocationPolicyMigrationAbstract(List<? extends Host> hostList,
+			PowerVmSelectionPolicy vmSelectionPolicy, boolean admissibleOrders, String orderType) {
 		super(hostList);
 		setVmSelectionPolicy(vmSelectionPolicy);
-		//setOverloadVerificationType(overloadVerificationType);
+		setAdmissibleOrders(admissibleOrders);
+		setOrderType(orderType);
+		// Carrega os melhores valores da aquitetura
+		// getMaxValuesArchicture(getHostList());
+
 	}
 
 	/**
@@ -98,8 +119,7 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 
 		ExecutionTimeMeasurer.start("optimizeAllocationHostSelection");
 		List<PowerHostUtilizationHistory> overUtilizedHosts = getOverUtilizedHosts();
-		getExecutionTimeHistoryHostSelection().add(
-				ExecutionTimeMeasurer.end("optimizeAllocationHostSelection"));
+		getExecutionTimeHistoryHostSelection().add(ExecutionTimeMeasurer.end("optimizeAllocationHostSelection"));
 
 		printOverUtilizedHosts(overUtilizedHosts);
 
@@ -111,10 +131,8 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 
 		Log.printLine("Reallocation of VMs from the over-utilized hosts:");
 		ExecutionTimeMeasurer.start("optimizeAllocationVmReallocation");
-		List<Map<String, Object>> migrationMap = getNewVmPlacement(vmsToMigrate, new HashSet<Host>(
-				overUtilizedHosts));
-		getExecutionTimeHistoryVmReallocation().add(
-				ExecutionTimeMeasurer.end("optimizeAllocationVmReallocation"));
+		List<Map<String, Object>> migrationMap = getNewVmPlacement(vmsToMigrate, new HashSet<Host>(overUtilizedHosts));
+		getExecutionTimeHistoryVmReallocation().add(ExecutionTimeMeasurer.end("optimizeAllocationVmReallocation"));
 		Log.printLine();
 
 		migrationMap.addAll(getMigrationMapFromUnderUtilizedHosts(overUtilizedHosts));
@@ -137,7 +155,8 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 		List<Map<String, Object>> migrationMap = new LinkedList<Map<String, Object>>();
 		List<PowerHost> switchedOffHosts = getSwitchedOffHosts();
 
-		// over-utilized hosts + hosts that are selected to migrate VMs to from over-utilized hosts
+		// over-utilized hosts + hosts that are selected to migrate VMs to from
+		// over-utilized hosts
 		Set<PowerHost> excludedHostsForFindingUnderUtilizedHost = new HashSet<PowerHost>();
 		excludedHostsForFindingUnderUtilizedHost.addAll(overUtilizedHosts);
 		excludedHostsForFindingUnderUtilizedHost.addAll(switchedOffHosts);
@@ -165,7 +184,8 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 			excludedHostsForFindingUnderUtilizedHost.add(underUtilizedHost);
 			excludedHostsForFindingNewVmPlacement.add(underUtilizedHost);
 
-			List<? extends Vm> vmsToMigrateFromUnderUtilizedHost = getVmsToMigrateFromUnderUtilizedHost(underUtilizedHost);
+			List<? extends Vm> vmsToMigrateFromUnderUtilizedHost = getVmsToMigrateFromUnderUtilizedHost(
+					underUtilizedHost);
 			if (vmsToMigrateFromUnderUtilizedHost.isEmpty()) {
 				continue;
 			}
@@ -179,8 +199,7 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 			Log.printLine();
 
 			List<Map<String, Object>> newVmPlacement = getNewVmPlacementFromUnderUtilizedHost(
-					vmsToMigrateFromUnderUtilizedHost,
-					excludedHostsForFindingNewVmPlacement);
+					vmsToMigrateFromUnderUtilizedHost, excludedHostsForFindingNewVmPlacement);
 
 			excludedHostsForFindingUnderUtilizedHost.addAll(extractHostListFromMigrationMap(newVmPlacement));
 
@@ -206,10 +225,136 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 		}
 	}
 
+	
+	
+	public PowerHost getPowerHostBestUseLevel(String strOrderType, ArrayList<HostUseLevel> listHostUseLevel) {
+
+		double tempXValue = 0.0;
+		double tempYValue = 0.0;
+		PowerHost outputHost = null;
+
+		for (int i = 0; i < listHostUseLevel.size(); i++) {
+			// tempHost = listHostUseLevel.get(i).getPowerHost();
+
+			if (strOrderType.equalsIgnoreCase("Lex1")) {
+
+				if ((tempXValue < listHostUseLevel.get(i).getOutputXValue())
+						|| (tempXValue == listHostUseLevel.get(i).getOutputXValue()
+								& tempYValue <= listHostUseLevel.get(i).getOutputYValue())) {
+
+					tempXValue = listHostUseLevel.get(i).getOutputXValue();
+					tempYValue = listHostUseLevel.get(i).getOutputYValue();
+					outputHost = listHostUseLevel.get(i).getPowerHost();
+
+				}
+
+			} else if (strOrderType.equalsIgnoreCase("Lex2")) {
+
+				if ((tempYValue < listHostUseLevel.get(i).getOutputYValue())
+						|| (tempYValue == listHostUseLevel.get(i).getOutputYValue()
+								& tempXValue <= listHostUseLevel.get(i).getOutputXValue())) {
+
+					tempXValue = listHostUseLevel.get(i).getOutputXValue();
+					tempYValue = listHostUseLevel.get(i).getOutputYValue();
+					outputHost = listHostUseLevel.get(i).getPowerHost();
+
+				}
+
+			} else if (strOrderType.equalsIgnoreCase("XuAndYager")) {
+
+				double sumTempXuAndYager = tempXValue + tempYValue;
+				double sumListHostUseLevel = listHostUseLevel.get(i).getOutputXValue()
+						+ listHostUseLevel.get(i).getOutputYValue();
+
+				// System.out.println("sumTempXuAndYager é: "+sumTempXuAndYager+"
+				// sumListHostUseLevel é: "+sumListHostUseLevel);
+
+				double diffTempXuAndYager = tempYValue - tempXValue;
+				double diffListHostUseLevel = listHostUseLevel.get(i).getOutputYValue()
+						- listHostUseLevel.get(i).getOutputXValue();
+
+				if ((sumTempXuAndYager < sumListHostUseLevel) || ((sumTempXuAndYager == sumListHostUseLevel)
+						& (diffTempXuAndYager <= diffListHostUseLevel))) {
+
+					tempXValue = listHostUseLevel.get(i).getOutputXValue();
+					tempYValue = listHostUseLevel.get(i).getOutputYValue();
+					outputHost = listHostUseLevel.get(i).getPowerHost();
+
+				}
+
+			}
+
+		}
+
+		return outputHost;
+	}
+
+
+
+	// boolean plotMF, int isOverOrUnder, int isTypeObjective
+	public ArrayList<HostUseLevel> getLevelRangeInUse(PowerHost host, boolean plotMF, int isOverOrUnder,
+			int isTypeObjective, List<? extends Host> hostList, Vm vm) {
+
+		double minPower = Double.MAX_VALUE;
+		PowerHostUtilizationHistory _host = (PowerHostUtilizationHistory) host;
+		// double cpAvailable = _host.getMaxAvailableMips();
+		// double ccAvailable = _host.getBw() - _host.getUtilizationOfBw();
+		// double ramAvailable = _host.getRam() - _host.getUtilizationOfRam();
+
+		double maxCPHost = this.maxCPHostOfArchitecture;
+		double minCCHost = this.minCCHostOfArchitecture;
+		double maxRamHost = this.maxRamHostOfArchitecture;
+
+		double cpStandartScale = 0;
+		double ccStandartScale = 0;
+		double ramStandartScale = 0;
+
+		cpStandartScale = (_host.getMaxAvailableMips() / maxCPHost) * 10;
+		ccStandartScale = (10 * _host.getUtilizationOfBw()) / minCCHost;
+		ramStandartScale = (_host.getUtilizationOfRam() / maxRamHost) * 10;
+
+		// inicio
+		ArrayList<HostUseLevel> templistHostUseLevel = new ArrayList<>();
+		for (int i = 0; i < hostList.size(); i++) {
+
+			if (host.isSuitableForVm(vm)) {
+				if (getUtilizationOfCpuMips(host) != 0 && isHostOverUtilizedAfterAllocation(host, vm)) {
+					continue;
+				}
+
+				try {
+
+					Type2FuzzyLogicEvaluation it2 = new Type2FuzzyLogicEvaluation(cpStandartScale, ccStandartScale,
+							ramStandartScale, plotMF, isOverOrUnder, isTypeObjective, true);
+
+					setOutputXValue(it2.getOutputXValue());
+					setOutputYValue(it2.getOutputYValue());
+
+					HostUseLevel h = new HostUseLevel();
+					h.setPowerHost(host);
+					h.setOutputXValue(it2.getOutputXValue());
+					h.setOutputYValue(it2.getOutputYValue());
+					templistHostUseLevel.add(h);
+					// this.hostUseLevel.add(h);
+					// hostList.add(h);
+
+
+				} catch (Exception e) {
+				}
+			}
+		}
+
+		// fim
+
+		ArrayList<HostUseLevel> outPuthostList = templistHostUseLevel;
+		return outPuthostList;
+
+	}
+
 	/**
-	 * Find host for vm.
+	 * Find host for vm by Bruno Moura.
 	 * 
-	 * @param vm the vm
+	 * @param vm            the vm
 	 * @param excludedHosts the excluded hosts
 	 * @return the power host
 	 */
@@ -217,7 +362,79 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 		double minPower = Double.MAX_VALUE;
 		PowerHost allocatedHost = null;
 
-		for (PowerHost host : this.<PowerHost> getHostList()) {
+		List<PowerHost> avalableHosts = new LinkedList<PowerHost>();
+
+		ArrayList<HostUseLevel> hostList = null;
+
+		for (PowerHost hs : this.<PowerHost>getHostList()) {
+
+			if (excludedHosts.contains(hs)) {
+				continue;
+			}
+			if (hs.isSuitableForVm(vm)) {
+				if (getUtilizationOfCpuMips(hs) != 0 && isHostOverUtilizedAfterAllocation(hs, vm)) {
+					continue;
+				}
+
+			}
+			avalableHosts.add(hs);
+		}
+
+		
+		
+		for (PowerHost host : this.<PowerHost>getHostList()) {
+
+			if (excludedHosts.contains(host)) {
+				continue;
+			}
+			if (host.isSuitableForVm(vm)) {
+				if (getUtilizationOfCpuMips(host) != 0 && isHostOverUtilizedAfterAllocation(host, vm)) {
+					continue;
+				}
+
+				try {
+					double powerAfterAllocation = getPowerAfterAllocation(host, vm);
+					if (powerAfterAllocation != -1) {
+
+						double powerDiff = powerAfterAllocation - host.getPower();
+						if (powerDiff < minPower) {
+							
+							if (isAdmissibleOrders()) {
+
+								minPower = powerDiff;
+								hostList = getLevelRangeInUse(host, false, 1, 1, avalableHosts, vm);
+								allocatedHost = getPowerHostBestUseLevel(getOrderType(), hostList);
+
+							} else {
+
+								minPower = powerDiff;
+								allocatedHost = host;
+
+							}
+						}
+					}
+				} catch (Exception e) {
+				}
+			}
+		}
+
+
+		return allocatedHost;
+	}
+
+	/**
+	 * Find host for vm by Bruno Moura.
+	 * 
+	 * @param vm            the vm
+	 * @param excludedHosts the excluded hosts
+	 * @return the power host
+	 */
+	public PowerHost findHostForVmBackup(Vm vm, Set<? extends Host> excludedHosts) {
+		double minPower = Double.MAX_VALUE;
+		PowerHost allocatedHost = null;
+
+		for (PowerHost host : this.<PowerHost>getHostList()) {
+
 			if (excludedHosts.contains(host)) {
 				continue;
 			}
@@ -246,7 +463,7 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 	 * Checks if is host over utilized after allocation.
 	 * 
 	 * @param host the host
-	 * @param vm the vm
+	 * @param vm   the vm
 	 * @return true, if is host over utilized after allocation
 	 */
 	protected boolean isHostOverUtilizedAfterAllocation(PowerHost host, Vm vm) {
@@ -290,12 +507,11 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 	/**
 	 * Gets the new vm placement.
 	 * 
-	 * @param vmsToMigrate the vms to migrate
+	 * @param vmsToMigrate  the vms to migrate
 	 * @param excludedHosts the excluded hosts
 	 * @return the new vm placement
 	 */
-	protected List<Map<String, Object>> getNewVmPlacement(
-			List<? extends Vm> vmsToMigrate,
+	protected List<Map<String, Object>> getNewVmPlacement(List<? extends Vm> vmsToMigrate,
 			Set<? extends Host> excludedHosts) {
 		List<Map<String, Object>> migrationMap = new LinkedList<Map<String, Object>>();
 		PowerVmList.sortByCpuUtilization(vmsToMigrate);
@@ -317,12 +533,11 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 	/**
 	 * Gets the new vm placement from under utilized host.
 	 * 
-	 * @param vmsToMigrate the vms to migrate
+	 * @param vmsToMigrate  the vms to migrate
 	 * @param excludedHosts the excluded hosts
 	 * @return the new vm placement from under utilized host
 	 */
-	protected List<Map<String, Object>> getNewVmPlacementFromUnderUtilizedHost(
-			List<? extends Vm> vmsToMigrate,
+	protected List<Map<String, Object>> getNewVmPlacementFromUnderUtilizedHost(List<? extends Vm> vmsToMigrate,
 			Set<? extends Host> excludedHosts) {
 		List<Map<String, Object>> migrationMap = new LinkedList<Map<String, Object>>();
 		PowerVmList.sortByCpuUtilization(vmsToMigrate);
@@ -354,9 +569,7 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 	 * @param overUtilizedHosts the over utilized hosts
 	 * @return the vms to migrate from hosts
 	 */
-	protected
-			List<? extends Vm>
-			getVmsToMigrateFromHosts(List<PowerHostUtilizationHistory> overUtilizedHosts) {
+	protected List<? extends Vm> getVmsToMigrateFromHosts(List<PowerHostUtilizationHistory> overUtilizedHosts) {
 		List<Vm> vmsToMigrate = new LinkedList<Vm>();
 		for (PowerHostUtilizationHistory host : overUtilizedHosts) {
 			while (true) {
@@ -397,7 +610,7 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 	 */
 	protected List<PowerHostUtilizationHistory> getOverUtilizedHosts() {
 		List<PowerHostUtilizationHistory> overUtilizedHosts = new LinkedList<PowerHostUtilizationHistory>();
-		for (PowerHostUtilizationHistory host : this.<PowerHostUtilizationHistory> getHostList()) {
+		for (PowerHostUtilizationHistory host : this.<PowerHostUtilizationHistory>getHostList()) {
 			if (isHostOverUtilized(host)) {
 				overUtilizedHosts.add(host);
 			}
@@ -412,7 +625,7 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 	 */
 	protected List<PowerHost> getSwitchedOffHosts() {
 		List<PowerHost> switchedOffHosts = new LinkedList<PowerHost>();
-		for (PowerHost host : this.<PowerHost> getHostList()) {
+		for (PowerHost host : this.<PowerHost>getHostList()) {
 			if (host.getUtilizationOfCpu() == 0) {
 				switchedOffHosts.add(host);
 			}
@@ -429,19 +642,18 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 	protected PowerHost getUnderUtilizedHost(Set<? extends Host> excludedHosts) {
 		double minUtilization = 1;
 		PowerHost underUtilizedHost = null;
-		
-		for (PowerHost host : this.<PowerHost> getHostList()) {
+
+		for (PowerHost host : this.<PowerHost>getHostList()) {
 			if (excludedHosts.contains(host)) {
 				continue;
 			}
 			double utilization = host.getUtilizationOfCpu();
-			
-		/*	host.getUtilizationOfCpuMips();
-			host.getAvailableMips();
-			host.getBw() */
-			
-			if (utilization > 0 && utilization < minUtilization
-					&& !areAllVmsMigratingOutOrAnyVmMigratingIn(host)) {
+
+			/*
+			 * host.getUtilizationOfCpuMips(); host.getAvailableMips(); host.getBw()
+			 */
+
+			if (utilization > 0 && utilization < minUtilization && !areAllVmsMigratingOutOrAnyVmMigratingIn(host)) {
 				minUtilization = utilization;
 				underUtilizedHost = host;
 			}
@@ -456,7 +668,7 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 	 * @return true, if successful
 	 */
 	protected boolean areAllVmsMigratingOutOrAnyVmMigratingIn(PowerHost host) {
-		for (PowerVm vm : host.<PowerVm> getVmList()) {
+		for (PowerVm vm : host.<PowerVm>getVmList()) {
 			if (!vm.isInMigration()) {
 				return false;
 			}
@@ -478,7 +690,7 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 	/**
 	 * Adds the history value.
 	 * 
-	 * @param host the host
+	 * @param host   the host
 	 * @param metric the metric
 	 */
 	protected void addHistoryEntry(HostDynamicWorkload host, double metric) {
@@ -540,7 +752,7 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 	 * Gets the power after allocation.
 	 * 
 	 * @param host the host
-	 * @param vm the vm
+	 * @param vm   the vm
 	 * 
 	 * @return the power after allocation
 	 */
@@ -556,11 +768,11 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 	}
 
 	/**
-	 * Gets the power after allocation. We assume that load is balanced between PEs. The only
-	 * restriction is: VM's max MIPS < PE's MIPS
+	 * Gets the power after allocation. We assume that load is balanced between PEs.
+	 * The only restriction is: VM's max MIPS < PE's MIPS
 	 * 
 	 * @param host the host
-	 * @param vm the vm
+	 * @param vm   the vm
 	 * 
 	 * @return the power after allocation
 	 */
@@ -571,9 +783,10 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 		double pePotentialUtilization = hostPotentialUtilizationMips / host.getTotalMips();
 		return pePotentialUtilization;
 	}
-	
+
 	/**
-	 * Gets the utilization of the CPU in MIPS for the current potentially allocated VMs.
+	 * Gets the utilization of the CPU in MIPS for the current potentially allocated
+	 * VMs.
 	 *
 	 * @param host the host
 	 *
@@ -681,8 +894,68 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 		return executionTimeHistoryTotal;
 	}
 
+	public double getOutputXValue() {
+		return outputXValue;
+	}
 
+	public void setOutputXValue(double outputXValue) {
+		this.outputXValue = outputXValue;
+	}
 
-	
-	
+	public double getOutputYValue() {
+		return outputYValue;
+	}
+
+	public void setOutputYValue(double outputYValue) {
+		this.outputYValue = outputYValue;
+	}
+
+	public double getMaxCPHostOfArchitecture() {
+		return maxCPHostOfArchitecture;
+	}
+
+	public void setMaxCPHostOfArchitecture(double maxCPHostOfArchitecture) {
+		this.maxCPHostOfArchitecture = maxCPHostOfArchitecture;
+	}
+
+	public double getMinCCHostOfArchitecture() {
+		return minCCHostOfArchitecture;
+	}
+
+	public void setMinCCHostOfArchitecture(double minCCHostOfArchitecture) {
+		this.minCCHostOfArchitecture = minCCHostOfArchitecture;
+	}
+
+	public double getMaxRamHostOfArchitecture() {
+		return maxRamHostOfArchitecture;
+	}
+
+	public void setMaxRamHostOfArchitecture(double maxRamHostOfArchitecture) {
+		this.maxRamHostOfArchitecture = maxRamHostOfArchitecture;
+	}
+
+	public ArrayList<HostUseLevel> getHostUseLevel() {
+		return hostUseLevel;
+	}
+
+	public void setHostUseLevel(ArrayList<HostUseLevel> hostUseLevel) {
+		this.hostUseLevel = hostUseLevel;
+	}
+
+	public boolean isAdmissibleOrders() {
+		return admissibleOrders;
+	}
+
+	public void setAdmissibleOrders(boolean admissibleOrders) {
+		this.admissibleOrders = admissibleOrders;
+	}
+
+	public String getOrderType() {
+		return orderType;
+	}
+
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+	}
+
 }

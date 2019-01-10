@@ -38,6 +38,8 @@ public class PowerVmAllocationPolicyMigrationFuzzy extends PowerVmAllocationPoli
 
 	/** The fallback vm allocation policy. */
 	private PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy;
+	
+	
 
 	/**
 	 * Instantiates a new power vm allocation policy migration mad.
@@ -49,8 +51,9 @@ public class PowerVmAllocationPolicyMigrationFuzzy extends PowerVmAllocationPoli
 	 */
 	public PowerVmAllocationPolicyMigrationFuzzy(List<? extends Host> hostList,
 			PowerVmSelectionPolicy vmSelectionPolicy, double safetyParameter,
-			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy, double utilizationThreshold) {
-		super(hostList, vmSelectionPolicy);
+			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy, double utilizationThreshold,boolean admissibleOrders,
+			String orderType) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType);
 		setSafetyParameter(safetyParameter);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
 	}
@@ -64,8 +67,9 @@ public class PowerVmAllocationPolicyMigrationFuzzy extends PowerVmAllocationPoli
 	 */
 	public PowerVmAllocationPolicyMigrationFuzzy(List<? extends Host> hostList,
 			PowerVmSelectionPolicy vmSelectionPolicy, double safetyParameter,
-			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy) {
-		super(hostList, vmSelectionPolicy);
+			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy, 
+			boolean admissibleOrders, String orderType) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType);
 		setSafetyParameter(safetyParameter);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
 	}
@@ -148,7 +152,7 @@ public class PowerVmAllocationPolicyMigrationFuzzy extends PowerVmAllocationPoli
 		ccStandartScale = (_host.getUtilizationOfBw()/maxCCHost)*10;
 		ramStandartScale = (_host.getUtilizationOfRam()/maxRamHost)*10;
 		
-		Type2FuzzyLogicEvaluation it2 = new Type2FuzzyLogicEvaluation(cpStandartScale,ccStandartScale,ramStandartScale, false, 1, 1);
+		Type2FuzzyLogicEvaluation it2 = new Type2FuzzyLogicEvaluation(cpStandartScale,ccStandartScale,ramStandartScale, false, 1, 1, false);
 		
 		// return utilization > getUtilizationThreshold();
 		//double utililization = it2.getPriority();
@@ -208,5 +212,8 @@ public class PowerVmAllocationPolicyMigrationFuzzy extends PowerVmAllocationPoli
 	public PowerVmAllocationPolicyMigrationAbstract getFallbackVmAllocationPolicy() {
 		return fallbackVmAllocationPolicy;
 	}
+
+	
+	
 
 }

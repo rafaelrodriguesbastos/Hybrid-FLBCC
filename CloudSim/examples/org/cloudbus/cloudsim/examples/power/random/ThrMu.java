@@ -38,6 +38,8 @@ public class ThrMu {
 		String parameter = "0.8"; // the static utilization threshold
 		boolean outputAbstractInCsv = true;  // enable summary recording in csv
 		boolean enableFuzzyT2Overload = true; // enable overload fuzzy type 2 detection
+		boolean admissibleOrders = true; // enable selection host for admissible orders
+		String orderType = "xuandyager"; // set adimissible order type
 
 		new RandomRunner(
 				enableOutput,
@@ -49,7 +51,9 @@ public class ThrMu {
 				vmSelectionPolicy,
 				parameter,
 				outputAbstractInCsv,
-				enableFuzzyT2Overload);
+				enableFuzzyT2Overload,
+				admissibleOrders,
+				orderType);
 	}
 
 }

@@ -2,6 +2,8 @@ package org.cloudbus.cloudsim.examples.power.planetlab;
 
 import java.io.IOException;
 
+import org.apache.commons.math3.ode.ODEIntegrator;
+
 /**
  * A simulation of a heterogeneous power aware data center that applies the Static Threshold (THR)
  * VM allocation policy and Maximum Correlation (MC) VM selection policy.
@@ -40,6 +42,8 @@ public class ThrMc {
 		String parameter = "0.8"; //0.8 the static utilization threshold
 		boolean outputAbstractInCsv = true;  // enable summary recording in csv
 		boolean enableFuzzyT2Overload = true; // enable overload fuzzy type 2 detection
+		boolean admissibleOrders = true; // enable selection host for admissible orders
+		String orderType = "xuandyager"; // set admissible order type
 
 		new PlanetLabRunner(
 				enableOutput,
@@ -51,7 +55,9 @@ public class ThrMc {
 				vmSelectionPolicy,
 				parameter,
 				outputAbstractInCsv,
-				enableFuzzyT2Overload);
+				enableFuzzyT2Overload,
+				admissibleOrders,
+				orderType);
 	}
 
 }

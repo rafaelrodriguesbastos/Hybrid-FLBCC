@@ -39,7 +39,11 @@ public class LrMc {
 		String vmSelectionPolicy = "mc"; // Maximum Correlation (MC) VM selection policy
 		String parameter = "1.2"; //1.2 the safety parameter of the LR policy
 		boolean outputAbstractInCsv = true;  // enable summary recording in csv
-		boolean enableFuzzyT2Overload = true; // enable overload fuzzy type 2 detection
+		boolean enableFuzzyT2Overload = false; // enable overload fuzzy type 2 detection
+		boolean admissibleOrders = true; // enable selection host for admissible orders
+		String orderType = "lex1"; // set admissible order type		
+		
+		
 
 		new PlanetLabRunner(
 				enableOutput,
@@ -51,7 +55,9 @@ public class LrMc {
 				vmSelectionPolicy,
 				parameter,
 				outputAbstractInCsv,
-				enableFuzzyT2Overload);
+				enableFuzzyT2Overload,
+				admissibleOrders,
+				orderType);
 	}
 
 }

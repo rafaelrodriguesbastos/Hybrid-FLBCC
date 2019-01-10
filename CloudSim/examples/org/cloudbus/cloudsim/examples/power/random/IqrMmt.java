@@ -38,6 +38,8 @@ public class IqrMmt {
 		String parameter = "1.5"; // the safety parameter of the IQR policy
 		boolean outputAbstractInCsv = true;  // enable summary recording in csv
 		boolean enableFuzzyT2Overload = true; // enable overload fuzzy type 2 detection
+		boolean admissibleOrders = true; // enable selection host for admissible orders
+		String orderType = "xuandyager"; // set adimissible order type
 
 		new RandomRunner(
 				enableOutput,
@@ -49,7 +51,9 @@ public class IqrMmt {
 				vmSelectionPolicy,
 				parameter,
 				outputAbstractInCsv,
-				enableFuzzyT2Overload);
+				enableFuzzyT2Overload,
+				admissibleOrders,
+				orderType);
 	}
 
 }

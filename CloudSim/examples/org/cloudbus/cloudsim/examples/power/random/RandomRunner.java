@@ -43,7 +43,9 @@ public class RandomRunner extends RunnerAbstract {
 			String vmSelectionPolicy,
 			String parameter,
 			boolean outputAbstractInCsv,
-			boolean enableFuzzyT2Overload) {
+			boolean enableFuzzyT2Overload,
+			boolean admissibleOrders, 
+			String orderType) {
 		super(
 				enableOutput,
 				outputToFile,
@@ -54,7 +56,9 @@ public class RandomRunner extends RunnerAbstract {
 				vmSelectionPolicy,
 				parameter,
 				outputAbstractInCsv,
-				enableFuzzyT2Overload);
+				enableFuzzyT2Overload,
+				admissibleOrders,
+				orderType);
 	}
 
 	/*

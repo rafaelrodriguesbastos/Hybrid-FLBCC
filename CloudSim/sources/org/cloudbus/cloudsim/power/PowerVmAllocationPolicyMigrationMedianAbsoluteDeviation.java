@@ -37,7 +37,8 @@ public class PowerVmAllocationPolicyMigrationMedianAbsoluteDeviation extends
 
 	/** The fallback vm allocation policy. */
 	private PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy;
-
+	
+	
 	/**
 	 * Instantiates a new power vm allocation policy migration mad.
 	 * 
@@ -51,8 +52,10 @@ public class PowerVmAllocationPolicyMigrationMedianAbsoluteDeviation extends
 			PowerVmSelectionPolicy vmSelectionPolicy,
 			double safetyParameter,
 			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy,
-			double utilizationThreshold) {
-		super(hostList, vmSelectionPolicy);
+			double utilizationThreshold,
+			boolean admissibleOrders,
+			String orderType) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType);
 		setSafetyParameter(safetyParameter);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
 	}
@@ -68,8 +71,10 @@ public class PowerVmAllocationPolicyMigrationMedianAbsoluteDeviation extends
 			List<? extends Host> hostList,
 			PowerVmSelectionPolicy vmSelectionPolicy,
 			double safetyParameter,
-			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy) {
-		super(hostList, vmSelectionPolicy);
+			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy,
+			boolean admissibleOrders,
+			String orderType) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType);
 		setSafetyParameter(safetyParameter);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
 	}
@@ -153,5 +158,8 @@ public class PowerVmAllocationPolicyMigrationMedianAbsoluteDeviation extends
 	public PowerVmAllocationPolicyMigrationAbstract getFallbackVmAllocationPolicy() {
 		return fallbackVmAllocationPolicy;
 	}
+
+
+	
 
 }
