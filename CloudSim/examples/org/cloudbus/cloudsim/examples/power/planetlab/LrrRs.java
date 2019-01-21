@@ -21,7 +21,7 @@ import java.io.IOException;
  * @author Anton Beloglazov
  * @since Jan 5, 2012
  */
-public class LrrRs {
+public class LrrRs { 
 
 	/**
 	 * The main method.
@@ -34,14 +34,14 @@ public class LrrRs {
 		boolean outputToFile = false;
 		String inputFolder = LrrRs.class.getClassLoader().getResource("workload/planetlab").getPath();
 		String outputFolder = "output";
-		String workload = "20110322"; // PlanetLab workload - 20110303, 20110306, 20110309, 20110322, 20110325, 20110403, 20110409, 20110411, 20110412 
+		String workload = "20110420"; // PlanetLab workload - 20110303, 20110306, 20110309, 20110322, 20110325, 20110403, 20110409, 20110411, 20110412 
 		String vmAllocationPolicy = "lrr"; // Local Regression Robust (LRR) VM allocation policy
 		String vmSelectionPolicy = "rs"; // Random Selection (RS) VM selection policy
 		String parameter = "1.2"; //1.2 the safety parameter of the LRR policy
 		boolean outputAbstractInCsv = true;  // enable summary recording in csv
 		boolean enableFuzzyT2Overload = false; // enable overload fuzzy type 2 detection
 		boolean admissibleOrders = true; // enable selection host for admissible orders
-		String orderType = "lex2"; // set admissible order type
+		String orderType = "xuandyager"; // set admissible order type
 
 		new PlanetLabRunner(
 				enableOutput,

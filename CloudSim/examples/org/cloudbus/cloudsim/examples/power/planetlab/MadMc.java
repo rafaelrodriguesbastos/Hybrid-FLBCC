@@ -34,12 +34,12 @@ public class MadMc {
 		boolean outputToFile = false;
 		String inputFolder = MadMc.class.getClassLoader().getResource("workload/planetlab").getPath();
 		String outputFolder = "output";
-		String workload = "20110412"; // PlanetLab workload - 20110303, 20110306, 20110309, 20110322, 20110325, 20110403, 20110409, 20110411, 20110412 
+		String workload = "20110322"; // PlanetLab workload - 20110303, 20110306, 20110309, 20110322, 20110325, 20110403, 20110409, 20110411, 20110412 
 		String vmAllocationPolicy = "mad"; // Median Absolute Deviation (MAD) VM allocation policy
 		String vmSelectionPolicy = "mc"; // Maximum Correlation (MC) VM selection policy
 		String parameter = "2.5"; //2.5 the safety parameter of the MAD policy
 		boolean outputAbstractInCsv = true;  // enable summary recording in csv
-		boolean enableFuzzyT2Overload = true; // enable overload fuzzy type 2 detection
+		boolean enableFuzzyT2Overload = false; // enable overload fuzzy type 2 detection
 		boolean admissibleOrders = true; // enable selection host for admissible orders
 		String orderType = "xuandyager"; // set admissible order type
 

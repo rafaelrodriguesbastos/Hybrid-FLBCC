@@ -30,11 +30,11 @@ public class IqrRs {
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	public static void main(String[] args) throws IOException {
-		boolean enableOutput = true;
+		boolean enableOutput = true; 
 		boolean outputToFile = false;
 		String inputFolder = IqrRs.class.getClassLoader().getResource("workload/planetlab").getPath(); 
 		String outputFolder = "output";
-		String workload = "20110322"; // PlanetLab workload - 20110303, 20110306, 20110309, 20110322, 20110325, 20110403, 20110409, 20110411, 20110412
+		String workload = "20110420"; // PlanetLab workload - 20110303, 20110306, 20110309, 20110322, 20110325, 20110403, 20110409, 20110411, 20110412
 		String vmAllocationPolicy = "iqr"; // Inter Quartile Range (IQR) VM allocation policy
 		String vmSelectionPolicy = "rs"; // Random Selection (RS) VM selection policy
 		String parameter = "1.5"; //1.5 the safety parameter of the IQR policy

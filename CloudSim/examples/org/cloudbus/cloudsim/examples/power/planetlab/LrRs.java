@@ -34,7 +34,7 @@ public class LrRs {
 		boolean outputToFile = false;
 		String inputFolder = LrRs.class.getClassLoader().getResource("workload/planetlab").getPath();
 		String outputFolder = "output";
-		String workload = "20110411"; // PlanetLab workload - 20110303, 20110306, 20110309, 20110322, 20110325, 20110403, 20110409, 20110411, 20110412 
+		String workload = "20110420"; // PlanetLab workload - 20110303, 20110306, 20110309, 20110322, 20110325, 20110403, 20110409, 20110411, 20110412 
 		String vmAllocationPolicy = "lr"; // Local Regression (LR) VM allocation policy
 		String vmSelectionPolicy = "rs"; // Random Selection (RS) VM selection policy
 		String parameter = "1.2"; //1.2 the safety parameter of the LR policy

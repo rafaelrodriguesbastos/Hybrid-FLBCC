@@ -34,7 +34,7 @@ public class MadRs {
 		boolean outputToFile = false;
 		String inputFolder = MadRs.class.getClassLoader().getResource("workload/planetlab").getPath();
 		String outputFolder = "output";
-		String workload = "20110325"; // PlanetLab workload - 20110303, 20110306, 20110309, 20110322, 20110325, 20110403, 20110409, 20110411, 20110412
+		String workload = "20110420"; // PlanetLab workload - 20110303, 20110306, 20110309, 20110322, 20110325, 20110403, 20110409, 20110411, 20110412
 		String vmAllocationPolicy = "mad"; // Median Absolute Deviation (MAD) VM allocation policy
 		String vmSelectionPolicy = "rs"; // Random Selection (RS) VM selection policy
 		String parameter = "2.5"; //2.5 the safety parameter of the MAD policy
