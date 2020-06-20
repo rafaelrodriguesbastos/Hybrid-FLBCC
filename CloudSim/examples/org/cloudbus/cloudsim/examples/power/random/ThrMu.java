@@ -38,6 +38,8 @@ public class ThrMu {
 		String parameter = "0.8"; // the static utilization threshold
 		boolean outputAbstractInCsv = true;  // enable summary recording in csv
 		boolean enableFuzzyT2Overload = true; // enable overload fuzzy type 2 detection
+		String typeIntersection = "TL"; //default value empty max(xInf, yInf), min(xSup, ySup)
+		String typeUnion = ""; // default value empty min(xInf, yInf), max(xSup, ySup)
 		boolean admissibleOrders = true; // enable selection host for admissible orders
 		String orderType = "xuandyager"; // set adimissible order type
 
@@ -52,6 +54,8 @@ public class ThrMu {
 				parameter,
 				outputAbstractInCsv,
 				enableFuzzyT2Overload,
+				typeIntersection,
+				typeUnion,
 				admissibleOrders,
 				orderType);
 	}

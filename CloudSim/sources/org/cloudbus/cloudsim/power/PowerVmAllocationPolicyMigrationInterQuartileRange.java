@@ -56,8 +56,10 @@ public class PowerVmAllocationPolicyMigrationInterQuartileRange extends
 			double utilizationThreshold,
 			boolean enableFuzzyT2Overload,
 			boolean admissibleOrders,
-			String orderType) {
-		super(hostList, vmSelectionPolicy, admissibleOrders, orderType);
+			String orderType,
+			String typeIntersection,
+			String typeUnion) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion);
 		setSafetyParameter(safetyParameter);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
 		
@@ -77,8 +79,10 @@ public class PowerVmAllocationPolicyMigrationInterQuartileRange extends
 			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy,
 			boolean enableFuzzyT2Overload,
 			boolean admissibleOrders, 
-			String orderType) {
-		super(hostList, vmSelectionPolicy, admissibleOrders, orderType);
+			String orderType,
+			String typeIntersection,
+			String typeUnion) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion);
 		setSafetyParameter(safetyParameter);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
 		

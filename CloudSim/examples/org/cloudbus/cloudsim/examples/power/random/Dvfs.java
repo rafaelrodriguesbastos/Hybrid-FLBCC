@@ -39,6 +39,8 @@ public class Dvfs {
 		String parameter = "";
 		boolean outputAbstractInCsv = true;  // enable summary recording in csv
 		boolean enableFuzzyT2Overload = true; // enable overload fuzzy type 2 detection
+		String typeIntersection = "TL"; //default value empty max(xInf, yInf), min(xSup, ySup)
+		String typeUnion = ""; // default value empty min(xInf, yInf), max(xSup, ySup)
 		boolean admissibleOrders = true; // enable selection host for admissible orders
 		String orderType = "xuandyager"; // set adimissible order type
 
@@ -53,6 +55,8 @@ public class Dvfs {
 				parameter,
 				outputAbstractInCsv,
 				enableFuzzyT2Overload,
+				typeIntersection,
+				typeUnion,
 				admissibleOrders,
 				orderType);
 	}

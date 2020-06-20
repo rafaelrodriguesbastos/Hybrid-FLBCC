@@ -34,12 +34,14 @@ public class IqrMmt {
 		boolean outputToFile = false;
 		String inputFolder = IqrMmt.class.getClassLoader().getResource("workload/planetlab").getPath();
 		String outputFolder = "output";
-		String workload = "20110412"; // PlanetLab workload - 20110303, 20110306, 20110309, 20110322, 20110325, 20110403, 20110409, 20110411, 20110412
+		String workload = "20110420"; // PlanetLab workload - 20110303, 20110306, 20110309, 20110322, 20110325, 20110403, 20110409, 20110411, 20110412
 		String vmAllocationPolicy = "iqr"; // Inter Quartile Range (IQR) VM allocation policy
 		String vmSelectionPolicy = "mmt"; // Minimum Migration Time (MMT) VM selection policy
 		String parameter = "1.5"; //3.2 1.5 the safety parameter of the IQR policy
 		boolean outputAbstractInCsv = true;  // enable summary recording in csv
 		boolean enableFuzzyT2Overload = false; // enable overload fuzzy type 2 detection
+		String typeIntersection = "TL"; //default value empty max(xInf, yInf), min(xSup, ySup)
+		String typeUnion = ""; // default value empty min(xInf, yInf), max(xSup, ySup)
 		boolean admissibleOrders = true; // enable selection host for admissible orders
 		String orderType = "xuandyager"; // set admissible order type
 
@@ -54,6 +56,8 @@ public class IqrMmt {
 				parameter,
 				outputAbstractInCsv,
 				enableFuzzyT2Overload,
+				typeIntersection,
+				typeUnion,
 				admissibleOrders,
 				orderType);
 	}

@@ -29,7 +29,9 @@ public class PlanetLabRunnerConsole {
 		boolean enableOutput = false;
 		boolean outputToFile = true;
 		boolean outputAbstractInCsv = false;
-		boolean enableFuzzyT2Overload = true; 
+		boolean enableFuzzyT2Overload = true;
+		String typeIntersection = "";
+		String typeUnion = "";
 		boolean admissibleOrders = true; // enable selection host for admissible orders
 		String orderType = "xuandyager"; // set admissible order type
 		
@@ -60,6 +62,8 @@ public class PlanetLabRunnerConsole {
 				parameter,
 				outputAbstractInCsv,
 				enableFuzzyT2Overload,
+				typeIntersection,
+				typeUnion,
 				admissibleOrders,
 				orderType);
 	}

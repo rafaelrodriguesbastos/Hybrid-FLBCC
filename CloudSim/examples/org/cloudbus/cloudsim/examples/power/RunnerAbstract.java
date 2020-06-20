@@ -29,17 +29,17 @@ import org.cloudbus.cloudsim.power.PowerVmSelectionPolicyMinimumMigrationTime;
 import org.cloudbus.cloudsim.power.PowerVmSelectionPolicyMinimumUtilization;
 import org.cloudbus.cloudsim.power.PowerVmSelectionPolicyRandomSelection;
 
-
 /**
  * The Class RunnerAbstract.
  * 
- * If you are using any algorithms, policies or workload included in the power package, please cite
- * the following paper:
+ * If you are using any algorithms, policies or workload included in the power
+ * package, please cite the following paper:
  * 
- * Anton Beloglazov, and Rajkumar Buyya, "Optimal Online Deterministic Algorithms and Adaptive
- * Heuristics for Energy and Performance Efficient Dynamic Consolidation of Virtual Machines in
- * Cloud Data Centers", Concurrency and Computation: Practice and Experience (CCPE), Volume 24,
- * Issue 13, Pages: 1397-1420, John Wiley & Sons, Ltd, New York, USA, 2012
+ * Anton Beloglazov, and Rajkumar Buyya, "Optimal Online Deterministic
+ * Algorithms and Adaptive Heuristics for Energy and Performance Efficient
+ * Dynamic Consolidation of Virtual Machines in Cloud Data Centers", Concurrency
+ * and Computation: Practice and Experience (CCPE), Volume 24, Issue 13, Pages:
+ * 1397-1420, John Wiley & Sons, Ltd, New York, USA, 2012
  * 
  * @author Anton Beloglazov
  */
@@ -59,105 +59,108 @@ public abstract class RunnerAbstract {
 
 	/** The host list. */
 	protected static List<PowerHost> hostList;
-	
+
 	/** The fuzzy type-2 overload detection. */
 	protected static boolean enableFuzzyT2Overload;
-	
+
+	protected static String typeIntersection;
+
+	protected static String typeUnion;
+
 	protected static boolean admissibleOrders;
-	
+
 	protected static String orderType;
-	
-	
-	
 
 	/**
 	 * Run.
 	 * 
-	 * @param enableOutput the enable output
-	 * @param outputToFile the output to file
-	 * @param inputFolder the input folder
-	 * @param outputFolder the output folder
-	 * @param workload the workload
+	 * @param enableOutput       the enable output
+	 * @param outputToFile       the output to file
+	 * @param inputFolder        the input folder
+	 * @param outputFolder       the output folder
+	 * @param workload           the workload
 	 * @param vmAllocationPolicy the vm allocation policy
-	 * @param vmSelectionPolicy the vm selection policy
-	 * @param parameter the parameter
+	 * @param vmSelectionPolicy  the vm selection policy
+	 * @param parameter          the parameter
 	 */
-	public RunnerAbstract(
-			boolean enableOutput,
-			boolean outputToFile,
-			String inputFolder,
-			String outputFolder,
-			String workload,
-			String vmAllocationPolicy,
-			String vmSelectionPolicy,
-			String parameter,
-			boolean outputAbstractInCsv,
-			boolean enableFuzzyT2Overload,
-			boolean admissibleOrders,
-			String orderType) {
+	public RunnerAbstract(boolean enableOutput, boolean outputToFile, String inputFolder, String outputFolder,
+			String workload, String vmAllocationPolicy, String vmSelectionPolicy, String parameter,
+			boolean outputAbstractInCsv, boolean enableFuzzyT2Overload, String typeIntersection, String typeUnion,
+			boolean admissibleOrders, String orderType) {
 		try {
-			initLogOutput(
-					enableOutput,
-					outputToFile,
-					outputFolder,
-					workload,
-					vmAllocationPolicy,
-					vmSelectionPolicy,
-					parameter
-					);
+			initLogOutput(enableOutput, outputToFile, outputFolder, workload, vmAllocationPolicy, vmSelectionPolicy,
+					parameter);
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.exit(0);
 		}
 
-	
 		String strFuzzyExperimentName = "";
-		
-		if (enableFuzzyT2Overload) {
-			strFuzzyExperimentName = "it2fuzzy";
+
+		if ((enableFuzzyT2Overload) || (admissibleOrders)) {
+
+			// strFuzzyExperimentName = "it2fuzzy";
+
+			if (enableFuzzyT2Overload) {
+
+				// strFuzzyExperimentName = strFuzzyExperimentName + "_overload";
+				strFuzzyExperimentName = strFuzzyExperimentName + "it2fuzzy";
+
+			}
+
+			if (admissibleOrders) {
+
+				// if (enableFuzzyT2Overload)
+				// strFuzzyExperimentName =
+				// strFuzzyExperimentName+"_admissible_orders_"+orderType;
+				// else
+				// strFuzzyExperimentName =
+				// strFuzzyExperimentName+"admissible_orders_"+orderType;
+
+				strFuzzyExperimentName = strFuzzyExperimentName + "_admissible_orders_" + orderType;
+
+			}
+
+			if (!typeIntersection.isEmpty())
+				strFuzzyExperimentName = strFuzzyExperimentName + "_intersection_" + typeIntersection.toLowerCase()
+						+ "_and";
+			// else
+			// strFuzzyExperimentName = strFuzzyExperimentName +
+			// "_intersection_"+"max_min_and";
+
+			if (!typeUnion.isEmpty())
+				strFuzzyExperimentName = strFuzzyExperimentName + "_union_" + typeUnion.toLowerCase();
+			// else
+			// strFuzzyExperimentName = strFuzzyExperimentName +"_union_"+"min_max";
+
 		}
-		
-		if (admissibleOrders) {
-			
-			if (enableFuzzyT2Overload)
-				strFuzzyExperimentName = strFuzzyExperimentName+"_admissible_orders_"+orderType;	
-			else
-				strFuzzyExperimentName = strFuzzyExperimentName+"admissible_orders_"+orderType;
-			
-			
-		}
-		
+
 		init(inputFolder + "/" + workload);
-		start(
-				getExperimentName(workload, vmAllocationPolicy, vmSelectionPolicy, parameter, strFuzzyExperimentName), //, "it2fuzzy"
-				outputFolder,
-				getVmAllocationPolicy(vmAllocationPolicy, vmSelectionPolicy, parameter, enableFuzzyT2Overload, admissibleOrders, orderType), outputAbstractInCsv);
+		start(getExperimentName(workload, vmAllocationPolicy, vmSelectionPolicy, parameter, strFuzzyExperimentName), // ,
+																														// "it2fuzzy"
+				outputFolder, getVmAllocationPolicy(vmAllocationPolicy, vmSelectionPolicy, parameter,
+						enableFuzzyT2Overload, typeIntersection, typeUnion, admissibleOrders, orderType),
+				outputAbstractInCsv);
 	}
 
 	/**
 	 * Inits the log output.
 	 * 
-	 * @param enableOutput the enable output
-	 * @param outputToFile the output to file
-	 * @param outputFolder the output folder
-	 * @param workload the workload
+	 * @param enableOutput       the enable output
+	 * @param outputToFile       the output to file
+	 * @param outputFolder       the output folder
+	 * @param workload           the workload
 	 * @param vmAllocationPolicy the vm allocation policy
-	 * @param vmSelectionPolicy the vm selection policy
-	 * @param parameter the parameter
-	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @param vmSelectionPolicy  the vm selection policy
+	 * @param parameter          the parameter
+	 * @throws IOException           Signals that an I/O exception has occurred.
 	 * @throws FileNotFoundException the file not found exception
 	 */
-	protected void initLogOutput(
-			boolean enableOutput,
-			boolean outputToFile,
-			String outputFolder,
-			String workload,
-			String vmAllocationPolicy,
-			String vmSelectionPolicy,
-			String parameter) throws IOException, FileNotFoundException {
+	protected void initLogOutput(boolean enableOutput, boolean outputToFile, String outputFolder, String workload,
+			String vmAllocationPolicy, String vmSelectionPolicy, String parameter)
+			throws IOException, FileNotFoundException {
 		setEnableOutput(enableOutput);
-		
-		
+
 		Log.setDisabled(!isEnableOutput());
 		if (isEnableOutput() && outputToFile) {
 			File folder = new File(outputFolder);
@@ -187,21 +190,19 @@ public abstract class RunnerAbstract {
 	/**
 	 * Starts the simulation.
 	 * 
-	 * @param experimentName the experiment name
-	 * @param outputFolder the output folder
+	 * @param experimentName     the experiment name
+	 * @param outputFolder       the output folder
 	 * @param vmAllocationPolicy the vm allocation policy
 	 */
-	protected void start(String experimentName, String outputFolder, VmAllocationPolicy vmAllocationPolicy, boolean outputAbstractInCsv) {
+	protected void start(String experimentName, String outputFolder, VmAllocationPolicy vmAllocationPolicy,
+			boolean outputAbstractInCsv) {
 		System.out.println("Starting " + experimentName);
 
 		try {
-			PowerDatacenter datacenter = (PowerDatacenter) Helper.createDatacenter(
-					"Datacenter",
-					PowerDatacenter.class,
-					hostList,
-					vmAllocationPolicy);
+			PowerDatacenter datacenter = (PowerDatacenter) Helper.createDatacenter("Datacenter", PowerDatacenter.class,
+					hostList, vmAllocationPolicy);
 
-			datacenter.setDisableMigrations(false); 
+			datacenter.setDisableMigrations(false);
 
 			broker.submitVmList(vmList);
 			broker.submitCloudletList(cloudletList);
@@ -214,13 +215,7 @@ public abstract class RunnerAbstract {
 
 			CloudSim.stopSimulation();
 
-			Helper.printResults(
-					datacenter,
-					vmList,
-					lastClock,
-					experimentName,
-					Constants.OUTPUT_CSV,
-					outputFolder,
+			Helper.printResults(datacenter, vmList, lastClock, experimentName, Constants.OUTPUT_CSV, outputFolder,
 					outputAbstractInCsv);
 
 		} catch (Exception e) {
@@ -256,17 +251,13 @@ public abstract class RunnerAbstract {
 	 * Gets the vm allocation policy.
 	 * 
 	 * @param vmAllocationPolicyName the vm allocation policy name
-	 * @param vmSelectionPolicyName the vm selection policy name
-	 * @param parameterName the parameter name
+	 * @param vmSelectionPolicyName  the vm selection policy name
+	 * @param parameterName          the parameter name
 	 * @return the vm allocation policy
 	 */
-	protected VmAllocationPolicy getVmAllocationPolicy(
-			String vmAllocationPolicyName,
-			String vmSelectionPolicyName,
-			String parameterName,
-			boolean enableFuzzyT2Overload,
-			boolean admissibleOrders,
-			String orderType) {
+	protected VmAllocationPolicy getVmAllocationPolicy(String vmAllocationPolicyName, String vmSelectionPolicyName,
+			String parameterName, boolean enableFuzzyT2Overload, String typeIntersection, String typeUnion,
+			boolean admissibleOrders, String orderType) {
 		VmAllocationPolicy vmAllocationPolicy = null;
 		PowerVmSelectionPolicy vmSelectionPolicy = null;
 		if (!vmSelectionPolicyName.isEmpty()) {
@@ -277,83 +268,44 @@ public abstract class RunnerAbstract {
 			parameter = Double.valueOf(parameterName);
 		}
 		if (vmAllocationPolicyName.equals("iqr")) {
-			
-			//JOptionPane.showMessageDialog(null, "Admissible order: "+ admissibleOrders+" Order Type: "+ orderType);
-			
+
+			// JOptionPane.showMessageDialog(null, "Admissible order: "+ admissibleOrders+"
+			// Order Type: "+ orderType);
+
 			PowerVmAllocationPolicyMigrationAbstract fallbackVmSelectionPolicy = new PowerVmAllocationPolicyMigrationStaticThreshold(
-					hostList,
-					vmSelectionPolicy,
-					0.7,
-					enableFuzzyT2Overload,
-					admissibleOrders,
-					orderType);
-			vmAllocationPolicy = new PowerVmAllocationPolicyMigrationInterQuartileRange(
-					hostList,
-					vmSelectionPolicy, 
-					parameter,
-					fallbackVmSelectionPolicy,
-					enableFuzzyT2Overload,
-					admissibleOrders,
-					orderType);
-		}else if (vmAllocationPolicyName.equals("mad")) {
+					hostList, vmSelectionPolicy, 0.7, enableFuzzyT2Overload, typeIntersection, typeUnion,
+					admissibleOrders, orderType);
+			vmAllocationPolicy = new PowerVmAllocationPolicyMigrationInterQuartileRange(hostList, vmSelectionPolicy,
+					parameter, fallbackVmSelectionPolicy, enableFuzzyT2Overload, admissibleOrders, orderType,
+					typeIntersection, typeUnion);
+		} else if (vmAllocationPolicyName.equals("mad")) {
 			PowerVmAllocationPolicyMigrationAbstract fallbackVmSelectionPolicy = new PowerVmAllocationPolicyMigrationStaticThreshold(
-					hostList,
-					vmSelectionPolicy,
-					0.7,
-					enableFuzzyT2Overload, 
-					admissibleOrders,
-					orderType);
-			vmAllocationPolicy = new PowerVmAllocationPolicyMigrationMedianAbsoluteDeviation(
-					hostList,
-					vmSelectionPolicy,
-					parameter,
-					fallbackVmSelectionPolicy,
-					admissibleOrders,
-					orderType);
+					hostList, vmSelectionPolicy, 0.7, enableFuzzyT2Overload, typeIntersection, typeUnion,
+					admissibleOrders, orderType);
+			vmAllocationPolicy = new PowerVmAllocationPolicyMigrationMedianAbsoluteDeviation(hostList,
+					vmSelectionPolicy, parameter, fallbackVmSelectionPolicy, admissibleOrders, orderType,
+					typeIntersection, typeUnion);
 		} else if (vmAllocationPolicyName.equals("lr")) {
 			PowerVmAllocationPolicyMigrationAbstract fallbackVmSelectionPolicy = new PowerVmAllocationPolicyMigrationStaticThreshold(
-					hostList,
-					vmSelectionPolicy,
-					0.7,
-					enableFuzzyT2Overload,
-					admissibleOrders,
-					orderType);
-			vmAllocationPolicy = new PowerVmAllocationPolicyMigrationLocalRegression(
-					hostList,
-					vmSelectionPolicy,
-					parameter,
-					Constants.SCHEDULING_INTERVAL,
-					fallbackVmSelectionPolicy,
-					admissibleOrders,
-					orderType);
+					hostList, vmSelectionPolicy, 0.7, enableFuzzyT2Overload, typeIntersection, typeUnion,
+					admissibleOrders, orderType);
+			vmAllocationPolicy = new PowerVmAllocationPolicyMigrationLocalRegression(hostList, vmSelectionPolicy,
+					parameter, Constants.SCHEDULING_INTERVAL, fallbackVmSelectionPolicy, admissibleOrders, orderType,
+					typeIntersection, typeUnion);
 		} else if (vmAllocationPolicyName.equals("lrr")) {
 			PowerVmAllocationPolicyMigrationAbstract fallbackVmSelectionPolicy = new PowerVmAllocationPolicyMigrationStaticThreshold(
-					hostList,
-					vmSelectionPolicy,
-					0.7,
-					enableFuzzyT2Overload,
-					admissibleOrders,
-					orderType);
-			vmAllocationPolicy = new PowerVmAllocationPolicyMigrationLocalRegressionRobust(
-					hostList,
-					vmSelectionPolicy,
-					parameter,
-					Constants.SCHEDULING_INTERVAL,
-					fallbackVmSelectionPolicy,
-					admissibleOrders,
-					orderType);
+					hostList, vmSelectionPolicy, 0.7, enableFuzzyT2Overload, typeIntersection, typeUnion,
+					admissibleOrders, orderType);
+			vmAllocationPolicy = new PowerVmAllocationPolicyMigrationLocalRegressionRobust(hostList, vmSelectionPolicy,
+					parameter, Constants.SCHEDULING_INTERVAL, fallbackVmSelectionPolicy, admissibleOrders, orderType,
+					typeIntersection, typeUnion);
 		} else if (vmAllocationPolicyName.equals("thr")) {
-			vmAllocationPolicy = new PowerVmAllocationPolicyMigrationStaticThreshold(
-					hostList,
-					vmSelectionPolicy,
-					parameter,
-					enableFuzzyT2Overload,
-					admissibleOrders,
-					orderType);
+			vmAllocationPolicy = new PowerVmAllocationPolicyMigrationStaticThreshold(hostList, vmSelectionPolicy,
+					parameter, enableFuzzyT2Overload, typeIntersection, typeUnion, admissibleOrders, orderType);
 		} else if (vmAllocationPolicyName.equals("dvfs")) {
 			vmAllocationPolicy = new PowerVmAllocationPolicySimple(hostList);
-			
-		}else {
+
+		} else {
 			System.out.println("Unknown VM allocation policy: " + vmAllocationPolicyName);
 			System.exit(0);
 		}
@@ -401,8 +353,5 @@ public abstract class RunnerAbstract {
 	public boolean isEnableOutput() {
 		return enableOutput;
 	}
-
-	
-	
 
 }

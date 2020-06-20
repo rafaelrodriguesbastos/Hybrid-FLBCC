@@ -23,7 +23,9 @@ public class Constants {
 	public final static boolean ENABLE_OUTPUT = true;
 	public final static boolean OUTPUT_CSV    = false;
 	
-	public final static String ABSTRACT_FILE_NAME = "/log-resumos-execs-fuzz-ieee-2019.csv";
+	//public final static String ABSTRACT_FILE_NAME = "/log-resumos-execs-fuzz-ieee-2019.csv";
+	//public final static String ABSTRACT_FILE_NAME = "/log-resumos-execs-fuzzy-sets-and-systems-admissible-orders.csv";
+	public final static String ABSTRACT_FILE_NAME = "/log-resumos-execs-fuzzy-sets-and-systems-part2.csv";
 
 	public final static double SCHEDULING_INTERVAL = 300;
 	public final static double SIMULATION_LIMIT = 24 * 60 * 60;

@@ -40,6 +40,8 @@ public class MadMu {
 		String parameter = "2.5"; //2.5 the safety parameter of the MAD policy
 		boolean outputAbstractInCsv = true;  // enable summary recording in csv
 		boolean enableFuzzyT2Overload = false; // enable overload fuzzy type 2 detection
+		String typeIntersection = "TL"; //default value empty max(xInf, yInf), min(xSup, ySup)
+		String typeUnion = ""; // default value empty min(xInf, yInf), max(xSup, ySup)
 		boolean admissibleOrders = true; // enable selection host for admissible orders
 		String orderType = "lex1"; // set admissible order type
 
@@ -54,6 +56,8 @@ public class MadMu {
 				parameter,
 				outputAbstractInCsv,
 				enableFuzzyT2Overload,
+				typeIntersection,
+				typeUnion,
 				admissibleOrders,
 				orderType);
 	}

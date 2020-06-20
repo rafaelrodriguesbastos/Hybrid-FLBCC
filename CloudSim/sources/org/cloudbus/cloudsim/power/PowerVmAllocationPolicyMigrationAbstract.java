@@ -88,6 +88,9 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 	private boolean admissibleOrders = true;
 
 	private String orderType = "XuAndYager";
+	
+	private String typeIntersection="";
+	private String typeUnion="";
 
 	/**
 	 * Instantiates a new power vm allocation policy migration abstract.
@@ -96,11 +99,14 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 	 * @param vmSelectionPolicy the vm selection policy
 	 */
 	public PowerVmAllocationPolicyMigrationAbstract(List<? extends Host> hostList,
-			PowerVmSelectionPolicy vmSelectionPolicy, boolean admissibleOrders, String orderType) {
+			PowerVmSelectionPolicy vmSelectionPolicy, boolean admissibleOrders, String orderType,
+			String typeIntersection, String typeUnion) {
 		super(hostList);
 		setVmSelectionPolicy(vmSelectionPolicy);
 		setAdmissibleOrders(admissibleOrders);
 		setOrderType(orderType);
+		setTypeIntersection(typeIntersection);
+		setTypeUnion(typeUnion);
 		// Carrega os melhores valores da aquitetura
 		// getMaxValuesArchicture(getHostList());
 
@@ -293,7 +299,7 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 
 	// boolean plotMF, int isOverOrUnder, int isTypeObjective
 	public ArrayList<HostUseLevel> getLevelRangeInUse(PowerHost host, boolean plotMF, int isOverOrUnder,
-			int isTypeObjective, List<? extends Host> hostList, Vm vm) {
+			int isTypeObjective, String typeIntersection, String typeUnion, List<? extends Host> hostList, Vm vm) {
 
 		double minPower = Double.MAX_VALUE;
 		PowerHostUtilizationHistory _host = (PowerHostUtilizationHistory) host;
@@ -325,7 +331,7 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 				try {
 
 					Type2FuzzyLogicEvaluation it2 = new Type2FuzzyLogicEvaluation(cpStandartScale, ccStandartScale,
-							ramStandartScale, plotMF, isOverOrUnder, isTypeObjective, true);
+							ramStandartScale, plotMF, isOverOrUnder, isTypeObjective, true, typeIntersection, typeUnion);
 
 					setOutputXValue(it2.getOutputXValue());
 					setOutputYValue(it2.getOutputYValue());
@@ -402,7 +408,7 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 							if (isAdmissibleOrders()) {
 
 								minPower = powerDiff;
-								hostList = getLevelRangeInUse(host, false, 1, 1, avalableHosts, vm);
+								hostList = getLevelRangeInUse(host, false, 1, 1, getTypeIntersection(),getTypeUnion(), avalableHosts, vm);
 								allocatedHost = getPowerHostBestUseLevel(getOrderType(), hostList);
 
 							} else {
@@ -957,5 +963,23 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 	public void setOrderType(String orderType) {
 		this.orderType = orderType;
 	}
+
+	public String getTypeIntersection() {
+		return typeIntersection;
+	}
+
+	public void setTypeIntersection(String typeIntersection) {
+		this.typeIntersection = typeIntersection;
+	}
+
+	public String getTypeUnion() {
+		return typeUnion;
+	}
+
+	public void setTypeUnion(String typeUnion) {
+		this.typeUnion = typeUnion;
+	}
+	
+	
 
 }

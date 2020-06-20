@@ -52,8 +52,8 @@ public class PowerVmAllocationPolicyMigrationFuzzy extends PowerVmAllocationPoli
 	public PowerVmAllocationPolicyMigrationFuzzy(List<? extends Host> hostList,
 			PowerVmSelectionPolicy vmSelectionPolicy, double safetyParameter,
 			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy, double utilizationThreshold,boolean admissibleOrders,
-			String orderType) {
-		super(hostList, vmSelectionPolicy, admissibleOrders, orderType);
+			String orderType, String typeIntersection, String typeUnion) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion);
 		setSafetyParameter(safetyParameter);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
 	}
@@ -68,8 +68,8 @@ public class PowerVmAllocationPolicyMigrationFuzzy extends PowerVmAllocationPoli
 	public PowerVmAllocationPolicyMigrationFuzzy(List<? extends Host> hostList,
 			PowerVmSelectionPolicy vmSelectionPolicy, double safetyParameter,
 			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy, 
-			boolean admissibleOrders, String orderType) {
-		super(hostList, vmSelectionPolicy, admissibleOrders, orderType);
+			boolean admissibleOrders, String orderType, String typeIntersection, String typeUnion) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion);
 		setSafetyParameter(safetyParameter);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
 	}
@@ -152,7 +152,8 @@ public class PowerVmAllocationPolicyMigrationFuzzy extends PowerVmAllocationPoli
 		ccStandartScale = (_host.getUtilizationOfBw()/maxCCHost)*10;
 		ramStandartScale = (_host.getUtilizationOfRam()/maxRamHost)*10;
 		
-		Type2FuzzyLogicEvaluation it2 = new Type2FuzzyLogicEvaluation(cpStandartScale,ccStandartScale,ramStandartScale, false, 1, 1, false);
+		Type2FuzzyLogicEvaluation it2 = new Type2FuzzyLogicEvaluation(cpStandartScale,ccStandartScale,ramStandartScale, 
+				false, 1, 1, false, "", "");
 		
 		// return utilization > getUtilizationThreshold();
 		//double utililization = it2.getPriority();

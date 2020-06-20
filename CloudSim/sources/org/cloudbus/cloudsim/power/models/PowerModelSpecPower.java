@@ -8,6 +8,8 @@
 
 package org.cloudbus.cloudsim.power.models;
 
+import javax.swing.JOptionPane;
+
 /**
  * The abstract class of power models created based on data from SPECpower benchmark:
  * http://www.spec.org/power_ssj2008/
@@ -31,9 +33,14 @@ public abstract class PowerModelSpecPower implements PowerModel {
 	 */
 	@Override
 	public double getPower(double utilization) throws IllegalArgumentException {
-		if (utilization < 0 || utilization > 1) {
-			throw new IllegalArgumentException("Utilization value must be between 0 and 1");
-		}
+		//if (utilization < 0 || utilization > 1) {
+		//	throw new IllegalArgumentException("Utilization value must be between 0 and 1");
+		//}
+		if (utilization <0) 
+			utilization=0;
+		else if (utilization >1)
+			utilization=1;
+		
 		if (utilization % 0.1 == 0) {
 			return getPowerData((int) (utilization * 10));
 		}

@@ -44,6 +44,8 @@ public class RandomRunner extends RunnerAbstract {
 			String parameter,
 			boolean outputAbstractInCsv,
 			boolean enableFuzzyT2Overload,
+			String typeIntersection,
+			String typeUnion,
 			boolean admissibleOrders, 
 			String orderType) {
 		super(
@@ -57,6 +59,8 @@ public class RandomRunner extends RunnerAbstract {
 				parameter,
 				outputAbstractInCsv,
 				enableFuzzyT2Overload,
+				typeIntersection,
+				typeUnion,
 				admissibleOrders,
 				orderType);
 	}

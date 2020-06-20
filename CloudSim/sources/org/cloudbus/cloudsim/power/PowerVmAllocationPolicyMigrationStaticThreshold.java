@@ -37,6 +37,8 @@ public class PowerVmAllocationPolicyMigrationStaticThreshold extends PowerVmAllo
 	private double utilizationThreshold = 0.9;
 
 	private boolean enableFuzzyT2Overload;
+	private String typeIntersection;
+	private String typeUnion;
 	
 	private boolean admissibleOrders;
 	private String orderType;
@@ -51,12 +53,17 @@ public class PowerVmAllocationPolicyMigrationStaticThreshold extends PowerVmAllo
 	 * @param utilizationThreshold the utilization threshold
 	 */
 	public PowerVmAllocationPolicyMigrationStaticThreshold(List<? extends Host> hostList,
-			PowerVmSelectionPolicy vmSelectionPolicy, double utilizationThreshold, boolean enableFuzzyT2Overload, boolean admissibleOrders, String orderType) {
-		super(hostList, vmSelectionPolicy, admissibleOrders, orderType);
+			PowerVmSelectionPolicy vmSelectionPolicy, double utilizationThreshold, boolean enableFuzzyT2Overload, String typeIntersection, String typeUnion,
+			boolean admissibleOrders, String orderType) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion);
 		setUtilizationThreshold(utilizationThreshold);
 		setEnableFuzzyT2Overload(enableFuzzyT2Overload);
+		setTypeIntersection(typeIntersection);
+		setTypeUnion(typeUnion);
 		setAdmissibleOrders(admissibleOrders);
 		setOrderType(orderType);
+		setTypeIntersection(typeIntersection);
+		setTypeUnion(typeUnion);
 	}
 
 	/**
@@ -153,9 +160,12 @@ public class PowerVmAllocationPolicyMigrationStaticThreshold extends PowerVmAllo
 		ccStandartScale = (10 * _host.getUtilizationOfBw()) / minCCHost;
 		ramStandartScale = (_host.getUtilizationOfRam() / maxRamHost) * 10;
 
-		Type2FuzzyLogicEvaluation it2 = new Type2FuzzyLogicEvaluation(cpStandartScale, ccStandartScale, ramStandartScale, plotMF,
-				isOverOrUnder, isTypeObjective, false);
-
+		Type2FuzzyLogicEvaluation it2 = new Type2FuzzyLogicEvaluation(cpStandartScale, ccStandartScale, ramStandartScale, 
+				plotMF,	isOverOrUnder, isTypeObjective, false, getTypeIntersection(), getTypeUnion());
+		
+		//JOptionPane.showMessageDialog(null, "Interseção é"+getTypeIntersection());
+		
+		
 		// System.out.println("maxCPHost: #"+maxCPHost+" minCCHost: #"+minCCHost+ "
 		// maxRamHost: #"+maxRamHost + " Level of Use #"+it2.getLevelOfUse());
 		// System.out.println("cpStandartScale: #"+cpStandartScale+" ccStandartScale:
@@ -207,6 +217,24 @@ public class PowerVmAllocationPolicyMigrationStaticThreshold extends PowerVmAllo
 	public void setOrderType(String orderType) {
 		this.orderType = orderType;
 	}
+
+	public String getTypeIntersection() {
+		return typeIntersection;
+	}
+
+	public void setTypeIntersection(String typeIntersection) {
+		this.typeIntersection = typeIntersection;
+	}
+
+	public String getTypeUnion() {
+		return typeUnion;
+	}
+
+	public void setTypeUnion(String typeUnion) {
+		this.typeUnion = typeUnion;
+	}
+	
+	
 	
 	
 

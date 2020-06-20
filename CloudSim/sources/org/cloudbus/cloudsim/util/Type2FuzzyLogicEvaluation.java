@@ -20,6 +20,8 @@ import intervalType2.system.IT2_Rulebase;
 import java.util.List;
 import java.util.TreeMap;
 
+import javax.swing.JOptionPane;
+
 import org.cloudbus.cloudsim.Host;
 import org.cloudbus.cloudsim.power.PowerHostUtilizationHistory;
 import tools.JMathPlotter;
@@ -49,6 +51,9 @@ public class Type2FuzzyLogicEvaluation
     
     private double OutputXValue;
     private double OutputYValue;
+    
+    private String typeIntersection="";
+    private String typeUnion="";
        
            
     public Type2FuzzyLogicEvaluation()
@@ -190,6 +195,9 @@ public class Type2FuzzyLogicEvaluation
         rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, averageCC, averageRAM}, averageUtilization));
         rulebase.addRule(new IT2_Rule(new IT2_Antecedent[]{highCP, averageCC, highRAM}, lowUtilization));
         
+        
+        
+        
         //get some outputs
         // getPriority(inCP, inCC, inRAM);
         getPriority(8.0, 2.0, 9.0);
@@ -216,11 +224,14 @@ public class Type2FuzzyLogicEvaluation
     
     // isOverOrUnder: 1 = Overload; 2 = Underload
     // isTypeObjective: 1 = Performance; 2 = Energy; 3 = Hibridy
-    public Type2FuzzyLogicEvaluation(double inCP, double inCC, double inRam, boolean plotMF, int isOverOrUnder, int isTypeObjective, boolean IntervalOutputType) {
+    public Type2FuzzyLogicEvaluation(double inCP, double inCC, double inRam, boolean plotMF, int isOverOrUnder, 
+    		int isTypeObjective, boolean IntervalOutputType, String typeIntersection, String typeUnion) {
 		super();
 		this.inCP = inCP;
 		this.inCC = inCC;
 		this.inRam = inRam;
+		this.typeIntersection = typeIntersection;
+		this.typeUnion = typeUnion;
 		 
 		
 	       //Define the inputs
@@ -381,7 +392,13 @@ public class Type2FuzzyLogicEvaluation
             
         }
        
-       
+        //rulebase.setAgregatorFunction("");
+        //rulebase.setTypeIntersection("TL");
+        //rulebase.setTypeUnion("");
+        //JOptionPane.showMessageDialog(null,"Rulebase Intersecção é: "+getTypeIntersection()+" e "+"União é "+getTypeUnion());
+        rulebase.setTypeIntersection(getTypeIntersection());
+        rulebase.setTypeUnion(getTypeUnion());
+        
         
         //get some outputs
         // getPriority(inCP, inCC, inRAM);
@@ -665,7 +682,8 @@ public class Type2FuzzyLogicEvaluation
     
 	//aqui ini
     
-    public double getLevelOfUse(Host host, boolean plotMF, int isOverOrUnder, int isTypeObjective, List<? extends Host> hostList, boolean IntervalOutputType) {
+    public double getLevelOfUse(Host host, boolean plotMF, int isOverOrUnder, int isTypeObjective, List<? extends Host> hostList,
+    		boolean IntervalOutputType) {
 		PowerHostUtilizationHistory _host = (PowerHostUtilizationHistory) host;
 		
 		//double cpAvailable = _host.getMaxAvailableMips();
@@ -703,7 +721,8 @@ public class Type2FuzzyLogicEvaluation
 		ccStandartScale = (10*_host.getUtilizationOfBw())/minCCHost;
 		ramStandartScale = (_host.getUtilizationOfRam()/maxRamHost)*10;
 		
-		Type2FuzzyLogicEvaluation it2 = new Type2FuzzyLogicEvaluation(cpStandartScale,ccStandartScale,ramStandartScale, plotMF, isOverOrUnder, isTypeObjective, IntervalOutputType);		
+		Type2FuzzyLogicEvaluation it2 = new Type2FuzzyLogicEvaluation(cpStandartScale,ccStandartScale,ramStandartScale, plotMF, isOverOrUnder, isTypeObjective,
+				IntervalOutputType, typeIntersection, typeUnion);		
 		
 		// System.out.println("maxCPHost: #"+maxCPHost+" minCCHost: #"+minCCHost+ " maxRamHost: #"+maxRamHost + " Level of Use #"+it2.getLevelOfUse());
 		//System.out.println("cpStandartScale: #"+cpStandartScale+" ccStandartScale: #"+ccStandartScale+ " ramStandartScale: #"+ramStandartScale+ " it2.getLevelOfUse() #"+(it2.getLevelOfUse()/10));
@@ -735,8 +754,32 @@ public class Type2FuzzyLogicEvaluation
 	public void setOutputYValue(double outputYValue) {
 		OutputYValue = outputYValue;
 	}
+
+
+
+	public String getTypeIntersection() {
+		return typeIntersection;
+	}
+
+
+
+	public void setTypeIntersection(String typeIntersection) {
+		this.typeIntersection = typeIntersection;
+	}
+
+
+
+	public String getTypeUnion() {
+		return typeUnion;
+	}
+
+
+
+	public void setTypeUnion(String typeUnion) {
+		this.typeUnion = typeUnion;
+	}
     
-   // aqui fim
+   
     
     
 }

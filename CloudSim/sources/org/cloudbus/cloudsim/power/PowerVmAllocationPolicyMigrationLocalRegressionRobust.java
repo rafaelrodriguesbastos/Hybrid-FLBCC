@@ -47,7 +47,9 @@ public class PowerVmAllocationPolicyMigrationLocalRegressionRobust extends
 			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy,
 			double utilizationThreshold,
 			boolean admissibleOrders,
-			String orderType) {
+			String orderType,
+			String typeIntersection,
+			String typeUnion) {
 		super(
 				hostList,
 				vmSelectionPolicy,
@@ -56,7 +58,9 @@ public class PowerVmAllocationPolicyMigrationLocalRegressionRobust extends
 				fallbackVmAllocationPolicy,
 				utilizationThreshold,
 				admissibleOrders,
-				orderType);
+				orderType,
+				typeIntersection,
+				typeUnion);
 	}
 
 	/**
@@ -74,8 +78,10 @@ public class PowerVmAllocationPolicyMigrationLocalRegressionRobust extends
 			double schedulingInterval,
 			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy,
 			boolean admissibleOrders,
-			String orderType) {
-		super(hostList, vmSelectionPolicy, safetyParameter, schedulingInterval, fallbackVmAllocationPolicy, admissibleOrders, orderType);
+			String orderType,
+			String typeIntersection,
+			String typeUnion) {
+		super(hostList, vmSelectionPolicy, safetyParameter, schedulingInterval, fallbackVmAllocationPolicy, admissibleOrders, orderType, typeIntersection, typeUnion);
 	}
 
 	/**

@@ -56,8 +56,10 @@ public class PowerVmAllocationPolicyMigrationLocalRegression extends PowerVmAllo
 			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy,
 			double utilizationThreshold,
 			boolean admissibleOrders,
-			String orderType) {
-		super(hostList, vmSelectionPolicy, admissibleOrders, orderType);
+			String orderType,
+			String typeIntersection,
+			String typeUnion) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion);
 		setSafetyParameter(safetyParameter);
 		setSchedulingInterval(schedulingInterval);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
@@ -78,8 +80,10 @@ public class PowerVmAllocationPolicyMigrationLocalRegression extends PowerVmAllo
 			double schedulingInterval,
 			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy,
 			boolean admissibleOrders,
-			String orderType) {
-		super(hostList, vmSelectionPolicy, admissibleOrders, orderType);
+			String orderType,
+			String typeIntersection,
+			String typeUnion) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion);
 		setSafetyParameter(safetyParameter);
 		setSchedulingInterval(schedulingInterval);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);

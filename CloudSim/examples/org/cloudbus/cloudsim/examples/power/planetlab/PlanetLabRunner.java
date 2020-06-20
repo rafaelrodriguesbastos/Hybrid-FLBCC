@@ -46,6 +46,8 @@ public class PlanetLabRunner extends RunnerAbstract {
 			String parameter,
 			boolean outputAbstractInCsv,
 			boolean enableFuzzyT2Overload,
+			String typeIntersection,
+			String typeUnion,
 			boolean admissibleOrders,
 			String orderType) {
 		super( 
@@ -59,10 +61,76 @@ public class PlanetLabRunner extends RunnerAbstract {
 				parameter,
 				outputAbstractInCsv,
 				enableFuzzyT2Overload,
+				typeIntersection,
+				typeUnion,
 				admissibleOrders,
 				orderType);
 	}
 
+	
+	
+	// constructor defautl without fuzzy
+	public PlanetLabRunner(
+			boolean enableOutput,
+			boolean outputToFile,
+			String inputFolder,
+			String outputFolder,
+			String workload,
+			String vmAllocationPolicy,
+			String vmSelectionPolicy,
+			String parameter,
+			boolean outputAbstractInCsv) {
+		super( 
+				enableOutput,
+				outputToFile,
+				inputFolder,
+				outputFolder,
+				workload,
+				vmAllocationPolicy,
+				vmSelectionPolicy,
+				parameter,
+				outputAbstractInCsv,
+				false, // enableFuzzyT2Overload,
+				"",    //typeIntersection,
+				"",    //typeUnion,
+				false, // admissibleOrders,
+				"");   //orderType
+	}
+	
+	// constructor fuzzy and without orders admissible with aggregator functions 
+	public PlanetLabRunner(
+			boolean enableOutput,
+			boolean outputToFile,
+			String inputFolder,
+			String outputFolder,
+			String workload,
+			String vmAllocationPolicy,
+			String vmSelectionPolicy,
+			String parameter,
+			boolean outputAbstractInCsv,
+			boolean enableFuzzyT2Overload,
+			String typeIntersection,
+			String typeUnion) {
+		super( 
+				enableOutput,
+				outputToFile,
+				inputFolder,
+				outputFolder,
+				workload,
+				vmAllocationPolicy,
+				vmSelectionPolicy,
+				parameter,
+				outputAbstractInCsv,
+				enableFuzzyT2Overload,
+				typeIntersection,
+				typeUnion,
+				false, // admissibleOrders 
+				"");  //orderType
+	}
+	
+	
+	
+	
 	/*
 	 * (non-Javadoc)
 	 * 

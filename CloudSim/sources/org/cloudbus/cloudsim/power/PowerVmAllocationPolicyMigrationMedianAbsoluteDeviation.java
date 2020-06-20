@@ -54,8 +54,10 @@ public class PowerVmAllocationPolicyMigrationMedianAbsoluteDeviation extends
 			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy,
 			double utilizationThreshold,
 			boolean admissibleOrders,
-			String orderType) {
-		super(hostList, vmSelectionPolicy, admissibleOrders, orderType);
+			String orderType,
+			String typeIntersection,
+			String typeUnion) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion);
 		setSafetyParameter(safetyParameter);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
 	}
@@ -73,8 +75,10 @@ public class PowerVmAllocationPolicyMigrationMedianAbsoluteDeviation extends
 			double safetyParameter,
 			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy,
 			boolean admissibleOrders,
-			String orderType) {
-		super(hostList, vmSelectionPolicy, admissibleOrders, orderType);
+			String orderType,
+			String typeIntersection,
+			String typeUnion) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion);
 		setSafetyParameter(safetyParameter);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
 	}
