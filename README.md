@@ -32,6 +32,11 @@ A modified version of CloudSim contemplating an approach with a type-2 fuzzy sys
 
 The T2FS module called Interval Fuzzy Load Balancing for Cloud Computing (Int-FLBCC) that integrates with CloudSim, is modeled and implemented with Juzzy [[1]](http://juzzy.wagnerweb.net/) and is available in the [GitHub](https://github.com/brunomourapaz/Juzzy) repository.
 
+## Publications
+1. B. M. P. Moura, G. B. Schneider, A. C. Yamin, M. L. Pilla and R. H. S. Reiser, ["Allocating Virtual Machines exploring Type-2 Fuzzy Logic and Admissible Orders,"](https://ieeexplore.ieee.org/document/8858827) 2019 IEEE International Conference on Fuzzy Systems (FUZZ-IEEE), New Orleans, LA, USA, 2019, pp. 1-6, doi: 10.1109/FUZZ-IEEE.2019.8858827.
+2. Moura, B., Schneider, G., Yamin, A., Pilla, M., & Reiser, R. (2019, August). [Type-2 Fuzzy Logic Approach for Overloaded Hosts in Consolidation of Virtual Machines in Cloud Computing.](https://www.atlantis-press.com/proceedings/eusflat-19/125914863) In 11th Conference of the European Society for Fuzzy Logic and Technology (EUSFLAT 2019) (pp. 668-675). Atlantis Press. 
+3. Moura, B. M., Schneider, G. B., Yamin, A. C., Santos, H., Reiser, R. H., & Bedregal, B. (2021). [Interval-valued Fuzzy Logic approach for overloaded hosts in consolidation of virtual machines in cloud computing.](https://www.sciencedirect.com/science/article/abs/pii/S0165011421000762) Fuzzy Sets and Systems. 
+
 ## Reference
 [1] [C. Wagner, "Juzzy – A Java based Toolkit for Type-2 Fuzzy Logic", Proceedings of the IEEE Symposium Series on Computational Intelligence, Singapore, April 2013.](http://juzzy.wagnerweb.net/)
 
