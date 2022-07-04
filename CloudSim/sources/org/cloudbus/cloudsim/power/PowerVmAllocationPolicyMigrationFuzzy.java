@@ -8,6 +8,7 @@
 
 package org.cloudbus.cloudsim.power;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.cloudbus.cloudsim.Host;
@@ -52,8 +53,8 @@ public class PowerVmAllocationPolicyMigrationFuzzy extends PowerVmAllocationPoli
 	public PowerVmAllocationPolicyMigrationFuzzy(List<? extends Host> hostList,
 			PowerVmSelectionPolicy vmSelectionPolicy, double safetyParameter,
 			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy, double utilizationThreshold,boolean admissibleOrders,
-			String orderType, String typeIntersection, String typeUnion) {
-		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion);
+			String orderType, String typeIntersection, String typeUnion, int typeReductionType, int typeFuzzySystem) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion, typeReductionType, typeFuzzySystem);
 		setSafetyParameter(safetyParameter);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
 	}
@@ -68,8 +69,8 @@ public class PowerVmAllocationPolicyMigrationFuzzy extends PowerVmAllocationPoli
 	public PowerVmAllocationPolicyMigrationFuzzy(List<? extends Host> hostList,
 			PowerVmSelectionPolicy vmSelectionPolicy, double safetyParameter,
 			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy, 
-			boolean admissibleOrders, String orderType, String typeIntersection, String typeUnion) {
-		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion);
+			boolean admissibleOrders, String orderType, String typeIntersection, String typeUnion, int typeReductionType, int typeFuzzySystem) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion, typeReductionType, typeFuzzySystem);
 		setSafetyParameter(safetyParameter);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
 	}
@@ -97,9 +98,10 @@ public class PowerVmAllocationPolicyMigrationFuzzy extends PowerVmAllocationPoli
 	 * 
 	 * @param _host the _host
 	 * @return true, if is host over utilized
+	 * @throws IOException 
 	 */	
 	@Override
-	protected boolean isHostOverUtilized(PowerHost host) {
+	protected boolean isHostOverUtilized(PowerHost host)  {
 		
 		/*
 		PowerHostUtilizationHistory _host = (PowerHostUtilizationHistory) host;
@@ -153,7 +155,7 @@ public class PowerVmAllocationPolicyMigrationFuzzy extends PowerVmAllocationPoli
 		ramStandartScale = (_host.getUtilizationOfRam()/maxRamHost)*10;
 		
 		Type2FuzzyLogicEvaluation it2 = new Type2FuzzyLogicEvaluation(cpStandartScale,ccStandartScale,ramStandartScale, 
-				false, 1, 1, false, "", "");
+				false, 1, 1, false, "", "", 0);
 		
 		// return utilization > getUtilizationThreshold();
 		//double utililization = it2.getPriority();

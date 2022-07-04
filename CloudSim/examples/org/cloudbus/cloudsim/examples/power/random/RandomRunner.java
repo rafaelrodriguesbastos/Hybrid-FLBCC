@@ -47,7 +47,9 @@ public class RandomRunner extends RunnerAbstract {
 			String typeIntersection,
 			String typeUnion,
 			boolean admissibleOrders, 
-			String orderType) {
+			String orderType,
+			int typeReductionType,
+			int typeFuzzySystem) {
 		super(
 				enableOutput,
 				outputToFile,
@@ -62,7 +64,9 @@ public class RandomRunner extends RunnerAbstract {
 				typeIntersection,
 				typeUnion,
 				admissibleOrders,
-				orderType);
+				orderType,
+				typeReductionType,
+				typeFuzzySystem);
 	}
 
 	/*

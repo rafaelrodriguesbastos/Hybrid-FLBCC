@@ -56,8 +56,10 @@ public class PowerVmAllocationPolicyMigrationMedianAbsoluteDeviation extends
 			boolean admissibleOrders,
 			String orderType,
 			String typeIntersection,
-			String typeUnion) {
-		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion);
+			String typeUnion,
+			int typeReductionType,
+			int typeFuzzySystem) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion, typeReductionType, typeFuzzySystem);
 		setSafetyParameter(safetyParameter);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
 	}
@@ -77,8 +79,10 @@ public class PowerVmAllocationPolicyMigrationMedianAbsoluteDeviation extends
 			boolean admissibleOrders,
 			String orderType,
 			String typeIntersection,
-			String typeUnion) {
-		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion);
+			String typeUnion,
+			int typeReductionType,
+			int typeFuzzySystem) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion, typeReductionType, typeFuzzySystem);
 		setSafetyParameter(safetyParameter);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
 	}

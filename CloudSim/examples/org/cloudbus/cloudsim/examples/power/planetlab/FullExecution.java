@@ -35,10 +35,13 @@ public class FullExecution {
 		String[] typeIntersection = { "omix", "omix", "o2db"};
 
 		// default value empty min(xInf, yInf), max(xSup, ySup)
-		//String[] typeUnion = { "minmax", "minmax", "minmax", "minmax", "minmax", "minmax", "minmax",  "o2n", "omn", "odbn", "om2n", "o2dbn", "an", "tln", "minmax"};
+		//String[] typeUnion = { "minmax", "minmax", "minmax", "minmax", "minmax", "minmax", "minmax",  "o2n", "omn", "odbn", "om3n", "o2dbn", "an", "tln", "minmax"};
 		
 		// setando as uniões part2
 		String[] typeUnion = { "minmax", "omixn", "o2dbn"};
+		
+		int typeReductionType = 0; // CENTEROFSETS = 0; CENTROID = 1;
+		int typeFuzzySystem = 0;  //  0 - Conventional Type-2 Fuzzy System, 1 - N Dimensional Type-2 Fuzzy Fuzzy System
 		
 		
 
@@ -88,7 +91,7 @@ public class FullExecution {
 									new PlanetLabRunner(enableOutput, outputToFile, inputFolder, outputFolder,
 											workload[i], vmAllocationPolicy[x], vmSelectionPolicy, parameter,
 											outputAbstractInCsv, enableFuzzyT2Overload, typeIntersection[y],
-											typeUnion[y], admissibleOrders, orderType[o]);
+											typeUnion[y], admissibleOrders, orderType[o], typeReductionType, typeFuzzySystem);
 								}
 
 							} else {
@@ -96,7 +99,7 @@ public class FullExecution {
 								// construtor sem ordens admissíveis com funções de agragação
 								new PlanetLabRunner(enableOutput, outputToFile, inputFolder, outputFolder, workload[i],
 										vmAllocationPolicy[x], vmSelectionPolicy, parameter, outputAbstractInCsv,
-										enableFuzzyT2Overload, typeIntersection[y], typeUnion[y]);
+										enableFuzzyT2Overload, typeIntersection[y], typeUnion[y], typeReductionType, typeFuzzySystem);
 							}
 
 						//}

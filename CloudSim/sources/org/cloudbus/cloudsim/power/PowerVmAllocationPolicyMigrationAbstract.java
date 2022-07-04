@@ -8,6 +8,7 @@
 
 package org.cloudbus.cloudsim.power;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -15,6 +16,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import javax.swing.JOptionPane;
 
 import org.cloudbus.cloudsim.Host;
 import org.cloudbus.cloudsim.HostDynamicWorkload;
@@ -91,6 +94,8 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 	
 	private String typeIntersection="";
 	private String typeUnion="";
+	private int typeReductionType; // CENTEROFSETS = 0; CENTROID = 1;
+	private int typeFuzzySystem;  //  0 - Conventional Type-2 Fuzzy System, 1 - N Dimensional Type-2 Fuzzy Fuzzy System  
 
 	/**
 	 * Instantiates a new power vm allocation policy migration abstract.
@@ -100,13 +105,16 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 	 */
 	public PowerVmAllocationPolicyMigrationAbstract(List<? extends Host> hostList,
 			PowerVmSelectionPolicy vmSelectionPolicy, boolean admissibleOrders, String orderType,
-			String typeIntersection, String typeUnion) {
+			String typeIntersection, String typeUnion, int typeReductionType, int typeFuzzySystem) {
 		super(hostList);
 		setVmSelectionPolicy(vmSelectionPolicy);
 		setAdmissibleOrders(admissibleOrders);
 		setOrderType(orderType);
 		setTypeIntersection(typeIntersection);
 		setTypeUnion(typeUnion);
+		setTypeReductionType(typeReductionType);
+		setTypeFuzzySystem(typeFuzzySystem);
+		
 		// Carrega os melhores valores da aquitetura
 		// getMaxValuesArchicture(getHostList());
 
@@ -239,7 +247,7 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 		double tempYValue = 0.0;
 		PowerHost outputHost = null;
 
-		for (int i = 0; i < listHostUseLevel.size(); i++) {
+		for (int i = 0; i < (listHostUseLevel.size() -1); i++) {
 			// tempHost = listHostUseLevel.get(i).getPowerHost();
 
 			if (strOrderType.equalsIgnoreCase("Lex1")) {
@@ -289,14 +297,187 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 				}
 
 			}
+			else if (strOrderType.equalsIgnoreCase("A")) {
+				
+				//double sumTempXuAndYager = tempXValue + tempYValue;
+				
+				//tempXValue = listHostUseLevel.get(i).getOutputXValue();
+				//tempYValue = listHostUseLevel.get(i).getOutputYValue();
+				//outputHost = listHostUseLevel.get(i).getPowerHost();
+				
+				//double xInf =0;
+				//double xSup =0;
+				
+				double xInfIntA =0; double xSupIntA =0;
+				double yInfIntB =0; double ySupIntB =0;
+				
+				String xValIntATemp = ""; //String xSupIntATemp = "";
+				String yValIntBTemp = ""; //String ySupIntBTemp = "";
+				
+				Integer xInfPos1 =0; Integer xInfPos2 =0; Integer xInfPos3 =0; Integer xInfPos4 =0; 
+				Integer xSupPos1 =0; Integer xSupPos2 =0; Integer xSupPos3 =0; Integer xSupPos4 =0;
+				
+				Integer yInfPos1 =0; Integer yInfPos2 =0; Integer yInfPos3 =0; Integer yInfPos4 =0;
+				Integer ySupPos1 =0; Integer ySupPos2 =0; Integer ySupPos3 =0; Integer ySupPos4 =0;
+				
+
+				
+				xInfIntA = listHostUseLevel.get(i).getOutputXValue()/10;
+				xSupIntA = listHostUseLevel.get(i).getOutputYValue()/10;
+				
+				yInfIntB = listHostUseLevel.get(i+1).getOutputXValue()/10;
+				ySupIntB = listHostUseLevel.get(i+1).getOutputYValue()/10;
+				
+				
+				
+				
+				//xInf = listHostUseLevel.get(i).getOutputXValue();
+				//yInf = listHostUseLevel.get(i).getOutputYValue();
+				
+				
+				//String strInfPos1 =  Double.toString(xInf).substring(2,3);
+				//String strInfPos2 =  Double.toString(xInf).substring(3,4);
+				//String strInfPos3 =  Double.toString(xInf).substring(4,5);
+				//String strInfPos4 =  Double.toString(xInf).substring(5,6);
+				
+				
+				/*xInfPos1 = Double.parseDouble(Double.toString(xInfIntA).substring(2,3));
+				xInfPos2 = Double.parseDouble(Double.toString(xInfIntA).substring(3,4));
+				xInfPos3 = Double.parseDouble(Double.toString(xInfIntA).substring(4,5));
+				xInfPos4 = Double.parseDouble(Double.toString(xInfIntA).substring(5,6)); 
+				
+				xSupPos1 = Double.parseDouble(Double.toString(xSupIntA).substring(2,3));
+				xSupPos2 = Double.parseDouble(Double.toString(xSupIntA).substring(3,4));
+				xSupPos3 = Double.parseDouble(Double.toString(xSupIntA).substring(4,5));
+				xSupPos4 = Double.parseDouble(Double.toString(xSupIntA).substring(5,6));
+				
+				yInfPos1 = Double.parseDouble(Double.toString(yInfIntB).substring(2,3));
+				yInfPos2 = Double.parseDouble(Double.toString(yInfIntB).substring(3,4));
+				yInfPos3 = Double.parseDouble(Double.toString(yInfIntB).substring(4,5));
+				yInfPos4 = Double.parseDouble(Double.toString(yInfIntB).substring(5,6));
+				
+				ySupPos1 = Double.parseDouble(Double.toString(ySupIntB).substring(2,3));
+				ySupPos2 = Double.parseDouble(Double.toString(ySupIntB).substring(3,4));
+				ySupPos3 = Double.parseDouble(Double.toString(ySupIntB).substring(4,5));
+				ySupPos4 = Double.parseDouble(Double.toString(ySupIntB).substring(5,6));*/
+				
+				xInfPos1 = Integer.parseInt(Double.toString(xInfIntA).substring(2,3));
+				xInfPos2 = Integer.parseInt(Double.toString(xInfIntA).substring(3,4));
+				xInfPos3 = Integer.parseInt(Double.toString(xInfIntA).substring(4,5));
+				xInfPos4 = Integer.parseInt(Double.toString(xInfIntA).substring(5,6)); 
+				
+				xSupPos1 = Integer.parseInt(Double.toString(xSupIntA).substring(2,3));
+				xSupPos2 = Integer.parseInt(Double.toString(xSupIntA).substring(3,4));
+				xSupPos3 = Integer.parseInt(Double.toString(xSupIntA).substring(4,5));
+				xSupPos4 = Integer.parseInt(Double.toString(xSupIntA).substring(5,6));
+				
+				yInfPos1 = Integer.parseInt(Double.toString(yInfIntB).substring(2,3));
+				yInfPos2 = Integer.parseInt(Double.toString(yInfIntB).substring(3,4));
+				yInfPos3 = Integer.parseInt(Double.toString(yInfIntB).substring(4,5));
+				yInfPos4 = Integer.parseInt(Double.toString(yInfIntB).substring(5,6));
+				
+				ySupPos1 = Integer.parseInt(Double.toString(ySupIntB).substring(2,3));
+				ySupPos2 = Integer.parseInt(Double.toString(ySupIntB).substring(3,4));
+				ySupPos3 = Integer.parseInt(Double.toString(ySupIntB).substring(4,5));
+				ySupPos4 = Integer.parseInt(Double.toString(ySupIntB).substring(5,6));
+				
+				
+				
+				/*JOptionPane.showMessageDialog(null, " xInf = "+xInf+ " strInfPos1 = "+xInfPos1 + 
+						" strInfPos2 = "+xInfPos2+ " strInfPos3 = "+xInfPos3 + " strInfPos4 = "+xInfPos4 + " \n "+
+						"yInf = "+ yInf + " yInfPos1 = "+ yInfPos1 + " yInfPos2 = " + yInfPos2 + " yInfPos3 = " + yInfPos3 + " yInfPos4 = " + yInfPos4);*/
+								
+				
+				/*String strXInfPos1 =  Double.toString(xInfPos1);
+				String strXSupPos1 =  Double.toString(xSupPos1);
+				String strXInfPos2 = Double.toString(xInfPos2);
+				String strXSupPos2 = Double.toString(xSupPos2);
+				String strXInfPos3 = Double.toString(xInfPos3);
+				String strXSupPos3 = Double.toString(xSupPos3);
+				String strXInfPos4 = Double.toString(xInfPos4);
+				String strXSupPos4 = Double.toString(xSupPos4);
+				
+				String strYInfPos1 =  Double.toString(yInfPos1);
+				String strYSupPos1 =  Double.toString(ySupPos1);
+				String strYInfPos2 = Double.toString(yInfPos2);
+				String strYSupPos2 = Double.toString(ySupPos2);
+				String strYInfPos3 = Double.toString(yInfPos3);
+				String strYSupPos3 = Double.toString(ySupPos3);
+				String strYInfPos4 = Double.toString(yInfPos4);
+				String strYSupPos4 = Double.toString(ySupPos4);
+				*/
+				
+				String strXInfPos1 =  Integer.toString(xInfPos1);
+				String strXSupPos1 =  Integer.toString(xSupPos1);
+				String strXInfPos2 = Integer.toString(xInfPos2);
+				String strXSupPos2 = Integer.toString(xSupPos2);
+				String strXInfPos3 = Integer.toString(xInfPos3);
+				String strXSupPos3 = Integer.toString(xSupPos3);
+				String strXInfPos4 = Integer.toString(xInfPos4);
+				String strXSupPos4 = Integer.toString(xSupPos4);
+				
+				String strYInfPos1 =  Integer.toString(yInfPos1);
+				String strYSupPos1 =  Integer.toString(ySupPos1);
+				String strYInfPos2 = Integer.toString(yInfPos2);
+				String strYSupPos2 = Integer.toString(ySupPos2);
+				String strYInfPos3 = Integer.toString(yInfPos3);
+				String strYSupPos3 = Integer.toString(ySupPos3);
+				String strYInfPos4 = Integer.toString(yInfPos4);
+				String strYSupPos4 = Integer.toString(ySupPos4);
+				
+				//if( (tempXValue <= 0) && (tempXValue <= tempYValue) && (tempYValue < 10)) {
+				if( (xInfIntA >= 0) && (xInfIntA <= xSupIntA) && (xSupIntA < 1)) {
+					
+					
+					
+					//double xInfIntATemp = 0; double xSupIntATemp = 0;
+					//double yInfIntBTemp = 0; double ySupIntBTemp = 0;
+					
+					//double xInfIntA =0; double xSupIntA =0;
+					//double yInfIntB =0; double ySupIntB =0;
+					
+					xValIntATemp =  "0."+strXInfPos1+strXSupPos1+strXInfPos2+strXSupPos2+strXInfPos3+strXSupPos3+strXInfPos4+strXSupPos4;
+					
+					yValIntBTemp =  "0."+strYInfPos1+strYSupPos1+strYInfPos2+strYSupPos2+strYInfPos3+strYSupPos3+strYInfPos4+strYSupPos4;
+					
+					/*JOptionPane.showMessageDialog(null,"A = [ "+ xInfIntA+","+xSupIntA+" ]"+ " B = ["+yInfIntB+","+yInfIntB+" ] \n"+
+					" xValIntATemp = "+xValIntATemp+ " e yValIntBTemp = "+yValIntBTemp); */
+					
+					 if (Double.parseDouble(xValIntATemp) < Double.parseDouble(yValIntBTemp)) 
+					
+						outputHost = listHostUseLevel.get(i).getPowerHost();
+					else
+						outputHost = listHostUseLevel.get(i+1).getPowerHost();
+					
+
+				//}else if ((tempXValue >= 0) && (tempYValue >= tempXValue ) && (tempYValue == 10)) {
+				}else if ((xInfIntA >= 0) && (xSupIntA >= xInfIntA ) && (xSupIntA == 1)) {
+					
+					xValIntATemp =  "0."+strXInfPos1+"9"+strXInfPos2+"9"+strXInfPos3+"9"+strXInfPos4;
+					yValIntBTemp =  "0."+strYInfPos1+"9"+strYInfPos2+"9"+strYInfPos3+"9"+strYInfPos4;
+					
+					if (Double.parseDouble(xValIntATemp) < Double.parseDouble(yValIntBTemp)) 
+						outputHost = listHostUseLevel.get(i).getPowerHost();
+					else
+						outputHost = listHostUseLevel.get(i+1).getPowerHost();
+					
+				}else {
+					
+					xValIntATemp = "1";
+					yValIntBTemp = "1";
+					outputHost = listHostUseLevel.get(i).getPowerHost();
+					
+				}
+				
+				
+			}
 
 		}
 
 		return outputHost;
 	}
-
-
-
+	
+	
 	// boolean plotMF, int isOverOrUnder, int isTypeObjective
 	public ArrayList<HostUseLevel> getLevelRangeInUse(PowerHost host, boolean plotMF, int isOverOrUnder,
 			int isTypeObjective, String typeIntersection, String typeUnion, List<? extends Host> hostList, Vm vm) {
@@ -331,7 +512,7 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 				try {
 
 					Type2FuzzyLogicEvaluation it2 = new Type2FuzzyLogicEvaluation(cpStandartScale, ccStandartScale,
-							ramStandartScale, plotMF, isOverOrUnder, isTypeObjective, true, typeIntersection, typeUnion);
+							ramStandartScale, plotMF, isOverOrUnder, isTypeObjective, false, typeIntersection, typeUnion, typeReductionType);
 
 					setOutputXValue(it2.getOutputXValue());
 					setOutputYValue(it2.getOutputYValue());
@@ -690,6 +871,7 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 	 * 
 	 * @param host the host
 	 * @return true, if is host over utilized
+	 * @throws IOException 
 	 */
 	protected abstract boolean isHostOverUtilized(PowerHost host);
 
@@ -979,6 +1161,25 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 	public void setTypeUnion(String typeUnion) {
 		this.typeUnion = typeUnion;
 	}
+
+	public int getTypeReductionType() {
+		return typeReductionType;
+	}
+
+	public void setTypeReductionType(int typeReductionType) {
+		this.typeReductionType = typeReductionType;
+	}
+
+	public int getTypeFuzzySystem() {
+		return typeFuzzySystem;
+	}
+
+	public void setTypeFuzzySystem(int typeFuzzySystem) {
+		this.typeFuzzySystem = typeFuzzySystem;
+	}
+	
+	
+	
 	
 	
 

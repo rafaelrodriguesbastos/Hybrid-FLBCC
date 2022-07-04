@@ -42,6 +42,8 @@ public class MadRs {
 		String typeUnion = ""; // default value empty min(xInf, yInf), max(xSup, ySup)
 		boolean admissibleOrders = true; // enable selection host for admissible orders
 		String orderType = "xuandyager"; // set adimissible order type
+		int typeReductionType = 0; // CENTEROFSETS = 0; CENTROID = 1;
+		int typeFuzzySystem = 0;  //  0 - Conventional Type-2 Fuzzy System, 1 - N Dimensional Type-2 Fuzzy Fuzzy System  
 
 		new RandomRunner(
 				enableOutput,
@@ -57,7 +59,9 @@ public class MadRs {
 				typeIntersection,
 				typeUnion,
 				admissibleOrders,
-				orderType);
+				orderType,
+				typeReductionType, 
+				typeFuzzySystem);
 	}
 
 }

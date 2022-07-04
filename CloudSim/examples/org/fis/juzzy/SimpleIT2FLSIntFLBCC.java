@@ -38,6 +38,10 @@ public class SimpleIT2FLSIntFLBCC
     Output P;             //the output of the FLS
     IT2_Rulebase rulebase;   //the rulebase captures the entire FLS
     
+    private double OutputXValue;
+    private double OutputYValue;
+    private double xPontual;
+    
     public SimpleIT2FLSIntFLBCC()
     {
         //Define the inputs
@@ -52,17 +56,18 @@ public class SimpleIT2FLSIntFLBCC
         // MF for Computational Power
         
         //MF1='limited':'itrapatype2',[-2.269 -0.9 0.45 2.4 -1.329 -0.01882 1.5 3.5 0.9]
-        T1MF_Trapezoidal limitedCPUMF = new  T1MF_Trapezoidal("Upper MF for Limited CP", new double[] {-2.27, -0.9, 1.5, 3.5});   
+          
+        T1MF_Trapezoidal limitedCPUMF = new  T1MF_Trapezoidal("Upper MF for Limited CP", new double[] {-2.27, -0.9, 1.5, 3.5});
         T1MF_Trapezoidal limitedCPLMF = new  T1MF_Trapezoidal("Lower MF for Limited CP", new double[] {-1.3, -0.2, 0.45, 2.4});
         IntervalT2MF_Trapezoidal limitedCPMF = new IntervalT2MF_Trapezoidal("IT2MF for limited CP",limitedCPUMF,limitedCPLMF);
         
         //MF2='reasonable':'itrapatype2',[1.6 3.8 5.4 7.4 2.6 4.6 6.3 8.4 0.9]
-        T1MF_Trapezoidal reasonableCPUMF = new  T1MF_Trapezoidal("Upper MF for Reasonable CP", new double[] {1.6, 3.8, 6.3, 8.4});  
+        T1MF_Trapezoidal reasonableCPUMF = new  T1MF_Trapezoidal("Upper MF for Reasonable CP", new double[] {1.6, 3.8, 6.3, 8.4});
         T1MF_Trapezoidal reasonableCPLMF = new  T1MF_Trapezoidal("Lower MF for Reasonable CP", new double[] {2.6, 4.6, 5.4, 7.4});
         IntervalT2MF_Trapezoidal reasonableCPMF = new IntervalT2MF_Trapezoidal("IT2MF for limited CP",reasonableCPUMF,reasonableCPLMF);
         
         //MF3='high':'itrapatype2',[6.65 7.65 10.19 12.34 7.65 8.5 11.19 13.34 0.9]
-        T1MF_Trapezoidal highCPUMF = new  T1MF_Trapezoidal("Upper MF for High CP", new double[] {6.65, 7.65, 11.19, 13.34});  
+        T1MF_Trapezoidal highCPUMF = new  T1MF_Trapezoidal("Upper MF for High CP", new double[] {6.65, 7.65, 11.19, 13.34});
         T1MF_Trapezoidal highCPLMF = new  T1MF_Trapezoidal("Lower MF for High CP", new double[] {7.65, 8.5, 10.19, 12.34});
         IntervalT2MF_Trapezoidal highCPMF = new IntervalT2MF_Trapezoidal("IT2MF for limited CP",highCPUMF,highCPLMF);
 
@@ -73,7 +78,7 @@ public class SimpleIT2FLSIntFLBCC
         // até a l189
         // MF for Comunication Cost
         //MF1='small':'itrapatype2',[-2.27 -0.8 0.5 2.4 -1.327 -0.01682 1.35 3.4 0.9]
-        T1MF_Trapezoidal smallCCUMF = new  T1MF_Trapezoidal("Upper MF for Small CC", new double[] {-2.27, -0.8, 1.35, 3.4});   
+        T1MF_Trapezoidal smallCCUMF = new  T1MF_Trapezoidal("Upper MF for Small CC", new double[] {-2.27, -0.8, 1.35, 3.4});
         T1MF_Trapezoidal smallCCLMF = new  T1MF_Trapezoidal("Lower MF for Small CC", new double[] {-1.3, -0.02, 0.5, 2.4});
         IntervalT2MF_Trapezoidal smallCCMF = new IntervalT2MF_Trapezoidal("IT2MF for limited CP",smallCCUMF,smallCCLMF);
         
@@ -83,7 +88,7 @@ public class SimpleIT2FLSIntFLBCC
         IntervalT2MF_Trapezoidal averageCCMF = new IntervalT2MF_Trapezoidal("IT2MF for Average CC",averageCCUMF,averageCCLMF);
         
         //MF2='big':'itrapatype2',[6.5 8.5 10 12 7.5 9.2 11.19 13.34 0.9]
-        T1MF_Trapezoidal bigCCUMF = new  T1MF_Trapezoidal("Upper MF for Big CC", new double[] {6.5, 8.5, 11.19, 13.34}); 
+        T1MF_Trapezoidal bigCCUMF = new  T1MF_Trapezoidal("Upper MF for Big CC", new double[] {6.5, 8.5, 11.19, 13.34});
         T1MF_Trapezoidal bigCCLMF = new  T1MF_Trapezoidal("Lower MF for Big CC", new double[] {7.5, 9.2, 10, 12});
         IntervalT2MF_Trapezoidal bigCCMF = new IntervalT2MF_Trapezoidal("IT2MF for Big CC",bigCCUMF,bigCCLMF);
         
@@ -92,7 +97,7 @@ public class SimpleIT2FLSIntFLBCC
         
         // MF for RAM
         //MF1='small':'itrapatype2',[-2.27 -0.8 0.5 2.4 -1.327 -0.01682 1.35 3.4 0.9]
-        T1MF_Trapezoidal smallRAMUMF = new  T1MF_Trapezoidal("Upper MF for Small RAM", new double[] {-2.27, -0.8, 1.35, 3.4}); 
+        T1MF_Trapezoidal smallRAMUMF = new  T1MF_Trapezoidal("Upper MF for Small RAM", new double[] {-2.27, -0.8, 1.35, 3.4});
         T1MF_Trapezoidal smallRAMLMF = new  T1MF_Trapezoidal("Lower MF for Small RAM", new double[] {-1.327, -0.01682, 0.5, 2.4});
         IntervalT2MF_Trapezoidal smallRAMMF = new IntervalT2MF_Trapezoidal("IT2MF for Small RAM",smallRAMUMF,smallRAMLMF);
         
@@ -110,17 +115,17 @@ public class SimpleIT2FLSIntFLBCC
         
         // MF for Priority (P)
         //MF1='low':'itrapatype2',[-1.74698039215686 -0.590980392156862 -0.569980392156862 3.99901960784314 -1.24678039215686 0.079019607843138 0.409019607843138 4.99901960784314 0.9]
-        T1MF_Trapezoidal lowPriorityUMF = new  T1MF_Trapezoidal("Upper MF for Low Priority", new double[] {-1.75, -0.6, 0.41, 5});  
+        T1MF_Trapezoidal lowPriorityUMF = new  T1MF_Trapezoidal("Upper MF for Low Priority", new double[] {-1.75, -0.6, 0.41, 5});
         T1MF_Trapezoidal lowPriorityLMF = new  T1MF_Trapezoidal("Lower MF for Low Priority", new double[] {-1.2, 0.08, -0.57, 4.0}); //
         IntervalT2MF_Trapezoidal lowPriorityMF = new IntervalT2MF_Trapezoidal("IT2MF for Low Priority ",lowPriorityUMF,lowPriorityLMF);
         
         //MF2='average':'itrapatype2',[0.5 4.5 4.83 8.5 1.5 5.16 5.5 9.5 0.9]
-        T1MF_Trapezoidal averagePriorityUMF = new  T1MF_Trapezoidal("Upper MF for Average Priority", new double[] {0.5, 4.5, 5.5, 9.5}); 
+        T1MF_Trapezoidal averagePriorityUMF = new  T1MF_Trapezoidal("Upper MF for Average Priority", new double[] {0.5, 4.5, 5.5, 9.5});
         T1MF_Trapezoidal averagePriorityLMF = new  T1MF_Trapezoidal("Lower MF for Average Priority", new double[] {1.5, 5.16, 4.83, 8.5});
         IntervalT2MF_Trapezoidal averagePriorityMF = new IntervalT2MF_Trapezoidal("IT2MF for Average Priority ",averagePriorityUMF,averagePriorityLMF);
         
         //MF3='high':'itrapatype2',[5 9.61 9.94 11.3 6 10.3 10.7 11.8 0.9]
-        T1MF_Trapezoidal highPriorityUMF = new  T1MF_Trapezoidal("Upper MF for High Priority", new double[] {5, 9.6, 10.7, 11.8});  
+        T1MF_Trapezoidal highPriorityUMF = new  T1MF_Trapezoidal("Upper MF for High Priority", new double[] {5, 9.6, 10.7, 11.8});
         T1MF_Trapezoidal highPriorityLMF = new  T1MF_Trapezoidal("Lower MF for High Priority", new double[] {6, 10.3, 9.94, 11.3});
         IntervalT2MF_Trapezoidal highPriorityMF = new IntervalT2MF_Trapezoidal("IT2MF for High Priority ", highPriorityUMF, highPriorityLMF);
         
@@ -178,8 +183,9 @@ public class SimpleIT2FLSIntFLBCC
         
         //get some outputs
         // getPriority(inCP, inCC, inRAM);
-        getPriority(8.0, 2.0, 9.0);
-        getPriority(1.0, 8.0, 3.0);
+        // getPriority(8.0, 2.0, 9.0);
+        // getPriority(1.0, 8.0, 3.0);
+        getLevelRangeInUse(6.613651768693075,1.0, 0.022125244140625);
                 
         //plot some sets, discretizing each input into 100 steps.
         plotMFs("Computational Power Membership Functions", new IntervalT2MF_Interface[]{limitedCPMF,reasonableCPMF, highCPMF}, 10);
@@ -195,6 +201,59 @@ public class SimpleIT2FLSIntFLBCC
         System.out.println("\n"+rulebase);
         
     }
+    
+    public void getLevelRangeInUse(double inCP, double inCC, double inRAM)
+    {
+        //first, set the inputs
+    	
+    	CP.setInput(inCP);
+    	CC.setInput(inCC);
+    	RAM.setInput(inRAM);
+    	
+   	
+        /*
+        //now execute the FLS and print output
+        System.out.println("The CP was: "+CP.getInput());
+        System.out.println("The CC was: "+CC.getInput());
+        System.out.println("The RAM was: "+RAM.getInput());
+        System.out.println("Using center of sets type reduction, the IT2 FLS recommends a "
+                + "priority of: "+rulebase.evaluate(0).get(P));  
+        System.out.println("Using centroid type reduction, the IT2 FLS recommends a "
+                + "priority of: "+rulebase.evaluate(1).get(P));
+        
+        //show the output of the raw centroids
+        System.out.println("Centroid of the output for Priority (based on centroid type reduction):");
+        TreeMap<Output, Object[]> centroid = rulebase.evaluateGetCentroid(1);
+        Object[] centroidTip = centroid.get(P);
+        Tuple centroidTipXValues = (Tuple)centroidTip[0];
+        double centroidTipYValues = ((Double)centroidTip[1]);
+            System.out.println(centroidTipXValues+" at y= "+centroidTipYValues);     
+         */   
+    	// System.out.println("Prioridade: "+rulebase.evaluate(tipoDefuzzificacao).get(U));
+    	
+    	TreeMap<Output, Object[]> centroid = rulebase.evaluateGetCentroid(0);
+        //Object[] centroidTip = centroid.get(U);
+    	Object[] centroidTip = centroid.get(P);
+        Tuple centroidTipXValues = (Tuple)centroidTip[0];
+        double centroidTipYValues = ((Double) centroidTip[1]);
+
+        System.out.println("inCP: "+inCP + " inCC= " + inCC+" inRAM "+inRAM);
+        System.out.println(centroidTipXValues + " at y= " + centroidTipYValues);
+        
+        //this.OutputXValue = Double.parseDouble(centroidTipXValues.toString());
+        this. OutputXValue = centroidTipXValues.getLeft();
+
+        //double centroidTipYValues = ((Double)centroidTip[1]);
+        this.OutputYValue = centroidTipXValues.getRight();
+        
+       // System.out.println("XValue: "+this.OutputXValue+" YValue: "+this.OutputYValue);
+        
+        // verificar
+        this.xPontual = centroidTipXValues.getAverage(); 
+         
+    }
+
+    
     
     /**
      * Basic method that prints the output for a given set of inputs.
@@ -296,6 +355,7 @@ public class SimpleIT2FLSIntFLBCC
     }
     */
     
+       
     public static void main(String args[])
     {
         new SimpleIT2FLSIntFLBCC();

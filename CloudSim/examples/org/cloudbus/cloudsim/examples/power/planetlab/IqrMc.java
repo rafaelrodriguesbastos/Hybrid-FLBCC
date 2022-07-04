@@ -44,6 +44,8 @@ public class IqrMc {
 		String typeUnion = ""; // default value empty min(xInf, yInf), max(xSup, ySup)
 		boolean admissibleOrders = true; // enable selection host for admissible orders
 		String orderType = "lex1"; // set admissible order type
+		int typeReductionType = 0; // CENTEROFSETS = 0; CENTROID = 1;
+		int typeFuzzySystem = 0;  //  0 - Conventional Type-2 Fuzzy System, 1 - N Dimensional Type-2 Fuzzy Fuzzy System
 
 
 		new PlanetLabRunner(
@@ -60,7 +62,9 @@ public class IqrMc {
 				typeIntersection,
 				typeUnion,
 				admissibleOrders,
-				orderType);
+				orderType,
+				typeReductionType, 
+				typeFuzzySystem);
 	}
 
 }

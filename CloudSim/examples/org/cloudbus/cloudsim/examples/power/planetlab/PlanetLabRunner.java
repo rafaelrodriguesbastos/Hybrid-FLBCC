@@ -49,7 +49,9 @@ public class PlanetLabRunner extends RunnerAbstract {
 			String typeIntersection,
 			String typeUnion,
 			boolean admissibleOrders,
-			String orderType) {
+			String orderType,
+			int typeReductionType,
+			int typeFuzzySystem) {
 		super( 
 				enableOutput,
 				outputToFile,
@@ -64,7 +66,9 @@ public class PlanetLabRunner extends RunnerAbstract {
 				typeIntersection,
 				typeUnion,
 				admissibleOrders,
-				orderType);
+				orderType,
+				typeReductionType,
+				typeFuzzySystem);
 	}
 
 	
@@ -94,7 +98,9 @@ public class PlanetLabRunner extends RunnerAbstract {
 				"",    //typeIntersection,
 				"",    //typeUnion,
 				false, // admissibleOrders,
-				"");   //orderType
+				"", //orderType
+				0, //typeReductionType
+				0); //typeFuzzySystem  
 	}
 	
 	// constructor fuzzy and without orders admissible with aggregator functions 
@@ -110,7 +116,9 @@ public class PlanetLabRunner extends RunnerAbstract {
 			boolean outputAbstractInCsv,
 			boolean enableFuzzyT2Overload,
 			String typeIntersection,
-			String typeUnion) {
+			String typeUnion,
+			int typeReductionType,
+			int typeFuzzySystem) {
 		super( 
 				enableOutput,
 				outputToFile,
@@ -125,7 +133,9 @@ public class PlanetLabRunner extends RunnerAbstract {
 				typeIntersection,
 				typeUnion,
 				false, // admissibleOrders 
-				"");  //orderType
+				"", //orderType
+				typeReductionType, //typeReductionType
+				typeFuzzySystem);  
 	}
 	
 	

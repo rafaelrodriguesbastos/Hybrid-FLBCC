@@ -39,11 +39,13 @@ public class LrrRs {
 		String vmSelectionPolicy = "rs"; // Random Selection (RS) VM selection policy
 		String parameter = "1.2"; //1.2 the safety parameter of the LRR policy
 		boolean outputAbstractInCsv = false;  // enable summary recording in csv
-		boolean enableFuzzyT2Overload = false; // enable overload fuzzy type 2 detection
-		String typeIntersection = "TL"; //default value empty max(xInf, yInf), min(xSup, ySup)
+		boolean enableFuzzyT2Overload = true; // enable overload fuzzy type 2 detection
+		String typeIntersection = ""; //TL //default value empty max(xInf, yInf), min(xSup, ySup)
 		String typeUnion = ""; // default value empty min(xInf, yInf), max(xSup, ySup)
-		boolean admissibleOrders = true; // enable selection host for admissible orders
+		boolean admissibleOrders = false; // enable selection host for admissible orders
 		String orderType = "xuandyager"; // set admissible order type
+		int typeReductionType = 0; // CENTEROFSETS = 0; CENTROID = 1;
+		int typeFuzzySystem = 0;  //  0 - Conventional Type-2 Fuzzy System, 1 - N Dimensional Type-2 Fuzzy Fuzzy System
 
 		new PlanetLabRunner(
 				enableOutput,
@@ -59,7 +61,9 @@ public class LrrRs {
 				typeIntersection,
 				typeUnion,
 				admissibleOrders,
-				orderType);
+				orderType,
+				typeReductionType,
+				typeFuzzySystem);
 	}
 
 }

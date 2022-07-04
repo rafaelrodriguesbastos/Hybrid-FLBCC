@@ -25,7 +25,11 @@ public class Constants {
 	
 	//public final static String ABSTRACT_FILE_NAME = "/log-resumos-execs-fuzz-ieee-2019.csv";
 	//public final static String ABSTRACT_FILE_NAME = "/log-resumos-execs-fuzzy-sets-and-systems-admissible-orders.csv";
-	public final static String ABSTRACT_FILE_NAME = "/log-resumos-execs-fuzzy-sets-and-systems-part2.csv";
+	//public final static String ABSTRACT_FILE_NAME = "/log-resumos-execs-fuzzy-sets-and-systems-part2.csv";
+	public final static String ABSTRACT_FILE_NAME = "/log-execs-correlacao-centerofsets-all-workloads-2.csv";
+	//public final static String ABSTRACT_FILE_NAME = "/log-execs-correlacao-centroid-all-workloads-2.csv";
+	//public final static String ABSTRACT_FILE_NAME = "/log-execs-implication-fuzzy-3.csv";
+	//public final static String ABSTRACT_FILE_NAME = "/log-execs-correlacao-n.csv";
 
 	public final static double SCHEDULING_INTERVAL = 300;
 	public final static double SIMULATION_LIMIT = 24 * 60 * 60;

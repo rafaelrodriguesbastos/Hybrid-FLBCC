@@ -49,7 +49,9 @@ public class PowerVmAllocationPolicyMigrationLocalRegressionRobust extends
 			boolean admissibleOrders,
 			String orderType,
 			String typeIntersection,
-			String typeUnion) {
+			String typeUnion,
+			int typeReductionType,
+			int typeFuzzySystem) {
 		super(
 				hostList,
 				vmSelectionPolicy,
@@ -60,7 +62,9 @@ public class PowerVmAllocationPolicyMigrationLocalRegressionRobust extends
 				admissibleOrders,
 				orderType,
 				typeIntersection,
-				typeUnion);
+				typeUnion,
+				typeReductionType,
+				typeFuzzySystem);
 	}
 
 	/**
@@ -80,8 +84,11 @@ public class PowerVmAllocationPolicyMigrationLocalRegressionRobust extends
 			boolean admissibleOrders,
 			String orderType,
 			String typeIntersection,
-			String typeUnion) {
-		super(hostList, vmSelectionPolicy, safetyParameter, schedulingInterval, fallbackVmAllocationPolicy, admissibleOrders, orderType, typeIntersection, typeUnion);
+			String typeUnion,
+			int typeReductionType,
+			int typeFuzzySystem) {
+		super(hostList, vmSelectionPolicy, safetyParameter, schedulingInterval, fallbackVmAllocationPolicy, admissibleOrders, orderType, 
+				typeIntersection, typeUnion, typeReductionType, typeFuzzySystem);
 	}
 
 	/**
