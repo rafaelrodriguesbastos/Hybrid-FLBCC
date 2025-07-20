@@ -1,6 +1,8 @@
 package org.cloudbus.cloudsim.examples.power.random;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A simulation of a heterogeneous power aware data center that applies the Static Threshold (THR)
@@ -45,6 +47,10 @@ public class ThrRs {
 		int typeReductionType = 0; // CENTEROFSETS = 0; CENTROID = 1;
 		int typeFuzzySystem = 0;  //  0 - Conventional Type-2 Fuzzy System, 1 - N Dimensional Type-2 Fuzzy Fuzzy System  
 
+		Map<String, String> vmPolicies = new HashMap<>();
+		vmPolicies.put("ap", "thr");
+		vmPolicies.put("sp", "rs");
+
 		new RandomRunner(
 				enableOutput,
 				outputToFile,
@@ -61,7 +67,8 @@ public class ThrRs {
 				admissibleOrders,
 				orderType,
 				typeReductionType,
-				typeFuzzySystem);
+				typeFuzzySystem,
+				vmPolicies);
 	}
 
 }

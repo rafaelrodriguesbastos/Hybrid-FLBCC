@@ -1,6 +1,8 @@
 package org.cloudbus.cloudsim.examples.power.planetlab;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A simulation of a heterogeneous power aware data center that applies the Inter Quartile Range
@@ -42,12 +44,15 @@ public class IqrRs {
 		boolean enableFuzzyT2Overload = true; // enable overload fuzzy type 2 detection
 		String typeIntersection = "maxmin"; //"maxmin"; //default maxmin value max(xInf, yInf), min(xSup, ySup)
 		String typeUnion = "minmax"; //"minmax"; // default minmax value  min(xInf, yInf), max(xSup, ySup)
-		boolean admissibleOrders = false; // enable selection host for admissible orders
-		String orderType = ""; 
+		boolean admissibleOrders = true; // enable selection host for admissible orders
+		String orderType = "xuandyager";
 		int typeReductionType = 1; // CENTEROFSETS = 0; CENTROID = 1;
 		int typeFuzzySystem = 1;  //  0 - Conventional Type-2 Fuzzy System, 1 - N Dimensional Type-2 Fuzzy Fuzzy System  
-		
-		
+
+		Map<String, String> vmPolicies = new HashMap<>();
+		vmPolicies.put("ap", "iqr");
+		vmPolicies.put("sp", "rs");
+
 		// set admissible order type
 		new PlanetLabRunner(
 				enableOutput,
@@ -65,7 +70,8 @@ public class IqrRs {
 				admissibleOrders,
 				orderType,
 				typeReductionType,
-				typeFuzzySystem);
+				typeFuzzySystem,
+				vmPolicies);
 	}
 
 }

@@ -1,6 +1,8 @@
 package org.cloudbus.cloudsim.examples.power.planetlab;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A simulation of a heterogeneous power aware data center that only applied DVFS, but no dynamic
@@ -47,7 +49,11 @@ public class Dvfs {
 		String orderType = "xuandyager"; // set admissible order type
 		int typeReductionType = 0; // CENTEROFSETS = 0; CENTROID = 1;
 		int typeFuzzySystem = 0;  //  0 - Conventional Type-2 Fuzzy System, 1 - N Dimensional Type-2 Fuzzy Fuzzy System  
-		
+
+		Map<String, String> vmPolicies = new HashMap<>();
+		vmPolicies.put("ap", "dvfs");
+		vmPolicies.put("sp", "");
+
 		new PlanetLabRunner(
 				enableOutput,
 				outputToFile,
@@ -64,7 +70,7 @@ public class Dvfs {
 				admissibleOrders,
 				orderType,
 				typeReductionType,
-				typeFuzzySystem);
+				typeFuzzySystem, vmPolicies);
 	}
 
 }

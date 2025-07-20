@@ -1,6 +1,8 @@
 package org.cloudbus.cloudsim.examples.power.planetlab;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.commons.math3.ode.ODEIntegrator;
 
@@ -49,6 +51,10 @@ public class ThrMc {
 		int typeReductionType = 0; // CENTEROFSETS = 0; CENTROID = 1;
 		int typeFuzzySystem = 0;  //  0 - Conventional Type-2 Fuzzy System, 1 - N Dimensional Type-2 Fuzzy Fuzzy System
 
+		Map<String, String> vmPolicies = new HashMap<>();
+		vmPolicies.put("ap", "thr");
+		vmPolicies.put("sp", "mc");
+
 		new PlanetLabRunner(
 				enableOutput,
 				outputToFile,
@@ -65,7 +71,8 @@ public class ThrMc {
 				admissibleOrders,
 				orderType,
 				typeReductionType,
-				typeFuzzySystem);
+				typeFuzzySystem,
+				vmPolicies);
 	}
 
 }

@@ -11,15 +11,14 @@ package org.cloudbus.cloudsim.power;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.swing.JOptionPane;
+import java.util.Map;
 
 import org.cloudbus.cloudsim.Host;
 import org.cloudbus.cloudsim.Vm;
+import org.cloudbus.cloudsim.core.CloudSim;
 import org.cloudbus.cloudsim.util.DaoMembershipDegreesOfType2FuzzySets;
 import org.cloudbus.cloudsim.util.MembershipDegreesOfType2FuzzySets;
-import org.cloudbus.cloudsim.util.Type2FuzzyLogicEvaluation;
-import org.cloudbus.cloudsim.util.Type2FuzzyLogicNDimensionalEvaluation;
+import org.cloudbus.cloudsim.util.Type2FuzzyLogicHybridEvaluation;
 
 /**
  * The Static Threshold (THR) VM allocation policy.
@@ -45,7 +44,8 @@ public class PowerVmAllocationPolicyMigrationStaticThreshold extends PowerVmAllo
 	private String typeIntersection;
 	private String typeUnion;
 	private int typeReductionType; // CENTEROFSETS = 0; CENTROID = 1; 
-	private int typeFuzzySystem;  //  0 - Conventional Type-2 Fuzzy System, 1 - N Dimensional Type-2 Fuzzy Fuzzy System  
+	private int typeFuzzySystem;  //  0 - Conventional Type-2 Fuzzy System, 1 - N Dimensional Type-2 Fuzzy Fuzzy System
+	private Map<String, String> vmPolicies;
 	
 	private boolean admissibleOrders;
 	private String orderType;
@@ -57,16 +57,17 @@ public class PowerVmAllocationPolicyMigrationStaticThreshold extends PowerVmAllo
 
 	/**
 	 * Instantiates a new power vm allocation policy migration mad.
-	 * 
+	 *
 	 * @param hostList             the host list
 	 * @param vmSelectionPolicy    the vm selection policy
 	 * @param utilizationThreshold the utilization threshold
+	 * @param vmPolicies
 	 */
 	public PowerVmAllocationPolicyMigrationStaticThreshold(List<? extends Host> hostList,
-			PowerVmSelectionPolicy vmSelectionPolicy, double utilizationThreshold, boolean enableFuzzyT2Overload, 
-			String typeIntersection, String typeUnion, int typeReductionType, int typeFuzzySystem, boolean admissibleOrders, String orderType) {
+														   PowerVmSelectionPolicy vmSelectionPolicy, double utilizationThreshold, boolean enableFuzzyT2Overload,
+														   String typeIntersection, String typeUnion, int typeReductionType, int typeFuzzySystem, boolean admissibleOrders, String orderType, Map<String, String> vmPolicies) {
 		//super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion);
-		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion, typeReductionType, typeFuzzySystem);
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion, typeReductionType, typeFuzzySystem, vmPolicies);
 		
 		setUtilizationThreshold(utilizationThreshold);
 		setEnableFuzzyT2Overload(enableFuzzyT2Overload);
@@ -78,6 +79,7 @@ public class PowerVmAllocationPolicyMigrationStaticThreshold extends PowerVmAllo
 		setTypeUnion(typeUnion);
 		setTypeReductionType(typeReductionType);
 		setTypeFuzzySystem(typeFuzzySystem);
+		setVmPolicies(vmPolicies);
 	}
 
 	/**
@@ -140,78 +142,61 @@ public class PowerVmAllocationPolicyMigrationStaticThreshold extends PowerVmAllo
 	public double getLevelOfUse(Host host, boolean plotMF, int isOverOrUnder, int isTypeObjective, int typeFuzzySystem)  {
 		PowerHostUtilizationHistory _host = (PowerHostUtilizationHistory) host;
 
-		// double cpAvailable = _host.getMaxAvailableMips();
-		// double ccAvailable = _host.getBw() - _host.getUtilizationOfBw();
-		// double ramAvailable = _host.getRam() - _host.getUtilizationOfRam();
+		double cpu = 0, ram = 0, bw = 0, mips = 0, storage = 0, energy = 0, previousUtilizationOfCpu = 0;
 
-		double maxCPHost = 0;
-		double minCCHost = 0;
-		double maxRamHost = 0;
+		double allVmRam = 0;
+		double allVmBw = 0;
+		double allVmMips = 0;
+		double allVmStorage = 0;
 
-		for (int i = 0; i < getHostList().size(); i++) {
-
-			if (maxCPHost < getHostList().get(i).getTotalMips()) {
-				maxCPHost = getHostList().get(i).getTotalMips();
-			}
-
-			if (minCCHost < getHostList().get(i).getBw()) {
-				minCCHost = getHostList().get(i).getBw();
-			}
-
-			if (maxRamHost < getHostList().get(i).getRam()) {
-				maxRamHost = getHostList().get(i).getRam();
-			}
-
-			// System.out.println("maxCPHost: #"+maxCPHost+" minCCHost: #"+minCCHost+ "
-			// maxRamHost: #"+maxRamHost);
-
+		for (Vm vm : _host.getVmList()) {
+			allVmRam += vm.getRam();
+			if (allVmBw < vm.getBw()) {
+				allVmBw = vm.getBw();
+			};
+			allVmMips += vm.getMips();
+			allVmStorage += vm.getSize();
 		}
 
-		double cpStandartScale = 0;
-		double ccStandartScale = 0;
-		double ramStandartScale = 0;
+		cpu = _host.getUtilizationOfCpu();
+		ram = allVmRam / _host.getRam();
+		bw = allVmBw / _host.getBw();
+		mips = allVmMips / _host.getTotalMips();
+		storage = allVmStorage / host.getStorage();
 
-		cpStandartScale = (_host.getMaxAvailableMips() / maxCPHost) * 10;
-		// ccStandartScale = (_host.getUtilizationOfBw()/maxCCHost)*10;
-		ccStandartScale = (10 * _host.getUtilizationOfBw()) / minCCHost;
-		ramStandartScale = (_host.getUtilizationOfRam() / maxRamHost) * 10;
-		
+		cpu = _host.getUtilizationOfCpu();
+		//cpu = _host.getUtilizationMips() / _host.getTotalMips(); ///Int-FLBCC _host.getMaxAvailableMips();
+		storage = allVmStorage / _host.getStorage();
+
+		previousUtilizationOfCpu = _host.getPreviousUtilizationOfCpu();
+		energy = _host.getEnergyLinearInterpolation(
+				previousUtilizationOfCpu,
+				cpu,
+				CloudSim.clock() - host.getDatacenter().getLastProcessTime());
+
 		double saida=0;
 		
 		//JOptionPane.showMessageDialog(null, "typeFuzzySystem: "+typeFuzzySystem);
 		
 		if(typeFuzzySystem == 0) {
 
-		Type2FuzzyLogicEvaluation it2 = new Type2FuzzyLogicEvaluation(cpStandartScale, ccStandartScale, ramStandartScale, 
-				plotMF,	isOverOrUnder, isTypeObjective, true, getTypeIntersection(), getTypeUnion(), getTypeReductionType());
-		//Type2FuzzyLogicEvaluation it2 = new Type2FuzzyLogicEvaluation(cpStandartScale, ccStandartScale, ramStandartScale);
-		
-		
-		//JOptionPane.showMessageDialog(null, "typeReductionType é: "+getTypeReductionType());
-		
-		
-		// System.out.println("maxCPHost: #"+maxCPHost+" minCCHost: #"+minCCHost+ "
-		// maxRamHost: #"+maxRamHost + " Level of Use #"+it2.getLevelOfUse());
-		// System.out.println("cpStandartScale: #"+cpStandartScale+" ccStandartScale:
-		// #"+ccStandartScale+ " ramStandartScale: #"+ramStandartScale+ "
-		// it2.getLevelOfUse() #"+(it2.getLevelOfUse()/10));
+		Type2FuzzyLogicHybridEvaluation it2 = new Type2FuzzyLogicHybridEvaluation(cpu, ram, bw, mips, storage, energy,
+				plotMF,	isOverOrUnder, isTypeObjective, true, getTypeIntersection(), getTypeUnion(), getTypeReductionType(), getVmPolicies());
 
-		// obtendo os graus de pertinecia para a saída utilização
-		//it2.getLevelOfUse();
-		it2.getLevelRangeInUse(cpStandartScale, ccStandartScale, ramStandartScale, getTypeReductionType());
+		it2.getLevelRangeInUse(cpu, ram, bw, mips, storage, energy, getTypeReductionType());
 		
 		
        // este bloco estava usando para salvar no arquivo csv	
 		//LowULower, LowUUpper, AverageULower, AverageUUpper, HighULower, HighUUpper
 	    double xPontual = it2.getxPontual();
-        this.degreesOfMembershipFunctions.setLowUtilizationDegreeOfMembershipLowerBound(it2.getLowUtilizationMF().getLowerBound(xPontual));
-        this.degreesOfMembershipFunctions.setLowUtilizationDegreeOfMembershipUpperBound(it2.getLowUtilizationMF().getUpperBound(xPontual));
+        this.degreesOfMembershipFunctions.setUnderUtilizationDegreeOfMembershipLowerBound(it2.getUnderUtilizationMF().getLowerBound(xPontual));
+        this.degreesOfMembershipFunctions.setUnderUtilizationDegreeOfMembershipUpperBound(it2.getUnderUtilizationMF().getUpperBound(xPontual));
         
-        this.degreesOfMembershipFunctions.setAverageUtilizationDegreeOfMembershipLowerBound(it2.getAverageUtilizationMF().getLowerBound(xPontual));
-        this.degreesOfMembershipFunctions.setAverageUtilizationDegreeOfMembershipUpperBound(it2.getAverageUtilizationMF().getUpperBound(xPontual));
+        this.degreesOfMembershipFunctions.setNormalUtilizationDegreeOfMembershipLowerBound(it2.getNormalUtilizationMF().getLowerBound(xPontual));
+        this.degreesOfMembershipFunctions.setNormalUtilizationDegreeOfMembershipUpperBound(it2.getNormalUtilizationMF().getUpperBound(xPontual));
         
-        this.degreesOfMembershipFunctions.setHighUtilizationDegreeOfMembershipLowerBound(it2.getHighUtilizationMF().getLowerBound(xPontual));  //highUtilizationUMF
-        this.degreesOfMembershipFunctions.setHighUtilizationDegreeOfMembershipUpperBound(it2.getHighUtilizationMF().getUpperBound(xPontual));  //highUtilizationUMF
+        this.degreesOfMembershipFunctions.setOverUtilizationDegreeOfMembershipLowerBound(it2.getOverUtilizationMF().getLowerBound(xPontual));  //highUtilizationUMF
+        this.degreesOfMembershipFunctions.setOverUtilizationDegreeOfMembershipUpperBound(it2.getOverUtilizationMF().getUpperBound(xPontual));  //highUtilizationUMF
 
         daoMembershipDegreesOfType2FuzzySets.adicionar(this.degreesOfMembershipFunctions);
 
@@ -220,8 +205,8 @@ public class PowerVmAllocationPolicyMigrationStaticThreshold extends PowerVmAllo
 		}else if(typeFuzzySystem ==1 ) {
 			
 			
-			Type2FuzzyLogicNDimensionalEvaluation it2 = new Type2FuzzyLogicNDimensionalEvaluation(cpStandartScale, ccStandartScale, ramStandartScale, 
-					plotMF,	isOverOrUnder, isTypeObjective, true, getTypeIntersection(), getTypeUnion(), getTypeReductionType());
+			Type2FuzzyLogicHybridEvaluation it2 = new Type2FuzzyLogicHybridEvaluation(cpu, ram, bw, mips, storage, energy,
+					plotMF,	isOverOrUnder, isTypeObjective, true, getTypeIntersection(), getTypeUnion(), getTypeReductionType(), getVmPolicies());
 			//Type2FuzzyLogicEvaluation it2 = new Type2FuzzyLogicEvaluation(cpStandartScale, ccStandartScale, ramStandartScale);
 			
 			
@@ -236,20 +221,20 @@ public class PowerVmAllocationPolicyMigrationStaticThreshold extends PowerVmAllo
 
 			// obtendo os graus de pertinecia para a saída utilização
 			//it2.getLevelOfUse();
-			it2.getLevelRangeInUse(cpStandartScale, ccStandartScale, ramStandartScale, getTypeReductionType());
+			it2.getLevelRangeInUse(cpu, ram, bw, mips, storage, energy, getTypeReductionType());
 			
 			
 	       // este bloco estava usando para salvar no arquivo csv	
 			//LowULower, LowUUpper, AverageULower, AverageUUpper, HighULower, HighUUpper
 		    double xPontual = it2.getxPontual();
-	        this.degreesOfMembershipFunctions.setLowUtilizationDegreeOfMembershipLowerBound(it2.getLowUtilizationMF().getLowerBound(xPontual));
-	        this.degreesOfMembershipFunctions.setLowUtilizationDegreeOfMembershipUpperBound(it2.getLowUtilizationMF().getUpperBound(xPontual));
+	        this.degreesOfMembershipFunctions.setUnderUtilizationDegreeOfMembershipLowerBound(it2.getUnderUtilizationMF().getLowerBound(xPontual));
+	        this.degreesOfMembershipFunctions.setUnderUtilizationDegreeOfMembershipUpperBound(it2.getUnderUtilizationMF().getUpperBound(xPontual));
 	        
-	        this.degreesOfMembershipFunctions.setAverageUtilizationDegreeOfMembershipLowerBound(it2.getAverageUtilizationMF().getLowerBound(xPontual));
-	        this.degreesOfMembershipFunctions.setAverageUtilizationDegreeOfMembershipUpperBound(it2.getAverageUtilizationMF().getUpperBound(xPontual));
+	        this.degreesOfMembershipFunctions.setNormalUtilizationDegreeOfMembershipLowerBound(it2.getNormalUtilizationMF().getLowerBound(xPontual));
+	        this.degreesOfMembershipFunctions.setNormalUtilizationDegreeOfMembershipUpperBound(it2.getNormalUtilizationMF().getUpperBound(xPontual));
 	        
-	        this.degreesOfMembershipFunctions.setHighUtilizationDegreeOfMembershipLowerBound(it2.getHighUtilizationMF().getLowerBound(xPontual));  //highUtilizationUMF
-	        this.degreesOfMembershipFunctions.setHighUtilizationDegreeOfMembershipLowerBound(it2.getHighUtilizationMF().getUpperBound(xPontual));  //highUtilizationUMF
+	        this.degreesOfMembershipFunctions.setOverUtilizationDegreeOfMembershipLowerBound(it2.getOverUtilizationMF().getLowerBound(xPontual));  //highUtilizationUMF
+	        this.degreesOfMembershipFunctions.setOverUtilizationDegreeOfMembershipLowerBound(it2.getOverUtilizationMF().getUpperBound(xPontual));  //highUtilizationUMF
 
 	        daoMembershipDegreesOfType2FuzzySets.adicionar(this.degreesOfMembershipFunctions);
 
@@ -332,8 +317,8 @@ public class PowerVmAllocationPolicyMigrationStaticThreshold extends PowerVmAllo
 	public void setTypeReductionType(int typeReductionType) {
 		this.typeReductionType = typeReductionType;
 	}
-	
-	
+
+
 
 	public int getTypeFuzzySystem() {
 		return typeFuzzySystem;
@@ -342,6 +327,16 @@ public class PowerVmAllocationPolicyMigrationStaticThreshold extends PowerVmAllo
 	public void setTypeFuzzySystem(int typeFuzzySystem) {
 		this.typeFuzzySystem = typeFuzzySystem;
 	}
+
+
+	public Map<String, String> getVmPolicies() {
+		return vmPolicies;
+	}
+
+	public void setVmPolicies(Map<String, String> vmPolicies) {
+		this.vmPolicies = vmPolicies;
+	}
+
 
 	public MembershipDegreesOfType2FuzzySets getDegreesOfMembershipFunctions() {
 		return degreesOfMembershipFunctions;

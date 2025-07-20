@@ -10,6 +10,7 @@ package org.cloudbus.cloudsim.power;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 import org.cloudbus.cloudsim.Host;
 import org.cloudbus.cloudsim.Log;
@@ -37,6 +38,8 @@ public class PowerVmAllocationPolicyMigrationFuzzy extends PowerVmAllocationPoli
 	/** The safety parameter. */
 	private double safetyParameter = 0;
 
+	private Map<String, String> vmPolicies;
+
 	/** The fallback vm allocation policy. */
 	private PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy;
 	
@@ -53,8 +56,8 @@ public class PowerVmAllocationPolicyMigrationFuzzy extends PowerVmAllocationPoli
 	public PowerVmAllocationPolicyMigrationFuzzy(List<? extends Host> hostList,
 			PowerVmSelectionPolicy vmSelectionPolicy, double safetyParameter,
 			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy, double utilizationThreshold,boolean admissibleOrders,
-			String orderType, String typeIntersection, String typeUnion, int typeReductionType, int typeFuzzySystem) {
-		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion, typeReductionType, typeFuzzySystem);
+			String orderType, String typeIntersection, String typeUnion, int typeReductionType, int typeFuzzySystem, Map<String, String> vmPolicies) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion, typeReductionType, typeFuzzySystem, vmPolicies);
 		setSafetyParameter(safetyParameter);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
 	}
@@ -69,8 +72,8 @@ public class PowerVmAllocationPolicyMigrationFuzzy extends PowerVmAllocationPoli
 	public PowerVmAllocationPolicyMigrationFuzzy(List<? extends Host> hostList,
 			PowerVmSelectionPolicy vmSelectionPolicy, double safetyParameter,
 			PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy, 
-			boolean admissibleOrders, String orderType, String typeIntersection, String typeUnion, int typeReductionType, int typeFuzzySystem) {
-		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion, typeReductionType, typeFuzzySystem);
+			boolean admissibleOrders, String orderType, String typeIntersection, String typeUnion, int typeReductionType, int typeFuzzySystem, Map<String, String> vmPolicies) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion, typeReductionType, typeFuzzySystem, vmPolicies);
 		setSafetyParameter(safetyParameter);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
 	}

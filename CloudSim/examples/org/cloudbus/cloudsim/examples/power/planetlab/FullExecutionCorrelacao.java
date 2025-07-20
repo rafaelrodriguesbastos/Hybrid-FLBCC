@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class FullExecutionCorrelacao {
 
@@ -74,9 +76,8 @@ public class FullExecutionCorrelacao {
 		
 		int typeReductionType = 0; // CENTEROFSETS = 0; CENTROID = 1;
 		int typeFuzzySystem = 0;  //  0 - Conventional Type-2 Fuzzy System, 1 - N Dimensional Type-2 Fuzzy Fuzzy System
-		 
-		
-		
+
+		Map<String, String> vmPolicies = new HashMap<>();
 
 		boolean admissibleOrders = false; // enable selection host for admissible orders
 		String[] orderType = { "lex1", "lex2", "xuandyager" }; // set admissible order type
@@ -103,6 +104,11 @@ public class FullExecutionCorrelacao {
 
 				}
 
+				vmPolicies.clear();
+				vmPolicies.put("ap", vmAllocationPolicy[x]);
+				vmPolicies.put("sp", vmSelectionPolicy);
+
+
 				// verifica se a detecção de sobrecarga fuzzy ou ordens admissíveis esta
 				// ativado, se não, executa sem fuzzy
 				if ((enableFuzzyT2Overload) || (admissibleOrders)) {
@@ -124,7 +130,7 @@ public class FullExecutionCorrelacao {
 									new PlanetLabRunner(enableOutput, outputToFile, inputFolder, outputFolder,
 											workload[i], vmAllocationPolicy[x], vmSelectionPolicy, parameter,
 											outputAbstractInCsv, enableFuzzyT2Overload, typeIntersection[y],
-											typeUnion[y], admissibleOrders, orderType[o],typeReductionType, typeFuzzySystem);
+											typeUnion[y], admissibleOrders, orderType[o],typeReductionType, typeFuzzySystem, vmPolicies);
 								}
 
 							} else {
@@ -132,7 +138,7 @@ public class FullExecutionCorrelacao {
 								// construtor sem ordens admissíveis com funções de agragação
 								new PlanetLabRunner(enableOutput, outputToFile, inputFolder, outputFolder, workload[i],
 										vmAllocationPolicy[x], vmSelectionPolicy, parameter, outputAbstractInCsv,
-										enableFuzzyT2Overload, typeIntersection[y], typeUnion[y], typeReductionType, typeFuzzySystem);
+										enableFuzzyT2Overload, typeIntersection[y], typeUnion[y], typeReductionType, typeFuzzySystem, vmPolicies);
 							}
 
 						//}
@@ -145,7 +151,7 @@ public class FullExecutionCorrelacao {
 
 					// construtor padrão do CloudSim
 					new PlanetLabRunner(enableOutput, outputToFile, inputFolder, outputFolder, workload[i],
-							vmAllocationPolicy[x], vmSelectionPolicy, parameter, outputAbstractInCsv);
+							vmAllocationPolicy[x], vmSelectionPolicy, parameter, outputAbstractInCsv, vmPolicies);
 
 				}
 

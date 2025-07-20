@@ -1,6 +1,7 @@
 package org.cloudbus.cloudsim.examples.power.planetlab;
 
 import java.util.Calendar;
+import java.util.Map;
 
 import org.cloudbus.cloudsim.Log;
 import org.cloudbus.cloudsim.core.CloudSim;
@@ -51,7 +52,8 @@ public class PlanetLabRunner extends RunnerAbstract {
 			boolean admissibleOrders,
 			String orderType,
 			int typeReductionType,
-			int typeFuzzySystem) {
+			int typeFuzzySystem,
+			Map<String, String> vmPolicies) {
 		super( 
 				enableOutput,
 				outputToFile,
@@ -68,7 +70,8 @@ public class PlanetLabRunner extends RunnerAbstract {
 				admissibleOrders,
 				orderType,
 				typeReductionType,
-				typeFuzzySystem);
+				typeFuzzySystem,
+				vmPolicies);
 	}
 
 	
@@ -83,7 +86,8 @@ public class PlanetLabRunner extends RunnerAbstract {
 			String vmAllocationPolicy,
 			String vmSelectionPolicy,
 			String parameter,
-			boolean outputAbstractInCsv) {
+			boolean outputAbstractInCsv,
+			Map<String, String> vmPolicies) {
 		super( 
 				enableOutput,
 				outputToFile,
@@ -100,7 +104,8 @@ public class PlanetLabRunner extends RunnerAbstract {
 				false, // admissibleOrders,
 				"", //orderType
 				0, //typeReductionType
-				0); //typeFuzzySystem  
+				0,
+				vmPolicies); //typeFuzzySystem
 	}
 	
 	// constructor fuzzy and without orders admissible with aggregator functions 
@@ -118,7 +123,8 @@ public class PlanetLabRunner extends RunnerAbstract {
 			String typeIntersection,
 			String typeUnion,
 			int typeReductionType,
-			int typeFuzzySystem) {
+			int typeFuzzySystem,
+			Map<String, String> vmPolicies) {
 		super( 
 				enableOutput,
 				outputToFile,
@@ -135,7 +141,8 @@ public class PlanetLabRunner extends RunnerAbstract {
 				false, // admissibleOrders 
 				"", //orderType
 				typeReductionType, //typeReductionType
-				typeFuzzySystem);  
+				typeFuzzySystem,
+				vmPolicies);
 	}
 	
 	

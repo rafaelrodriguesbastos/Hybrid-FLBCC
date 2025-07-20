@@ -9,6 +9,7 @@
 package org.cloudbus.cloudsim.power;
 
 import java.util.List;
+import java.util.Map;
 
 import org.cloudbus.cloudsim.Host;
 import org.cloudbus.cloudsim.Vm;
@@ -36,6 +37,8 @@ public class PowerVmAllocationPolicyMigrationLocalRegression extends PowerVmAllo
 	/** The safety parameter. */
 	private double safetyParameter;
 
+	private Map<String, String> vmPolicies;
+
 	/** The fallback vm allocation policy. */
 	private PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy;
 	
@@ -60,8 +63,9 @@ public class PowerVmAllocationPolicyMigrationLocalRegression extends PowerVmAllo
 			String typeIntersection,
 			String typeUnion,
 			int typeReductionType,
-			int typeFuzzySystem) {
-		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion, typeReductionType, typeFuzzySystem);
+			int typeFuzzySystem,
+			Map<String, String> vmPolicies) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion, typeReductionType, typeFuzzySystem, vmPolicies);
 		setSafetyParameter(safetyParameter);
 		setSchedulingInterval(schedulingInterval);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
@@ -86,8 +90,9 @@ public class PowerVmAllocationPolicyMigrationLocalRegression extends PowerVmAllo
 			String typeIntersection,
 			String typeUnion,
 			int typeReductionType,
-			int typeFuzzySystem) {
-		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion, typeReductionType, typeFuzzySystem);
+			int typeFuzzySystem,
+			Map<String, String> vmPolicies) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion, typeReductionType, typeFuzzySystem, vmPolicies);
 		setSafetyParameter(safetyParameter);
 		setSchedulingInterval(schedulingInterval);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);

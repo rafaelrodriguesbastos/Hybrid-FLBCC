@@ -9,6 +9,7 @@
 package org.cloudbus.cloudsim.power;
 
 import java.util.List;
+import java.util.Map;
 
 import org.cloudbus.cloudsim.Host;
 import org.cloudbus.cloudsim.Log;
@@ -35,6 +36,8 @@ public class PowerVmAllocationPolicyMigrationMedianAbsoluteDeviation extends
 	/** The safety parameter. */
 	private double safetyParameter = 0;
 
+	private Map<String, String> vmPolicies;
+
 	/** The fallback vm allocation policy. */
 	private PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy;
 	
@@ -58,8 +61,9 @@ public class PowerVmAllocationPolicyMigrationMedianAbsoluteDeviation extends
 			String typeIntersection,
 			String typeUnion,
 			int typeReductionType,
-			int typeFuzzySystem) {
-		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion, typeReductionType, typeFuzzySystem);
+			int typeFuzzySystem,
+			Map<String, String> vmPolicies) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion, typeReductionType, typeFuzzySystem, vmPolicies);
 		setSafetyParameter(safetyParameter);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
 	}
@@ -81,8 +85,9 @@ public class PowerVmAllocationPolicyMigrationMedianAbsoluteDeviation extends
 			String typeIntersection,
 			String typeUnion,
 			int typeReductionType,
-			int typeFuzzySystem) {
-		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion, typeReductionType, typeFuzzySystem);
+			int typeFuzzySystem,
+			Map<String, String> vmPolicies) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion, typeReductionType, typeFuzzySystem, vmPolicies);
 		setSafetyParameter(safetyParameter);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
 	}

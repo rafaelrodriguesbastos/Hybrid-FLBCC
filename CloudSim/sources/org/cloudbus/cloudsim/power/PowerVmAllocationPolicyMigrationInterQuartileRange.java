@@ -9,11 +9,14 @@
 package org.cloudbus.cloudsim.power;
 
 import java.util.List;
+import java.util.Map;
 
 import org.cloudbus.cloudsim.Host;
 import org.cloudbus.cloudsim.Log;
 import org.cloudbus.cloudsim.Vm;
+import org.cloudbus.cloudsim.core.CloudSim;
 import org.cloudbus.cloudsim.util.MathUtil;
+import org.cloudbus.cloudsim.util.Type2FuzzyLogicHybridEvaluation;
 
 /**
  * The Inter Quartile Range (IQR) VM allocation policy.
@@ -35,6 +38,8 @@ public class PowerVmAllocationPolicyMigrationInterQuartileRange extends
 	/** The safety parameter. */
 	private double safetyParameter = 0;
 
+	private Map<String, String> vmPolicies;
+
 	/** The fallback vm allocation policy. */
 	private PowerVmAllocationPolicyMigrationAbstract fallbackVmAllocationPolicy;
 	
@@ -42,11 +47,12 @@ public class PowerVmAllocationPolicyMigrationInterQuartileRange extends
 	
 	/**
 	 * Instantiates a new power vm allocation policy migration mad.
-	 * 
-	 * @param hostList the host list
-	 * @param vmSelectionPolicy the vm selection policy
-	 * @param safetyParameter the safety parameter
+	 *
+	 * @param hostList             the host list
+	 * @param vmSelectionPolicy    the vm selection policy
+	 * @param safetyParameter      the safety parameter
 	 * @param utilizationThreshold the utilization threshold
+	 * @param vmPolicies
 	 */
 	public PowerVmAllocationPolicyMigrationInterQuartileRange(
 			List<? extends Host> hostList,
@@ -60,10 +66,13 @@ public class PowerVmAllocationPolicyMigrationInterQuartileRange extends
 			String typeIntersection,
 			String typeUnion,
 			int typeReductionType,
-			int typeFuzzySystem) {
-		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion, typeReductionType, typeFuzzySystem);
+			int typeFuzzySystem,
+			Map<String, String> vmPolicies) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion, typeReductionType, typeFuzzySystem, vmPolicies);
 		setSafetyParameter(safetyParameter);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
+		setVmPolicies(vmPolicies);
+
 		
 	}
 
@@ -85,11 +94,13 @@ public class PowerVmAllocationPolicyMigrationInterQuartileRange extends
 			String typeIntersection,
 			String typeUnion,
 			int typeReductionType,
-			int typeFuzzySystem) {
-		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion, typeReductionType, typeFuzzySystem);
+			int typeFuzzySystem,
+			Map<String, String> vmPolicies) {
+		super(hostList, vmSelectionPolicy, admissibleOrders, orderType, typeIntersection, typeUnion, typeReductionType, typeFuzzySystem, vmPolicies);
 		setSafetyParameter(safetyParameter);
 		setFallbackVmAllocationPolicy(fallbackVmAllocationPolicy);
-		
+		setVmPolicies(vmPolicies);
+
 	}
 
 	/**
@@ -112,7 +123,11 @@ public class PowerVmAllocationPolicyMigrationInterQuartileRange extends
 		for (Vm vm : host.getVmList()) {
 			totalRequestedMips += vm.getCurrentRequestedTotalMips();
 		}
-		double utilization = totalRequestedMips / host.getTotalMips();
+
+		//Alterado por Bastos
+		//double utilization = totalRequestedMips / host.getTotalMips();
+		double utilization = getLevelOfUse(host, false, 1, 1, getTypeFuzzySystem()) / 10;
+
 		return utilization > upperThreshold;
 	}
 
@@ -172,6 +187,81 @@ public class PowerVmAllocationPolicyMigrationInterQuartileRange extends
 		return fallbackVmAllocationPolicy;
 	}
 
-	
+	public Map<String, String> getVmPolicies() {
+		return vmPolicies;
+	}
+
+	public void setVmPolicies(Map<String, String> vmPolicies) {
+		this.vmPolicies = vmPolicies;
+	}
+
+	/**
+	 * Adicionado por Bastos
+	 * @param host
+	 * @param plotMF
+	 * @param isOverOrUnder
+	 * @param isTypeObjective
+	 * @param typeFuzzySystem
+	 * @return
+	 */
+
+	public double getLevelOfUse(Host host, boolean plotMF, int isOverOrUnder, int isTypeObjective, int typeFuzzySystem)  {
+		PowerHostUtilizationHistory _host = (PowerHostUtilizationHistory) host;
+
+		double cpu = 0, ram = 0, bw = 0, mips = 0, storage = 0, energy = 0, previousUtilizationOfCpu = 0;
+
+		double allVmRam = 0;
+		double allVmBw = 0;
+		double allVmMips = 0;
+		double allVmStorage = 0;
+
+		for (Vm vm : _host.getVmList()) {
+			allVmRam += vm.getRam();
+			if (allVmBw < vm.getBw()) {
+				allVmBw = vm.getBw();
+			};
+			allVmMips += vm.getMips();
+			allVmStorage += vm.getSize();
+		}
+
+		//cpu = _host.getUtilizationMips() / _host.getTotalMips(); ///Int-FLBCC _host.getMaxAvailableMips();
+		cpu = _host.getUtilizationOfCpu();
+		ram = allVmRam / _host.getRam();
+		bw = allVmBw / _host.getBw();
+		mips = allVmMips / _host.getTotalMips();
+		storage = allVmStorage / host.getStorage();
+
+		previousUtilizationOfCpu = _host.getPreviousUtilizationOfCpu();
+		energy = _host.getEnergyLinearInterpolation(
+				previousUtilizationOfCpu,
+				cpu,
+				CloudSim.clock() - host.getDatacenter().getLastProcessTime());
+
+		double saida=0;
+
+		if(typeFuzzySystem == 0) {
+
+			Type2FuzzyLogicHybridEvaluation it2 = new Type2FuzzyLogicHybridEvaluation(cpu, ram, bw, mips, storage, energy,
+					plotMF,	isOverOrUnder, isTypeObjective, true, getTypeIntersection(), getTypeUnion(), getTypeReductionType(), getVmPolicies());
+
+			it2.getLevelRangeInUse(cpu, ram, bw, mips, storage, energy, getTypeReductionType());
+
+			saida = it2.getxPontual();
+
+		}else if(typeFuzzySystem ==1 ) {
+
+			Type2FuzzyLogicHybridEvaluation it2 = new Type2FuzzyLogicHybridEvaluation(cpu, ram, bw, mips, storage, energy,
+					plotMF,	isOverOrUnder, isTypeObjective, true, getTypeIntersection(), getTypeUnion(), getTypeReductionType(), getVmPolicies());
+
+			it2.getLevelRangeInUse(cpu, ram, bw, mips, storage, energy, getTypeReductionType());
+
+			saida = it2.getxPontual();
+		}
+
+		return saida;
+
+	}
+
+
 
 }

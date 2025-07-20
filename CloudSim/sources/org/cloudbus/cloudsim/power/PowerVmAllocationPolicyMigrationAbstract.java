@@ -28,7 +28,7 @@ import org.cloudbus.cloudsim.core.CloudSim;
 import org.cloudbus.cloudsim.power.lists.PowerVmList;
 import org.cloudbus.cloudsim.util.ExecutionTimeMeasurer;
 import org.cloudbus.cloudsim.util.Type2FuzzyLogicEvaluation;
-
+import org.cloudbus.cloudsim.util.Type2FuzzyLogicHybridEvaluation;
 
 
 /**
@@ -96,6 +96,7 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 	private String typeUnion="";
 	private int typeReductionType; // CENTEROFSETS = 0; CENTROID = 1;
 	private int typeFuzzySystem;  //  0 - Conventional Type-2 Fuzzy System, 1 - N Dimensional Type-2 Fuzzy Fuzzy System  
+	private Map<String, String> vmPolicies;
 
 	/**
 	 * Instantiates a new power vm allocation policy migration abstract.
@@ -105,7 +106,7 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 	 */
 	public PowerVmAllocationPolicyMigrationAbstract(List<? extends Host> hostList,
 			PowerVmSelectionPolicy vmSelectionPolicy, boolean admissibleOrders, String orderType,
-			String typeIntersection, String typeUnion, int typeReductionType, int typeFuzzySystem) {
+			String typeIntersection, String typeUnion, int typeReductionType, int typeFuzzySystem, Map<String, String> vmPolicies) {
 		super(hostList);
 		setVmSelectionPolicy(vmSelectionPolicy);
 		setAdmissibleOrders(admissibleOrders);
@@ -114,6 +115,8 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 		setTypeUnion(typeUnion);
 		setTypeReductionType(typeReductionType);
 		setTypeFuzzySystem(typeFuzzySystem);
+		setVmPolicies(vmPolicies);
+
 		
 		// Carrega os melhores valores da aquitetura
 		// getMaxValuesArchicture(getHostList());
@@ -482,43 +485,54 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 	public ArrayList<HostUseLevel> getLevelRangeInUse(PowerHost host, boolean plotMF, int isOverOrUnder,
 			int isTypeObjective, String typeIntersection, String typeUnion, List<? extends Host> hostList, Vm vm) {
 
-		double minPower = Double.MAX_VALUE;
-		PowerHostUtilizationHistory _host = (PowerHostUtilizationHistory) host;
-		// double cpAvailable = _host.getMaxAvailableMips();
-		// double ccAvailable = _host.getBw() - _host.getUtilizationOfBw();
-		// double ramAvailable = _host.getRam() - _host.getUtilizationOfRam();
-
-		double maxCPHost = this.maxCPHostOfArchitecture;
-		double minCCHost = this.minCCHostOfArchitecture;
-		double maxRamHost = this.maxRamHostOfArchitecture;
-
-		double cpStandartScale = 0;
-		double ccStandartScale = 0;
-		double ramStandartScale = 0;
-
-		cpStandartScale = (_host.getMaxAvailableMips() / maxCPHost) * 10;
-		ccStandartScale = (10 * _host.getUtilizationOfBw()) / minCCHost;
-		ramStandartScale = (_host.getUtilizationOfRam() / maxRamHost) * 10;
-
-		// inicio
 		ArrayList<HostUseLevel> templistHostUseLevel = new ArrayList<>();
-		for (int i = 0; i < hostList.size(); i++) {
 
-			if (host.isSuitableForVm(vm)) {
-				if (getUtilizationOfCpuMips(host) != 0 && isHostOverUtilizedAfterAllocation(host, vm)) {
+		for (int i = 0; i < hostList.size(); i++) {
+			PowerHostUtilizationHistory _host = (PowerHostUtilizationHistory) hostList.get(i);
+
+			if (_host.isSuitableForVm(vm)) {
+				if (getUtilizationOfCpuMips(_host) != 0 && isHostOverUtilizedAfterAllocation(_host, vm)) {
 					continue;
 				}
 
 				try {
 
-					Type2FuzzyLogicEvaluation it2 = new Type2FuzzyLogicEvaluation(cpStandartScale, ccStandartScale,
-							ramStandartScale, plotMF, isOverOrUnder, isTypeObjective, false, typeIntersection, typeUnion, typeReductionType);
+					double cpu = 0, ram = 0, bw = 0, mips = 0, storage = 0, energy = 0, previousUtilizationOfCpu = 0;
+
+					double allVmRam = 0;
+					double allVmBw = 0;
+					double allVmMips = 0;
+					double allVmStorage = 0;
+
+					for (Vm _vm : _host.getVmList()) {
+						allVmRam += _vm.getRam();
+						if (allVmBw < _vm.getBw()) {
+							allVmBw = _vm.getBw();
+						};
+						allVmMips += _vm.getMips();
+						allVmStorage += _vm.getSize();
+					}
+
+					cpu = _host.getUtilizationOfCpu();
+					ram = allVmRam / _host.getRam();
+					bw = allVmBw / _host.getBw();
+					mips = allVmMips / _host.getTotalMips();
+					storage = allVmStorage / host.getStorage();
+
+					previousUtilizationOfCpu = _host.getPreviousUtilizationOfCpu();
+					energy = _host.getEnergyLinearInterpolation(
+							previousUtilizationOfCpu,
+							cpu,
+							CloudSim.clock() - _host.getDatacenter().getLastProcessTime());
+
+					Type2FuzzyLogicHybridEvaluation it2 = new Type2FuzzyLogicHybridEvaluation(cpu, ram, bw, mips, storage,energy, plotMF, isOverOrUnder, isTypeObjective,
+							false, typeIntersection, typeUnion, typeReductionType, getVmPolicies());
 
 					setOutputXValue(it2.getOutputXValue());
 					setOutputYValue(it2.getOutputYValue());
 
 					HostUseLevel h = new HostUseLevel();
-					h.setPowerHost(host);
+					h.setPowerHost(_host);
 					h.setOutputXValue(it2.getOutputXValue());
 					h.setOutputYValue(it2.getOutputYValue());
 					templistHostUseLevel.add(h);
@@ -527,6 +541,7 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 
 
 				} catch (Exception e) {
+
 				}
 			}
 		}
@@ -549,7 +564,7 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 		double minPower = Double.MAX_VALUE;
 		PowerHost allocatedHost = null;
 
-		List<PowerHost> avalableHosts = new LinkedList<PowerHost>();
+		List<PowerHost> availableHosts = new LinkedList<PowerHost>();
 
 		ArrayList<HostUseLevel> hostList = null;
 
@@ -564,7 +579,7 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 				}
 
 			}
-			avalableHosts.add(hs);
+			availableHosts.add(hs);
 		}
 
 		
@@ -589,7 +604,7 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 							if (isAdmissibleOrders()) {
 
 								minPower = powerDiff;
-								hostList = getLevelRangeInUse(host, false, 1, 1, getTypeIntersection(),getTypeUnion(), avalableHosts, vm);
+								hostList = getLevelRangeInUse(host, false, 1, 1, getTypeIntersection(),getTypeUnion(), availableHosts, vm);
 								allocatedHost = getPowerHostBestUseLevel(getOrderType(), hostList);
 
 							} else {
@@ -834,7 +849,8 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 			if (excludedHosts.contains(host)) {
 				continue;
 			}
-			double utilization = host.getUtilizationOfCpu();
+			//double utilization = host.getUtilizationOfCpu();
+			double utilization = getLevelOfUse(host, false, 1, 1, getTypeFuzzySystem()) / 10;
 
 			/*
 			 * host.getUtilizationOfCpuMips(); host.getAvailableMips(); host.getBw()
@@ -1098,30 +1114,6 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 		this.outputYValue = outputYValue;
 	}
 
-	public double getMaxCPHostOfArchitecture() {
-		return maxCPHostOfArchitecture;
-	}
-
-	public void setMaxCPHostOfArchitecture(double maxCPHostOfArchitecture) {
-		this.maxCPHostOfArchitecture = maxCPHostOfArchitecture;
-	}
-
-	public double getMinCCHostOfArchitecture() {
-		return minCCHostOfArchitecture;
-	}
-
-	public void setMinCCHostOfArchitecture(double minCCHostOfArchitecture) {
-		this.minCCHostOfArchitecture = minCCHostOfArchitecture;
-	}
-
-	public double getMaxRamHostOfArchitecture() {
-		return maxRamHostOfArchitecture;
-	}
-
-	public void setMaxRamHostOfArchitecture(double maxRamHostOfArchitecture) {
-		this.maxRamHostOfArchitecture = maxRamHostOfArchitecture;
-	}
-
 	public ArrayList<HostUseLevel> getHostUseLevel() {
 		return hostUseLevel;
 	}
@@ -1177,10 +1169,84 @@ public abstract class PowerVmAllocationPolicyMigrationAbstract extends PowerVmAl
 	public void setTypeFuzzySystem(int typeFuzzySystem) {
 		this.typeFuzzySystem = typeFuzzySystem;
 	}
-	
-	
-	
-	
-	
+
+	public Map<String, String> getVmPolicies() {
+		return vmPolicies;
+	}
+
+	public void setVmPolicies(Map<String, String> vmPolicies) {
+		this.vmPolicies = vmPolicies;
+	}
+
+	/**
+	 * Adicionado por Bastos
+	 * @param host
+	 * @param plotMF
+	 * @param isOverOrUnder
+	 * @param isTypeObjective
+	 * @param typeFuzzySystem
+	 * @return
+	 */
+
+	public double getLevelOfUse(Host host, boolean plotMF, int isOverOrUnder, int isTypeObjective, int typeFuzzySystem)  {
+		PowerHostUtilizationHistory _host = (PowerHostUtilizationHistory) host;
+
+		double cpu = 0, ram = 0, bw = 0, mips = 0, storage = 0, energy = 0, previousUtilizationOfCpu = 0;
+
+		double allVmRam = 0;
+		double allVmBw = 0;
+		double allVmMips = 0;
+		double allVmStorage = 0;
+
+		for (Vm vm : _host.getVmList()) {
+			allVmRam += vm.getRam();
+			if (allVmBw < vm.getBw()) {
+				allVmBw = vm.getBw();
+			};
+			allVmMips += vm.getMips();
+			allVmStorage += vm.getSize();
+		}
+
+		cpu = _host.getUtilizationOfCpu();
+		//cpu = _host.getUtilizationMips() / _host.getTotalMips(); ///Int-FLBCC _host.getMaxAvailableMips();
+		ram = allVmRam / _host.getRam();
+		bw = allVmBw / _host.getBw();
+		mips = allVmMips / _host.getTotalMips();
+		storage = allVmStorage / _host.getStorage();
+
+		previousUtilizationOfCpu = _host.getPreviousUtilizationOfCpu();
+		energy = _host.getEnergyLinearInterpolation(
+				previousUtilizationOfCpu,
+				cpu,
+				CloudSim.clock() - host.getDatacenter().getLastProcessTime());
+
+		double saida=0;
+
+		if(typeFuzzySystem == 0) {
+
+			Type2FuzzyLogicHybridEvaluation it2 = new Type2FuzzyLogicHybridEvaluation(cpu, ram, bw, mips, storage, energy,
+					plotMF,	isOverOrUnder, isTypeObjective, true, getTypeIntersection(), getTypeUnion(), getTypeReductionType(), vmPolicies);
+
+			it2.getLevelRangeInUse(cpu, ram, bw, mips, storage, energy, getTypeReductionType());
+
+			saida = it2.getxPontual();
+
+		}else if(typeFuzzySystem ==1 ) {
+
+			Type2FuzzyLogicHybridEvaluation it2 = new Type2FuzzyLogicHybridEvaluation(cpu, ram, bw, mips, storage, energy,
+					plotMF,	isOverOrUnder, isTypeObjective, true, getTypeIntersection(), getTypeUnion(), getTypeReductionType(), vmPolicies);
+
+			it2.getLevelRangeInUse(cpu, ram, bw, mips, storage, energy, getTypeReductionType());
+
+			saida = it2.getxPontual();
+		}
+
+		return saida;
+
+	}
+
+
+
+
 
 }

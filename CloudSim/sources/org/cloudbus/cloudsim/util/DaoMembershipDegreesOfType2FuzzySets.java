@@ -4,26 +4,23 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
-
-import org.cloudbus.cloudsim.examples.power.RunnerAbstract;
-
 public class DaoMembershipDegreesOfType2FuzzySets {
 
 	private MembershipDegreesOfType2FuzzySets membershipDegreesOfType2FuzzySets;
 
 	private ArrayList<MembershipDegreesOfType2FuzzySets> list = new ArrayList<>();
-	
-	String pathFile = "/home/bruno/tmp/";
-    String fileName = "correlacao_centerofsets_all_workloads.csv";
-	//String fileName = "correlacao_centroid_all_workloads.csv";
-	//String fileName = "correlacao_n.csv";
-    String fileHeader = "Label, LowULower, LowUUpper, AverageULower, AverageUUpper, HighULower, HighUUpper"; 
-    private LibFile libFile = new LibFile();
-    
-    
-    
 
+	ExperimentName experimentNamePublico = new ExperimentName();
+
+	String pathFile = "/home/bastos/Dados/temp/entropia/";
+    String fileName = experimentNamePublico.getExperimentName()+".csv"; // = "entropia.csv";
+    String fileHeader = "LowCpuLower, LowCpuUpper, MediumCpuLower, MediumCpuUpper, HighCpuLower, HighCpuUpper, LowRamLower, " +
+			"LowRamUpper, MediumRamLower, MediumRamUpper, HighRamLower, HighRamUpper, LowBwLower, LowBwUpper, MediumBwLower, MediumBwUpper, " +
+			"HighBwLower, HighBwUpper, LowMipsLower, LowMipsUpper, MediumMipsLower, MediumMipsUpper, HighMipsLower, HighMipsUpper, " +
+			"LowStorageLower, LowStorageUpper, MediumStorageLower, MediumStorageUpper, HighStorageLower, HighStorageUpper, LowEnergyLower, " +
+			"LowEnergyUpper, MediumEnergyLower, MediumEnergyUpper, HighEnergyLower, HighEnergy, UpperUnderUtilizationLower, " +
+			"UnderUtilizationUpper, NormalUtilizationLower, NormalUtilizationUpper, OverUtilizationLower, OverUtilizationUpper";
+    private LibFile libFile = new LibFile();
 
 	public void adicionar(MembershipDegreesOfType2FuzzySets membershipDegreesOfType2FuzzySets)  {
 		
@@ -35,7 +32,7 @@ public class DaoMembershipDegreesOfType2FuzzySets {
 		}
 		
 		
-        ExperimetName experimetNamePublico = new ExperimetName();
+//        ExperimentName experimentNamePublico = new ExperimentName();
         
        // JOptionPane.showMessageDialog(null, experimetNamePublico.getEXPERIMENT_NAME());
         
@@ -43,13 +40,48 @@ public class DaoMembershipDegreesOfType2FuzzySets {
 			list.add(membershipDegreesOfType2FuzzySets);
 			
 			String linha =
-					experimetNamePublico.getExperimentName()+","+
-					membershipDegreesOfType2FuzzySets.getLowUtilizationDegreeOfMembershipLowerBound()+","+
-					membershipDegreesOfType2FuzzySets.getLowUtilizationDegreeOfMembershipUpperBound()+","+
-					membershipDegreesOfType2FuzzySets.getAverageUtilizationDegreeOfMembershipLowerBound()+","+
-					membershipDegreesOfType2FuzzySets.getAverageUtilizationDegreeOfMembershipUpperBound()+","+
-					membershipDegreesOfType2FuzzySets.getHighUtilizationDegreeOfMembershipLowerBound()+","+
-					membershipDegreesOfType2FuzzySets.getHighUtilizationDegreeOfMembershipUpperBound();
+					membershipDegreesOfType2FuzzySets.getLowCpuDegreeOfMembershipLowerBound() + "," +
+					membershipDegreesOfType2FuzzySets.getLowCpuDegreeOfMembershipUpperBound() + "," +
+					membershipDegreesOfType2FuzzySets.getMediumCpuDegreeOfMembershipLowerBound() + "," +
+					membershipDegreesOfType2FuzzySets.getMediumCpuDegreeOfMembershipUpperBound() + "," +
+					membershipDegreesOfType2FuzzySets.getHighCpuDegreeOfMembershipLowerBound() + "," +
+					membershipDegreesOfType2FuzzySets.getHighCpuDegreeOfMembershipUpperBound() + "," +
+					membershipDegreesOfType2FuzzySets.getLowRamDegreeOfMembershipLowerBound() + "," +
+					membershipDegreesOfType2FuzzySets.getLowRamDegreeOfMembershipUpperBound() + "," +
+					membershipDegreesOfType2FuzzySets.getMediumRamDegreeOfMembershipLowerBound() + "," +
+					membershipDegreesOfType2FuzzySets.getMediumRamDegreeOfMembershipUpperBound() + "," +
+					membershipDegreesOfType2FuzzySets.getHighRamDegreeOfMembershipLowerBound() + "," +
+					membershipDegreesOfType2FuzzySets.getHighRamDegreeOfMembershipUpperBound() + "," +
+					membershipDegreesOfType2FuzzySets.getLowBwDegreeOfMembershipLowerBound() + "," +
+					membershipDegreesOfType2FuzzySets.getLowBwDegreeOfMembershipUpperBound() + "," +
+					membershipDegreesOfType2FuzzySets.getMediumBwDegreeOfMembershipLowerBound() + "," +
+					membershipDegreesOfType2FuzzySets.getMediumBwDegreeOfMembershipUpperBound() + "," +
+					membershipDegreesOfType2FuzzySets.getHighBwDegreeOfMembershipLowerBound() + "," +
+					membershipDegreesOfType2FuzzySets.getHighBwDegreeOfMembershipUpperBound() + "," +
+					membershipDegreesOfType2FuzzySets.getLowMipsDegreeOfMembershipLowerBound() + "," +
+					membershipDegreesOfType2FuzzySets.getLowMipsDegreeOfMembershipUpperBound() + "," +
+					membershipDegreesOfType2FuzzySets.getMediumMipsDegreeOfMembershipLowerBound() + "," +
+					membershipDegreesOfType2FuzzySets.getMediumMipsDegreeOfMembershipUpperBound() + "," +
+					membershipDegreesOfType2FuzzySets.getHighMipsDegreeOfMembershipLowerBound() + "," +
+					membershipDegreesOfType2FuzzySets.getHighMipsDegreeOfMembershipUpperBound() + "," +
+					membershipDegreesOfType2FuzzySets.getLowStorageDegreeOfMembershipLowerBound() + "," +
+					membershipDegreesOfType2FuzzySets.getLowStorageDegreeOfMembershipUpperBound() + "," +
+					membershipDegreesOfType2FuzzySets.getMediumStorageDegreeOfMembershipLowerBound() + "," +
+					membershipDegreesOfType2FuzzySets.getMediumStorageDegreeOfMembershipUpperBound() + "," +
+					membershipDegreesOfType2FuzzySets.getHighStorageDegreeOfMembershipLowerBound() + "," +
+					membershipDegreesOfType2FuzzySets.getHighStorageDegreeOfMembershipUpperBound() + "," +
+					membershipDegreesOfType2FuzzySets.getLowEnergyDegreeOfMembershipLowerBound() + "," +
+					membershipDegreesOfType2FuzzySets.getLowEnergyDegreeOfMembershipUpperBound() + "," +
+					membershipDegreesOfType2FuzzySets.getMediumEnergyDegreeOfMembershipLowerBound() + "," +
+					membershipDegreesOfType2FuzzySets.getMediumEnergyDegreeOfMembershipUpperBound() + "," +
+					membershipDegreesOfType2FuzzySets.getHighEnergyDegreeOfMembershipLowerBound() + "," +
+					membershipDegreesOfType2FuzzySets.getHighEnergyDegreeOfMembershipUpperBound() + "," +
+					membershipDegreesOfType2FuzzySets.getUnderUtilizationDegreeOfMembershipLowerBound()+","+
+					membershipDegreesOfType2FuzzySets.getUnderUtilizationDegreeOfMembershipUpperBound()+","+
+					membershipDegreesOfType2FuzzySets.getNormalUtilizationDegreeOfMembershipLowerBound()+","+
+					membershipDegreesOfType2FuzzySets.getNormalUtilizationDegreeOfMembershipUpperBound()+","+
+					membershipDegreesOfType2FuzzySets.getOverUtilizationDegreeOfMembershipLowerBound()+","+
+					membershipDegreesOfType2FuzzySets.getOverUtilizationDegreeOfMembershipUpperBound();
 			
 			libFile.adicionarLinhaTxt(linha, this.pathFile, this.fileName);
 			
