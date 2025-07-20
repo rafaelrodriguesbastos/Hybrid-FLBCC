@@ -1,6 +1,8 @@
 package org.cloudbus.cloudsim.examples.power.planetlab;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A simulation of a heterogeneous power aware data center that applies the Median Absolute
@@ -34,18 +36,22 @@ public class MadMmt {
 		boolean outputToFile = false;
 		String inputFolder = MadMmt.class.getClassLoader().getResource("workload/planetlab").getPath();
 		String outputFolder = "output";
-		String workload = "20110322"; // PlanetLab workload - 20110303, 20110306, 20110309, 20110322, 20110325, 20110403, 20110409, 20110411, 20110412 
+		String workload = "20110303"; //"20110322"; // PlanetLab workload - 20110303, 20110306, 20110309, 20110322, 20110325, 20110403, 20110409, 20110411, 20110412
 		String vmAllocationPolicy = "mad"; // Median Absolute Deviation (MAD) VM allocation policy
 		String vmSelectionPolicy = "mmt"; // Minimum Migration Time (MMT) VM selection policy
 		String parameter = "2.5"; //2.5 the safety parameter of the MAD policy
 		boolean outputAbstractInCsv = true;  // enable summary recording in csv
-		boolean enableFuzzyT2Overload = false; // enable overload fuzzy type 2 detection
-		String typeIntersection = "TL"; //default value empty max(xInf, yInf), min(xSup, ySup)
-		String typeUnion = ""; // default value empty min(xInf, yInf), max(xSup, ySup)
+		boolean enableFuzzyT2Overload = true; // enable overload fuzzy type 2 detection
+		String typeIntersection = "maxmin"; //default value empty max(xInf, yInf), min(xSup, ySup)
+		String typeUnion = "minmax"; // default value empty min(xInf, yInf), max(xSup, ySup)
 		boolean admissibleOrders = true; // enable selection host for admissible orders
 		String orderType = "xuandyager"; // set admissible order type
-		int typeReductionType = 0; // CENTEROFSETS = 0; CENTROID = 1;
-		int typeFuzzySystem = 0;  //  0 - Conventional Type-2 Fuzzy System, 1 - N Dimensional Type-2 Fuzzy Fuzzy System
+		int typeReductionType = 1; // CENTEROFSETS = 0; CENTROID = 1;
+		int typeFuzzySystem = 1;  //  0 - Conventional Type-2 Fuzzy System, 1 - N Dimensional Type-2 Fuzzy Fuzzy System
+
+		Map<String, String> vmPolicies = new HashMap<>();
+		vmPolicies.put("ap", "mad");
+		vmPolicies.put("sp", "mmt");
 
 		new PlanetLabRunner(
 				enableOutput,
@@ -63,7 +69,8 @@ public class MadMmt {
 				admissibleOrders,
 				orderType,
 				typeReductionType,
-				typeFuzzySystem);
+				typeFuzzySystem,
+				vmPolicies);
 	}
 
 }

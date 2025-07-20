@@ -1,6 +1,8 @@
 package org.cloudbus.cloudsim.examples.power.planetlab;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A simulation of a heterogeneous power aware data center that applies the Local Regression Robust
@@ -34,18 +36,22 @@ public class LrrRs {
 		boolean outputToFile = false;
 		String inputFolder = LrrRs.class.getClassLoader().getResource("workload/planetlab").getPath();
 		String outputFolder = "output";
-		String workload = "20110420"; // PlanetLab workload - 20110303, 20110306, 20110309, 20110322, 20110325, 20110403, 20110409, 20110411, 20110412 
+		String workload = "20110303"; //"20110420"; // PlanetLab workload - 20110303, 20110306, 20110309, 20110322, 20110325, 20110403, 20110409, 20110411, 20110412
 		String vmAllocationPolicy = "lrr"; // Local Regression Robust (LRR) VM allocation policy
 		String vmSelectionPolicy = "rs"; // Random Selection (RS) VM selection policy
 		String parameter = "1.2"; //1.2 the safety parameter of the LRR policy
-		boolean outputAbstractInCsv = false;  // enable summary recording in csv
+		boolean outputAbstractInCsv = true;  // enable summary recording in csv
 		boolean enableFuzzyT2Overload = true; // enable overload fuzzy type 2 detection
-		String typeIntersection = ""; //TL //default value empty max(xInf, yInf), min(xSup, ySup)
-		String typeUnion = ""; // default value empty min(xInf, yInf), max(xSup, ySup)
-		boolean admissibleOrders = false; // enable selection host for admissible orders
+		String typeIntersection = "maxmin"; //TL //default value empty max(xInf, yInf), min(xSup, ySup)
+		String typeUnion = "minmax"; // default value empty min(xInf, yInf), max(xSup, ySup)
+		boolean admissibleOrders = true; // enable selection host for admissible orders
 		String orderType = "xuandyager"; // set admissible order type
-		int typeReductionType = 0; // CENTEROFSETS = 0; CENTROID = 1;
-		int typeFuzzySystem = 0;  //  0 - Conventional Type-2 Fuzzy System, 1 - N Dimensional Type-2 Fuzzy Fuzzy System
+		int typeReductionType = 1; // CENTEROFSETS = 0; CENTROID = 1;
+		int typeFuzzySystem = 1;  //  0 - Conventional Type-2 Fuzzy System, 1 - N Dimensional Type-2 Fuzzy Fuzzy System
+
+		Map<String, String> vmPolicies = new HashMap<>();
+		vmPolicies.put("ap", "lrr");
+		vmPolicies.put("sp", "rs");
 
 		new PlanetLabRunner(
 				enableOutput,
@@ -63,7 +69,8 @@ public class LrrRs {
 				admissibleOrders,
 				orderType,
 				typeReductionType,
-				typeFuzzySystem);
+				typeFuzzySystem,
+				vmPolicies);
 	}
 
 }

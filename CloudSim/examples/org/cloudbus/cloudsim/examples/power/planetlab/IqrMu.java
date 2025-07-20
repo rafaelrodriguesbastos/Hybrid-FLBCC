@@ -1,6 +1,8 @@
 package org.cloudbus.cloudsim.examples.power.planetlab;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A simulation of a heterogeneous power aware data center that applies the Inter Quartile Range
@@ -34,19 +36,22 @@ public class IqrMu {
 		boolean outputToFile = false;
 		String inputFolder = IqrMu.class.getClassLoader().getResource("workload/planetlab").getPath();
 		String outputFolder = "output";
-		String workload = "20110420"; // PlanetLab workload - 20110303, 20110306, 20110309, 20110322, 20110325, 20110403, 20110409, 20110411, 20110412
+		String workload = "20110303"; //"20110420"; // PlanetLab workload - 20110303, 20110306, 20110309, 20110322, 20110325, 20110403, 20110409, 20110411, 20110412
 		String vmAllocationPolicy = "iqr"; // Inter Quartile Range (IQR) VM allocation policy
 		String vmSelectionPolicy = "mu"; // Minimum Utilization (MU) VM selection policy
 		String parameter = "1.5"; // the safety parameter of the IQR policy
 		boolean outputAbstractInCsv = true;  // enable summary recording in csv
 		boolean enableFuzzyT2Overload = true; // enable overload fuzzy type 2 detection
-		String typeIntersection = ""; //default value empty max(xInf, yInf), min(xSup, ySup)
-		String typeUnion = ""; // default value empty min(xInf, yInf), max(xSup, ySup)
-		boolean admissibleOrders = false; // enable selection host for admissible orders
-		String orderType = ""; // set admissible order type supported xuandyager , lex1 lex2
-		int typeReductionType = 0; // CENTEROFSETS = 0; CENTROID = 1;
-		int typeFuzzySystem = 0;  //  0 - Conventional Type-2 Fuzzy System, 1 - N Dimensional Type-2 Fuzzy Fuzzy System
-		
+		String typeIntersection = "maxmin"; //default value empty max(xInf, yInf), min(xSup, ySup)
+		String typeUnion = "minmax"; // default value empty min(xInf, yInf), max(xSup, ySup)
+		boolean admissibleOrders = true; // enable selection host for admissible orders
+		String orderType = "xuandyager"; // set admissible order type supported xuandyager , lex1 lex2
+		int typeReductionType = 1; // CENTEROFSETS = 0; CENTROID = 1;
+		int typeFuzzySystem = 1;  //  0 - Conventional Type-2 Fuzzy System, 1 - N Dimensional Type-2 Fuzzy Fuzzy System
+
+		Map<String, String> vmPolicies = new HashMap<>();
+		vmPolicies.put("ap", "iqr");
+		vmPolicies.put("sp", "mu");
 
 		new PlanetLabRunner(
 				enableOutput,
@@ -64,7 +69,8 @@ public class IqrMu {
 				admissibleOrders,
 				orderType,
 				typeReductionType,
-				typeFuzzySystem);
+				typeFuzzySystem,
+				vmPolicies);
 	}
 
 }

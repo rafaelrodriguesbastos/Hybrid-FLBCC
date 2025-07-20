@@ -6,290 +6,474 @@ public class MembershipDegreesOfType2FuzzySets implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	// Degree Of Membership Functions CP Limited
-	private double limitedCPDegreeOfMembershipUpperBound;
-	private double limitedCPDegreeOfMembershipLowerBound;
+	// Degree Of Membership Functions cpu low
+	private double lowCpuDegreeOfMembershipUpperBound;
+	private double lowCpuDegreeOfMembershipLowerBound;
 
-	// Degree Of Membership Functions CP Reasonable
-	private double reasonableCPDegreeOfMembershipUpperBound;
-	private double reasonableCPDegreeOfMembershipLowerBound;
+	// Degree Of Membership Functions cpu medium
+	private double mediumCpuDegreeOfMembershipUpperBound;
+	private double mediumCpuDegreeOfMembershipLowerBound;
 
-	// Degree Of Membership Functions CP High
-	private double highCPDegreeOfMembershipUpperBound;
-	private double highCPDegreeOfMembershipLowerBound;
+	// Degree Of Membership Functions cpu high
+	private double highCpuDegreeOfMembershipUpperBound;
+	private double highCpuDegreeOfMembershipLowerBound;
 
-	// Degree Of Membership Functions CC Small
-	private double smallCCDegreeOfMembershipUpperBound;
-	private double smallCCDegreeOfMembershipLowerBound;
+	// Degree Of Membership Functions ram low
+	private double lowRamDegreeOfMembershipUpperBound;
+	private double lowRamDegreeOfMembershipLowerBound;
 
-	// Degree Of Membership Functions CC Average
-	private double averageCCDegreeOfMembershipUpperBound;
-	private double averageCCDegreeOfMembershipLowerBound;
+	// Degree Of Membership Functions ram medium
+	private double mediumRamDegreeOfMembershipUpperBound;
+	private double mediumRamDegreeOfMembershipLowerBound;
 
-	// Degree Of Membership Functions CC Big
-	private double bigCCDegreeOfMembershipUpperBound;
-	private double bigCCDegreeOfMembershipLowerBound;
+	// Degree Of Membership Functions ram high
+	private double highRamDegreeOfMembershipUpperBound;
+	private double highRamDegreeOfMembershipLowerBound;
 
-	// Degree Of Membership Functions RAM Small
-	private double smallRAMDegreeOfMembershipUpperBound;
-	private double smallRAMDegreeOfMembershipLowerBound;
+	// Degree Of Membership Functions bw low
+	private double lowBwDegreeOfMembershipUpperBound;
+	private double lowBwDegreeOfMembershipLowerBound;
 
-	// Degree Of Membership Functions RAM Average
-	private double averageRAMDegreeOfMembershipUpperBound;
-	private double averageRAMDegreeOfMembershipLowerBound;
+	// Degree Of Membership Functions bw medium
+	private double mediumBwDegreeOfMembershipUpperBound;
+	private double mediumBwDegreeOfMembershipLowerBound;
 
-	// Degree Of Membership Functions RAM High
-	private double highRAMDegreeOfMembershipUpperBound;
-	private double highRAMDegreeOfMembershipLowerBound;
+	// Degree Of Membership Functions bw high
+	private double highBwDegreeOfMembershipUpperBound;
+	private double highBwDegreeOfMembershipLowerBound;
 
-	// Degree Of Membership Functions Utilization Low
-	private double lowUtilizationDegreeOfMembershipUpperBound;
-	private double lowUtilizationDegreeOfMembershipLowerBound;
+	// Degree Of Membership Functions mips low
+	private double lowMipsDegreeOfMembershipUpperBound;
+	private double lowMipsDegreeOfMembershipLowerBound;
 
-	// Degree Of Membership Functions Utilization Average
-	private double averageUtilizationDegreeOfMembershipUpperBound;
-	private double averageUtilizationDegreeOfMembershipLowerBound;
+	// Degree Of Membership Functions mips medium
+	private double mediumMipsDegreeOfMembershipUpperBound;
+	private double mediumMipsDegreeOfMembershipLowerBound;
 
-	// Degree Of Membership Functions Utilization High
-	private double highUtilizationDegreeOfMembershipUpperBound;
-	private double highUtilizationDegreeOfMembershipLowerBound;
+	// Degree Of Membership Functions mips high
+	private double highMipsDegreeOfMembershipUpperBound;
+	private double highMipsDegreeOfMembershipLowerBound;
+
+	// Degree Of Membership Functions storage low
+	private double lowStorageDegreeOfMembershipUpperBound;
+	private double lowStorageDegreeOfMembershipLowerBound;
+
+	// Degree Of Membership Functions storage medium
+	private double mediumStorageDegreeOfMembershipUpperBound;
+	private double mediumStorageDegreeOfMembershipLowerBound;
+
+	// Degree Of Membership Functions storage high
+	private double highStorageDegreeOfMembershipUpperBound;
+	private double highStorageDegreeOfMembershipLowerBound;
+
+	// Degree Of Membership Functions energy low
+	private double lowEnergyDegreeOfMembershipUpperBound;
+	private double lowEnergyDegreeOfMembershipLowerBound;
+
+	// Degree Of Membership Functions energy medium
+	private double mediumEnergyDegreeOfMembershipUpperBound;
+	private double mediumEnergyDegreeOfMembershipLowerBound;
+
+	// Degree Of Membership Functions energy high
+	private double highEnergyDegreeOfMembershipUpperBound;
+	private double highEnergyDegreeOfMembershipLowerBound;
+
+	// Degree Of Membership Functions utilization under
+	private double underUtilizationDegreeOfMembershipUpperBound;
+	private double underUtilizationDegreeOfMembershipLowerBound;
+
+	// Degree Of Membership Functions utilization normal
+	private double normalUtilizationDegreeOfMembershipUpperBound;
+	private double normalUtilizationDegreeOfMembershipLowerBound;
+
+	// Degree Of Membership Functions utilization over
+	private double overUtilizationDegreeOfMembershipUpperBound;
+	private double overUtilizationDegreeOfMembershipLowerBound;
 
 	public MembershipDegreesOfType2FuzzySets() {
 		super();
 	}
 
-	public MembershipDegreesOfType2FuzzySets(double limitedCPDegreeOfMembershipUpperBound,
-			double limitedCPDegreeOfMembershipLowerBound, double reasonableCPDegreeOfMembershipUpperBound,
-			double reasonableCPDegreeOfMembershipLowerBound, double highCPDegreeOfMembershipUpperBound,
-			double highCPDegreeOfMembershipLowerBound, double smallCCDegreeOfMembershipUpperBound,
-			double smallCCDegreeOfMembershipLowerBound, double averageCCDegreeOfMembershipUpperBound,
-			double averageCCDegreeOfMembershipLowerBound, double bigCCDegreeOfMembershipUpperBound,
-			double bigCCDegreeOfMembershipLowerBound, double smallRAMDegreeOfMembershipUpperBound,
-			double smallRAMDegreeOfMembershipLowerBound, double averageRAMDegreeOfMembershipUpperBound,
-			double averageRAMDegreeOfMembershipLowerBound, double highRAMDegreeOfMembershipUpperBound,
-			double highRAMDegreeOfMembershipLowerBound, double lowUtilizationDegreeOfMembershipUpperBound,
-			double lowUtilizationDegreeOfMembershipLowerBound, double averageUtilizationDegreeOfMembershipUpperBound,
-			double averageUtilizationDegreeOfMembershipLowerBound, double highUtilizationDegreeOfMembershipUpperBound,
-			double highUtilizationDegreeOfMembershipLowerBound) {
+	public MembershipDegreesOfType2FuzzySets(double lowCpuDegreeOfMembershipUpperBound, double lowCpuDegreeOfMembershipLowerBound, double mediumCpuDegreeOfMembershipUpperBound, double mediumCpuDegreeOfMembershipLowerBound, double highCpuDegreeOfMembershipUpperBound, double highCpuDegreeOfMembershipLowerBound, double lowStorageDegreeOfMembershipUpperBound, double lowStorageDegreeOfMembershipLowerBound, double mediumStorageDegreeOfMembershipUpperBound, double mediumStorageDegreeOfMembershipLowerBound, double highStorageDegreeOfMembershipUpperBound, double highStorageDegreeOfMembershipLowerBound, double lowEnergyDegreeOfMembershipUpperBound, double lowEnergyDegreeOfMembershipLowerBound, double mediumEnergyDegreeOfMembershipUpperBound, double mediumEnergyDegreeOfMembershipLowerBound, double highEnergyDegreeOfMembershipUpperBound, double highEnergyDegreeOfMembershipLowerBound, double underUtilizationDegreeOfMembershipUpperBound, double underUtilizationDegreeOfMembershipLowerBound, double normalUtilizationDegreeOfMembershipUpperBound, double normalUtilizationDegreeOfMembershipLowerBound, double overUtilizationDegreeOfMembershipUpperBound, double overUtilizationDegreeOfMembershipLowerBound) {
 		super();
-		this.limitedCPDegreeOfMembershipUpperBound = limitedCPDegreeOfMembershipUpperBound;
-		this.limitedCPDegreeOfMembershipLowerBound = limitedCPDegreeOfMembershipLowerBound;
-		this.reasonableCPDegreeOfMembershipUpperBound = reasonableCPDegreeOfMembershipUpperBound;
-		this.reasonableCPDegreeOfMembershipLowerBound = reasonableCPDegreeOfMembershipLowerBound;
-		this.highCPDegreeOfMembershipUpperBound = highCPDegreeOfMembershipUpperBound;
-		this.highCPDegreeOfMembershipLowerBound = highCPDegreeOfMembershipLowerBound;
-		this.smallCCDegreeOfMembershipUpperBound = smallCCDegreeOfMembershipUpperBound;
-		this.smallCCDegreeOfMembershipLowerBound = smallCCDegreeOfMembershipLowerBound;
-		this.averageCCDegreeOfMembershipUpperBound = averageCCDegreeOfMembershipUpperBound;
-		this.averageCCDegreeOfMembershipLowerBound = averageCCDegreeOfMembershipLowerBound;
-		this.bigCCDegreeOfMembershipUpperBound = bigCCDegreeOfMembershipUpperBound;
-		this.bigCCDegreeOfMembershipLowerBound = bigCCDegreeOfMembershipLowerBound;
-		this.smallRAMDegreeOfMembershipUpperBound = smallRAMDegreeOfMembershipUpperBound;
-		this.smallRAMDegreeOfMembershipLowerBound = smallRAMDegreeOfMembershipLowerBound;
-		this.averageRAMDegreeOfMembershipUpperBound = averageRAMDegreeOfMembershipUpperBound;
-		this.averageRAMDegreeOfMembershipLowerBound = averageRAMDegreeOfMembershipLowerBound;
-		this.highRAMDegreeOfMembershipUpperBound = highRAMDegreeOfMembershipUpperBound;
-		this.highRAMDegreeOfMembershipLowerBound = highRAMDegreeOfMembershipLowerBound;
-		this.lowUtilizationDegreeOfMembershipUpperBound = lowUtilizationDegreeOfMembershipUpperBound;
-		this.lowUtilizationDegreeOfMembershipLowerBound = lowUtilizationDegreeOfMembershipLowerBound;
-		this.averageUtilizationDegreeOfMembershipUpperBound = averageUtilizationDegreeOfMembershipUpperBound;
-		this.averageUtilizationDegreeOfMembershipLowerBound = averageUtilizationDegreeOfMembershipLowerBound;
-		this.highUtilizationDegreeOfMembershipUpperBound = highUtilizationDegreeOfMembershipUpperBound;
-		this.highUtilizationDegreeOfMembershipLowerBound = highUtilizationDegreeOfMembershipLowerBound;
+		this.lowCpuDegreeOfMembershipUpperBound = lowCpuDegreeOfMembershipUpperBound;
+		this.lowCpuDegreeOfMembershipLowerBound =lowCpuDegreeOfMembershipLowerBound;
+		this.mediumCpuDegreeOfMembershipUpperBound=mediumCpuDegreeOfMembershipUpperBound;
+		this.mediumCpuDegreeOfMembershipLowerBound=mediumCpuDegreeOfMembershipLowerBound;
+		this.highCpuDegreeOfMembershipUpperBound=highCpuDegreeOfMembershipUpperBound;
+		this.highCpuDegreeOfMembershipLowerBound=highCpuDegreeOfMembershipLowerBound;
+		this.lowRamDegreeOfMembershipUpperBound = lowRamDegreeOfMembershipUpperBound;
+		this.lowRamDegreeOfMembershipLowerBound =lowRamDegreeOfMembershipLowerBound;
+		this.mediumRamDegreeOfMembershipUpperBound=mediumRamDegreeOfMembershipUpperBound;
+		this.mediumRamDegreeOfMembershipLowerBound=mediumRamDegreeOfMembershipLowerBound;
+		this.highRamDegreeOfMembershipUpperBound=highRamDegreeOfMembershipUpperBound;
+		this.highRamDegreeOfMembershipLowerBound=highRamDegreeOfMembershipLowerBound;
+		this.lowBwDegreeOfMembershipUpperBound = lowBwDegreeOfMembershipUpperBound;
+		this.lowBwDegreeOfMembershipLowerBound =lowBwDegreeOfMembershipLowerBound;
+		this.mediumBwDegreeOfMembershipUpperBound=mediumBwDegreeOfMembershipUpperBound;
+		this.mediumBwDegreeOfMembershipLowerBound=mediumBwDegreeOfMembershipLowerBound;
+		this.highBwDegreeOfMembershipUpperBound=highBwDegreeOfMembershipUpperBound;
+		this.highBwDegreeOfMembershipLowerBound=highBwDegreeOfMembershipLowerBound;
+		this.lowMipsDegreeOfMembershipUpperBound = lowMipsDegreeOfMembershipUpperBound;
+		this.lowMipsDegreeOfMembershipLowerBound =lowMipsDegreeOfMembershipLowerBound;
+		this.mediumMipsDegreeOfMembershipUpperBound=mediumMipsDegreeOfMembershipUpperBound;
+		this.mediumMipsDegreeOfMembershipLowerBound=mediumMipsDegreeOfMembershipLowerBound;
+		this.highMipsDegreeOfMembershipUpperBound=highMipsDegreeOfMembershipUpperBound;
+		this.highMipsDegreeOfMembershipLowerBound=highMipsDegreeOfMembershipLowerBound;
+		this.lowStorageDegreeOfMembershipUpperBound=lowStorageDegreeOfMembershipUpperBound;
+		this.lowStorageDegreeOfMembershipLowerBound=lowStorageDegreeOfMembershipLowerBound;
+		this.mediumStorageDegreeOfMembershipUpperBound=mediumStorageDegreeOfMembershipUpperBound;
+		this.mediumStorageDegreeOfMembershipLowerBound=mediumStorageDegreeOfMembershipLowerBound;
+		this.highStorageDegreeOfMembershipUpperBound=highStorageDegreeOfMembershipUpperBound;
+		this.highStorageDegreeOfMembershipLowerBound=highStorageDegreeOfMembershipLowerBound;
+		this.lowEnergyDegreeOfMembershipUpperBound=lowEnergyDegreeOfMembershipUpperBound;
+		this.lowEnergyDegreeOfMembershipLowerBound=lowEnergyDegreeOfMembershipLowerBound;
+		this.mediumEnergyDegreeOfMembershipUpperBound=mediumEnergyDegreeOfMembershipUpperBound;
+		this.mediumEnergyDegreeOfMembershipLowerBound=mediumEnergyDegreeOfMembershipLowerBound;
+		this.highEnergyDegreeOfMembershipUpperBound=mediumEnergyDegreeOfMembershipLowerBound;
+		this.highEnergyDegreeOfMembershipLowerBound=highEnergyDegreeOfMembershipLowerBound;
+		this.underUtilizationDegreeOfMembershipUpperBound=underUtilizationDegreeOfMembershipUpperBound;
+		this.underUtilizationDegreeOfMembershipLowerBound=underUtilizationDegreeOfMembershipLowerBound;
+		this.normalUtilizationDegreeOfMembershipUpperBound=normalUtilizationDegreeOfMembershipUpperBound;
+		this.normalUtilizationDegreeOfMembershipLowerBound=normalUtilizationDegreeOfMembershipLowerBound;
+		this.overUtilizationDegreeOfMembershipUpperBound=overUtilizationDegreeOfMembershipUpperBound;
+		this.overUtilizationDegreeOfMembershipLowerBound=overUtilizationDegreeOfMembershipLowerBound;
 	}
 
-	public double getLimitedCPDegreeOfMembershipUpperBound() {
-		return limitedCPDegreeOfMembershipUpperBound;
+	public double getLowCpuDegreeOfMembershipUpperBound() {
+		return lowCpuDegreeOfMembershipUpperBound;
 	}
 
-	public void setLimitedCPDegreeOfMembershipUpperBound(double limitedCPDegreeOfMembershipUpperBound) {
-		this.limitedCPDegreeOfMembershipUpperBound = limitedCPDegreeOfMembershipUpperBound;
+	public void setLowCpuDegreeOfMembershipUpperBound(double lowCpuDegreeOfMembershipUpperBound) {
+		this.lowCpuDegreeOfMembershipUpperBound = lowCpuDegreeOfMembershipUpperBound;
 	}
 
-	public double getLimitedCPDegreeOfMembershipLowerBound() {
-		return limitedCPDegreeOfMembershipLowerBound;
+	public double getLowCpuDegreeOfMembershipLowerBound() {
+		return lowCpuDegreeOfMembershipLowerBound;
 	}
 
-	public void setLimitedCPDegreeOfMembershipLowerBound(double limitedCPDegreeOfMembershipLowerBound) {
-		this.limitedCPDegreeOfMembershipLowerBound = limitedCPDegreeOfMembershipLowerBound;
+	public void setLowCpuDegreeOfMembershipLowerBound(double lowCpuDegreeOfMembershipLowerBound) {
+		this.lowCpuDegreeOfMembershipLowerBound = lowCpuDegreeOfMembershipLowerBound;
 	}
 
-	public double getReasonableCPDegreeOfMembershipUpperBound() {
-		return reasonableCPDegreeOfMembershipUpperBound;
+	public double getMediumCpuDegreeOfMembershipUpperBound() {
+		return mediumCpuDegreeOfMembershipUpperBound;
 	}
 
-	public void setReasonableCPDegreeOfMembershipUpperBound(double reasonableCPDegreeOfMembershipUpperBound) {
-		this.reasonableCPDegreeOfMembershipUpperBound = reasonableCPDegreeOfMembershipUpperBound;
+	public void setMediumCpuDegreeOfMembershipUpperBound(double mediumCpuDegreeOfMembershipUpperBound) {
+		this.mediumCpuDegreeOfMembershipUpperBound = mediumCpuDegreeOfMembershipUpperBound;
 	}
 
-	public double getReasonableCPDegreeOfMembershipLowerBound() {
-		return reasonableCPDegreeOfMembershipLowerBound;
+	public double getMediumCpuDegreeOfMembershipLowerBound() {
+		return mediumCpuDegreeOfMembershipLowerBound;
 	}
 
-	public void setReasonableCPDegreeOfMembershipLowerBound(double reasonableCPDegreeOfMembershipLowerBound) {
-		this.reasonableCPDegreeOfMembershipLowerBound = reasonableCPDegreeOfMembershipLowerBound;
+	public void setMediumCpuDegreeOfMembershipLowerBound(double mediumCpuDegreeOfMembershipLowerBound) {
+		this.mediumCpuDegreeOfMembershipLowerBound = mediumCpuDegreeOfMembershipLowerBound;
 	}
 
-	public double getHighCPDegreeOfMembershipUpperBound() {
-		return highCPDegreeOfMembershipUpperBound;
+	public double getHighCpuDegreeOfMembershipUpperBound() {
+		return highCpuDegreeOfMembershipUpperBound;
 	}
 
-	public void setHighCPDegreeOfMembershipUpperBound(double highCPDegreeOfMembershipUpperBound) {
-		this.highCPDegreeOfMembershipUpperBound = highCPDegreeOfMembershipUpperBound;
+	public void setHighCpuDegreeOfMembershipUpperBound(double highCpuDegreeOfMembershipUpperBound) {
+		this.highCpuDegreeOfMembershipUpperBound = highCpuDegreeOfMembershipUpperBound;
 	}
 
-	public double getHighCPDegreeOfMembershipLowerBound() {
-		return highCPDegreeOfMembershipLowerBound;
+	public double getHighCpuDegreeOfMembershipLowerBound() {
+		return highCpuDegreeOfMembershipLowerBound;
 	}
 
-	public void setHighCPDegreeOfMembershipLowerBound(double highCPDegreeOfMembershipLowerBound) {
-		this.highCPDegreeOfMembershipLowerBound = highCPDegreeOfMembershipLowerBound;
+	public void setHighCpuDegreeOfMembershipLowerBound(double highCpuDegreeOfMembershipLowerBound) {
+		this.highCpuDegreeOfMembershipLowerBound = highCpuDegreeOfMembershipLowerBound;
 	}
 
-	public double getSmallCCDegreeOfMembershipUpperBound() {
-		return smallCCDegreeOfMembershipUpperBound;
+	public double getLowStorageDegreeOfMembershipUpperBound() {
+		return lowStorageDegreeOfMembershipUpperBound;
 	}
 
-	public void setSmallCCDegreeOfMembershipUpperBound(double smallCCDegreeOfMembershipUpperBound) {
-		this.smallCCDegreeOfMembershipUpperBound = smallCCDegreeOfMembershipUpperBound;
+	public void setLowStorageDegreeOfMembershipUpperBound(double lowStorageDegreeOfMembershipUpperBound) {
+		this.lowStorageDegreeOfMembershipUpperBound = lowStorageDegreeOfMembershipUpperBound;
 	}
 
-	public double getSmallCCDegreeOfMembershipLowerBound() {
-		return smallCCDegreeOfMembershipLowerBound;
+	public double getLowStorageDegreeOfMembershipLowerBound() {
+		return lowStorageDegreeOfMembershipLowerBound;
 	}
 
-	public void setSmallCCDegreeOfMembershipLowerBound(double smallCCDegreeOfMembershipLowerBound) {
-		this.smallCCDegreeOfMembershipLowerBound = smallCCDegreeOfMembershipLowerBound;
+	public void setLowStorageDegreeOfMembershipLowerBound(double lowStorageDegreeOfMembershipLowerBound) {
+		this.lowStorageDegreeOfMembershipLowerBound = lowStorageDegreeOfMembershipLowerBound;
 	}
 
-	public double getAverageCCDegreeOfMembershipUpperBound() {
-		return averageCCDegreeOfMembershipUpperBound;
+	public double getMediumStorageDegreeOfMembershipUpperBound() {
+		return mediumStorageDegreeOfMembershipUpperBound;
 	}
 
-	public void setAverageCCDegreeOfMembershipUpperBound(double averageCCDegreeOfMembershipUpperBound) {
-		this.averageCCDegreeOfMembershipUpperBound = averageCCDegreeOfMembershipUpperBound;
+	public void setMediumStorageDegreeOfMembershipUpperBound(double mediumStorageDegreeOfMembershipUpperBound) {
+		this.mediumStorageDegreeOfMembershipUpperBound = mediumStorageDegreeOfMembershipUpperBound;
 	}
 
-	public double getAverageCCDegreeOfMembershipLowerBound() {
-		return averageCCDegreeOfMembershipLowerBound;
+	public double getMediumStorageDegreeOfMembershipLowerBound() {
+		return mediumStorageDegreeOfMembershipLowerBound;
 	}
 
-	public void setAverageCCDegreeOfMembershipLowerBound(double averageCCDegreeOfMembershipLowerBound) {
-		this.averageCCDegreeOfMembershipLowerBound = averageCCDegreeOfMembershipLowerBound;
+	public void setMediumStorageDegreeOfMembershipLowerBound(double mediumStorageDegreeOfMembershipLowerBound) {
+		this.mediumStorageDegreeOfMembershipLowerBound = mediumStorageDegreeOfMembershipLowerBound;
 	}
 
-	public double getBigCCDegreeOfMembershipUpperBound() {
-		return bigCCDegreeOfMembershipUpperBound;
+	public double getHighStorageDegreeOfMembershipUpperBound() {
+		return highStorageDegreeOfMembershipUpperBound;
 	}
 
-	public void setBigCCDegreeOfMembershipUpperBound(double bigCCDegreeOfMembershipUpperBound) {
-		this.bigCCDegreeOfMembershipUpperBound = bigCCDegreeOfMembershipUpperBound;
+	public void setHighStorageDegreeOfMembershipUpperBound(double highStorageDegreeOfMembershipUpperBound) {
+		this.highStorageDegreeOfMembershipUpperBound = highStorageDegreeOfMembershipUpperBound;
 	}
 
-	public double getBigCCDegreeOfMembershipLowerBound() {
-		return bigCCDegreeOfMembershipLowerBound;
+	public double getHighStorageDegreeOfMembershipLowerBound() {
+		return highStorageDegreeOfMembershipLowerBound;
 	}
 
-	public void setBigCCDegreeOfMembershipLowerBound(double bigCCDegreeOfMembershipLowerBound) {
-		this.bigCCDegreeOfMembershipLowerBound = bigCCDegreeOfMembershipLowerBound;
+	public void setHighStorageDegreeOfMembershipLowerBound(double highStorageDegreeOfMembershipLowerBound) {
+		this.highStorageDegreeOfMembershipLowerBound = highStorageDegreeOfMembershipLowerBound;
 	}
 
-	public double getSmallRAMDegreeOfMembershipUpperBound() {
-		return smallRAMDegreeOfMembershipUpperBound;
+	public double getLowEnergyDegreeOfMembershipUpperBound() {
+		return lowEnergyDegreeOfMembershipUpperBound;
 	}
 
-	public void setSmallRAMDegreeOfMembershipUpperBound(double smallRAMDegreeOfMembershipUpperBound) {
-		this.smallRAMDegreeOfMembershipUpperBound = smallRAMDegreeOfMembershipUpperBound;
+	public void setLowEnergyDegreeOfMembershipUpperBound(double lowEnergyDegreeOfMembershipUpperBound) {
+		this.lowEnergyDegreeOfMembershipUpperBound = lowEnergyDegreeOfMembershipUpperBound;
 	}
 
-	public double getSmallRAMDegreeOfMembershipLowerBound() {
-		return smallRAMDegreeOfMembershipLowerBound;
+	public double getLowEnergyDegreeOfMembershipLowerBound() {
+		return lowEnergyDegreeOfMembershipLowerBound;
 	}
 
-	public void setSmallRAMDegreeOfMembershipLowerBound(double smallRAMDegreeOfMembershipLowerBound) {
-		this.smallRAMDegreeOfMembershipLowerBound = smallRAMDegreeOfMembershipLowerBound;
+	public void setLowEnergyDegreeOfMembershipLowerBound(double lowEnergyDegreeOfMembershipLowerBound) {
+		this.lowEnergyDegreeOfMembershipLowerBound = lowEnergyDegreeOfMembershipLowerBound;
 	}
 
-	public double getAverageRAMDegreeOfMembershipUpperBound() {
-		return averageRAMDegreeOfMembershipUpperBound;
+	public double getMediumEnergyDegreeOfMembershipUpperBound() {
+		return mediumEnergyDegreeOfMembershipUpperBound;
 	}
 
-	public void setAverageRAMDegreeOfMembershipUpperBound(double averageRAMDegreeOfMembershipUpperBound) {
-		this.averageRAMDegreeOfMembershipUpperBound = averageRAMDegreeOfMembershipUpperBound;
+	public void setMediumEnergyDegreeOfMembershipUpperBound(double mediumEnergyDegreeOfMembershipUpperBound) {
+		this.mediumEnergyDegreeOfMembershipUpperBound = mediumEnergyDegreeOfMembershipUpperBound;
 	}
 
-	public double getAverageRAMDegreeOfMembershipLowerBound() {
-		return averageRAMDegreeOfMembershipLowerBound;
+	public double getMediumEnergyDegreeOfMembershipLowerBound() {
+		return mediumEnergyDegreeOfMembershipLowerBound;
 	}
 
-	public void setAverageRAMDegreeOfMembershipLowerBound(double averageRAMDegreeOfMembershipLowerBound) {
-		this.averageRAMDegreeOfMembershipLowerBound = averageRAMDegreeOfMembershipLowerBound;
+	public void setMediumEnergyDegreeOfMembershipLowerBound(double mediumEnergyDegreeOfMembershipLowerBound) {
+		this.mediumEnergyDegreeOfMembershipLowerBound = mediumEnergyDegreeOfMembershipLowerBound;
 	}
 
-	public double getHighRAMDegreeOfMembershipUpperBound() {
-		return highRAMDegreeOfMembershipUpperBound;
+	public double getHighEnergyDegreeOfMembershipUpperBound() {
+		return highEnergyDegreeOfMembershipUpperBound;
 	}
 
-	public void setHighRAMDegreeOfMembershipUpperBound(double highRAMDegreeOfMembershipUpperBound) {
-		this.highRAMDegreeOfMembershipUpperBound = highRAMDegreeOfMembershipUpperBound;
+	public void setHighEnergyDegreeOfMembershipUpperBound(double highEnergyDegreeOfMembershipUpperBound) {
+		this.highEnergyDegreeOfMembershipUpperBound = highEnergyDegreeOfMembershipUpperBound;
 	}
 
-	public double getHighRAMDegreeOfMembershipLowerBound() {
-		return highRAMDegreeOfMembershipLowerBound;
+	public double getHighEnergyDegreeOfMembershipLowerBound() {
+		return highEnergyDegreeOfMembershipLowerBound;
 	}
 
-	public void setHighRAMDegreeOfMembershipLowerBound(double highRAMDegreeOfMembershipLowerBound) {
-		this.highRAMDegreeOfMembershipLowerBound = highRAMDegreeOfMembershipLowerBound;
+	public void setHighEnergyDegreeOfMembershipLowerBound(double highEnergyDegreeOfMembershipLowerBound) {
+		this.highEnergyDegreeOfMembershipLowerBound = highEnergyDegreeOfMembershipLowerBound;
 	}
 
-	public double getLowUtilizationDegreeOfMembershipUpperBound() {
-		return lowUtilizationDegreeOfMembershipUpperBound;
+	public double getUnderUtilizationDegreeOfMembershipUpperBound() {
+		return underUtilizationDegreeOfMembershipUpperBound;
 	}
 
-	public void setLowUtilizationDegreeOfMembershipUpperBound(double lowUtilizationDegreeOfMembershipUpperBound) {
-		this.lowUtilizationDegreeOfMembershipUpperBound = lowUtilizationDegreeOfMembershipUpperBound;
+	public void setUnderUtilizationDegreeOfMembershipUpperBound(double underUtilizationDegreeOfMembershipUpperBound) {
+		this.underUtilizationDegreeOfMembershipUpperBound = underUtilizationDegreeOfMembershipUpperBound;
 	}
 
-	public double getLowUtilizationDegreeOfMembershipLowerBound() {
-		return lowUtilizationDegreeOfMembershipLowerBound;
+	public double getUnderUtilizationDegreeOfMembershipLowerBound() {
+		return underUtilizationDegreeOfMembershipLowerBound;
 	}
 
-	public void setLowUtilizationDegreeOfMembershipLowerBound(double lowUtilizationDegreeOfMembershipLowerBound) {
-		this.lowUtilizationDegreeOfMembershipLowerBound = lowUtilizationDegreeOfMembershipLowerBound;
+	public void setUnderUtilizationDegreeOfMembershipLowerBound(double underUtilizationDegreeOfMembershipLowerBound) {
+		this.underUtilizationDegreeOfMembershipLowerBound = underUtilizationDegreeOfMembershipLowerBound;
 	}
 
-	public double getAverageUtilizationDegreeOfMembershipUpperBound() {
-		return averageUtilizationDegreeOfMembershipUpperBound;
+	public double getNormalUtilizationDegreeOfMembershipUpperBound() {
+		return normalUtilizationDegreeOfMembershipUpperBound;
 	}
 
-	public void setAverageUtilizationDegreeOfMembershipUpperBound(
-			double averageUtilizationDegreeOfMembershipUpperBound) {
-		this.averageUtilizationDegreeOfMembershipUpperBound = averageUtilizationDegreeOfMembershipUpperBound;
+	public void setNormalUtilizationDegreeOfMembershipUpperBound(double normalUtilizationDegreeOfMembershipUpperBound) {
+		this.normalUtilizationDegreeOfMembershipUpperBound = normalUtilizationDegreeOfMembershipUpperBound;
 	}
 
-	public double getAverageUtilizationDegreeOfMembershipLowerBound() {
-		return averageUtilizationDegreeOfMembershipLowerBound;
+	public double getNormalUtilizationDegreeOfMembershipLowerBound() {
+		return normalUtilizationDegreeOfMembershipLowerBound;
 	}
 
-	public void setAverageUtilizationDegreeOfMembershipLowerBound(
-			double averageUtilizationDegreeOfMembershipLowerBound) {
-		this.averageUtilizationDegreeOfMembershipLowerBound = averageUtilizationDegreeOfMembershipLowerBound;
+	public void setNormalUtilizationDegreeOfMembershipLowerBound(double normalUtilizationDegreeOfMembershipLowerBound) {
+		this.normalUtilizationDegreeOfMembershipLowerBound = normalUtilizationDegreeOfMembershipLowerBound;
 	}
 
-	public double getHighUtilizationDegreeOfMembershipUpperBound() {
-		return highUtilizationDegreeOfMembershipUpperBound;
+	public double getOverUtilizationDegreeOfMembershipUpperBound() {
+		return overUtilizationDegreeOfMembershipUpperBound;
 	}
 
-	public void setHighUtilizationDegreeOfMembershipUpperBound(double highUtilizationDegreeOfMembershipUpperBound) {
-		this.highUtilizationDegreeOfMembershipUpperBound = highUtilizationDegreeOfMembershipUpperBound;
+	public void setOverUtilizationDegreeOfMembershipUpperBound(double overUtilizationDegreeOfMembershipUpperBound) {
+		this.overUtilizationDegreeOfMembershipUpperBound = overUtilizationDegreeOfMembershipUpperBound;
 	}
 
-	public double getHighUtilizationDegreeOfMembershipLowerBound() {
-		return highUtilizationDegreeOfMembershipLowerBound;
+	public double getOverUtilizationDegreeOfMembershipLowerBound() {
+		return overUtilizationDegreeOfMembershipLowerBound;
 	}
 
-	public void setHighUtilizationDegreeOfMembershipLowerBound(double highUtilizationDegreeOfMembershipLowerBound) {
-		this.highUtilizationDegreeOfMembershipLowerBound = highUtilizationDegreeOfMembershipLowerBound;
+	public void setOverUtilizationDegreeOfMembershipLowerBound(double overUtilizationDegreeOfMembershipLowerBound) {
+		this.overUtilizationDegreeOfMembershipLowerBound = overUtilizationDegreeOfMembershipLowerBound;
+	}
+
+	public double getLowRamDegreeOfMembershipUpperBound() {
+		return lowRamDegreeOfMembershipUpperBound;
+	}
+
+	public void setLowRamDegreeOfMembershipUpperBound(double lowRamDegreeOfMembershipUpperBound) {
+		this.lowRamDegreeOfMembershipUpperBound = lowRamDegreeOfMembershipUpperBound;
+	}
+
+	public double getLowRamDegreeOfMembershipLowerBound() {
+		return lowRamDegreeOfMembershipLowerBound;
+	}
+
+	public void setLowRamDegreeOfMembershipLowerBound(double lowRamDegreeOfMembershipLowerBound) {
+		this.lowRamDegreeOfMembershipLowerBound = lowRamDegreeOfMembershipLowerBound;
+	}
+
+	public double getMediumRamDegreeOfMembershipUpperBound() {
+		return mediumRamDegreeOfMembershipUpperBound;
+	}
+
+	public void setMediumRamDegreeOfMembershipUpperBound(double mediumRamDegreeOfMembershipUpperBound) {
+		this.mediumRamDegreeOfMembershipUpperBound = mediumRamDegreeOfMembershipUpperBound;
+	}
+
+	public double getMediumRamDegreeOfMembershipLowerBound() {
+		return mediumRamDegreeOfMembershipLowerBound;
+	}
+
+	public void setMediumRamDegreeOfMembershipLowerBound(double mediumRamDegreeOfMembershipLowerBound) {
+		this.mediumRamDegreeOfMembershipLowerBound = mediumRamDegreeOfMembershipLowerBound;
+	}
+
+	public double getHighRamDegreeOfMembershipUpperBound() {
+		return highRamDegreeOfMembershipUpperBound;
+	}
+
+	public void setHighRamDegreeOfMembershipUpperBound(double highRamDegreeOfMembershipUpperBound) {
+		this.highRamDegreeOfMembershipUpperBound = highRamDegreeOfMembershipUpperBound;
+	}
+
+	public double getHighRamDegreeOfMembershipLowerBound() {
+		return highRamDegreeOfMembershipLowerBound;
+	}
+
+	public void setHighRamDegreeOfMembershipLowerBound(double highRamDegreeOfMembershipLowerBound) {
+		this.highRamDegreeOfMembershipLowerBound = highRamDegreeOfMembershipLowerBound;
+	}
+
+	public double getLowBwDegreeOfMembershipUpperBound() {
+		return lowBwDegreeOfMembershipUpperBound;
+	}
+
+	public void setLowBwDegreeOfMembershipUpperBound(double lowBwDegreeOfMembershipUpperBound) {
+		this.lowBwDegreeOfMembershipUpperBound = lowBwDegreeOfMembershipUpperBound;
+	}
+
+	public double getLowBwDegreeOfMembershipLowerBound() {
+		return lowBwDegreeOfMembershipLowerBound;
+	}
+
+	public void setLowBwDegreeOfMembershipLowerBound(double lowBwDegreeOfMembershipLowerBound) {
+		this.lowBwDegreeOfMembershipLowerBound = lowBwDegreeOfMembershipLowerBound;
+	}
+
+	public double getMediumBwDegreeOfMembershipUpperBound() {
+		return mediumBwDegreeOfMembershipUpperBound;
+	}
+
+	public void setMediumBwDegreeOfMembershipUpperBound(double mediumBwDegreeOfMembershipUpperBound) {
+		this.mediumBwDegreeOfMembershipUpperBound = mediumBwDegreeOfMembershipUpperBound;
+	}
+
+	public double getMediumBwDegreeOfMembershipLowerBound() {
+		return mediumBwDegreeOfMembershipLowerBound;
+	}
+
+	public void setMediumBwDegreeOfMembershipLowerBound(double mediumBwDegreeOfMembershipLowerBound) {
+		this.mediumBwDegreeOfMembershipLowerBound = mediumBwDegreeOfMembershipLowerBound;
+	}
+
+	public double getHighBwDegreeOfMembershipUpperBound() {
+		return highBwDegreeOfMembershipUpperBound;
+	}
+
+	public void setHighBwDegreeOfMembershipUpperBound(double highBwDegreeOfMembershipUpperBound) {
+		this.highBwDegreeOfMembershipUpperBound = highBwDegreeOfMembershipUpperBound;
+	}
+
+	public double getHighBwDegreeOfMembershipLowerBound() {
+		return highBwDegreeOfMembershipLowerBound;
+	}
+
+	public void setHighBwDegreeOfMembershipLowerBound(double highBwDegreeOfMembershipLowerBound) {
+		this.highBwDegreeOfMembershipLowerBound = highBwDegreeOfMembershipLowerBound;
+	}
+
+	public double getLowMipsDegreeOfMembershipUpperBound() {
+		return lowMipsDegreeOfMembershipUpperBound;
+	}
+
+	public void setLowMipsDegreeOfMembershipUpperBound(double lowMipsDegreeOfMembershipUpperBound) {
+		this.lowMipsDegreeOfMembershipUpperBound = lowMipsDegreeOfMembershipUpperBound;
+	}
+
+	public double getLowMipsDegreeOfMembershipLowerBound() {
+		return lowMipsDegreeOfMembershipLowerBound;
+	}
+
+	public void setLowMipsDegreeOfMembershipLowerBound(double lowMipsDegreeOfMembershipLowerBound) {
+		this.lowMipsDegreeOfMembershipLowerBound = lowMipsDegreeOfMembershipLowerBound;
+	}
+
+	public double getMediumMipsDegreeOfMembershipUpperBound() {
+		return mediumMipsDegreeOfMembershipUpperBound;
+	}
+
+	public void setMediumMipsDegreeOfMembershipUpperBound(double mediumMipsDegreeOfMembershipUpperBound) {
+		this.mediumMipsDegreeOfMembershipUpperBound = mediumMipsDegreeOfMembershipUpperBound;
+	}
+
+	public double getMediumMipsDegreeOfMembershipLowerBound() {
+		return mediumMipsDegreeOfMembershipLowerBound;
+	}
+
+	public void setMediumMipsDegreeOfMembershipLowerBound(double mediumMipsDegreeOfMembershipLowerBound) {
+		this.mediumMipsDegreeOfMembershipLowerBound = mediumMipsDegreeOfMembershipLowerBound;
+	}
+
+	public double getHighMipsDegreeOfMembershipUpperBound() {
+		return highMipsDegreeOfMembershipUpperBound;
+	}
+
+	public void setHighMipsDegreeOfMembershipUpperBound(double highMipsDegreeOfMembershipUpperBound) {
+		this.highMipsDegreeOfMembershipUpperBound = highMipsDegreeOfMembershipUpperBound;
+	}
+
+	public double getHighMipsDegreeOfMembershipLowerBound() {
+		return highMipsDegreeOfMembershipLowerBound;
+	}
+
+	public void setHighMipsDegreeOfMembershipLowerBound(double highMipsDegreeOfMembershipLowerBound) {
+		this.highMipsDegreeOfMembershipLowerBound = highMipsDegreeOfMembershipLowerBound;
 	}
 
 	@Override
@@ -297,53 +481,53 @@ public class MembershipDegreesOfType2FuzzySets implements Serializable {
 		final int prime = 31;
 		int result = 1;
 		long temp;
-		temp = Double.doubleToLongBits(averageCCDegreeOfMembershipLowerBound);
+		temp = Double.doubleToLongBits(mediumStorageDegreeOfMembershipLowerBound);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(averageCCDegreeOfMembershipUpperBound);
+		temp = Double.doubleToLongBits(mediumStorageDegreeOfMembershipUpperBound);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(averageRAMDegreeOfMembershipLowerBound);
+		temp = Double.doubleToLongBits(mediumEnergyDegreeOfMembershipLowerBound);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(averageRAMDegreeOfMembershipUpperBound);
+		temp = Double.doubleToLongBits(mediumEnergyDegreeOfMembershipUpperBound);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(averageUtilizationDegreeOfMembershipLowerBound);
+		temp = Double.doubleToLongBits(normalUtilizationDegreeOfMembershipLowerBound);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(averageUtilizationDegreeOfMembershipUpperBound);
+		temp = Double.doubleToLongBits(normalUtilizationDegreeOfMembershipUpperBound);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(bigCCDegreeOfMembershipLowerBound);
+		temp = Double.doubleToLongBits(highStorageDegreeOfMembershipLowerBound);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(bigCCDegreeOfMembershipUpperBound);
+		temp = Double.doubleToLongBits(highStorageDegreeOfMembershipUpperBound);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(highCPDegreeOfMembershipLowerBound);
+		temp = Double.doubleToLongBits(highCpuDegreeOfMembershipLowerBound);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(highCPDegreeOfMembershipUpperBound);
+		temp = Double.doubleToLongBits(highCpuDegreeOfMembershipUpperBound);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(highRAMDegreeOfMembershipLowerBound);
+		temp = Double.doubleToLongBits(highEnergyDegreeOfMembershipLowerBound);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(highRAMDegreeOfMembershipUpperBound);
+		temp = Double.doubleToLongBits(highEnergyDegreeOfMembershipUpperBound);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(highUtilizationDegreeOfMembershipLowerBound);
+		temp = Double.doubleToLongBits(overUtilizationDegreeOfMembershipLowerBound);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(highUtilizationDegreeOfMembershipUpperBound);
+		temp = Double.doubleToLongBits(overUtilizationDegreeOfMembershipUpperBound);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(limitedCPDegreeOfMembershipLowerBound);
+		temp = Double.doubleToLongBits(lowCpuDegreeOfMembershipLowerBound);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(limitedCPDegreeOfMembershipUpperBound);
+		temp = Double.doubleToLongBits(lowCpuDegreeOfMembershipUpperBound);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(lowUtilizationDegreeOfMembershipLowerBound);
+		temp = Double.doubleToLongBits(underUtilizationDegreeOfMembershipLowerBound);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(lowUtilizationDegreeOfMembershipUpperBound);
+		temp = Double.doubleToLongBits(underUtilizationDegreeOfMembershipUpperBound);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(reasonableCPDegreeOfMembershipLowerBound);
+		temp = Double.doubleToLongBits(mediumCpuDegreeOfMembershipLowerBound);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(reasonableCPDegreeOfMembershipUpperBound);
+		temp = Double.doubleToLongBits(mediumCpuDegreeOfMembershipUpperBound);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(smallCCDegreeOfMembershipLowerBound);
+		temp = Double.doubleToLongBits(lowStorageDegreeOfMembershipLowerBound);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(smallCCDegreeOfMembershipUpperBound);
+		temp = Double.doubleToLongBits(lowStorageDegreeOfMembershipUpperBound);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(smallRAMDegreeOfMembershipLowerBound);
+		temp = Double.doubleToLongBits(lowEnergyDegreeOfMembershipLowerBound);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(smallRAMDegreeOfMembershipUpperBound);
+		temp = Double.doubleToLongBits(lowEnergyDegreeOfMembershipUpperBound);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
@@ -357,82 +541,80 @@ public class MembershipDegreesOfType2FuzzySets implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		MembershipDegreesOfType2FuzzySets other = (MembershipDegreesOfType2FuzzySets) obj;
-		if (Double.doubleToLongBits(averageCCDegreeOfMembershipLowerBound) != Double
-				.doubleToLongBits(other.averageCCDegreeOfMembershipLowerBound))
+		if (Double.doubleToLongBits(mediumStorageDegreeOfMembershipLowerBound) != Double
+				.doubleToLongBits(other.mediumStorageDegreeOfMembershipLowerBound))
 			return false;
-		if (Double.doubleToLongBits(averageCCDegreeOfMembershipUpperBound) != Double
-				.doubleToLongBits(other.averageCCDegreeOfMembershipUpperBound))
+		if (Double.doubleToLongBits(mediumStorageDegreeOfMembershipUpperBound) != Double
+				.doubleToLongBits(other.mediumStorageDegreeOfMembershipUpperBound))
 			return false;
-		if (Double.doubleToLongBits(averageRAMDegreeOfMembershipLowerBound) != Double
-				.doubleToLongBits(other.averageRAMDegreeOfMembershipLowerBound))
+		if (Double.doubleToLongBits(mediumEnergyDegreeOfMembershipLowerBound) != Double
+				.doubleToLongBits(other.mediumEnergyDegreeOfMembershipLowerBound))
 			return false;
-		if (Double.doubleToLongBits(averageRAMDegreeOfMembershipUpperBound) != Double
-				.doubleToLongBits(other.averageRAMDegreeOfMembershipUpperBound))
+		if (Double.doubleToLongBits(mediumEnergyDegreeOfMembershipUpperBound) != Double
+				.doubleToLongBits(other.mediumEnergyDegreeOfMembershipUpperBound))
 			return false;
-		if (Double.doubleToLongBits(averageUtilizationDegreeOfMembershipLowerBound) != Double
-				.doubleToLongBits(other.averageUtilizationDegreeOfMembershipLowerBound))
+		if (Double.doubleToLongBits(normalUtilizationDegreeOfMembershipLowerBound) != Double
+				.doubleToLongBits(other.normalUtilizationDegreeOfMembershipLowerBound))
 			return false;
-		if (Double.doubleToLongBits(averageUtilizationDegreeOfMembershipUpperBound) != Double
-				.doubleToLongBits(other.averageUtilizationDegreeOfMembershipUpperBound))
+		if (Double.doubleToLongBits(normalUtilizationDegreeOfMembershipUpperBound) != Double
+				.doubleToLongBits(other.normalUtilizationDegreeOfMembershipUpperBound))
 			return false;
-		if (Double.doubleToLongBits(bigCCDegreeOfMembershipLowerBound) != Double
-				.doubleToLongBits(other.bigCCDegreeOfMembershipLowerBound))
+		if (Double.doubleToLongBits(highStorageDegreeOfMembershipLowerBound) != Double
+				.doubleToLongBits(other.highStorageDegreeOfMembershipLowerBound))
 			return false;
-		if (Double.doubleToLongBits(bigCCDegreeOfMembershipUpperBound) != Double
-				.doubleToLongBits(other.bigCCDegreeOfMembershipUpperBound))
+		if (Double.doubleToLongBits(highStorageDegreeOfMembershipUpperBound) != Double
+				.doubleToLongBits(other.highStorageDegreeOfMembershipUpperBound))
 			return false;
-		if (Double.doubleToLongBits(highCPDegreeOfMembershipLowerBound) != Double
-				.doubleToLongBits(other.highCPDegreeOfMembershipLowerBound))
+		if (Double.doubleToLongBits(highCpuDegreeOfMembershipLowerBound) != Double
+				.doubleToLongBits(other.highCpuDegreeOfMembershipLowerBound))
 			return false;
-		if (Double.doubleToLongBits(highCPDegreeOfMembershipUpperBound) != Double
-				.doubleToLongBits(other.highCPDegreeOfMembershipUpperBound))
+		if (Double.doubleToLongBits(highCpuDegreeOfMembershipUpperBound) != Double
+				.doubleToLongBits(other.highCpuDegreeOfMembershipUpperBound))
 			return false;
-		if (Double.doubleToLongBits(highRAMDegreeOfMembershipLowerBound) != Double
-				.doubleToLongBits(other.highRAMDegreeOfMembershipLowerBound))
+		if (Double.doubleToLongBits(highEnergyDegreeOfMembershipLowerBound) != Double
+				.doubleToLongBits(other.highEnergyDegreeOfMembershipLowerBound))
 			return false;
-		if (Double.doubleToLongBits(highRAMDegreeOfMembershipUpperBound) != Double
-				.doubleToLongBits(other.highRAMDegreeOfMembershipUpperBound))
+		if (Double.doubleToLongBits(highEnergyDegreeOfMembershipUpperBound) != Double
+				.doubleToLongBits(other.highEnergyDegreeOfMembershipUpperBound))
 			return false;
-		if (Double.doubleToLongBits(highUtilizationDegreeOfMembershipLowerBound) != Double
-				.doubleToLongBits(other.highUtilizationDegreeOfMembershipLowerBound))
+		if (Double.doubleToLongBits(overUtilizationDegreeOfMembershipLowerBound) != Double
+				.doubleToLongBits(other.overUtilizationDegreeOfMembershipLowerBound))
 			return false;
-		if (Double.doubleToLongBits(highUtilizationDegreeOfMembershipUpperBound) != Double
-				.doubleToLongBits(other.highUtilizationDegreeOfMembershipUpperBound))
+		if (Double.doubleToLongBits(overUtilizationDegreeOfMembershipUpperBound) != Double
+				.doubleToLongBits(other.overUtilizationDegreeOfMembershipUpperBound))
 			return false;
-		if (Double.doubleToLongBits(limitedCPDegreeOfMembershipLowerBound) != Double
-				.doubleToLongBits(other.limitedCPDegreeOfMembershipLowerBound))
+		if (Double.doubleToLongBits(lowCpuDegreeOfMembershipLowerBound) != Double
+				.doubleToLongBits(other.lowCpuDegreeOfMembershipLowerBound))
 			return false;
-		if (Double.doubleToLongBits(limitedCPDegreeOfMembershipUpperBound) != Double
-				.doubleToLongBits(other.limitedCPDegreeOfMembershipUpperBound))
+		if (Double.doubleToLongBits(lowCpuDegreeOfMembershipUpperBound) != Double
+				.doubleToLongBits(other.lowCpuDegreeOfMembershipUpperBound))
 			return false;
-		if (Double.doubleToLongBits(lowUtilizationDegreeOfMembershipLowerBound) != Double
-				.doubleToLongBits(other.lowUtilizationDegreeOfMembershipLowerBound))
+		if (Double.doubleToLongBits(underUtilizationDegreeOfMembershipLowerBound) != Double
+				.doubleToLongBits(other.underUtilizationDegreeOfMembershipLowerBound))
 			return false;
-		if (Double.doubleToLongBits(lowUtilizationDegreeOfMembershipUpperBound) != Double
-				.doubleToLongBits(other.lowUtilizationDegreeOfMembershipUpperBound))
+		if (Double.doubleToLongBits(underUtilizationDegreeOfMembershipUpperBound) != Double
+				.doubleToLongBits(other.underUtilizationDegreeOfMembershipUpperBound))
 			return false;
-		if (Double.doubleToLongBits(reasonableCPDegreeOfMembershipLowerBound) != Double
-				.doubleToLongBits(other.reasonableCPDegreeOfMembershipLowerBound))
+		if (Double.doubleToLongBits(mediumCpuDegreeOfMembershipLowerBound) != Double
+				.doubleToLongBits(other.mediumCpuDegreeOfMembershipLowerBound))
 			return false;
-		if (Double.doubleToLongBits(reasonableCPDegreeOfMembershipUpperBound) != Double
-				.doubleToLongBits(other.reasonableCPDegreeOfMembershipUpperBound))
+		if (Double.doubleToLongBits(mediumCpuDegreeOfMembershipUpperBound) != Double
+				.doubleToLongBits(other.mediumCpuDegreeOfMembershipUpperBound))
 			return false;
-		if (Double.doubleToLongBits(smallCCDegreeOfMembershipLowerBound) != Double
-				.doubleToLongBits(other.smallCCDegreeOfMembershipLowerBound))
+		if (Double.doubleToLongBits(lowStorageDegreeOfMembershipLowerBound) != Double
+				.doubleToLongBits(other.lowStorageDegreeOfMembershipLowerBound))
 			return false;
-		if (Double.doubleToLongBits(smallCCDegreeOfMembershipUpperBound) != Double
-				.doubleToLongBits(other.smallCCDegreeOfMembershipUpperBound))
+		if (Double.doubleToLongBits(lowStorageDegreeOfMembershipUpperBound) != Double
+				.doubleToLongBits(other.lowStorageDegreeOfMembershipUpperBound))
 			return false;
-		if (Double.doubleToLongBits(smallRAMDegreeOfMembershipLowerBound) != Double
-				.doubleToLongBits(other.smallRAMDegreeOfMembershipLowerBound))
+		if (Double.doubleToLongBits(lowEnergyDegreeOfMembershipLowerBound) != Double
+				.doubleToLongBits(other.lowEnergyDegreeOfMembershipLowerBound))
 			return false;
-		if (Double.doubleToLongBits(smallRAMDegreeOfMembershipUpperBound) != Double
-				.doubleToLongBits(other.smallRAMDegreeOfMembershipUpperBound))
+		if (Double.doubleToLongBits(lowEnergyDegreeOfMembershipUpperBound) != Double
+				.doubleToLongBits(other.lowEnergyDegreeOfMembershipUpperBound))
 			return false;
 		return true;
 	}
-	
-	
-	
+
 
 }

@@ -1,6 +1,7 @@
 package org.cloudbus.cloudsim.examples.power.random;
 
 import java.util.Calendar;
+import java.util.Map;
 
 import org.cloudbus.cloudsim.Log;
 import org.cloudbus.cloudsim.core.CloudSim;
@@ -49,7 +50,8 @@ public class RandomRunner extends RunnerAbstract {
 			boolean admissibleOrders, 
 			String orderType,
 			int typeReductionType,
-			int typeFuzzySystem) {
+			int typeFuzzySystem,
+			Map<String, String> vmPolicies) {
 		super(
 				enableOutput,
 				outputToFile,
@@ -66,7 +68,8 @@ public class RandomRunner extends RunnerAbstract {
 				admissibleOrders,
 				orderType,
 				typeReductionType,
-				typeFuzzySystem);
+				typeFuzzySystem,
+				vmPolicies);
 	}
 
 	/*

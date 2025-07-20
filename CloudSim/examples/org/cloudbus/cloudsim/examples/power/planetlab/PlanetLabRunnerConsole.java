@@ -1,6 +1,8 @@
 package org.cloudbus.cloudsim.examples.power.planetlab;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This is a universal example runner that can be used for running examples from console. All the
@@ -53,6 +55,10 @@ public class PlanetLabRunnerConsole {
 			parameter = args[6];
 		}
 
+		Map<String, String> vmPolicies = new HashMap<>();
+		vmPolicies.put("ap", vmAllocationPolicy);
+		vmPolicies.put("sp", vmSelectionPolicy);
+
 		new PlanetLabRunner(
 				enableOutput,
 				outputToFile,
@@ -69,7 +75,8 @@ public class PlanetLabRunnerConsole {
 				admissibleOrders,
 				orderType,
 				typeReductionType,
-				typeFuzzySystem);
+				typeFuzzySystem,
+				vmPolicies);
 	}
 
 }

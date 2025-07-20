@@ -1108,7 +1108,7 @@ public class Datacenter extends SimEntity {
 	 * 
 	 * @return the last process time
 	 */
-	protected double getLastProcessTime() {
+    public double getLastProcessTime() {
 		return lastProcessTime;
 	}
 

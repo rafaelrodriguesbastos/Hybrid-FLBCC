@@ -9,6 +9,7 @@
 package org.cloudbus.cloudsim.power;
 
 import java.util.List;
+import java.util.Map;
 
 import org.cloudbus.cloudsim.Host;
 import org.cloudbus.cloudsim.util.MathUtil;
@@ -51,7 +52,8 @@ public class PowerVmAllocationPolicyMigrationLocalRegressionRobust extends
 			String typeIntersection,
 			String typeUnion,
 			int typeReductionType,
-			int typeFuzzySystem) {
+			int typeFuzzySystem,
+			Map<String, String> vmPolicies) {
 		super(
 				hostList,
 				vmSelectionPolicy,
@@ -64,7 +66,8 @@ public class PowerVmAllocationPolicyMigrationLocalRegressionRobust extends
 				typeIntersection,
 				typeUnion,
 				typeReductionType,
-				typeFuzzySystem);
+				typeFuzzySystem,
+				vmPolicies);
 	}
 
 	/**
@@ -86,9 +89,10 @@ public class PowerVmAllocationPolicyMigrationLocalRegressionRobust extends
 			String typeIntersection,
 			String typeUnion,
 			int typeReductionType,
-			int typeFuzzySystem) {
+			int typeFuzzySystem,
+			Map<String, String> vmPolicies) {
 		super(hostList, vmSelectionPolicy, safetyParameter, schedulingInterval, fallbackVmAllocationPolicy, admissibleOrders, orderType, 
-				typeIntersection, typeUnion, typeReductionType, typeFuzzySystem);
+				typeIntersection, typeUnion, typeReductionType, typeFuzzySystem, vmPolicies);
 	}
 
 	/**
